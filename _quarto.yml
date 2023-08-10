@@ -1,0 +1,81 @@
+project:
+  type: website
+  output-dir: docs
+  render: 
+    - "*.qmd"
+    - "!HW/Proj/"
+
+lang: ja
+
+website:
+  favicon: Figs/favicon.png
+  site-url: "https://www.jaysong.net/kpu-r/"
+  title: "Introduction to R@KPU"
+  search: true
+  page-footer: 
+    left: "Copyright 2023, <a href='https://www.jaysong.net' target='_blank'>Jaehyun Song</a>. Powered by <a href='https://quarto.org/' target='_blank'>Quarto</a>" 
+    right:
+      - icon: house-fill
+        href: https://www.jaysong.net
+      - icon: github
+        href: https://github.com/JaehyunSong
+  navbar:
+    logo: Figs/logo.png
+    search: true
+    background: "#1955A6"
+    pinned: true
+    left:
+      - sidebar:syllabus
+      - sidebar:intro
+      - sidebar:material
+    right: 
+      - icon: terminal
+        href: https://jupyter.cs.rcos.nii.ac.jp/
+      - icon: book
+        href: https://www.jaysong.net/RBook/
+  sidebar:
+    - id: syllabus
+      title: "シラバス"
+      style: "docked"
+      contents: 
+        - text: "シラバス"
+          href: syllabus/syllabus.qmd
+        - text: "セッション情報"
+          href: syllabus/session.qmd
+    - id: intro
+      title: "Rの使い方"
+      style: "docked"
+      contents:
+        - intro/install.qmd
+        - intro/rstudio.qmd
+        - intro/filesystem.qmd
+        - intro/project.qmd
+        - intro/file.qmd
+        - text: "パッケージ"
+          href: intro/packages.qmd
+        - intro/faq.qmd
+    - id: material
+      title: "講義資料"
+      style: "docked"
+      contents:
+        - materials/day01.qmd
+        - materials/day02.qmd
+        - materials/day03.qmd
+        - materials/final.qmd
+  google-analytics: "G-9TLN2VMPQD"
+
+format:
+  html:
+    theme: 
+      light: [a11y, r4ps.scss]
+    toc-depth: 3
+    link-external-newwindow: true
+    code-annotations: hover
+    mainfont: "Noto Sans JP"
+    monofont: "Noto Sans Mono"
+    header-includes: |
+      <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP&display=swap" rel="stylesheet"> 
+      <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Mono&display=swap" rel="stylesheet"> 
+
+execute: 
+  freeze: auto

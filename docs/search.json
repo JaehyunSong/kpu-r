@@ -1,0 +1,380 @@
+[
+  {
+    "objectID": "syllabus/syllabus.html",
+    "href": "syllabus/syllabus.html",
+    "title": "情報処理応用演習",
+    "section": "",
+    "text": "講義名：情報処理応用演習\n講義日: 未定\n場所: 未定\n講義内容: Rの使い方\n\nRの基本的な操作 & Quarto\nデータの入出力\nデータのハンドリング（前処理）\nデータの可視化\n\n統計学、確率、多変量解析、因果推論の授業ではないことに注意\n到達目標: Rを用いたデータ分析の教科書が読める土台づくり"
+  },
+  {
+    "objectID": "syllabus/syllabus.html#概要",
+    "href": "syllabus/syllabus.html#概要",
+    "title": "情報処理応用演習",
+    "section": "",
+    "text": "講義名：情報処理応用演習\n講義日: 未定\n場所: 未定\n講義内容: Rの使い方\n\nRの基本的な操作 & Quarto\nデータの入出力\nデータのハンドリング（前処理）\nデータの可視化\n\n統計学、確率、多変量解析、因果推論の授業ではないことに注意\n到達目標: Rを用いたデータ分析の教科書が読める土台づくり"
+  },
+  {
+    "objectID": "syllabus/syllabus.html#担当教員",
+    "href": "syllabus/syllabus.html#担当教員",
+    "title": "情報処理応用演習",
+    "section": "担当教員",
+    "text": "担当教員\n\n氏名：宋財泫（そん じぇひょん; SONG JAEHYUN）\nホームページ：https://www.jaysong.net\nメール: songkansai-u.ac.jp"
+  },
+  {
+    "objectID": "syllabus/syllabus.html#講義内容",
+    "href": "syllabus/syllabus.html#講義内容",
+    "title": "情報処理応用演習",
+    "section": "講義内容",
+    "text": "講義内容\n\n\n\n回\n内容\n教科書\n\n\n\n\n1\nガイダンス & RとIDEの導入\n\n\n\n2\nRの基本的な操作 & Quarto入門\n第6・22・24章\n\n\n3\nデータハンドリング（1）\n第12・14章\n\n\n4\nデータハンドリング（2）\n第13・14章\n\n\n5\nデータハンドリング（3）\n第15章\n\n\n6\n可視化（1）\n第17章\n\n\n7\n可視化（2）\n第18・19章\n\n\n8\n可視化（3）\n第18・19章"
+  },
+  {
+    "objectID": "syllabus/syllabus.html#前提知識",
+    "href": "syllabus/syllabus.html#前提知識",
+    "title": "情報処理応用演習",
+    "section": "前提知識",
+    "text": "前提知識\n\nファイル・システムの理解\n\nフォルダー (ディレクトリ)の概念\nC:/AAA/BBB/CCC.txt (Windows)や~/AAA/BBB/CCC.text (macOS / Linux)の意味が理解できること\n相対パス / 絶対パスの概念が理解できること\n不安がある場合は本サポートページの「ファイル・システム」を参照すること。\n\nブラインド・タッチ (重要)\n\nタイピングが遅いと、実習で非常に苦労する。\n第4回の授業までにブラインドタッチの練習を推奨\n\nグーグルで「タイピング練習」で検索すれば様々な情報が得られる。一日30分以上、2週間程度である程度出来るようになり、それ以降は意識しなくても上達していく。\n\nこの授業に限らず、現代社会で極めて重要なスキル"
+  },
+  {
+    "objectID": "syllabus/syllabus.html#教科書",
+    "href": "syllabus/syllabus.html#教科書",
+    "title": "情報処理応用演習",
+    "section": "教科書",
+    "text": "教科書\nSong Jaehyun・矢内勇生.『私たちのR: ベストプラクティスの探求』Web-book\n\nhttps://www.jaysong.net/RBook\n本講義内容を200%カバーする\n無料"
+  },
+  {
+    "objectID": "syllabus/syllabus.html#参考書",
+    "href": "syllabus/syllabus.html#参考書",
+    "title": "情報処理応用演習",
+    "section": "参考書",
+    "text": "参考書\n\n松村優哉 他. 2021. 『改訂2版 RユーザのためのRStudio[実践]入門』技術評論社\nGarrett Grolemund and Hadley Wickham. 2017. R for Data Science. O’Reilly.\n\n邦訳『Rではじめるデータサイエンス』(原著は無料: https://r4ds.had.co.nz/)\n\nJared P. Lander. 2018. R for Everyone. Addison-Wesley Professional.\n\n邦訳『みんなのR』"
+  },
+  {
+    "objectID": "syllabus/syllabus.html#成績評価",
+    "href": "syllabus/syllabus.html#成績評価",
+    "title": "情報処理応用演習",
+    "section": "成績評価",
+    "text": "成績評価\n\n平常点: 30%\n課題: 70%"
+  },
+  {
+    "objectID": "intro/rstudio.html",
+    "href": "intro/rstudio.html",
+    "title": "RStudioの設定",
+    "section": "",
+    "text": "RStudioはそのままでも使えるが、少しカスタマイズするとより使い勝手が良くなる。RStudioのカスタマイズ画面はTools &gt; Global Optionsをクリックすることで表示される。\n以下の設定はJDCat分析ツールで使用可能なRStudio最新版 (RStudio Server 2022.12.0+353)の設定であり、宋の設定と同じである。"
+  },
+  {
+    "objectID": "intro/rstudio.html#general",
+    "href": "intro/rstudio.html#general",
+    "title": "RStudioの設定",
+    "section": "1 General",
+    "text": "1 General\n\n1.1 Basicタブ\n\n\n\n\n\n\n\n\n項目\n設定\n\n\n\n\nDefault working directory (when not in a project)\n~\n\n\nRestore most recently opened project at startup\n\n\n\nRestore previously open source documents at startup\n\n\n\nRun Rprofile when resuming suspended session\n\n\n\nRestore .RData into workspace at startup\n\n\n\nSave work space to .Rdata on exit\nNever\n\n\nAlways save history (even when not saving .RData)\n\n\n\nRemove duplicate entries in history\n\n\n\nWrap around when navigating to previous/next tab\nチェック\n\n\n\n\n\n1.2 Graphicsタブ\n\n\n\n\n\n\n\n\n項目\n設定\n\n\n\n\nBackend\nAGG\n\n\nAntialising\n(defualt)"
+  },
+  {
+    "objectID": "intro/rstudio.html#code",
+    "href": "intro/rstudio.html#code",
+    "title": "RStudioの設定",
+    "section": "2 Code",
+    "text": "2 Code\n\n2.1 Editingタブ\n\n\n\n\n\n\n\n\n項目\n設定\n\n\n\n\nInsert spaces for tab\nチェック\n\n\nTab width\n2 or 4\n\n\nAuto-detect code indentation\nチェック\n\n\nInsert matching parens/quotes\nチェック\n\n\nUse native pipe operator\nチェック\n\n\nAuto-indent code after paste\nチェック\n\n\nVertically align arguments in auto-indent\nチェック\n\n\nSoft-wrap R source files\nチェック\n\n\nContinue comment when inserting new line\n\n\n\nEnable hyperlink highlighting in editor\nチェック\n\n\nEditor scroll speed sensitivity\n100\n\n\nSurround selection on text insertion\nQuotes & Brackets\n\n\nKeybindings\nDefault\n\n\nFocus console after excuting from source\n\n\n\nCtrl + Enter excutes\nMulti-line R statement\n\n\nEnable code snippets\nチェック\n\n\n\n\n\n2.2 Displayタブ\n\n\n\n\n\n\n\n\n項目\n設定\n\n\n\n\nHighlight selected word\nチェック\n\n\nHighlight selected line\nチェック\n\n\nShow line numbers\nチェック\n\n\nRelative line numbers\n\n\n\nShow margin\n\n\n\nMargin column\n\n\n\nShow whitespace characters\n\n\n\nIndentation guides\n\n\n\nBlinking cursor\nチェック\n\n\nAllow scroll past end of document\n\n\n\nAllow drag and drop of text\n\n\n\nFold Style\nStart and End\n\n\nHighlight R function calls\nチェック\n\n\nEnable preview of names and hexadecimal colors\nチェック\n\n\nRainbow parentheses\nチェック\n\n\n\n\n\n2.3 Savingタブ\n\n\n\n\n\n\n\n\n項目\n設定\n\n\n\n\nEnsure that source files end with newline\n\n\n\nStrip trailing horizontal whitespace when saving\n\n\n\nRestore last cursor position when opening file\n\n\n\nLine ending conversion\nPlatform Native\n\n\nDefault text encoding\nUTF-8\n\n\nAlways save R script before sourcing\nチェック\n\n\nAutomatically save when editor loses focus\n\n\n\nWhen editor is idle\nBackup unsaved changes\n\n\nIdle period\n1000ms\n\n\n\n\n\n2.4 Completionタブ\n\n\n\n\n\n\n\n\n項目\n設定\n\n\n\n\nShow code completions\nAutomatically\n\n\nAllow automatic completions in console\nチェック\n\n\nInsert parentheses after function completions\nチェック\n\n\nShow help tooltip after function completions\nチェック\n\n\nShow help tooltip on cursor idle\n\n\n\nInsert spaces around equals for argument completions\nチェック\n\n\nUse tab for autocompletions\nチェック\n\n\nUse tab for multiline autocompletions\n\n\n\nShow code completions\nAutomatically\n\n\nShow completions after characters entered\n3\n\n\nShow completions after keyboard idle (ms)\n250"
+  },
+  {
+    "objectID": "intro/rstudio.html#console",
+    "href": "intro/rstudio.html#console",
+    "title": "RStudioの設定",
+    "section": "3 Console",
+    "text": "3 Console\n\n\n\n\n\n\n\n\n項目\n設定\n\n\n\n\nShow syntax highlighting in console input\nチェック\n\n\nDifferent color for error or message output\nチェック\n\n\nLimit visible console output\n\n\n\nLimit output line length to\n1000\n\n\nANSI Escape Codes\nShow ANSI colors\n\n\nDiscard pending console input on error\nチェック\n\n\nAutomatically expand tracebacks in error inspector\n\n\n\nDouble-click to select words\n\n\n\nWarn when automatic session suspension is paused\n\n\n\nNumber of seconds to delay warning\n5"
+  },
+  {
+    "objectID": "intro/rstudio.html#appearance",
+    "href": "intro/rstudio.html#appearance",
+    "title": "RStudioの設定",
+    "section": "4 Appearance",
+    "text": "4 Appearance\n\n\n\n\n\n\n自分の好みのものを選択する。ただし、小さすぎる文字サイズ (font size) は推奨しない。目に優しくないだけでなく、誤字脱字が見つけにくくなる。30代から老眼で苦しみたくないなら、なるべくフォントサイズは大きめにしよう。"
+  },
+  {
+    "objectID": "intro/rstudio.html#pane-layout",
+    "href": "intro/rstudio.html#pane-layout",
+    "title": "RStudioの設定",
+    "section": "5 Pane Layout",
+    "text": "5 Pane Layout\n\n\n\n\n\n\n\n\n項目\n設定\n\n\n\n\n左上\nSource\n\n\n右上\nConsole\n\n\n左下\nすべてチェックを外す\n\n\n右下\nすべてチェックする"
+  },
+  {
+    "objectID": "intro/rstudio.html#r-markdown",
+    "href": "intro/rstudio.html#r-markdown",
+    "title": "RStudioの設定",
+    "section": "6 R Markdown",
+    "text": "6 R Markdown\n\n6.1 Basic\n\n\n\n\n\n\n\n\n項目\n設定\n\n\n\n\nShow document outline by default\n\n\n\nSoft-wrap R markdown files\nチェック\n\n\nShow in document outline\nSections Only\n\n\nShow output preview in\nViewer Pane\n\n\nShow output inline for all R Markdown document\n\n\n\nShow equation and image previews\nNever\n\n\nEvaluate chunks in directory\nDocument\n\n\nExcute setup chunk automatically in notebooks\nチェック\n\n\nHide console automatically when executing notebook chunks\nチェック\n\n\n\n\n\n6.2 Advanced\n\n\n\n\n\n\n\n\n項目\n設定\n\n\n\n\nEnable chunk background highlight\nチェック\n\n\nShow inline toolbar for R code chunks\nチェック\n\n\nDisplay render command in R Markdown tab\n\n\n\n\n設定が終わったら右下のOK、またはApplyをクリックする。"
+  },
+  {
+    "objectID": "intro/packages.html",
+    "href": "intro/packages.html",
+    "title": "パッケージ",
+    "section": "",
+    "text": "Rには様々な関数（functions）が提供されている。算術平均値を求めるmean()、合計を求めるsum()、線形回帰分析を行うlm()、平均値の検定を行うt.test()などがあり、全てを列挙することはできない。しかし、データ分析の技術は日々発展し、Rがデフォルトで提供する関数では不可能ではないが、かなり長いコードが必要な分析を使わざる得ないケースもあろう。Rは開発元だけでなく、誰でも関数を作ることができる。通常なら数百行のコードが必要な分析を一行のコードで実行可能とする関数を多くのRユーザーが作ってきた。これらの関数を集めたのがパッケージである。Rにはグラフ作成に特化したパッケージ、機械学習に特化したパッケージ、テキスト分析に特化したパッケージなど、数千のパッケージが開発されている。このパッケージの豊富さがRの最大のメリットでもある。誰かが新しい分析手法を提案したら、数日内、あるいはその手法が論文として出版される前からRパッケージとして公開されるケースが多い。\n　Rの内蔵関数は料理における包丁のようなものである。包丁があれば理論上、食材を粉々にすることはできよう。料理の達人であれば、問題ないかも知れないが、我々のような一般人では時間もかかるし、途中でミスをおかすかも知れない。一方、ミキサーを使えばだれても簡単に食材を粉々にすることも出来るし、（ミキサーが不良でないなら）ミスの恐れもほぼない。このミキサーがRのパッケージのようなものだ。ミキサーとRパッケージの違いは、ミキサーの入手には金がかかる一方、Rパッケージは無料で入手できる点だ。"
+  },
+  {
+    "objectID": "intro/packages.html#パッケージとは",
+    "href": "intro/packages.html#パッケージとは",
+    "title": "パッケージ",
+    "section": "",
+    "text": "Rには様々な関数（functions）が提供されている。算術平均値を求めるmean()、合計を求めるsum()、線形回帰分析を行うlm()、平均値の検定を行うt.test()などがあり、全てを列挙することはできない。しかし、データ分析の技術は日々発展し、Rがデフォルトで提供する関数では不可能ではないが、かなり長いコードが必要な分析を使わざる得ないケースもあろう。Rは開発元だけでなく、誰でも関数を作ることができる。通常なら数百行のコードが必要な分析を一行のコードで実行可能とする関数を多くのRユーザーが作ってきた。これらの関数を集めたのがパッケージである。Rにはグラフ作成に特化したパッケージ、機械学習に特化したパッケージ、テキスト分析に特化したパッケージなど、数千のパッケージが開発されている。このパッケージの豊富さがRの最大のメリットでもある。誰かが新しい分析手法を提案したら、数日内、あるいはその手法が論文として出版される前からRパッケージとして公開されるケースが多い。\n　Rの内蔵関数は料理における包丁のようなものである。包丁があれば理論上、食材を粉々にすることはできよう。料理の達人であれば、問題ないかも知れないが、我々のような一般人では時間もかかるし、途中でミスをおかすかも知れない。一方、ミキサーを使えばだれても簡単に食材を粉々にすることも出来るし、（ミキサーが不良でないなら）ミスの恐れもほぼない。このミキサーがRのパッケージのようなものだ。ミキサーとRパッケージの違いは、ミキサーの入手には金がかかる一方、Rパッケージは無料で入手できる点だ。"
+  },
+  {
+    "objectID": "intro/packages.html#インストール",
+    "href": "intro/packages.html#インストール",
+    "title": "パッケージ",
+    "section": "インストール",
+    "text": "インストール\n　Rには数万以上のパッケージが存在し、Rをインストールするだけでも数十のパッケージが自動的にインストールされる。しかし、データ分析/ハンドリング/可視化の手法は日々発展しており、R内蔵パッケージだけでは対応が難しい (できないわけではない)。したがって、必要に応じて新しいパッケージを導入する必要があるが、パッケージのインストールするにはConsoleペインに以下のように入力する。\n\n\n\nCode 01\n\ninstall.packages(\"インストールするパッケージ名\")\n\n\n　前期の「ミクロ政治データ分析実習」では{tidyverse}パッケージのみ使用する予定である。ただし、本講義ようにセッティングされた環境を導入する場合、{tidyverse}は既に導入済みであるため、以下のコードは実行しなくても良い。\n\n\n\nCode 02\n\ninstall.packages(\"tidyverse\")"
+  },
+  {
+    "objectID": "intro/packages.html#アップデート",
+    "href": "intro/packages.html#アップデート",
+    "title": "パッケージ",
+    "section": "アップデート",
+    "text": "アップデート\n　特定のパッケージをアップデートする方法はインストールと同じだが、一つ一つのパッケージが全て最新バージョンかどうかを確認するのは大変である。また、久々のアップデートで数十個のパッケージをアップデートする必要があるケースもあろう。この場合、RStudioの内蔵機能を使えば一瞬で更新可能なパッケージのリスト化、インストールができる。\n手順1: PackagesペインのUpdateをクリックする。\n\n\n\n\n\n手順2: アップデートしたいパッケージの左にチェックを付けるか、左下のSelect Allをクリックし、右下のInstall Updatesをクリックする。\n\n\n\n\n\n　インストール、またはアップデートの際、以下のようなメッセージが出力される場合がある。\n  There are binary versions available but the source versions\n  are later:\n      binary source needs_compilation\nterra 1.5-17 1.5-21              TRUE\nyaml   2.2.2  2.3.4              TRUE\n\nDo you want to install from sources the packages which need compilation? (Yes/no/cancel)\n　この場合、Consoleペイン上でYes、no、cancelのいずれかを入力してReturnキー (Enterキー)を押す必要がある。大文字と小文字は区別すること。どうしても最新のパッケージが欲しい場合はYesを入力すれば良いが、インストールに時間がかかる場合がある。一方、noを入力した場合は、若干古いバージョンがインストールされるが、インストールに必要な時間が短いため、基本的にはnoでも問題ないだろう。cancelを入力した場合はアップデートが全てキャンセルされる。\n\n\n\n\n\n\nインストールは1回でOK、読み込みは毎回必要\n\n\n\n　Rを削除して再インストールしたり、（クラウド版のRStudioなら）分析環境を新しく立ち上げない限り、パッケージのインストールは1回で十分だ。しかし、library()関数でパッケージを読み込む作業は、R（RStudio）を開く度に行う必要がある。つまり、読み込んだRパッケージはRを終了すると一旦外されることとなり、改めてRを開いたらもう一度読み込む必要がある。"
+  },
+  {
+    "objectID": "intro/packages.html#教科書",
+    "href": "intro/packages.html#教科書",
+    "title": "パッケージ",
+    "section": "教科書",
+    "text": "教科書\n『私たちのR』の第5章「Rパッケージ」: https://www.jaysong.net/RBook/packages.html"
+  },
+  {
+    "objectID": "intro/homework.html",
+    "href": "intro/homework.html",
+    "title": "課題の取り組み方",
+    "section": "",
+    "text": "課題の取り組み方が分からない?\n\n\n\n　必ず宋と相談すること。"
+  },
+  {
+    "objectID": "intro/homework.html#step1-課題ファイル一式の入手",
+    "href": "intro/homework.html#step1-課題ファイル一式の入手",
+    "title": "課題の取り組み方",
+    "section": "Step1: 課題ファイル一式の入手",
+    "text": "Step1: 課題ファイル一式の入手\n手順1: LMSの授業ページから「第XX回 課題資料」を選択する。\n\n以下の画面は2021年度のページである。\nタイトルは「第XX回 課題資料」でなく「第XX回 課題用ファイル」など変更される可能性もある。\n\n\n\n\n\n\n手順2: 通常、課題ファイルは2つであるが、1つのみ、または3つ以上の場合もある。それぞれの資料の「添付資料」クリックする。\n\n\n\n\n\n手順3: 新しいウィンドウが表示される。ここでファイル名をクリックするとファイルがダウンロードされる。この作業を全ファイルに対して行うこと。"
+  },
+  {
+    "objectID": "intro/homework.html#step2-課題ファイルのアップロード",
+    "href": "intro/homework.html#step2-課題ファイルのアップロード",
+    "title": "課題の取り組み方",
+    "section": "Step2: 課題ファイルのアップロード",
+    "text": "Step2: 課題ファイルのアップロード\n手順1: JDCat分析ツールへアクセスし、RStudioを起動する。\n手順2: 課題用のプロジェクトを作成する。プロジェクト名は任意だが、Homework_XXやHW_XXなど、分かりやすい名前を付けよう。\n手順3: ダウンロードしたファイルにデータ（.csvなど）がある場合、プロジェクト・フォルダー内にDataというフォルダーを作成する。\n手順4: ダウンロードしたファイルをアップロードする。課題用ファイル（.qmdファイル）はプロジェクト・フォルダー直に、課題用データ（.csv、.xlsxなど）は手順3で作成したDataにアップロードする。\n\n\n\n\n\n\nプロジェクト、フォルダー、ファイルの管理\n\n\n\n　以下のページを参照すること。\n\nファイル・システム\nプロジェクト管理\nファイル管理"
+  },
+  {
+    "objectID": "intro/homework.html#step3-頑張る",
+    "href": "intro/homework.html#step3-頑張る",
+    "title": "課題の取り組み方",
+    "section": "Step3: 頑張る",
+    "text": "Step3: 頑張る\n　一部の課題を除き、本講義の課題は本サポートページの「課題」メニューに掲載されている画面と同じ結果が得られるようにコードを書くことである。\n\n\n\n\n\n\n学籍番号と名前を忘れずに!\n\n\n\n　課題用ファイル（.qmd）の2行目には「情20-0012 関大太郎」と名前が記入されている。課題に取り組む前にまず学籍番号と名前を修正しよう。毎年、関大太郎と関大花子さんから提出された課題が散見されるが、この場合、課題未提出とみなす。むろん、自分の名前が関大太郎/関大花子なら学籍番号のみ修正しても良い。\n\n\n　一部の課題を除き、履修者がやることは「学籍番号と氏名の修正」と「チャンク（chunk）内にコードを入力すること」、そして最後に「Knit」することだけである。チャンク内には# ここにコードと既に何かが書いてあるが、この# ここにコードの行は消してからコードを書くこと。あっても減点にはならない（印象は悪くなるかも知れない）。"
+  },
+  {
+    "objectID": "intro/homework.html#step4-出力物のダウンロード",
+    "href": "intro/homework.html#step4-出力物のダウンロード",
+    "title": "課題の取り組み方",
+    "section": "Step4: 出力物のダウンロード",
+    "text": "Step4: 出力物のダウンロード\n　本講義の課題は一部を除き、成果として.htmlファイルを提出する。Knit後のHTMLファイルは元のqmdファイル名.htmlである。こちらのファイルをダウンロードしよう。.qmdも一緒にダウンロードして良いが、指定された形式のファイルを提出すること。.htmlファイルを提出しなければならないのに、.qmdファイルを提出した場合は未提出とみなす。\n\n\n\n\n\n\n右クリックしてダウンロードは厳禁!!!\n\n\n\n　出力物のダウンロード方法はファイル管理を参考すること。JupyterHubのホーム画面でファイルを右クリックして保存することは絶対にしないこと。開いてみれば分かるが、なんの情報もない（ほぼ）空っぽのファイルがダウンロードされる。提出期限が過ぎてから「知りませんでした！ごめんなさい！てへっ」と言われても、宋は「そうか、残念！てへっ」としか言わないので、ダウンロードしたファイルは必ず一回自分で開いてみよう。"
+  },
+  {
+    "objectID": "intro/homework.html#step5-提出",
+    "href": "intro/homework.html#step5-提出",
+    "title": "課題の取り組み方",
+    "section": "Step5: 提出",
+    "text": "Step5: 提出\n手順1: LMSの授業ページから「第XX回 課題提出窓口」をクリックする。\n\n\n\n\n\n手順2: 指定された形式のファイルを添付し、「レポート提出」クリックする。\n\n提出されたら「202X-XX-XX XX:XX:XX にファイル xxxxxxxx が提出済みです。」と表示される。ここまでできたら終了ボタンをクリックする。\n\n\n\n\n\n\n\n\n\n\n\n\n課題がちゃんと提出されているか不安です…\n\n\n\n　自分が提出した課題はLMSの「マイレポート」から確認できる。\n\n\n\n\n\n　以下のように自分が提出した課題のリストが表示される。提出物のダウンロードもできるため、ファイルが問題なくアップロードされているかも確認できる。"
+  },
+  {
+    "objectID": "intro/file.html",
+    "href": "intro/file.html",
+    "title": "ファイル管理",
+    "section": "",
+    "text": "「ファイル・システム」も合わせて読もう！\n\n\n\n　本ページの内容を読む前に、ファイルシステムの詳細などを解説した「ファイル・システム」も合わせて読むことを強く推奨する。\nフォルダー/ファイルの管理はJupyterHub内でも、RStudio内でもできるが、ここではRStudio側で管理する方法を紹介する。RStudioを起動し、作業するプロジェクトを開き、Filesペインを確認しよう。RStudioを経由したフォルダー/ファイルの管理は全てFilesペイン上で行われる。"
+  },
+  {
+    "objectID": "intro/file.html#フォルダーの管理",
+    "href": "intro/file.html#フォルダーの管理",
+    "title": "ファイル管理",
+    "section": "フォルダーの管理",
+    "text": "フォルダーの管理\n　講義、または課題ごとのプロジェクトを作ったら、JupyterHubにプロジェクトのフォルダーが生成される。各プロジェクトごとにRスクリプト、Markdownファイル、出力物（図、文書など）が管理できるが、プロジェクト内のファイルが多くなる可能性もある。この場合、プロジェクト・フォルダー内に更に下位フォルダーを作成し、ファイルを管理した方が望ましい。\n\nフォルダーの作成\n手順1: 現在、Filesペインで表示されているフォルダーがプロジェクトの最上位フォルダーであることを確認する。「Home &gt; プロジェクト名」と表示されていれば問題ない。\n\n\n\n\n\n手順2: New Folderをクリックする。\n\n\n\n\n\n手順3: 作成するフォルダーの名前を入力する。ここではデータなどを集めておくDataという名のフォルダーを作成する。\n\n\n\n\n\n手順4: 正しくフォルダーが作成されているかを確認する。\n\n\n\n\n\n\n\n\n\n\n\nフォルダー名の付け方\n\n\n\nフォルダー名にはローマ字、数字のみを使おう。スペースもなるべく使わず、空白を入れたい場合はスペースの代わりにアンダースコア（_）を使おう。\n\n\n\n\n\n\n\n\nフォルダー in フォルダー\n\n\n\nフォルダー内に更にフォルダーを作成することもできる。一つのフォルダー内にファイルが多すぎる場合、更にフォルダー分けして管理した方が効率的だろう。\n\n\n\n\nフォルダーの削除\n\n\n\n\n\n\nフォルダーの削除は慎重に!\n\n\n\nフォルダーを削除するとフォルダー内のファイルも全て削除される。削除する前には慎重にフォルダー内のファイルを確認しておくこと。\n\n\n手順1: 削除するフォルダーの左にチェックを付け、Deleteをクリックする。\n\n\n\n\n\n手順2: Yesをクリックする。"
+  },
+  {
+    "objectID": "intro/file.html#ファイルの管理",
+    "href": "intro/file.html#ファイルの管理",
+    "title": "ファイル管理",
+    "section": "ファイルの管理",
+    "text": "ファイルの管理\n　分析に使用するデータセットを自分のPCにダウンロードしてもそのままJDCat分析ツールで使うことはできない。JDCat分析ツールで使用するためには、ファイルをアップロードする必要がある。これはデータだけでなく、本講義の課題用ファイルについても同様である。\n\nファイルのアップロード\n手順1: ファイルをアップロードしたいフォルダーへ移動する。\n\n下位フォルダーへの移動: フォルダー名をクリックする。\n上位フォルダーへの移動: 「..」をクリックするか、パスが表示されているバーで移動先をクリックする。\n\n手順2: ファイルのアップロード先が正しいかを確認し、Uploadをクリックする。\n\n以下の例はHomework_01プロジェクト・フォルダー内のDataフォルダーがアップロード先である。\n\n\n\n\n\n\n手順3: File to upload:でアップロードしたいファイルを選択する。\n\n\n\n\n\n\n\n\n\n\n\n複数のファイルをアップロードしたい場合\n\n\n\nRStudio上でファイルは一度の一つしかアップロードできない。複数のファイルを同時にアップロードしたい場合は、この作業を繰り返すか、JupyterHubのホーム画面でアップロードする必要がある。\n\n\n手順4: アップロードするファイルをダブルクリックする。\n\n以下ではPrev_Vote.csvというファイルをアップロードする例である。\n\n\n\n\n\n\n手順5: OKをクリックする。\n\n\n\n\n\n手順6: 正しくファイルがアップロードされているかを確認する。\n\n\n\n\n\n\n\nファイルのダウンロード\n　作成した図表をLaTex/Microsoft Word/Powerpoint/Pages/Keynoteなどで使うためには、その図表を自分のPCにダウンロードする必要がある。同様に、課題の出力物をLMSに提出するためにも、出力物を一旦自分のPCにダウンロードしてから提出する必要がある。\n\n\n\n\n\n\n複数ファイルのダウンロード\n\n\n\nアップロードは一度ごとに一つのファイルしかアップロードできないが、ダウンロードは複数のファイルを同時にダウンロードできる。ただし、個別のファイルがダウンロードされるのではなく、一つのファイルととして圧縮（zip形式）されてからダウンロードされる。ダウンロード後はファイルを解凍すること。\n\n\n手順1: ダウンロードするファイル名の左にチェックを付ける。\n\n以下ではMicro_HW01.htmlというファイルをダウンロードする例である。\n\n\n\n\n\n\n手順2: More &gt; Export…をクリックする。\n\n\n\n\n\n手順3: Downloadをクリックする。\n\n\n\n\n\n\n\n\n\n\n\n課題の出力物は提出する前に必ず確認を!!\n\n\n\nLMSで課題を提出するためには出力物を提出する必要があるが、提出する前にダウンロードしたファイルを必ず確認しよう。間違ったファイルを提出した場合でも提出期限内なら差し替え可能だが、期限が過ぎた場合、理由を問わず差し替えは認めない。また、間違ったファイルが提出されたことを宋が個別に知らせることもないため注意しよう。\n\n\n\n\nファイルの削除\nフォルダーの削除と同じ手順で削除できる。\n\n\n\n\n\n\nファイルの場所が分からない\n\n\n\nFileペインではファイルの一覧が確認できる。しかし、これらのファイルがどのフォルダーに入っているかが分からない場合もあろう。この場合、Fileペインの上段バーを確認すること。そこに現在表示されているファイルのパスが表示されている。「Home&gt;プロジェクト名」と表示されている場合、Fileペインに見えるファイルはプロジェクト・フォルダ―直に入っていることを意味する（右上のプロジェクト名とFileペインのプロジェクト名が一致しているか確認すること）。これらのファイルのパスは\"ファイル名\"のみで良い。上段バーのパスが「Home&gt;プロジェクト名&gt;Data」になっている場合、表示されているファイルはプロジェクト・フォルダー内のDataフォルダーに入っていることを意味する。これらのファイルのパスは\"Data/ファイル名\"となる。"
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Introduction to R@KPU",
+    "section": "",
+    "text": "本ウェブサイトは京都府立大学「情報処理応用演習」のサポートページです。本ページはPC画面での閲覧を推奨します。"
+  },
+  {
+    "objectID": "index.html#本ページにおけるコードと結果の表示について",
+    "href": "index.html#本ページにおけるコードと結果の表示について",
+    "title": "Introduction to R@KPU",
+    "section": "本ページにおけるコードと結果の表示について",
+    "text": "本ページにおけるコードと結果の表示について\n\nコードは以下のように背景に色が付けられている部分です。\n\n\nprint(\"Hello!\")\n\n\nコードの中で#で始まる内容はコメントであり、分析に影響を与えません。ただし、\"や'で囲まれた#はコメントではありません。また、行の途中から#が入る場合、#以降は実行されません。\n\n\n# Hello!を出力するコード\nprint(\"Hello!\")\n\n# \"や'内の#はコメントではない\nprint(\"この#はコメントではありません\")\n\nprint(\"Hello World!\") # Hello World!を出力\n\n\nコードの右端に表示される丸付き数字（、など）は各行の解説を意味する。数字部分にマウスのカーソルを乗せると解説が表示される。\n\n\ndf |&gt; \n1   select(ID, Col1:Col3, Col8) |&gt;\n2   filter(ID &lt;= 100) |&gt;\n   print(n = Inf)\n\n\n1\n\ndfからID列、Col1からCol3列、Col8列を抽出する。\n\n2\n\nIDの値が100以下の行を抽出する。\n\n\n\n\n\n出力結果は灰色の枠線で囲まれた領域です。\n\n\n\n[1] \"Hello!\"\n\n\n\nオブジェクト名は変数名や関数名()のように文中の色付き背景で示された部分です。\nパッケージ名は{}で囲みます。tidyverseパッケージの場合、{tidyverse}と表記します。\n\nただし、パッケージ名を{}で囲むのは一般的な表記ではありません（もちろん、囲む人も大勢にいます）。\n\n\n\n\n\n\n\n\nページ情報\n\n\n\n\n最終更新日: 2023年08月10日\n開発環境\n\nmacOS Ventura 13.5\nFirefox 116.0.2\nR version 4.3.1 (2023-06-16)\nRStudio 2023.06.0+421\nQuarto 1.4.232\nR package {quarto} 1.2"
+  },
+  {
+    "objectID": "intro/faq.html",
+    "href": "intro/faq.html",
+    "title": "この授業の「あるある」",
+    "section": "",
+    "text": "ブラインドタッチ（キーボードを見ないでタイピングすること）は必須\n\n教員の画面、スライド、資料などを見ながらタイピングすることになるため、キーボードを見る暇はない\n\n1分間当たり150文字以上（英字）入力できること\n\nhttps://manabi-gakushu.benesse.ne.jp/gakushu/typing/eigonyuryoku.html\n200字以上が望ましい"
+  },
+  {
+    "objectID": "intro/faq.html#タイピングの速度について",
+    "href": "intro/faq.html#タイピングの速度について",
+    "title": "この授業の「あるある」",
+    "section": "",
+    "text": "ブラインドタッチ（キーボードを見ないでタイピングすること）は必須\n\n教員の画面、スライド、資料などを見ながらタイピングすることになるため、キーボードを見る暇はない\n\n1分間当たり150文字以上（英字）入力できること\n\nhttps://manabi-gakushu.benesse.ne.jp/gakushu/typing/eigonyuryoku.html\n200字以上が望ましい"
+  },
+  {
+    "objectID": "intro/faq.html#データが読み込めない",
+    "href": "intro/faq.html#データが読み込めない",
+    "title": "この授業の「あるある」",
+    "section": "データが読み込めない",
+    "text": "データが読み込めない\n\n99.999%の確率でパスの指定が間違っている（スペルミスを含む）。\nファイルシステムの理解がない場合は、プロジェクト機能を使おう。\n\nというか、必ずプロジェクト機能を使おう。ファイルシステムを理解している宋でもプロジェクト機能は常に使用している。"
+  },
+  {
+    "objectID": "intro/faq.html#エラーが出た",
+    "href": "intro/faq.html#エラーが出た",
+    "title": "この授業の「あるある」",
+    "section": "エラーが出た!",
+    "text": "エラーが出た!\n\nエラーメッセージは読む。メッセージを読んで、その原因を特定しよう。\n\n何も考えずに教員やTAを呼ぶと、独学する時に同じエラーが出ても解決できなくなる。\n\nスペルミス\n\n最もよくあるミス。\n大文字と小文字の区分は厳格（Rに限らず全てのプログラミング言語共通）\nフォントサイズを大きくすると、スペルミスを発見しやすくなる。\n\nカッコ、コンマ忘れ\n\nカッコは開けたら必ず閉じる。"
+  },
+  {
+    "objectID": "intro/faq.html#コードの実行順番",
+    "href": "intro/faq.html#コードの実行順番",
+    "title": "この授業の「あるある」",
+    "section": "コードの実行順番",
+    "text": "コードの実行順番\nData.csvという名の表形式データがあり、var1、var2、var3、var4、var5という列で構成されているとしよう。このデータを用いて以下のような処理を行うとする。\n\nData.csvを読み込みdfという名のオブジェクトとして格納する。\ndfからvar1、var3、var4列のみ残し、dfを上書きする。\ndfにsum_3_4という新しい列を追加し、その値はvar3とvar4の和とする。\n\n　以上の処理を行うコードは以下の通りである（つまり、以下のコードが正解例）。\n\n\n\n正しいコード\n\n# Block 1\ndf &lt;- read_csv(\"Data.csv\")\n\n# Block 2\ndf &lt;- df %&gt;%\n  select(var1, var3, var4)\n\n# Block 3\ndf &lt;- df %&gt;%\n  mutate(sum_3_4 = var3 + var4)\n\n\n　しかし、2番目のブロックで以下のような入力ミスがあったとしよう。\n\n\n\n間違ったコード\n\n# Block 1\ndf &lt;- read_csv(\"Data.csv\")\n\n# Block 2（var4がvar3になっている）\ndf &lt;- df %&gt;%\n  select(var1, var2, var3)\n\n# Block 3\ndf &lt;- df %&gt;%\n  mutate(sum_3_4 = var3 + var4)\n\n\n　この場合、3番目のブロックは正しく実行されない。なぜなら、2ブロック目においてvar4とvar5列を除外したため、3ブロック目のコードを実行する時点でdfにvar4列がないからだ。ここで2ブロック目のコードを正しいコードへ修正したとしよう（var1, var2, var3をvar1, var3, var4に修正）。そして2ブロック目のコードを実行する。どうなるだろうか。\n　結果はエラーである。最初はうまく行ったものの、なぜか今回はエラーが出る。これはなぜだろうか。既に我々はdfからvar1、var2、var3列のみを抽出した。つまり、今のdfにはvar4とvar5列は存在しない。そこでvar1、var3、var4を抽出するコードを実行してもvar4列が存在しないからエラーが発生する。\n　対処法は簡単だ。dfをvar1、var2、var3、var4、var5が全て入っている状態に戻すことだ。したがって、以上の例だと、2ブロック目のコードを修正した場合は1ブロック目から改めて実行する必要がある。\n　以上の話を難しく感じる場合は、コードミスを修正した後はコードを1行目から再実行することをおすすめする。"
+  },
+  {
+    "objectID": "intro/filesystem.html",
+    "href": "intro/filesystem.html",
+    "title": "ファイル・システム",
+    "section": "",
+    "text": "PC内に存在するほとんどのファイルは「名前.拡張子」と名付けられている1。名前の拡張子は.で区切られており、名前は英数字と_のみで構成することを推奨する（ファイル名に.が推奨されない理由の一つが名前と拡張子を区分する文字として使われるからだ）。ここで注目したいのはファイルの名前でなく、拡張子のことだ。拡張子とはファイルの特徴を示すものである。たとえば、拡張子が.htmlであれば、ウェブページ形式を意味し、.pngなら図、.pdfなら図・文書、.exeなら実行ファイル、.dmgならディスクイメージを意味する。ファイル名がFigure01.pngならFigure01という名の画像ファイルであることを意味する2。この拡張子によって、パソコンは当該ファイルをどのアプリケーションで開くかを判定する。.exeファイルをダブルクリックするとアプリケーションが立ち上がるし、.pdfファイルをダブルクリックするとPDFビュアーソフトが起動され、中身が表示される。\n　これは拡張子を変えると問題が生じ得ることを意味する。画像ファイルであるFigure01.pngのファイル名を動画ファイル拡張子であるMovie01.mp4に修正しても、そのファイルは動画ファイルにはならない。また、拡張子が.mp4になると、そのファイルを開く際、動画プレイヤーが起動されるが、ファイルの中身は画像ファイルのままなのでエラーが出る。したがって、拡張子は勝手に変えてはならない。たまに課題の結果物としてファイルを提出する際、自分の名前を入れたくてファイル名をXXXX.htmlからXXXX.html_Songへ変更して提出する場合がある。しかし、これは大きな間違いだ。もやはこのファイルはHTMLファイル（.html）でなく、未知のファイル形式（.html_Song）として認識され、ダブルクリックしてもPCはどのアプリケーションで開けば良いかが分からなくなる。ファイル名を修正するならXXXX_Song.htmlのように修正しよう3。\n　Rを用いたデータ分析の場面において頻繁に登場する拡張子は以下の通りである。ファイルの名前は大文字と小文字を区別するが、拡張子の場合、区別されないケースが多い。\n\n\n\n\n\n\n\n\n拡張子\n説明\n備考\n\n\n\n\n.R\nRスクリプトファイル\n\n\n\n.Rproj\nRプロジェクトファイル\n\n\n\n.Rmd\nR Markdownファイル\n\n\n\n.qmd\nQuartoファイル\nRMarkdownに似たようなもの\n\n\n.csv\n表形式ファイル\n業界標準のフォーマット\n\n\n.xlsx or .xls\n表形式ファイル\nExcelで使うフォーマット\n\n\n.dta\n表形式ファイル\nStataで使うフォーマット\n\n\n.sav\n表形式ファイル\nSPSSで使うフォーマット\n\n\n.html\nウェブページファイル\nR Markdown/QuartoをKnitした場合に得られる\n\n\n.png\n画像ファイル\n\n\n\n.pdf\n画像/文書ファイル\n画像にも文書にもなるファイル"
+  },
+  {
+    "objectID": "intro/filesystem.html#拡張子",
+    "href": "intro/filesystem.html#拡張子",
+    "title": "ファイル・システム",
+    "section": "",
+    "text": "PC内に存在するほとんどのファイルは「名前.拡張子」と名付けられている1。名前の拡張子は.で区切られており、名前は英数字と_のみで構成することを推奨する（ファイル名に.が推奨されない理由の一つが名前と拡張子を区分する文字として使われるからだ）。ここで注目したいのはファイルの名前でなく、拡張子のことだ。拡張子とはファイルの特徴を示すものである。たとえば、拡張子が.htmlであれば、ウェブページ形式を意味し、.pngなら図、.pdfなら図・文書、.exeなら実行ファイル、.dmgならディスクイメージを意味する。ファイル名がFigure01.pngならFigure01という名の画像ファイルであることを意味する2。この拡張子によって、パソコンは当該ファイルをどのアプリケーションで開くかを判定する。.exeファイルをダブルクリックするとアプリケーションが立ち上がるし、.pdfファイルをダブルクリックするとPDFビュアーソフトが起動され、中身が表示される。\n　これは拡張子を変えると問題が生じ得ることを意味する。画像ファイルであるFigure01.pngのファイル名を動画ファイル拡張子であるMovie01.mp4に修正しても、そのファイルは動画ファイルにはならない。また、拡張子が.mp4になると、そのファイルを開く際、動画プレイヤーが起動されるが、ファイルの中身は画像ファイルのままなのでエラーが出る。したがって、拡張子は勝手に変えてはならない。たまに課題の結果物としてファイルを提出する際、自分の名前を入れたくてファイル名をXXXX.htmlからXXXX.html_Songへ変更して提出する場合がある。しかし、これは大きな間違いだ。もやはこのファイルはHTMLファイル（.html）でなく、未知のファイル形式（.html_Song）として認識され、ダブルクリックしてもPCはどのアプリケーションで開けば良いかが分からなくなる。ファイル名を修正するならXXXX_Song.htmlのように修正しよう3。\n　Rを用いたデータ分析の場面において頻繁に登場する拡張子は以下の通りである。ファイルの名前は大文字と小文字を区別するが、拡張子の場合、区別されないケースが多い。\n\n\n\n\n\n\n\n\n拡張子\n説明\n備考\n\n\n\n\n.R\nRスクリプトファイル\n\n\n\n.Rproj\nRプロジェクトファイル\n\n\n\n.Rmd\nR Markdownファイル\n\n\n\n.qmd\nQuartoファイル\nRMarkdownに似たようなもの\n\n\n.csv\n表形式ファイル\n業界標準のフォーマット\n\n\n.xlsx or .xls\n表形式ファイル\nExcelで使うフォーマット\n\n\n.dta\n表形式ファイル\nStataで使うフォーマット\n\n\n.sav\n表形式ファイル\nSPSSで使うフォーマット\n\n\n.html\nウェブページファイル\nR Markdown/QuartoをKnitした場合に得られる\n\n\n.png\n画像ファイル\n\n\n\n.pdf\n画像/文書ファイル\n画像にも文書にもなるファイル"
+  },
+  {
+    "objectID": "intro/filesystem.html#ファイルシステム",
+    "href": "intro/filesystem.html#ファイルシステム",
+    "title": "ファイル・システム",
+    "section": "2 ファイルシステム",
+    "text": "2 ファイルシステム\n　R上でファイルを入出力を行うためにはファイルシステム（file system）を理解する必要がある。\n\n2.1 ファイルの入出力\n　そもそも、ファイルの「入出力」とは何だろうか。これはコンピューターの構造に関わる話なので極めて難しい内容であるが、我々のような消費者（end user）側から見れば、ファイルの入力（input）とは、いわゆるファイルの読み込みを意味し、多くの場合、表形式のデータ（.csv、.xlsxなど）をR上に読み込む作業を意味する。また、ファイルの出力（output）とは、いわゆるファイルの保存だ。たとえば、作成したスクリプトを.R形式で保存したり、加工済みのデータを.csv形式で保存したり、作成した図を.png、.pdf形式で保存したり、作成した文書を.pdf、.html形式で保存したりすることがファイルの出力だ。\n\n\n2.2 パスとは\n　ファイルを読み込む場合はファイル名を指定する必要がある。また、ファイルを書き出す場合もファイルに名付ける必要がある。そしてファイル名は名前.拡張子である。ただし、これらのファイルは全て一箇所に集まっているわけではない。もし、全てのファイルが一箇所に集まっていると、必要なファイルを探すのは非常に難しい。通常、PC内には数万のファイルがある。これらのファイルから必要なファイルを探すのは至難の業だろう。したがって、これらのファイルをいくつかの部屋に分けて保管し、この部屋のことをフォルダー（folder）、またはディレクトリ（directory）と呼ぶ（ここでは「フォルダー」と呼ぶとする）。パス（path）とは特定のファイルの位置と名前の書き方である。つまり、「どこのどのファイルを読み込むか」、「このファイルをどの名前でどこに保存するか」に関する書き方であり、プログラミングを学習する上で必須の知識と言っても過言ではない。\n　このパスという概念は我々が住んでいる居住地の「住所」と類似した概念だ。もし、日本に「都道府県」も「市区町村」も「〜丁目、〜番、〜号」という概念がないとしよう。ここでAmazonで魚を購入し、受取先を指定する場合はどうすれば良いだろうか。日本に人が数十人しか住んでいないのであれば、「XXXさんの家」と書くだけで十分かも知れない。しかし、日本には1億人以上の人がある。「ソンさんの家」と書いても届かないだろう。届いたとしても数年、あるいは数十年後に魚の化石の状態で届くかも知れない。そもそも日本に「ソンさん」はこの授業の担当教員以外にもいくらでもいる（ちなみに송（Song; 宋・松）さんも、손（Sohn; 孫）さんも、성（Seong/Sung; 成・星）さんも、선（Sun/Seon; 宣）さんも韓国語では発音が全く別だが、日本ではソンさんになってしまう。）。それぞれの家を何かの区域内に位置づけないとモノが届くまで数年かかってしまう。そこで必要なのが住所だ。「東京都千代田区永田町1丁目7番1号の田中さん」は「東京都」、「千代田区」、「永田町」、「1丁目」、「7番」、「1号」、「田中さん」で構成される。これをファイルシステムに例えると、東京都というフォルダーの中に千代田区というフォルダーがあり、その中には永田町というフォルダー、その中に1丁目といるファルダー、…が存在する。むろん、一つのフォルダーには複数のフォルダーが存在する可能性もある。東京都のフォルダーには千代田区以外にも大田区、中野区、文京区、葛飾区といった複数のフォルダーがあり、千代田区の中にも複数のフォルダーがある。最後の「田中さん」は受け取る人、コンピューターでいうファイル名である。\n　この住所と受取人のことをコンピューターではパス（path）と呼ぶ。それぞれのフォルダーは/で区切られる（macOS/Linuxでは/、Windowsでは\\または￥; JDCat分析ツールはLinuxベースであるため、/で区切られる）。先ほどの住所の例だと、東京都/千代田区/永田町/1丁目/7番/1号/田中さんとなる（macOS/Linuxの場合）。左に行くほど上位のフォルダーとなり、最後のものはファイル名である。ただし、コンピュターではパスの最初に/を付ける。Windowsなら主にC:\\でスタートし、C:\\東京都\\千代田区\\永田町\\1丁目\\7番\\1号\\田中さんとなる（\\の代わりに￥と表示される場合もある）。\n　たとえば、以下のような構造でファイルが保存されているとしよう。拡張子が付いているものはファイル、それ以外はフォルダー、1行目の.は最上位フォルダーである。\n\n\n                      levelName\n1  .                           \n2   ¦--Day01                   \n3   ¦   ¦--Day01.Rproj         \n4   ¦   ¦--Script01.R          \n5   ¦   ¦--Script02.R          \n6   ¦   ¦--Data                \n7   ¦   ¦   ¦--raw_data.csv    \n8   ¦   ¦   °--cleaned_data.csv\n9   ¦   °--Figs                \n10  ¦       ¦--Figure01.png    \n11  ¦       °--Figure02.png    \n12  °--Day02                   \n13      ¦--Day02.Rproj         \n14      ¦--Script01.R          \n15      ¦--Document01.qmd      \n16      ¦--Document01.html     \n17      ¦--Data                \n18      ¦   °--my_data.csv     \n19      °--Figs                \n20          ¦--Old             \n21          ¦   ¦--Figure01.pdf\n22          ¦   ¦--Figure02.pdf\n23          ¦   °--Figure03.pdf\n24          °--New             \n25              °--Figure01.png\n\n\n　ここでread_csv()関数を使ってDay01フォルダー内のDataフォルダー内のraw_data.csvを読み込む場合はread_csv(\"/Day01/Data/raw_data.csv\")となる。また、ggsave()を用いて、Day02内のFigs内のNew内にFigure02.pngという名で図を保存する場合は、ggsave(filename = \"/Day02/Figs/New/Figure02.png\", ...)と入力する必要がある。しかし、通常、パスを指定する際に、/（WindownならC:\\）から始めることは滅多にない。それは「作業フォルダーはパスで省略可能」だからだ。"
+  },
+  {
+    "objectID": "intro/filesystem.html#rstudioのプロジェクト機能",
+    "href": "intro/filesystem.html#rstudioのプロジェクト機能",
+    "title": "ファイル・システム",
+    "section": "3 RStudioのプロジェクト機能",
+    "text": "3 RStudioのプロジェクト機能\n　Rでファイルを入出力する時に頭に入れておくべき概念として「作業フォルダー（working folder/working directory）」がある。通常、Rの作業フォルダーはmacOSだと/Users/ユーザー名/、JDCat分析ツールだと/home/joyvan/が作業フォルダーだ。そして、パスを指定する場合、作業フォルダーは省略することができる。つまり、現在の作業フォルダーが/home/joyvan/なら\"/home/joyvan/Day01/Data/raw_data.csv\"は\"Day01/Data/raw_data.csv\"に、\"/home/joyvan/Day02/Figs/New/Figure02.png\"は\"Day02/Figs/New/Figure02.png\"に省略される。我々が郵便局で手紙を送る際、住所にわざわざ「日本国」と書かないものと同じである。作業フォルダーはRコンソール上でgetwd()と入力すれば出力される。macOSなら/Users/ユーザー名、JDCat分析ツールなら/home/joyvanと出力される。\n\n\n\n\n\n\n最上位フォルダーの話\n\n\n\n　macOSとLinuxに限定した話であるが、最上位フォルダーは/であり、これはシステム上の最上位フォルダーである。個人レベルの最上位フォルダーはmacOSだと/Users/ユーザー名、JDCat分析ツールだと/home/joyvanである。そして、この個人レベルの最上位フォルダーは~/と表記することができる。Rコンソールでgetwd()を入力し、以上のように出力されれば個人レベルの最上位フォルダー（~/）が作業フォルダーになっている理解しても良い。ちなみに、WindowsはC:\\がシステム上の最上位フォルダーである。\n\n\n　もし、自分がこれから全ての作業をDay03という名のフォルダー内で完結するとする。つまり、保存するスクリプト（たとえば、Script.R）もDay03に保存し、図（たとえば、FigureA.png）はDay03のFigsフォルダーに、読み込む表形式データ（たとえば、Day03_Data.csv）もDay03の中のDataフォルダーに入れるとする。この場合、それぞれのファイルのパスはDay03/Script.R、Day03/Figs/FigureA.png、Day03/Data/Day03_Data.csvとなる（作業フォルダーが~/であるため、~/は省略可能）。全ての作業が同じフォルダー（とその下位フォルダー）内で行うとしたら、パス名にDay03も不要な気がする。そこで必要なのがRStudioのプロジェクト機能である。\n　RStudioでDay03というプロジェクトを作成すると、Day03フォルダーが自動的に生成され、Day03.Rprojというファイルも生成される。プロジェクトを最上位フォルダーに作成したのであれば、~/Day03/Day03.Rprojファイルが生成されるのである。ここでRStudioのFile &gt; Open ProjectでこのDay03.Rprojファイルを開くとRStudio画面の右上にプロジェクト名が表示され、作業フォルダーがDay03.Rprojが保存されているフォルダー、つまり~/Day03へ変更される（プロジェクトが開かれていな場合は「Project: (None)」と表示される）。実際、JDCat分析ツールでXXXという名前のプロジェクトを生成し、そのプロジェクトを開けば作業フォルダーは/home/joyvan/XXX/（=~/XXX/）になる（getwd()で確認可能）。これは大変便利な機能である。なぜなら作業フォルダーまでのパスは全て省略可能だからだ。これまでDay03/Script.R、Day03/Figs/FigureA.png、Day03/Data/Day03_Data.csvだったパスが、それぞれScript.R、Figs/FigureA.png、Data/Day03_Data.csvになる。\n　また、何らかの理由でDay03フォルダーの名前をDay05に変更したとしよう。もし、プロジェクト機能を使っていないのであれば、パスのDay03を全てDay05に変更する必要がある。しかし、プロジェクト機能を使っているのであれば、.Rprojファイルが存在するフォルダーが作業フォルダーになるため、そもそもパスにDay03は存在しない。つまり、修正不要ということだ。ちなみに、プロジェクトを一旦作成したら、そのプロジェクトのフォルダー名や.Rprojファイルの名前は自由に修正しても良いし、フォルダー名と.Rprojファイルの名前が一致しなくても良い。\n　以上の内容を住所と郵便の話で例えるとしよう。社内でも郵便物の行き来は頻繁に行われる。とりわけ面積が広く、キャンパスも複数ある大学なら尚更だ。たとえば、「京都府京都市左京区下鴨半木町1-5 京都府立大学 ラーメン学部」の宋が「京都府京都市左京区下鴨半木町1-5 京都府立大学 蕎麦学部」の秦に郵便を送る場合、同じ大学であるにも関わらず、住所を全て書くのは面倒なことであろう。ここで京都府立大学専用の郵便局を作れば問題は解決される（これは「学内便」と呼ばれる）。そうすれば差出人は「ラーメン学部　宋」、受取人は「蕎麦学部　秦」と書くだけで郵便物は届く。つまり、「京都府京都市左京区下鴨半木町1-5 京都府立大学」は省略できる（同じ市区町村内の引っ越した際、転入・転出届けの住所欄に市区町村名までは省略できるのと同じ）。また、京都府立大学がなぜかキャンパスを滋賀県に移転した場合を考えてみよう（もはや京都府立大学ではないが…）。学内便がなければ、郵便物の住所を全て「滋賀県〜」に変えなければならない。しかし、学内便が存在すればこれまで使ってきた「ラーメン学部　宋」という表記は有効であろう。\n　このようにRStudioのプロジェクト機能は必須といっても過言ではない。簡単な計算目的として使う場合は問題ないが、何かの分析をする時、授業の実習時、課題時には必ずRStudioの右上が「Project: (None)」になっていないことを確認しよう。\n\n\n\n\n\n\n絶対パスと相対パス\n\n\n\n　これまで紹介したパスの書き方で/（WindowsならC:\\）から始まるパスは、絶対パス（absolute path）またはフルパス（full path）と呼ばれる。これはファイル名を最上位フォルダーを起点に書く方法である。一方、/（WindowsならC:\\）で始まらないパスは相対パス（relative path）呼ばれ、ファイル名を作業フォルダーを起点に書く方法である。"
+  },
+  {
+    "objectID": "intro/filesystem.html#本講義でおすすめするフォルダー構造",
+    "href": "intro/filesystem.html#本講義でおすすめするフォルダー構造",
+    "title": "ファイル・システム",
+    "section": "4 本講義でおすすめするフォルダー構造",
+    "text": "4 本講義でおすすめするフォルダー構造\n　プロジェクトを作成すれば、プロジェクトフォルダー内に以下のようなフォルダーを作成しよう。\n\n表形式のデータを読み込んだり、保存したりするのであればDataフォルダーをプロジェクトフォルダー内に作成する。\n\n.csv、.xlsx、.sav、.dtaのような表形式ファイルはDataフォルダーに入れる。\nデータを加工し、保存する場合はData/ファイル名.csvなどと指定する。\n\n図を作成し、保存する予定があれば、Figsフォルダーをプロジェクトフォルダー内に作成する。\n\n図を保存する場合、ファイルのパスをFigs/ファイル名.pngやFigs/ファイル名.pdfとする。\n\n\n　よく分からない場合はとりあえずプロジェクトフォルダー内にDataとFigsというフォルダーを作っておこう。ただし、.R、.qmdなどコードファイルはプロジェクトフォルダーの下位フォルダーに入れず、プロジェクトフォルダーの直に入れよう4。この場合、R Markdown / Quartoで作成された文書（.html、.pdfなど）は.Rmdや.qmdファイルと同じフォルダーに保存される（別途の設定をすれば別フォルダーに保存することも可能だが、そこまではしなくても良い）。"
+  },
+  {
+    "objectID": "intro/filesystem.html#参考",
+    "href": "intro/filesystem.html#参考",
+    "title": "ファイル・システム",
+    "section": "5 参考",
+    "text": "5 参考\n　以下の内容も合わせて読むことを強く推奨する。\n\n宋財泫・矢内勇生.『私たちのR』の「ファイルシステム」"
+  },
+  {
+    "objectID": "intro/install.html",
+    "href": "intro/install.html",
+    "title": "Rの導入",
+    "section": "",
+    "text": "注意!!!\n\n\n\n　初期設定は国立情報学研究所（以下、NII）のサーバーに自分の作業用スペースを借りる作業である。つまり、初期設定を繰り返すことはNIIのサーバー（のスペース）をいくつも借りることとなり、サーバーを圧迫してしまう可能性がある（一つのアカウントで作成可能なサーバー数は最大10個まで）。したがって、以下の初期設定は授業全体を通じて1回のみ実行すること。\n　既存のサーバーが使えないなどの問題が生じない限り、このページへのアクセスは不要である。次回から右上のをクリックして、既存のサーバーを立ち上げること。"
+  },
+  {
+    "objectID": "intro/install.html#初期設定",
+    "href": "intro/install.html#初期設定",
+    "title": "Rの導入",
+    "section": "1 初期設定",
+    "text": "1 初期設定\n　本講義の実習はJDCat分析ツールの使用を推奨する。自分のPCにインストールしたR + RStudio、RStuio.cloud、大学PCにインストールされているR + RStudioなどの使用を妨げないが1、本ページの資料と同じ結果が得られることは保証しない。また、実習・分析中に起きた不具合についても授業中には対応しない（オフィスアワーなどでは対応可能）。\n　以下ではJDCat分析ツールを用いたRおよびRStudioの導入方法について解説する。\n手順1: 以下のアドレスにアクセスする。\n\nhttps://binder.cs.rcos.nii.ac.jp/v2/gh/JaehyunSong/Binder_R/HEAD\n\n\n\n\n\n\n\n注意!!!\n\n\n\n　何回も強調するが、以上のURLは授業全体を通じて1回のみアクセスすること。このURLはアプリに例えると、「インストール」であり、1回だけで十分だ。使いたいアプリを起動する度にインストールする愚かな人はいないだろう。自分の貴重な時間を無駄にし、スマホの容量を圧迫するだけなら、まだましだが、JDCat分析システムは他人も使うシステムだ。つまり、以上のURLを2回以上クリックすることは明らかに迷惑行為である。次回から本サポートページ右上のをクリックして、既存のサーバーを立ち上げること。\n\n\n手順2: 所属機関に「京都府立大学」、または「Kyoto Prefectual University」を入力・選択し、「選択」をクリックする。このような画面が表示されない場合は手順2から5は飛ばしても良い。\n\n\n\n\n\n手順3: 自分の大学のIDをパスワードを入力する。\n\n\n\n\n\n手順4: このまま「同意します」をクリックする。\n\n\n\n\n\n手順5: 以下のような画面が表示されたらしばらく待つ。\n\n\n\n\n\n手順6: 以下のような画面が表示されたら初期設定は完了\n\n\n\n\n\n手順7: 初期設定が終わったら、すぐRおよびRStudioが利用可能だが、ここでは一旦右上の「Logout」をクリックし、タブ (or ウィンドウ) を閉じる。"
+  },
+  {
+    "objectID": "intro/install.html#jdcat分析ツールの起動",
+    "href": "intro/install.html#jdcat分析ツールの起動",
+    "title": "Rの導入",
+    "section": "2 JDCat分析ツールの起動",
+    "text": "2 JDCat分析ツールの起動\n初期設定が終わったら、今後、以下の手順でJDCat分析ツールを起動する。\n手順1: 以下のアドレスにアクセスするか、本ページの右上にある右上の  ボタンをクリックする（右クリックし、新しいタブ or ウィンドウで開くことを推奨する）。\n\nhttps://jupyter.cs.rcos.nii.ac.jp/\n\n手順2: 必要に応じて認証を行う（初期設定の手順2, 3, 4と同じ）。\n手順3: サーバーリストが表示される。URL列のアドレスをクリックする。\n\n参考) 初期設定を1回のみ行ったら1行のみ表示されるため混同することはないが、個人利用などを目的に初期設定を複数回行った場合は2行以上が表示されるだろう。本講義に使うサーバーのURLをクリックすること。\n\n\n\n\n\n\n手順4: 以下のような画面が表示されたらJDCat分析ツールの起動完了である。この画面を今後、「JupyterHub（ジュピターハブ）のホーム画面」と呼ぶ。"
+  },
+  {
+    "objectID": "intro/install.html#rstudioの起動",
+    "href": "intro/install.html#rstudioの起動",
+    "title": "Rの導入",
+    "section": "3 RStudioの起動",
+    "text": "3 RStudioの起動\n手順1: JupyterHubのホーム画面の右上の「New」をクリックし、「RStudio」をクリックする。\n\n\n\n\n\n手順2: 以下の画面が表示されたら、RStudioの起動完了である（RStudioの見栄は初期状態の場合、白ベースである）。"
+  },
+  {
+    "objectID": "intro/install.html#rstudioの終了",
+    "href": "intro/install.html#rstudioの終了",
+    "title": "Rの導入",
+    "section": "4 RStudioの終了",
+    "text": "4 RStudioの終了\n手順1: RStudio画面右上のオレンジ色のボタンをクリックする。\n\n\n\n\n\n手順2: 以下のダイアログが表示されたらタブ、またはウィンドウを閉じる。"
+  },
+  {
+    "objectID": "intro/project.html",
+    "href": "intro/project.html",
+    "title": "プロジェクト管理",
+    "section": "",
+    "text": "なぜプロジェクト機能を使う必要があるのか\n\n\n\n　「なぜプロジェクト機能を使うのか」を知るためにはファイルシステムに関する理解が必要だ。もし、「ファイルシステム」という単語や「絶対パス」、「相対パス」という単語を聞いたことのない人はファイル・システムも予め読んでおこう。"
+  },
+  {
+    "objectID": "intro/project.html#プロジェクトの作成",
+    "href": "intro/project.html#プロジェクトの作成",
+    "title": "プロジェクト管理",
+    "section": "プロジェクトの作成",
+    "text": "プロジェクトの作成\n手順1: File &gt; New Project…をクリックする。\n\n\n\n\n\n手順2: New Directoryをクリックする。\n\n\n\n\n\n手順3: New Projectをクリックする。\n\n\n\n\n\n手順4: Directory name:にプロジェクト名を入力し、Create Projectをクリックする。\n\n\n\n\n\n\n\n\n\n\n\n注意: プロジェクト名の付け方\n\n\n\n　プロジェクト名にはローマ字、数字のみを使おう。つまり、日本語、中国語、韓国語、全角文字、スペースはなるべく使わないこと。空白を入れたい場合はスペースの代わりにアンダースコア（_）を使おう。"
+  },
+  {
+    "objectID": "intro/project.html#プロジェクトの開き方",
+    "href": "intro/project.html#プロジェクトの開き方",
+    "title": "プロジェクト管理",
+    "section": "プロジェクトの開き方",
+    "text": "プロジェクトの開き方\n　プロジェクトを作成すれば、自動的に出来たてのプロジェクトが開かれる。しかし、JDCat分析ツールから一旦ログアウトし、改めてRStudioを起動する場合、プロジェクトをロードする必要がある。\n手順1: File &gt; Open Project…をクリックする。\n\n\n\n\n\n手順2: プロジェクト・フォルダー名をダブルクリックする。\n\n\n\n\n\n手順3: .Rprojで終わるファイルをダブルクリックする。\n\n\n\n\n\nプロジェクトが正しくロードされている場合、RStudioの右上にプロジェクト名が表示される。\n\n\n\n\n\n\n\n\n\n\n\n常にプロジェクト機能を使おう!\n\n\n\n　RStudionの右上のプロジェクト名表示が「Project: (None)」になっていることは、現在プロジェクトを開いていないことを意味する。簡単な計算機として使う目的以外（つまり、授業中の実習や課題）は必ずプロジェクト機能を使おう。"
+  },
+  {
+    "objectID": "syllabus/session.html",
+    "href": "syllabus/session.html",
+    "title": "セッション情報",
+    "section": "",
+    "text": "macOS Ventura 13.5\nFirefox 116.0.2\nR version 4.3.1 (2023-06-16)\nRStudio 2023.06.0+421\nQuarto 1.4.232\nR package {quarto} 1.2"
+  },
+  {
+    "objectID": "syllabus/session.html#作成環境",
+    "href": "syllabus/session.html#作成環境",
+    "title": "セッション情報",
+    "section": "",
+    "text": "macOS Ventura 13.5\nFirefox 116.0.2\nR version 4.3.1 (2023-06-16)\nRStudio 2023.06.0+421\nQuarto 1.4.232\nR package {quarto} 1.2"
+  },
+  {
+    "objectID": "syllabus/session.html#セッション情報",
+    "href": "syllabus/session.html#セッション情報",
+    "title": "セッション情報",
+    "section": "セッション情報",
+    "text": "セッション情報\n\n\nR version 4.3.1 (2023-06-16)\nPlatform: aarch64-apple-darwin20 (64-bit)\nRunning under: macOS Ventura 13.5\n\nMatrix products: default\nBLAS:   /Library/Frameworks/R.framework/Versions/4.3-arm64/Resources/lib/libRblas.0.dylib \nLAPACK: /Library/Frameworks/R.framework/Versions/4.3-arm64/Resources/lib/libRlapack.dylib;  LAPACK version 3.11.0\n\nlocale:\n[1] en_US.UTF-8/en_US.UTF-8/en_US.UTF-8/C/en_US.UTF-8/en_US.UTF-8\n\ntime zone: Asia/Tokyo\ntzcode source: internal\n\nattached base packages:\n[1] stats     graphics  grDevices utils     datasets  methods   base     \n\nloaded via a namespace (and not attached):\n [1] digest_0.6.33     later_1.3.1       fastmap_1.1.1     xfun_0.39        \n [5] magrittr_2.0.3    glue_1.6.2        stringr_1.5.0     knitr_1.43       \n [9] htmltools_0.5.5   rmarkdown_2.23    lifecycle_1.0.3   ps_1.7.5         \n[13] cli_3.6.1         processx_3.8.2    vctrs_0.6.3       compiler_4.3.1   \n[17] rstudioapi_0.15.0 tools_4.3.1       quarto_1.2        evaluate_0.21    \n[21] Rcpp_1.0.11       yaml_2.3.7        rlang_1.1.1       jsonlite_1.8.7   \n[25] htmlwidgets_1.6.2 stringi_1.7.12"
+  },
+  {
+    "objectID": "syllabus/session.html#パッケージ",
+    "href": "syllabus/session.html#パッケージ",
+    "title": "セッション情報",
+    "section": "パッケージ",
+    "text": "パッケージ\n\n\n\n\n\nPackage\nVersion\n\n\n\n\nabind\n1.4-5\n\n\nAER\n1.2-10\n\n\narm\n1.13-1\n\n\nAsioHeaders\n1.22.1-2\n\n\naskpass\n1.1\n\n\nassertthat\n0.2.1\n\n\nattachment\n0.4.0\n\n\nattempt\n0.3.1\n\n\nbackports\n1.4.1\n\n\nBalanceR\n0.8.0\n\n\nbase\n4.3.1\n\n\nbase64enc\n0.1-3\n\n\nbayestestR\n0.13.1\n\n\nBH\n1.81.0-1\n\n\nbibtex\n0.5.1\n\n\nbigD\n0.2.0\n\n\nBiocManager\n1.30.21.1\n\n\nBiocVersion\n3.17.1\n\n\nbit\n4.0.5\n\n\nbit64\n4.0.5\n\n\nbitops\n1.0-7\n\n\nblob\n1.2.4\n\n\nblogdown\n1.18\n\n\nbookdown\n0.34\n\n\nBoom\n0.9.11\n\n\nBoomSpikeSlab\n1.2.5\n\n\nboot\n1.3-28.1\n\n\nbrew\n1.0-8\n\n\nbrio\n1.1.3\n\n\nbroom\n1.0.5\n\n\nbslib\n0.5.0\n\n\nbsts\n0.9.9\n\n\ncachem\n1.0.8\n\n\ncallr\n3.7.3\n\n\ncar\n3.1-2\n\n\ncarData\n3.0-5\n\n\nCausalImpact\n1.3.0\n\n\ncellranger\n1.1.0\n\n\ncheckmate\n2.2.0\n\n\nchk\n0.9.0\n\n\nchromote\n0.1.1.9001\n\n\ncjoint\n2.1.0\n\n\nclass\n7.3-22\n\n\nclassInt\n0.4-9\n\n\ncli\n3.6.1\n\n\nclipr\n0.8.0\n\n\ncluster\n2.1.4\n\n\ncobalt\n4.5.1\n\n\ncoda\n0.19-4\n\n\ncodetools\n0.2-19\n\n\ncollections\n0.3.7\n\n\ncolorspace\n2.1-0\n\n\ncolourpicker\n1.2.0\n\n\ncommonmark\n1.9.0\n\n\ncompiler\n4.3.1\n\n\nconfig\n0.3.1\n\n\nconflicted\n1.2.0\n\n\ncorpcor\n1.6.10\n\n\ncorrplot\n0.92\n\n\ncountrycode\n1.5.0\n\n\ncowplot\n1.1.1\n\n\ncpp11\n0.4.5\n\n\ncranlogs\n2.1.1\n\n\ncrayon\n1.5.2\n\n\ncredentials\n1.3.2\n\n\ncregg\n0.4.0\n\n\ncrosstalk\n1.2.0\n\n\ncrul\n1.4.0\n\n\ncurl\n5.0.1\n\n\ncyclocomp\n1.1.0\n\n\ndagitty\n0.3-1\n\n\ndata.table\n1.14.8\n\n\ndata.tree\n1.0.0\n\n\ndatasets\n4.3.1\n\n\ndatawizard\n0.8.0\n\n\nDBI\n1.1.3\n\n\ndbplyr\n2.3.3\n\n\ndcurver\n0.9.2\n\n\ndemocracyData\n0.5.0\n\n\ndendextend\n1.17.1\n\n\nDeriv\n4.1.3\n\n\ndesc\n1.4.2\n\n\nDescTools\n0.99.49\n\n\ndevtools\n2.4.5\n\n\ndfidx\n0.0-5\n\n\ndiffobj\n0.3.5\n\n\ndigest\n0.6.33\n\n\ndoParallel\n1.0.17\n\n\ndoRNG\n1.8.6\n\n\ndownlit\n0.4.3\n\n\ndplyr\n1.1.2\n\n\nDT\n0.28\n\n\ndtplyr\n1.3.1\n\n\ne1071\n1.7-13\n\n\nellipsis\n0.3.2\n\n\nestimatr\n1.0.0\n\n\nevaluate\n0.21\n\n\nExact\n3.2\n\n\nexpm\n0.999-7\n\n\nexpss\n0.11.6\n\n\nextrafont\n0.19\n\n\nextrafontdb\n1.0\n\n\nfansi\n1.0.4\n\n\nfarver\n2.1.1\n\n\nfastDummies\n1.7.3\n\n\nfastmap\n1.1.1\n\n\nfontawesome\n0.5.1\n\n\nfontBitstreamVera\n0.1.1\n\n\nfontLiberation\n0.1.0\n\n\nfontquiver\n0.2.1\n\n\nforcats\n1.0.0\n\n\nforeach\n1.5.2\n\n\nforeign\n0.8-84\n\n\nformatR\n1.14\n\n\nFormula\n1.2-5\n\n\nfs\n1.6.3\n\n\nfusen\n0.5.1\n\n\nfuture\n1.33.0\n\n\nfuzzyjoin\n0.1.6\n\n\ngamlss.dist\n6.0-5\n\n\ngapminder\n1.0.0\n\n\ngargle\n1.5.2\n\n\ngdtools\n0.3.3\n\n\ngenerics\n0.1.3\n\n\ngeodist\n0.0.8\n\n\ngeosphere\n1.5-18\n\n\ngert\n1.9.2\n\n\ngfonts\n0.2.0\n\n\nggalluvial\n0.12.5\n\n\nGGally\n2.1.2\n\n\nggbump\n0.1.0\n\n\nggdag\n0.2.10\n\n\nggdendro\n0.1.23\n\n\nggExtra\n0.10.0\n\n\nggfittext\n0.10.0\n\n\nggforce\n0.4.1\n\n\nggh4x\n0.2.5\n\n\ngghighlight\n0.4.0\n\n\nggmap\n3.0.2\n\n\nggmosaic\n0.3.3\n\n\nggplot2\n3.4.2\n\n\nggpubr\n0.6.0\n\n\nggraph\n2.1.0\n\n\nggrepel\n0.9.3\n\n\nggridges\n0.5.4\n\n\nggsci\n3.0.0\n\n\nggsignif\n0.6.4\n\n\nggstance\n0.3.6\n\n\ngh\n1.4.0\n\n\nghibli\n0.3.3\n\n\ngitcreds\n0.1.2\n\n\ngld\n2.6.6\n\n\nglobals\n0.16.2\n\n\nglue\n1.6.2\n\n\ngolem\n0.4.1\n\n\ngoogledrive\n2.1.1\n\n\ngooglePolylines\n0.8.3\n\n\ngooglesheets4\n1.1.1\n\n\nGPArotation\n2023.3-1\n\n\ngraphics\n4.3.1\n\n\ngraphlayouts\n1.0.0\n\n\ngrDevices\n4.3.1\n\n\ngrid\n4.3.1\n\n\ngridExtra\n2.3\n\n\ngridtext\n0.1.5\n\n\ngsynth\n1.2.1\n\n\ngt\n0.9.0\n\n\ngtable\n0.3.3\n\n\ngtExtras\n0.4.5\n\n\ngtools\n3.9.4\n\n\nhaven\n2.5.3\n\n\nhere\n1.0.1\n\n\nhighr\n0.10\n\n\nhms\n1.1.3\n\n\nhrbrthemes\n0.8.0\n\n\nhtmlTable\n2.4.1\n\n\nhtmltools\n0.5.5\n\n\nhtmlwidgets\n1.6.2\n\n\nhttpcode\n0.3.0\n\n\nhttpgd\n1.3.1\n\n\nhttpuv\n1.6.11\n\n\nhttr\n1.4.6\n\n\nhttr2\n0.2.3\n\n\nicons\n0.2.0\n\n\nids\n1.0.1\n\n\nigraph\n1.5.0.1\n\n\nini\n0.3.1\n\n\ninline\n0.3.19\n\n\ninsight\n0.19.3\n\n\nisoband\n0.2.7\n\n\niterators\n1.0.14\n\n\njpeg\n0.1-10\n\n\njpmesh\n2.1.0\n\n\njpndistrict\n0.3.9.9000\n\n\njquerylib\n0.1.4\n\n\njsonlite\n1.8.7\n\n\njuicyjuice\n0.1.0\n\n\nkableExtra\n1.3.4\n\n\nkernlab\n0.9-32\n\n\nKernSmooth\n2.23-22\n\n\nknitr\n1.43\n\n\nlabeling\n0.4.2\n\n\nlanguageserver\n0.3.15\n\n\nlater\n1.3.1\n\n\nlatex2exp\n0.9.6\n\n\nlattice\n0.21-8\n\n\nlazyeval\n0.2.2\n\n\nleaflet\n2.1.2\n\n\nleaflet.providers\n1.9.0\n\n\nlearnr\n0.11.4\n\n\nlfe\n2.9-0\n\n\nlifecycle\n1.0.3\n\n\nlintr\n3.1.0\n\n\nlist\n9.2.4\n\n\nlistenv\n0.9.0\n\n\nlme4\n1.1-34\n\n\nlmom\n2.9\n\n\nlmtest\n0.9-40\n\n\nlobstr\n1.1.2\n\n\nloo\n2.6.0\n\n\nlpdensity\n2.4\n\n\nlubridate\n1.9.2\n\n\nmaditr\n0.8.3\n\n\nmagic\n1.6-1\n\n\nmagick\n2.7.4\n\n\nmagrittr\n2.0.3\n\n\nmapdata\n2.3.1\n\n\nmapproj\n1.2.11\n\n\nmaps\n3.4.1\n\n\nmarginaleffects\n0.13.0\n\n\nmargins\n0.3.26\n\n\nmarkdown\n1.7\n\n\nMASS\n7.3-60\n\n\nMatchIt\n4.5.4\n\n\nMatrix\n1.6-0\n\n\nMatrixModels\n0.5-2\n\n\nmatrixStats\n1.0.0\n\n\nmcmc\n0.9-7\n\n\nMCMCpack\n1.6-3\n\n\nmemoise\n2.0.1\n\n\nmethods\n4.3.1\n\n\nmgcv\n1.9-0\n\n\nmime\n0.12\n\n\nminiUI\n0.1.1.1\n\n\nminqa\n1.2.5\n\n\nmirt\n1.39\n\n\nmitools\n2.4\n\n\nmlogit\n1.1-1\n\n\nmodelr\n0.1.11\n\n\nmodelsummary\n1.4.1\n\n\nmunsell\n0.5.0\n\n\nmvtnorm\n1.2-2\n\n\nnaniar\n1.0.0\n\n\nnetworkD3\n0.4\n\n\nnlme\n3.1-162\n\n\nnloptr\n2.0.3\n\n\nnnet\n7.3-19\n\n\nnorm\n1.0-11.1\n\n\nnumDeriv\n2016.8-1.1\n\n\nopenssl\n2.1.0\n\n\noptimx\n2022-4.30\n\n\npackrat\n0.9.1\n\n\npacman\n0.5.1\n\n\npagedown\n0.20\n\n\npaletteer\n1.5.0\n\n\npander\n0.6.5\n\n\npanelView\n1.1.16\n\n\nparallel\n4.3.1\n\n\nparallelly\n1.36.0\n\n\nparameters\n0.21.1\n\n\nparsermd\n0.1.2\n\n\npatchwork\n1.1.2\n\n\npbapply\n1.7-2\n\n\npbkrtest\n0.5.2\n\n\nperformance\n0.10.4\n\n\npermute\n0.9-7\n\n\npillar\n1.9.0\n\n\npkgbuild\n1.4.2\n\n\npkgconfig\n2.0.3\n\n\npkgdown\n2.0.7\n\n\npkgload\n1.3.2.1\n\n\nplogr\n0.2.0\n\n\nplotly\n4.10.2\n\n\nplyr\n1.8.8\n\n\npng\n0.1-8\n\n\npolyclip\n1.10-4\n\n\npolynom\n1.4-1\n\n\npraise\n1.0.0\n\n\nPRcalc\n0.7.0\n\n\nprediction\n0.3.14\n\n\nprettyunits\n1.1.1\n\n\nprismatic\n1.1.1\n\n\nprocessx\n3.8.2\n\n\nproductplots\n0.1.1\n\n\nprofvis\n0.3.8\n\n\nprogress\n1.2.2\n\n\npromises\n1.2.0.1\n\n\nproxy\n0.4-27\n\n\npryr\n0.1.6\n\n\nps\n1.7.5\n\n\npurrr\n1.0.1\n\n\nq2c\n0.2.1\n\n\nqrcode\n0.2.1\n\n\nquadprog\n1.5-8\n\n\nqualtRics\n3.1.7\n\n\nquantreg\n5.96\n\n\nquarto\n1.2\n\n\nR.cache\n0.16.0\n\n\nR.methodsS3\n1.8.2\n\n\nR.oo\n1.25.0\n\n\nR.utils\n2.12.2\n\n\nR6\n2.5.1\n\n\nragg\n1.2.5\n\n\nrappdirs\n0.3.3\n\n\nrapportools\n1.1\n\n\nraster\n3.6-23\n\n\nrbibutils\n2.2.13\n\n\nrcmdcheck\n1.4.0\n\n\nRColorBrewer\n1.1-3\n\n\nRcpp\n1.0.11\n\n\nRcppArmadillo\n0.12.4.1.0\n\n\nRcppEigen\n0.3.3.9.3\n\n\nRcppParallel\n5.1.7\n\n\nRcppProgress\n0.4.2\n\n\nrdd\n0.57\n\n\nrddensity\n2.4\n\n\nRdpack\n2.4\n\n\nrdrobust\n2.1.1\n\n\nreactable\n0.4.4\n\n\nreactR\n0.4.4\n\n\nreadr\n2.1.4\n\n\nreadxl\n1.4.3\n\n\nRefManageR\n1.4.0\n\n\nrematch\n1.0.1\n\n\nrematch2\n2.1.2\n\n\nremotes\n2.4.2.1\n\n\nrenderthis\n0.2.1\n\n\nrenv\n1.0.0\n\n\nreprex\n2.0.2\n\n\nreshape\n0.8.9\n\n\nreshape2\n1.4.4\n\n\nrex\n1.2.1\n\n\nrgenoud\n5.9-0.3\n\n\nrgeos\n0.6-4\n\n\nRgoogleMaps\n1.4.5.3\n\n\nrjags\n4-14\n\n\nrlang\n1.1.1\n\n\nrmarkdown\n2.23\n\n\nrmdja\n0.4.6.9\n\n\nrnaturalearth\n0.3.3\n\n\nrnaturalearthdata\n0.1.0\n\n\nrnaturalearthhires\n0.2.1\n\n\nrngtools\n1.5.2\n\n\nrootSolve\n1.8.2.3\n\n\nroxygen2\n7.2.3\n\n\nrpart\n4.1.19\n\n\nrprojroot\n2.0.3\n\n\nrqog\n0.4.2023\n\n\nrsconnect\n1.0.1\n\n\nRSQLite\n2.3.1\n\n\nrstan\n2.21.8\n\n\nrstatix\n0.7.2\n\n\nrstudioapi\n0.15.0\n\n\nRttf2pt1\n1.3.12\n\n\nrversions\n2.1.2\n\n\nrvest\n1.0.3\n\n\ns2\n1.1.4\n\n\nsandwich\n3.0-2\n\n\nsass\n0.4.7\n\n\nscales\n1.2.1\n\n\nselectr\n0.4-2\n\n\nservr\n0.27\n\n\nsessioninfo\n1.2.2\n\n\nsf\n1.0-14\n\n\nshades\n1.4.0\n\n\nshiny\n1.7.4.1\n\n\nshiny.i18n\n0.3.0\n\n\nshinyBS\n0.61.1\n\n\nshinyjs\n2.1.0\n\n\nSimpleConjoint\n0.1.1\n\n\nsjlabelled\n1.2.0\n\n\nsourcetools\n0.1.7-1\n\n\nsp\n2.0-0\n\n\nSparseM\n1.81\n\n\nspatial\n7.3-17\n\n\nsplines\n4.3.1\n\n\nStanHeaders\n2.26.27\n\n\nstargazer\n5.2.3\n\n\nstatmod\n1.5.0\n\n\nstats\n4.3.1\n\n\nstats4\n4.3.1\n\n\nstringdist\n0.9.10\n\n\nstringi\n1.7.12\n\n\nstringr\n1.5.0\n\n\nstyler\n1.10.1\n\n\nsummarytools\n1.0.1\n\n\nsurvey\n4.2-1\n\n\nsurvival\n3.5-5\n\n\nsvglite\n2.1.1\n\n\nSynth\n1.1-8\n\n\nsys\n3.4.2\n\n\nsystemfonts\n1.0.4\n\n\ntables\n0.9.17\n\n\ntcltk\n4.3.1\n\n\nterra\n1.7-39\n\n\ntestthat\n3.1.10\n\n\ntextshaping\n0.3.6\n\n\ntibble\n3.2.1\n\n\ntidycensus\n1.4.1\n\n\ntidyfast\n0.2.1\n\n\ntidygraph\n1.2.3\n\n\ntidyr\n1.3.0\n\n\ntidyselect\n1.2.0\n\n\ntidyverse\n2.0.0\n\n\ntigris\n2.0.3\n\n\ntimechange\n0.2.0\n\n\ntinytex\n0.45\n\n\ntitanic\n0.1.0\n\n\ntools\n4.3.1\n\n\ntreemapify\n2.5.5\n\n\ntriebeard\n0.4.1\n\n\ntweenr\n2.0.2\n\n\ntzdb\n0.4.0\n\n\nunits\n0.8-2\n\n\nUpSetR\n1.4.0\n\n\nurlchecker\n1.0.1\n\n\nurlshorteneR\n1.5.7\n\n\nurltools\n1.7.3\n\n\nusethis\n2.2.2\n\n\nusmap\n0.6.2\n\n\nusmapdata\n0.1.0\n\n\nutf8\n1.2.3\n\n\nutils\n4.3.1\n\n\nuuid\n1.1-0\n\n\nV8\n4.3.3\n\n\nvctrs\n0.6.3\n\n\nvdemdata\n13.0\n\n\nvegan\n2.6-4\n\n\nVGAM\n1.1-8\n\n\nviridis\n0.6.4\n\n\nviridisLite\n0.4.2\n\n\nvisdat\n0.6.0\n\n\nvisNetwork\n2.1.2\n\n\nvroom\n1.6.3\n\n\nwaldo\n0.5.1\n\n\nwebshot\n0.5.5\n\n\nwebsocket\n1.4.1\n\n\nWeightIt\n0.14.2\n\n\nwhisker\n0.4.1\n\n\nwithr\n2.5.0\n\n\nwk\n0.7.3\n\n\nwoRdle\n0.0.1\n\n\nxaringan\n0.28\n\n\nxaringanExtra\n0.7.0.9000\n\n\nxfun\n0.39\n\n\nxml2\n1.3.5\n\n\nxmlparsedata\n1.0.5\n\n\nxopen\n1.0.0\n\n\nxtable\n1.8-4\n\n\nxts\n0.13.1\n\n\nyaml\n2.3.7\n\n\nzip\n2.3.0\n\n\nzipcodeR\n0.3.5\n\n\nzoo\n1.8-12"
+  }
+]
