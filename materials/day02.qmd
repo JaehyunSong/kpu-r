@@ -1,6 +1,6 @@
 ---
 title: "第2回 講義資料"
-subtitle: "ガイダンス"
+subtitle: "データハンドリング"
 metadata-files: 
   - _material.yml
 ---

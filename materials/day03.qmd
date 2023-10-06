@@ -1,6 +1,6 @@
 ---
 title: "第3回 講義資料"
-subtitle: "ガイダンス"
+subtitle: "可視化"
 metadata-files: 
   - _material.yml
 ---
