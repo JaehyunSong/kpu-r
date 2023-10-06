@@ -1,0 +1,1469 @@
+---
+subtitle: "第1回 Rの導入、基本的な操作、Quarto"
+date: "2023/10/7"
+format: revealjs
+metadata-files: 
+  - _slide.yml
+---
+
+# ガイダンス
+
+## 講義概要
+
+* 講義日: 2023年10月7・14・28日の2〜4コース
+   * 10月28日は3〜4コース
+* 場所: 1号館2階・情報処理室
+* 講義内容: Rの使い方
+   * Rの基本的な操作 & Quarto
+   * データの入出力
+   * データのハンドリング（前処理）
+   * データの可視化
+* 統計学、確率、多変量解析、因果推論の授業**ではない**。
+   * 後期の授業ではRの使い方について解説**しない**。
+* 到達目標: Rを用いたデータ分析の教科書が読める土台づくり
+
+## 講義内容（予定）
+
+* 第1回（2023/10/07）
+   * RとRStudioの導入（JDCat分析ツールを利用）
+   * 基本的な操作
+   * Quartoの使い方
+* 第2回（2023/10/14）
+   * データハンドリング（{dplyr}と{tidyr}）
+* 第3回（2023/10/28）
+   * 可視化（{ggplot2}）
+
+## 講師紹介
+
+::::{.columns}
+
+:::{.column width=5%}
+:::
+
+:::{.column width=25%}
+![[LINEスタンプ](https://store.line.me/search/sticker/ja?q=jaehyun%20song)絶賛販売中!](Figs/Profile.png)
+:::
+
+:::{.column width=10%}
+:::
+
+:::{.column width=60%}
+* <ruby>宋<rp>(</rp><rt>そん</rt><rp>)</rp></ruby>&nbsp;&nbsp;<ruby>財泫<rp>(</rp><rt>じぇひょん</rt><rp>)</rp></ruby> (SONG JAEHYUN)
+   * [関西大学](https://www.kansai-u.ac.jp/ja/?stt_lang=ja)[総合情報学部](https://www.kansai-u.ac.jp/Fc_inf/) 准教授
+   * 博士（政治学）
+* 専門は政治行動論、選挙研究、政治学方法論
+* 趣味はゲームはラーメン屋巡り
+   * 好きなラーメンは家系と二郎インスパイア、汁なし全般
+   * 最近やっているゲームはFF XIV
+
+<br/><br/>
+
+* <i class="bi bi-envelope"></i> <song@kansai-u.ac.jp>
+* <i class="bi bi-house"></i> <https://www.jaysong.net>
+:::
+
+::::
+
+## 前提知識
+
+* ファイル・システムの理解
+   * フォルダー (ディレクトリ)の概念
+   * 相対パスと絶対パスの違いと書き方
+   * `C:/AAA/BBB/CCC.txt`や`~/AAA/BBB/CCC.text`の意味が理解できること
+   * サポートページの「[ファイル・システム](../../intro/filesystem.html){target="_blank"}」、「[プロジェクト管理](../../intro/project.html){target="_blank"}」、「[ファイル管理](../../intro/file.html){target="_blank"}」を読んでおくこと
+   * **これができないとデータの読み込みすらきでない**。
+* ブラインド・タッチ (**重要**)
+   * 期末レポートは第15回の授業中に執筆する。
+   * タイピングが遅いと、90分内に期末レポートの完成ができない。
+   * 第15回の授業までにブラインドタッチの練習を推奨
+   * この授業に限らず、現代社会で極めて重要なスキル
+
+## 教科書
+
+宋財泫・矢内勇生.『私たちのR: ベストプラクティスの探求』Web-book
+
+* 本講義内容を全てカバーする
+* 無料 (<https://www.jaysong.net/RBook>)
+
+![](Figs/introduction/RN4E.png){width=25% fig-align="center"}
+
+## 参考書
+
+* 松村優哉 他. 2021. 『[改訂2版 RユーザのためのRStudio[実践]入門](https://www.amazon.co.jp/dp/4297121700/)』技術評論社
+* Garrett Grolemund and Hadley Wickham. 2017. [*R for Data Science.*](https://r4ds.had.co.nz) O'Reilly.
+   * 邦訳『Rではじめるデータサイエンス』(**原著は無料:** <https://r4ds.had.co.nz/>)
+* Jared P. Lander. 2018. [*R for Everyone.*](https://www.amazon.co.jp/dp/4839962154) Addison-Wesley Professional. 
+   * 邦訳『みんなのR』
+
+::: {layout="[3, -1, 3, -1, 3]"}
+![](Figs/introduction/Reference1.jpg){width=25% fig-align="center"}
+
+![](Figs/introduction/Reference2.jpg){width=25% fig-align="center"}
+
+![](Figs/introduction/Reference3.jpg){width=25% fig-align="center"}
+:::
+
+## 成績評価
+
+* **平常点**（30%）
+* **課題**（70%）
+   * 詳細は10月14日にアナウンス
+
+## 授業内容のフィードバックについて
+
+1. メール: <song@kansai-u.ac.jp>
+2. 対面（授業前後）
+
+# Rの導入
+
+## Rとは
+
+![](Figs/r/rlogo.png){width=25% fig-align="center"}
+
+* 統計、データ分析、作図のためのインタープリター**プログラミング言語**
+* 1976年開発されたS言語の後継者
+* **R**oss Ihakaと**R**obert Clifford Gentlemanが開発
+* 統計分析のためのソフトウェアは星の数ほど存在
+
+## 統計ソフトウェア/言語
+
+#### 有償
+
+* [SAS](https://www.jaysong.net/RBook/www.sas.com/)
+* [SPSS](https://www.ibm.com/products/spss-statistics)
+* [Stata](https://www.stata.com/)
+* [MATLAB](https://www.mathworks.com/products/matlab.html)
+
+#### 無償
+
+* [PSPP](https://www.gnu.org/software/pspp/): [SPSS](https://www.ibm.com/products/spss-statistics)にとてもよく似た無料ソフトウェア
+* [JASP](https://jasp-stats.org/)/[jamovi](https://www.jamovi.org/): 裏で動いているのはR
+* [gretl](http://gretl.sourceforge.net/): 時系列分析など、計量経済学で利用される手法に特化したソフト
+* [GNU Octave](https://www.gnu.org/software/octave/): [MATLAB](https://www.mathworks.com/products/matlab.html)とほぼ同じ文法をもつ無料言語
+* [HAD](https://norimune.net/had): [清水裕士](https://norimune.net/)先生が開発している[Excel](https://www.microsoft.com/microsoft-365/excel)ベースのデータ分析マクロ
+  * ただし、[Excel](https://www.microsoft.com/microsoft-365/excel)が有償ソフト
+
+## Rのライバルたち（どれも無料）
+
+* 現在のデータサイエンス業界において標準は[R](https://www.r-project.org/) + [Python](https://www.python.org/)
+* どれもGUI（Graphical User Interface）でなく、**CUI**（Character User Interface）
+
+:::: {.columns}
+
+::: {.column width="45%"}
+![](Figs/r/Python_logo.png){width=17% fig-align="center"}
+
+[**Python**](https://www.python.org/)
+
+* 汎用プログラミング言語
+* 機械分析に強い
+* 豊富なパッケージ
+* [R](https://www.r-project.org/)より速く、[Julia](https://julialang.org/)より遅い
+:::
+
+::: {.column width="10%"}
+
+:::
+
+::: {.column width="45%"}
+![](Figs/r/Julia_logo.png){width=25% fig-align="center"}
+
+[**Julia**](https://julialang.org/)
+
+* 統計プログラミング言語
+* 非常に高速
+* パッケージが[R](https://www.r-project.org/)や[Python](https://www.python.org/)に比べ、少ない
+:::
+
+::::
+
+## Why R?
+
+R界隈の神様、[Hadley Wickham](http://hadley.nz/)（羽鳥先生）によると... (Hadley 2019)
+
+1. 無料、オープンソース、多くのプラットフォームで利用可能
+2. オンライン、オフラインの両方で、多様なRコミュニティが存在
+3. 膨大なパッケージが用意されている。
+4. 分析結果を伝達する強力なツールを提供（R Markdown）
+5. 代表的な統合開発環境であるRStudioはデータサイエンス、対話型のデータ分析、そして統計的プログラミングが必要とするものに最適化されている。
+6. 多くの統計学や機械学習の研究者は自分の研究成果とRパッケージを同時に公開している。
+7. データ分析を特化した言語（欠損値、データフレーム、ベクトル化など）
+8. 関数型プログラミングのための最適な環境を提供
+9. RStudio社は営利企業であるものの、その収益の多くをオープンソースコミュニティーに投資している。
+10. メタプログラミングが非常に強力
+11. RはC、C++、Fortranのようなhigh-performance言語と容易に結合できるように設計されている。
+
+## GUIとCUI
+
+![](Figs/r/CUI_GUI.png){width=40% fig-align="center"}
+
+* **GUI**：マウスでポチポチするだけで操作できる環境
+  * 間違いがほぼ起きない
+  * 柔軟性が低い（開発元が提供する機能しか使えない）
+  * 分析の再現が難しい（出来ないわけではない）
+* **CUI**：全ての操作を文字列ベース（=キーボード）で行う
+  * 一文字でも間違えるとエラーが出たり
+  * 柔軟性が高い（カスタマイズ自由）
+  * 分析の再現性が非常に高い（コードさえ保存しておけばOK）
+
+## GUIとCUIの操作の違い
+
+`Data.csv`を読み込み、`X`という変数の平均値と分散を計算するまでの手順
+
+::::{.columns}
+:::{.column width=49%}
+**GUI (SPSS)の例**
+
+1. 「ファイル」→「開く」→「データ」をクリック
+2. ファイルを選択し、「開く」をクリック
+3. 「分析」→「記述統計」→「記述統計」をクリック
+4. 左側のパネルから`X`を右側の「変数」パネルへ移動
+5. 「オブション」をクリック
+6. 「散らばり」の「分散」にチェック
+7. 「続行」をクリック→「OK」をクリック
+:::
+
+:::{.column width=2%}
+:::
+
+:::{.column width=49%}
+**CUI (R)の例**
+
+```r
+MyData <- read.csv("Data.csv")
+mean(MyData$X)
+var(MyData$X)
+```
+:::
+::::
+
+## 統合開発環境（IDE）
+
+* R Studioが代表的（ほぼ一択）
+  * 他にもR Tools for Visual Studio、VS Code、Atom、Sublime Text、Vim、Emacsなど
+* IDEの使用は必須ではないが、生産性に大きく向上させる。
+* データ分析、プログラミングの手助けをする優秀な秘書
+  * ファイルの管理、うろ覚えのコマンドの、コードの色分けなどを自動的に行う。
+  * コードの実行結果の画面をコードと同時に表示
+  * これまでの作業を記録
+
+![](Figs/r/IDE_RStudio.png){width=45% fig-align="center"}
+
+## RとRStudioの導入
+
+* 本講義のサポートページを参照しながら、宋と一緒にやってみよう。
+
+:::{.callout-caution icon=false}
+## 導入 $\neq$ 起動
+
+　Rの「導入」はアプリのインストールの概念に近い。一方、「起動」はアプリの実行である。スマホのアプリを使う度にインストールする人はいないだろう。Rの導入は1回のみとし、複数回行わないこと。何かの不具合が生じるわけではないが、サーバー立ち上げ用のURLにアクセスする度に、サーバーが増え、自分が使っていたサーバーが何だったのかが分からなくなる。今後の授業では「サーバー立ち上げ用のURL」でなく、「起動用のURL」からアクセスすること。
+:::
+
+## 「プロジェクト」機能について
+
+* 本講義のサポートページを参照
+   * Rの使い方の「[ファイルシステム](https://www.jaysong.net/r4ps/intro/filesystem.html){target="_blank"}」、「[プロジェクト管理](https://www.jaysong.net/r4ps/intro/project.html){target="_blank"}」、「[ファイル管理](https://www.jaysong.net/r4ps/intro/file.html){target="_blank"}」すべてを読むこと
+   * 教科書の「[ファイルシステム](https://www.jaysong.net/RBook/filesystem.html){target="_blank"}」も合わせて読もう。
+* 毎回の講義、課題ごとに独立したプロジェクトを作ること
+* ファイル・システムに関する知識（パス、相対パス、絶対パス）がない場合、プロジェクト機能は必須
+   * ファイル・システムを知っている宋でも常にプロジェクト機能を使用している。
+
+# Rの基本的な操作
+
+## 電卓としてのRと算術演算子
+
+* **Step 1**: File > New File > R Script
+* **Step 2**: Sourceペインの大きさを最大化する。
+* **Step 3**: Sourceペインに以下のように入力する
+
+```{r}
+#| eval: false
+1 + 2 + 3
+```
+
+* **Step 4**: Step 3で入力した行に移動し、「Cmd + Return（macOS）」または「Ctrl + Enter（Linux/Windows）」
+  * Consoleペインに以下のように出力されればOK
+
+```{r}
+#| echo: false
+1 + 2 + 3
+```
+
+## Rの算術演算子
+
+* 結果として何らかの**数字**が返される
+* 累乗（`^`）を除き、**演算子の前後にはスペースを入れる**のがRの流儀
+  * 必須ではないが、コードが読みやすくなる
+
+|演算子|意味|例|結果|
+|:---:|---|---|---:|
+|`+`|和|`2 + 5`|7|
+|`-`|差|`2 - 8`|-6|
+|`*`|積|`7 * 3`|21|
+|`/`|商|`16 / 5`|3.2|
+|`^`、`**`|累乗（べき乗）|`2^3`または`2 ** 3`|8|
+|`%%`|剰余 (モジュロ)|`18 %% 7`|4|
+|`%/%`|整数商|`18 %/% 7`|2|
+
+## Rの論理演算子
+
+* 真（`TRUE`）か偽（`FALSE`）の値を返す演算子
+
+```{r}
+3 > 2 # 3は2より大きいか
+5 <= 10 # 5は10以下か
+2 + 3 == 1 # 2 + 3は1に等しいか
+2 + 2 != 2 * 2 # 2 + 3は2 * 2と等しくないか
+(2 + 2) != (2 * 2) # こっちの方がもう少し読みやすい
+```
+
+## Rの論理演算子（まとめ）
+
+* 「等しい」は`=`でなく、`==`であることに注意すること
+   * `=`は代入演算子として機能する（他の言語と同じ）。
+
+|演算子|意味|例|結果|
+|---|---|---|---|
+|`x < y`|`x`は`y`より小さい|`3 < 1`|`FALSE`|
+|`x <= y`|`x`は`y`と等しいか、小さい|`2 <= 2`|`TRUE`|
+|`x > y`|`x`は`y`より大きい|`6 > 5`|`TRUE`|
+|`x >= y`|`x`は`y`と等しいか、大きい|`4 >= 5`|`FALSE`|
+|`x == y`|`x`と`y`は等しい|`(2 + 3) == (4 + 1)`|`TRUE`|
+|`x != y`|`x`と`y`は等しくない|`((2 * 3) + 1) != (2 * (3 + 1))`|`TRUE`|
+
+## 論理演算子: ANDとOR
+
+#### AND演算子: `&`
+
+* `&`を挟む左右の**両側**が`TRUE`の場合のみ`TRUE`を返す
+
+```{r}
+(2 + 3 == 5) & (1 * 2 == 3) # TRUE and FALSEだから
+(2 + 2 == 4) & (2 * 2 == 4) # TRUE and TRUEだから
+```
+
+<br/>
+
+#### OR演算子: `|`
+
+* `|`を挟む左右の**片側、あるいは両側**が`TRUE`の場合のみ`TRUE`を返す
+
+```{r}
+(2 + 3 == 5) | (1 * 2 == 3) # TRUE or FALSEだから
+(2 + 2 != 4) | (2 * 2 != 4) # FALSE or FALSEだから
+```
+
+## Rにおけるベクトル
+
+ベクトル（vector）: Rにおけるデータの**最小単位**
+
+* 同じデータ型（数値、文字列など）
+  * 数値と文字列が混在するベクトルは作成不可
+* 長さは1以上
+  * `1`や`"Cat"`は長さ1のベクトル
+* `c()`関数で作成
+  * `()`の中にベクトルの要素を入力
+  * 長さ1のベクトルの場合、`c()`は省略可能
+
+## ベクトルの作成
+
+* `<-`演算子で格納
+  * `ベクトル名`という名前の**オブジェクト（object）**が生成され、作業環境内に保存される。
+  * 「作業環境」や「オブジェクト」の概念は次回解説
+  * 格納済みのオブジェクトのリストはコンソール上で`ls()`または、RStudioの「Environment」タブで確認
+* 格納しない場合、作業環境に保存されず、出力のみ
+
+```r
+ベクトル名 <- c(要素1, 要素2, ...)
+```
+
+<br/>
+
+**例1:** 要素が1, 2, 3, 4, 5の長さ5の数値型ベクトル
+
+* ベクトルを`my_vector1`という名前で作業環境に格納
+
+```{r}
+my_vector1 <- c(1, 2, 3, 4, 5)
+```
+
+<br/>
+
+**例2:** 要素が"Cat", "Lion", "Tiger"の長さ3の文字型ベクトルを`my_vector2`という名で格納
+
+* 文字は必ず`"`か`'`で囲む
+
+```{r}
+my_vector2 <- c("Cat", "Lion", "Tiger")
+```
+
+## オブジェクトの名前
+
+基本的にオブジェクト名は何でも良いが、いくつかの禁則事項がある
+
+* 特殊記号、スペース禁止（例外: `_`と`.`）
+   * スペースの代わりに`_`か`.`が使われるが、`_`を推奨
+* 数字、または`_`、`.`で始まるオブジェクト名
+* 予約語は使えない（`for`や`if`など）
+   * 使える予約語もあるが、非推奨
+* 日本語、ハングル、簡体字、アラビア文字も可能であるが、非推奨
+
+<br/>
+
+#### 良いオブジェクト名は
+
+* オブジェクト名を見るだけで、中身の内容が想像できる
+* 短いオブジェクト名
+
+## オブジェクトの出力
+
+1. オブジェクト名のみ入力
+2. `print(オブジェクト名)`
+
+```{r}
+my_vector1 # print(my_vector1) でもOK
+my_vector2 # print(my_vector2) でもOK
+```
+
+* Rを再起動すると作業環境が**初期化**されるため、もう一回作成する必要がある。
+  * コードを記録し、残すことが重要
+
+## 参考）等差数列ベクトルの作り方
+
+:::: {.columns}
+
+::: {.column width="40%"}
+公差 = 1の等差数列
+
+* `:`演算子を利用
+
+```{r}
+c(1, 2, 3, 4, 5, 6, 7)
+1:7
+8:3
+```
+:::
+
+::: {.column width="2%"}
+:::
+
+::: {.column width="58%"}
+公差 $\neq$ 1の等差数列
+
+* `seq()`関数の使用 (`by`で公差を指定)
+
+```{r}
+c(1, 3, 5, 7, 9)
+seq(1, 9, by = 2)   # 1から9までの公差2の等差数列
+seq(1, 5, by = 0.5) # 1から5までの公差0.5の等差数列
+seq(8, 3, by = -1)  # 8から3までの公差-1の等差数列
+```
+:::
+
+::::
+
+## ベクトル同士の演算
+
+**例)** ベクトル`X`とベクトル`Y`同士の演算
+
+* **ケース1：** `X`の長さ = `Y`の長さ
+* **ケース2：** `X`の長さ $\neq$ `Y`の長さ
+
+<br/>
+
+**参考)** ベクトルの長さの求め方
+
+* `length()`関数を使用
+
+```{r}
+length(my_vector1) # c(1, 2, 3, 4, 5)
+length(my_vector2) # c("Cat", "Lion", "Tiger")
+```
+
+## ケース1: ベクトルの長さが同じ場合
+
+* 同じ位置の要素同士の演算
+
+|ベクトル/位置|1番目|2番目|3番目|4番目|5番目|6番目|
+|---|:---:|:---:|:---:|:---:|:---:|:---:|
+|`my_vec1`|1|2|3|4|5|6|
+||$\times$|$\times$|$\times$|$\times$|$\times$|$\times$|
+|`my_vec2`|0|1|2|0|1|2|
+|結果|0|2|6|0|5|12|
+
+<br/>
+
+```{r}
+# my_vec1とmy_vec2は同じ長さ
+my_vec1 <- c(1, 2, 3, 4, 5, 6) # 長さ6のベクトル
+my_vec2 <- c(0, 1, 2, 0, 1, 2) # 長さ6のベクトル
+my_vec1 * my_vec2
+```
+
+## ケース2: ベクトルの長さが異なる場合
+
+* 短い方のベクトルがリサイクルされる（**ベクトル・リサイクル**）。
+  * `my_vec4`の方が短いため、足りない分（太字の部分）はリサイクルされる。
+
+|ベクトル/位置|1番目|2番目|3番目|4番目|5番目|6番目|
+|---|:---:|:---:|:---:|:---:|:---:|:---:|
+|`my_vec3`|1|2|3|4|5|6|
+||$\times$|$\times$|$\times$|$\times$|$\times$|$\times$|
+|`my_vec4`|0|1|**0**|**1**|**0**|**1**|
+|結果|0|2|0|4|0|6|
+
+<br/>
+
+```{r}
+# my_vec3とmy_vec4の長さは異なる
+my_vec3 <- c(1, 2, 3, 4, 5, 6) # 長さ6のベクトル
+my_vec4 <- c(0, 1)             # 長さ2のベクトル
+my_vec3 * my_vec4
+```
+
+## ベクトル要素の抽出
+
+ベクトルから任意の要素を抽出する2つの方法
+
+* **方法1**: 抽出する要素の位置を指定する。
+* **方法2**: 論理演算子を利用する。
+
+<br/>
+
+**例)** 11, 12, 13, ..., 19, 20が格納された`my_vec5`
+
+```{r}
+my_vec5 <- 11:20 # my_vec <- seq(11, 20, by = 1) と同じ
+my_vec5
+```
+
+<br/>
+
+|位置|1|2|3|4|5|6|7|8|9|10|
+|---|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|
+|`my_vec5`|11|12|13|14|15|16|17|18|19|20|
+
+* 他の言語と違い、位置の番号は0からでなく、**1からスタート**することに注意
+
+## 要素の抽出: 位置指定
+
+* `ベクトル名[抽出する要素の位置]`
+
+**例1)** `my_vec5`の3番目の要素
+
+```{r}
+my_vec5[3]
+```
+
+**例2)** `my_vec5`の2, 3, 4, 5番目の要素
+
+* `[]`内に抽出する要素の位置を表すベクトルを指定
+* `pos_vec`、`c(2, 3, 4, 5)`、`seq(2, 5, by = 1)`、`2:5`はすべて同じ意味
+
+```{r}
+pos_vec <- c(2, 3, 4, 5)
+my_vec5[pos_vec]
+my_vec5[c(2, 3, 4, 5)]
+my_vec5[seq(2, 5, by = 1)]
+my_vec5[2:5]
+```
+
+## 要素の抽出: 論理演算子の利用
+
+* それぞれの要素に対し、抽出するか（`TRUE`）しないか（`FALSE`）を指定
+* 表形式データにおける行の抽出を自由自在に操るためには必須知識（第9回）
+
+**例1)** `my_vec5`から1, 4, 7, 9, 10番目の要素を抽出
+
+* `[]`内にベクトルの長さ分のベクトルを更に入力する必要があるため、あまり使わない方法
+
+```{r}
+# my_vec5[c(1, 4, 7, 9, 10)] と同じ結果
+my_vec5[c(TRUE, FALSE, FALSE, TRUE, FALSE, FALSE, TRUE, FALSE, TRUE, TRUE)]
+```
+
+**例2)** `my_vec5`から奇数のみ抽出（論理演算子の利用）
+
+```{r}
+# my_vec5を2で割った場合、余りが1ならTRUE、その他はFALSE
+my_vec5 %% 2 == 1
+my_vec5[my_vec5 %% 2 == 1]
+```
+
+## 表形式データの読み込み
+
+{tidyverse}パッケージが提供する`read_csv()`関数を利用
+
+* `オブジェクト名 <- read_csv("パスを含むファイル名")`
+* 以下の例はプロジェクト・フォルダー内に`Data`という名の下位フォルダーがあり、その中に`Pref_Vote.csv`が保存されている場合。
+   * パスは`"Data/Pref_Vote.csv"`
+   * 予めデータをJDCat分析ツールのサーバーにアップロードしておくこと。
+      * ファイルアップロードの方法はサポートページの「Rの使い方 > [ファイル管理](https://www.jaysong.net/r4ps/intro/file.html){target="_blank"}」を参照
+
+```{r}
+#| message: false
+library(tidyverse)
+my_data <- read_csv("Data/Pref_Vote.csv")
+```
+
+:::{.callout-note icon=false}
+## 注意：`read_csv()`と`read.csv()`は区別しよう。
+
+　両方`.csv`形式データを読み込む関数であるが、`read.csv()`はR内蔵関数、`read_csv()`は{tidyverse}を読み込まないと使用できない関数である。後者の方が見やすいメリットがある。本講義では`read_csv()`のみを使用する。課題の際、`read.csv()`関数を使うと**減点**とする。
+:::
+
+## データの出力
+
+* `オブジェクト名`、または`print(オブジェクト名)`
+
+```{r}
+# my_dataの中身の出力するコード
+# print(my_data) でもOK
+my_data
+```
+
+## データが全部見えない?
+
+**1行目**
+
+* 意味: 47行13列の表形式データ
+
+```
+# A tibble: 47 × 13
+```
+
+<br/>
+
+**最終行**
+
+* 意味: 表示された行以外にも更に37行があり、`Region2`と`Region6`は画面では省略されている。
+   * 文字サイズが小さい or 画面が大きい場合は省略されず、13列がすべて出力される場合もある。
+
+```
+# … with 37 more rows, and 2 more variables: Region2 <dbl>, Region6 <dbl>
+```
+
+## 読み込んだデータの出力
+
+
+::: {.panel-tabset}
+
+### デフォルト
+
+* `オブジェクト名`、または`print(オブジェクト名)`
+
+```{r}
+my_data
+```
+
+### 出力行数の指定
+
+* `print(オブジェクト名, n = 行数)`
+
+```{r}
+print(my_data, n = 15)
+```
+
+### 最後の6行
+
+* `tail(オブジェクト名)`
+
+```{r}
+tail(my_data)
+```
+
+### 最後のn行
+
+* `tail(オブジェクト名, n = 行数)`
+   * `head()`で使うと**最初**の`n`行の出力も可能
+
+```{r}
+tail(my_data, n = 10)
+```
+
+:::
+
+## `.csv`以外の表形式データ
+
+`.csv`形式ファイルは表形式データの定番であり、標準
+
+* 他にも様々な形式のデータがあり、Rで読み込み可能（以下は一部の例）
+
+|ソフトウェア名|拡張子|使用パッケージ|関数|
+|:---|:---|:---|:---|
+|Microsoft Excel|`.xls`、`.xlsx`|{readxl}|`read_excle()`|
+|LibreOffice / OpenOffice|`.ods`|{readODS}|`read_ods()`|
+|SPSS|`.sav`|{haven}|`read_stata()`|
+|Stata|`.dta`|{haven}|`read_spss()`|
+|SAS|`.sas7bdat`|{haven}|`read_sas()`|
+
+# Quarto
+
+## R Markdown / Quartoとは
+
+::::{.columns}
+:::{.column width=48%}
+![R Markdown](https://bookdown.org/yihui/rmarkdown/images/hex-rmarkdown.png){width=250px fig-align="center"}
+
+* R + Markdown
+* Rのコードと結果、文章が一つの文書としてまとまったもの
+   * HTML、Microsoft Word（`.docx`）、PDF等
+* スライド、ホームページ、ポスター、書籍なども作成可能
+:::
+
+:::{.column width=4%}
+:::
+
+:::{.column width=48%}
+![Quarto](https://posit.co/wp-content/uploads/2022/10/quarto.svg){width=250px fig-align="center"}
+
+* 読み方は「**クゥオート**」（クワトロじゃない）
+* 断片化されつつあるR Markdown生態系を一つに統合したもの
+  * R Markdownだとホームページには{blogdown}、書籍執筆は{bookdown}、スライド作成は{xaringan}など
+  * 本講義のスライド、サポートページ、教科書、宋のホームページも全てQuartoで作成
+* R Markdownと使い方はほぼ同じ
+  * 本講義ではQuartoを使用
+* Python/Julia/Observable JSも使用可能
+:::
+::::
+
+## プレーンテキストとリッチテキスト
+
+* Plain text: 書式情報などが含まれていない純粋なテキストのみで構成されている文書
+  * macOSの「テキストエディット」、Windowsの「メモ帳」など
+* Rich text: 書式情報だけでなく、図表なども含まれる文書
+  * Microsoft Word、Apple Pagesなど
+* 書式情報の例: 文書の余白、行間の幅、文字サイズ、太さ、色
+* リッチテキストには文字情報以外にも様々な書式情報が含まれているため、サイズが大きく、パソコンへの負担も大きい
+
+## プレーンからリッチへ
+
+* **Markup**言語：プレーンテキストをリッチテキストへ変換するための言語
+* HTML（HyperText **Markup** Language）が代表的
+  * 例1） `<b>`と`</b>`で囲まれた文字は太字として出力される。
+  * 例2） `<a>`と`</a>`で囲まれた文字はリンクであり、`<a>`の`href`引数で指定されたリンク先へ飛ばされる。
+
+**Input:**
+
+```html
+この文字は<b>太字</b>にしましょう。<br/>
+この文字は<a href = "https://www.jaysong.net">リンク</a>にしましょう。
+```
+
+**Output:**
+
+この文字は**太字**にしましょう。<br/>
+この文字は[リンク](https://www.jaysong.net)にしましょう。
+
+## Markdownとは
+
+* Mark**down**（<i class="bi bi-markdown"></i>）: Mark**up**言語の軽量版
+   * 文章作成に必要なタグ（tag）をより簡単に記述できる。
+   * ブラインドタッチに慣れればWordよりも素早く文書を作成することができるようになる。
+
+<br/>
+
+以下の2つのコードは同じ結果を返す。
+
+**Markup**の場合（HTML）
+
+```html
+この文字は<b>太字</b>にしましょう。<br/>
+この文字は<a href = "https://www.jaysong.net">リンク</a>にしましょう。
+```
+
+**Markdown**の場合
+
+```md
+この文字は**太字**にしましょう。
+
+この文字は[リンク](https://www.jaysong.net)にしましょう。
+```
+
+**結果**
+
+この文字は**太字**にしましょう。
+
+この文字は[リンク](https://www.jaysong.net)にしましょう。
+
+## Markup vs. Markdown
+
+#### 表の作成
+
+:::: {.columns}
+
+::: {.column width="50%"}
+**Markup**
+
+```html
+<table>
+    <thead style = "font-weight:bold;">
+        <td>ID</td>
+        <td>Name</td>
+    </thead>
+    <tr>
+        <td>1</td>
+        <td>Song</td>
+    </tr>
+    <tr>
+        <td>2</td>
+        <td>Yanai</td>
+    </tr>
+</table>
+```
+:::
+
+::: {.column width="1%"}
+:::
+
+::: {.column width="24%"}
+**Markdown**
+
+```markdown
+| ID | Name |
+|----|------|
+| 1  | Song |
+| 2  | Hata |
+```
+
+綺麗に揃えなくてもOK
+
+```markdown
+|ID|Name|
+|---|---|
+|1|Song|
+|2|Hata|
+```
+:::
+
+::: {.column width="1%"}
+:::
+
+::: {.column width="24%"}
+**Output**
+
+| ID | Name |
+|----|------|
+| 1  | Song |
+| 2  | Hata |
+:::
+
+::::
+
+## Markup vs. Markdown
+
+#### 箇条書き
+
+:::: {.columns}
+
+::: {.column width="33%"}
+**Markup**
+
+```html
+<ul>
+  <li>箇条書き1</li>
+    <ul>
+      <li>箇条書き1A</li>
+      <li>箇条書き1B</li>
+    </ul>
+  <li>箇条書き2</li>
+  <li>箇条書き3</li>
+</ul>
+```
+:::
+
+::: {.column width="1%"}
+:::
+
+::: {.column width="32%"}
+**Markdown**
+
+```markdown
+* 箇条書き1
+  * 箇条書き1A
+  * 箇条書き1B
+* 箇条書き2
+* 箇条書き3
+```
+:::
+
+::: {.column width="1%"}
+:::
+
+::: {.column width="33%"}
+**Output**
+
+* 箇条書き1
+  * 箇条書き1A
+  * 箇条書き1B
+* 箇条書き2
+* 箇条書き3
+:::
+
+::::
+
+## `.qmd`ファイルの生成
+
+1. RStudioを起動し、プロジェクトを作成する。
+1. File > New > Quarto Document...を選択する。
+1. OKをクリックする。
+1. YAMLヘッダーを修正する。
+1. ファイルを保存する（File > Save）。
+   * ショートカットキー: ⌘+S（macOS）、または Ctrl + S (Windows)
+1. Sourceペイン上段のRenderをクリックする。
+
+## YAMLヘッダー
+
+`.qmd`ファイル最上段に位置する文書の情報に関する内容
+
+* 最初は`title`と`format`のみになっているため、適宜修正（場合によっては`title`のみになっている）
+
+```yaml
+---
+title: "はじめてのQuarto"
+author: "府大花子"
+date: "2023/10/07"
+format: html
+lang: ja
+---
+```
+
+* `title`: 文書のタイトル
+   * `subtitle:`でサブタイトルも付けられる。
+* `author`: 文書の作成者
+* `date`: 日付（「年/月/日」形式で入力）
+  * `date: today`に修正すると、Renderした日の日付が自動的につけられる。
+* `format`: 出力形式（`html`のままで良い）
+* `lang`: 出力言語（デフォルトは`en`）
+
+## Markdownの文法: 文章の改行
+
+1回のみの改行は連続した文字列として認識するため、文章を改行するためには、必ず**2回**改行が必要
+
+:::: {.columns}
+
+::: {.column width="47.5%"}
+**Input**
+
+```markdown
+これは文章1です。
+これは文章2です。
+```
+
+**Output**
+
+これは文章1です。
+これは文章2です。
+:::
+
+::: {.column width="5%"}
+:::
+
+::: {.column width="47.5%"}
+**Input**
+
+```markdown
+これは文章1です。
+
+これは文章2です。
+```
+
+**Output**
+
+これは文章1です。
+
+これは文章2です。
+:::
+
+::::
+
+## Markdownの文法: 強調
+
+* 英語の強調はイタリック、日本語の強調は太字を使用
+
+**Input**
+
+```r
+文章の一部を**太字**にしてみましょう。
+
+The G7 consists of Canada, France, Germany, Italy, *Japan*, UK, and USA.
+
+~~取り消し線~~はあまり使わないかも。
+
+<u>アンダーライン</u>はHTMLタグを使います。
+```
+
+**Output**
+
+文章の一部を**太字**にしてみましょう。
+
+The G7 consists of Canada, France, Germany, Italy, *Japan*, UK, and USA.
+
+~~取り消し線~~はあまり使わないかも。
+
+<u>アンダーライン</u>はHTMLタグを使います。
+
+## Markdownの文法: リンク
+
+* `[リンク文](URL)`
+* `[]`で囲まれた文章をクリックすると`()`内で指定したURLへ移動
+
+**Input**
+
+```markdown
+[ここ](https://www.jaysong.net)をクリックすると、宋のHPへ移動します。
+```
+
+**Output**
+
+[ここ](https://www.jaysong.net)をクリックすると、宋のHPへ移動します。
+
+## Markdownの文法: 見出し
+
+* `#` + 半角スペース + 見出し（`#`が多いほど小さくなる）
+
+**Input**
+
+```markdown
+# 見出し1 (ヘッディング1)
+## 見出し2 (ヘッディング2)
+### 見出し3 (ヘッディング3)
+#### 見出し4 (ヘッディング4)
+```
+
+**Output**
+
+<p style="font-size:3em;margin-top:0px;margin-bottom:0px;">見出し1  (ヘッディング1)</p>
+<p style="font-size:2.5em;margin-top:0px;margin-bottom:0px;">見出し2  (ヘッディング2)</p>
+<p style="font-size:2em;margin-top:0px;margin-bottom:0px;">見出し3  (ヘッディング3)</p>
+<p style="font-size:1.5em;margin-top:0px;margin-bottom:0px;">見出し4  (ヘッディング4)</p>
+
+## Markdownの文法: 水平線
+
+* 任意の行に`---`を挿入
+* 章と章の区切り、節と節の区切りなどに使用
+
+**Input**
+
+```markdown
+文章1
+
+---
+
+文章2
+```
+
+**Output**
+
+文章1
+
+<hr/>
+
+文章2
+
+## Markdownの文法: 箇条書き（順序なし）
+
+* `*` + 半角スペース + 文字列
+* 階層構造にする場合、`*`の前に半角スペースを3個以上入れる
+* `*`の代わりに`-`も可
+
+:::: {.columns}
+
+::: {.column width="47.5%"}
+**Input**
+
+```markdown
+* リスト1
+* リスト2
+   * リスト2-1
+      * リスト2-1-1
+      * リスト2-1-2
+   * リスト2-1
+* リスト3
+```
+:::
+
+::: {.column width="5%"}
+:::
+
+::: {.column width="47.5%"}
+**Output**
+
+* リスト1
+* リスト2
+   * リスト2-1
+      * リスト2-1-1
+      * リスト2-1-2
+   * リスト2-1
+* リスト3
+:::
+
+::::
+
+## Markdownの文法: 箇条書き（順序付き）
+
+* `1.` + 半角スペース + 文字列
+* `1.`の箇所は任意の数字でもOK。`1.`、`2.`、...も可
+* 階層構造にする場合、`1.`の前に半角スペースを3個入れる
+* `1.`と`*`の組み合わせも可能
+
+:::: {.columns}
+
+::: {.column width="47.5%"}
+**Input**
+
+```markdown
+1. リスト1
+2. リスト2
+   1. リスト2-1
+      1. リスト2-1-1
+      2. リスト2-1-2
+   2. リスト2-1
+3. リスト3
+```
+:::
+
+::: {.column width="5%"}
+:::
+
+::: {.column width="47.5%"}
+**Output**
+
+1. リスト1
+2. リスト2
+   1. リスト2-1
+      1. リスト2-1-1
+      2. リスト2-1-2
+   2. リスト2-1
+3. リスト3
+:::
+
+::::
+
+## Markdownの文法: 数式
+
+* 文中数式は`$数式$`、独立した行の数式は`$$`で囲む
+* $\LaTeX$ の数式表記法を理解する必要がある
+
+**Input**
+
+```markdown
+文中の数式の例: $e = mc^2$
+
+独立した数式の例は、
+
+$$
+y_i \sim \text{Normal}(\mathbf{X} \boldsymbol{\beta}, \sigma).
+$$
+
+のように書きます。
+```
+
+**Output**
+
+文中の数式の例: $e = mc^2$
+
+独立した数式の例は、
+
+$$
+y_i \sim \text{Normal}(\mathbf{X} \boldsymbol{\beta}, \sigma).
+$$
+
+のように書きます。
+
+## Markdownの文法: 表
+
+* 行は改行で、列は`|`で区切る
+* 1行目は表のヘッダーであり、`|---|`で区切る（`-`は1個以上でOK）
+  * `|---|`と`|:---|`は左揃え、`|---:|`は右揃え、`|:---:|`は中央揃え
+
+:::: {.columns}
+
+::: {.column width="47.5%"}
+**Input**
+
+```markdown
+|ID |Name   |Birth (Year)|Pref   |
+|:-:|-------|-----------:|-------|
+|1  |Ogura  |1852        |Tokyo  |
+|2  |Tsurumi|1858        |Tochigi|
+|3  |Yoshida|1858        |Fukuoka|
+|4  |Hotta  |1859        |Chiba  |
+|5  |Inoue  |1847        |Nagano |
+|6  |Tezuka |1862        |Tokyo  |
+|7  |Shikata|1857        |Saitama|
+|8  |Nomura |1855        |Gunma  |
+```
+:::
+
+::: {.column width="5%"}
+:::
+
+::: {.column width="47.5%"}
+**Output**
+
+| ID  | Name    | Birth (Year) | Pref    |
+| :-: | :------ | -----------: | :------ |
+|  1  | Ogura   |         1852 | Tokyo   |
+|  2  | Tsurumi |         1858 | Tochigi |
+|  3  | Yoshida |         1858 | Fukuoka |
+|  4  | Hotta   |         1859 | Chiba   |
+|  5  | Inoue   |         1847 | Nagano  |
+|  6  | Tezuka  |         1862 | Tokyo   |
+|  7  | Shikata |         1857 | Saitama |
+|  8  | Nomura  |         1855 | Gunma   |
+:::
+
+::::
+
+## Markdownの文法: コメント
+
+出力に影響されないコメントを入れる場合
+
+* `<!--`と`-->`内に囲む
+* `<!--`と`-->`の間の文章は出力されない
+* 自分用のメモ、とりあえず出力させない内容などに使用
+* チャンク内コメントは`#`（チャンクは後に解説）
+
+:::: {.columns}
+
+::: {.column width="47.5%"}
+**Input:**
+```r
+これは文章1です。
+
+<!--
+これはコメントです。
+-->
+
+これは文章2です。
+```
+:::
+
+::: {.column width="5%"}
+:::
+
+::: {.column width="47.5%"}
+**Output:**
+
+これは文章1です。
+
+<!--
+これはコメントです。
+-->
+
+これは文章2です。
+:::
+
+::::
+
+## Markdownの文法: その他
+
+教科書の「[R Markdown入門](https://www.jaysong.net/RBook/rmarkdown.html)」と「[Quarto入門](https://www.jaysong.net/RBook/quarto.html)」を参照
+
+* 図の挿入
+* 脚注
+* 引用
+* Quarto独自の機能など
+
+## Rコードの挿入：チャンク（Chunk）
+
+Rのコードを挿入する領域
+
+* ```` ```{r} ````と```` ``` ````で囲む。
+   * チャンクの外にコードを書いても文章として認識する。
+   * チャンク内においてMarkdown文法は通用しない。純粋なRコードのみ。
+   * `` ` ``は「バッククォート（back quote）」と読む。
+   * **チャンクの前後は必ず改行**する（下のコードの4・9行目のように）。
+* コードの出力 > 結果の出力の順番
+
+::::{.columns}
+:::{.column width=49%}
+**Input**
+
+````md
+ここはチャンクの外
+
+ここに書いたものは文章として扱われる。
+
+```{{r}}
+x <- 5 # 円の半径
+print(3.14 * x^2)
+```
+
+ここに書いたのも文章
+````
+:::
+
+:::{.column width=2%}
+:::
+
+:::{.column width=49%}
+**Output**
+
+ここはチャンクの外
+
+ここに書いたものは文章として扱われる。
+
+```{r}
+x <- 5 # 円の半径
+print(3.14 * x^2)
+```
+
+ここに書いたのも文章
+
+:::
+::::
+
+## Rコードの挿入：チャンクのオプション
+
+チャンク内に各チャンクのオプションが指定可能
+
+::::{.columns}
+:::{.column width=38%}
+チャンクオプションの付け方
+
+````md
+```{{r}}
+#| label: my_chunk_1
+#| warning: false
+#| echo: false
+#| fig-width: 8
+#| fig-align: center
+
+Rのコード
+```
+````
+
+* 他にも数十のオプションの指定が可能
+   * [R Markdown Cheetsheet](https://github.com/rstudio/cheatsheets/raw/master/rmarkdown-2.0.pdf)
+   * [Quarto公式ホームページ](https://quarto.org/)
+:::
+
+:::{.column width=2%}
+:::
+
+:::{.column width=60%}
+* `#| label: チャンクの名前`
+  * チャンクに名前を付ける
+* `#| eval: false`
+  * コードのみ出力し、結果は出力しない
+* `#| echo: false`
+  * 結果のみ出力し、コードは出力しない
+* `#| fig-width: 5`
+  * 出力される図の幅を8インチに
+* `#| fig-height: 500px`
+  * 出力される図の幅を高さを500ピクセルに
+* `#| fig-align: center`
+  * 出力される図を中央揃えに
+* `#| warning: false`
+  * 警告メッセージを隠す
+* `#| error: true`
+  * エラーが発生してもとりあえずRenderする
+:::
+::::
+
+## Rコード: インラインコード
+
+文章内にRコードの**結果**を埋め込む場合
+
+* `` `r ``と`` ` ``の間にコードを挿入
+* 単に`` ` ``で囲まれたものはコードのように表示してくれるものの、そのコードは実行されない。文中に短いコードのみを入れたり、変数名、関数名を示す際に使う機能である。
+
+::::{.columns}
+:::{.column width=49%}
+**Input:**
+
+````md
+```{{r}}
+X <- c(2, 3, 5, 7, 11)
+```
+
+変数`X`の平均値は`r "\x60r mean(X)\x60"`です。
+````
+:::
+
+:::{.column width=2%}
+:::
+
+:::{.column width=49%}
+**Output:**
+
+```{r}
+#| echo: true
+X <- c(2, 3, 5, 7, 11)
+```
+
+変数`X`の平均値は`r mean(X)`です。
+:::
+::::
+
+## 再現・再生可能な研究
+
+国里 (2020)による定義
+
+* 学会、分野によっては正反対の概念になる場合もある (Barba 2018)
+
+<br/>
+
+### 再生可能性 (Reproducibility)
+
+* 同じデータ + 同じ方法 = 同じ結果
+* Quarto/R Markdownの主な目的は**再生可能性**
+
+<br/>
+
+### 再現可能性 (Replicability)
+
+* 新しいデータ + 同じ方法 = 同じ結果
+* 新しいデータ + 違う方法 = 同じ結果
+
+::: aside
+参考文献
+
+* [国里愛彦. 2020.「再現可能な心理学研究入門」『専修大学人間科学論集:心理学篇』10. 21-33.](http://doi.org/10.34360/00011014)
+* [Lorena A. Barba. 2018. "Terminologies for Reproducible Research." *ArXiv.* 1802.03311](https://arxiv.org/abs/1802.03311)
+:::
+
+## Quarto/R Markdownと再生可能性
+
+1. 具体的にどのような手順で分析が行われたかが分かる
+   * コードを記録&公開
+
+2. コードに対する説明が付いている
+   * 自分が書いたコードであっても、昔書いたコードは読みにくい
+   * 過去、自分が行った分析の再生する出来ない場合も
+      * 今、教壇に立っている人の話ではない
+
+3. コードと結果が同時に照会できる
+   * わざわざRを立ち上げなくても、その場で分析の手順が分かる
+
+## 再生可能な研究を目指して
+
+* 可能な限り、詳細な説明を付ける
+   * 文章領域では「以下のコードがどのような目的で書かれたコードであるか」などを明示する。
+   * チャンク内にもこまめにコメント（`#`）を付ける
+      * 理想としては一行ごとにコメントを付ける
+
+**悪い例** (悪くはないが、良くもない)
+
+```r
+x <- rep(NA, 5)
+```
+
+**良い例**
+
+```r
+x <- rep(NA, 5) # 欠損値で埋められた長さ5のベクトル
+```
+
+## 再生可能な研究を目指して
+
+* コードを分かりやすく書く
+   * 長いオブジェクト名を避ける
+   * 分かりやすいオブジェクト名
+   * 適宜スペースと字下げを入れるなど
+   * 読みやすいコードの書き方（前回講義を参照）
+* データについても詳細に書く
+   * どのように収集されたデータであるのか
+   * どのような変数があるのか

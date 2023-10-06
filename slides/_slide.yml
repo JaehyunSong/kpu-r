@@ -1,0 +1,26 @@
+title: "情報処理応用演習"
+author: "<ruby>宋<rp>(</rp><rt>そん</rt><rp>)</rp></ruby>&nbsp;&nbsp;<ruby>財泫<rp>(</rp><rt>じぇひょん</rt><rp>)</rp></ruby>"
+institute: "関西大学総合情報学部"
+date-format: iso
+code-line-numbers: true
+link-external-newwindow: true
+knitr: 
+  opts_chunk: 
+    dev: "ragg_png"
+    dpi: 300
+    fig.align: "center"
+    echo: true
+    message: false
+    warning: false
+format:
+  revealjs: 
+    width: 1600
+    height: 900
+    slide-number: true
+    theme: [default, styles.scss]
+    footer: <https://www.jaysong.net/kpu-r/>
+    preview-links: false
+    chalkboard: true
+    touch: true
+    controls: true
+    auto-stretch: false

@@ -1,0 +1,1703 @@
+---
+subtitle: "第2回 データハンドリング"
+date: "2023/10/14"
+format: revealjs
+metadata-files: 
+  - _slide.yml
+---
+
+# Tidyverseの世界とパイプ演算子
+
+## Tidyverseの世界
+
+![](https://www.tidyverse.org/images/tidyverse-default.png){width=40% fig-align="center"}
+
+データサイエンスのために考案された、強い信念と思想に基づいたRパッケージの集合
+
+* {tidyverse}をインストールすることで導入可能
+* Tidyverseに属するパッケージは思想、文法およびデータ構造を共有
+  * {dplyr}、{tidyr}、{readr}、{ggplot2}など
+* オブジェクトを**パイプ演算子** (`|>` or `%>%`)で繋ぐ
+
+Rのコードは`library(tidyverse)`で始めよう!
+
+## パイプ演算子
+
+Tidyverseにおいてオブジェクトは`|>`で繋がっている。
+
+* 既存の書き方: **書き方と読み方が逆**
+  * 一般的なプログラミング言語共通
+  * 書き方: `print(sum(X))` (`print`、`sum`、`X`の順で書く)
+  * 読み方1: `X`を`sum()`し、`print()`する (コードの順番と逆)
+  * 読み方2: `print()`する内容は`sum()`で、`sum()`は`X`に対して行う（直感的でない読み方）
+* Tidyverseな書き方: **書き方と読み方が一致**
+  * 今どきのRの書き方
+  * 書き方: `X |> sum() |> print()`
+  * 読み方: `X`を`sum()`し、`print()`する
+
+## パイプ演算子の仕組み
+
+* `|>`の左側を右側の最初の引数として渡すだけ
+* `X |> 関数(Y)`は`関数(X, Y)`と同じ
+   * `X |> sum(na.rm = TRUE)`は`sum(X, na.rm = TRUE)`と同じ
+* ショートカットキーを使えば簡単に入力可能
+   * macOS: Command (⌘) + Shift + m
+   * Windows/Linux: Control (Ctrl) + Shift + m
+* 二番目以降の引数として渡すことも可能（適宜、解説）
+
+:::: {.columns}
+
+::: {.column width="49%"}
+#### 既存の書き方
+
+```{r}
+X <- c(2, 3, 5, NA, 11)
+print(sum(X, na.rm = TRUE))
+```
+:::
+
+::: {.column width="2%"}
+
+:::
+
+::: {.column width="49%"}
+#### Tidyverseな書き方
+
+```{r}
+X <- c(2, 3, 5, NA, 11)
+X |> sum(na.rm = TRUE) |> print()
+```
+:::
+
+::::
+
+## 様々な書き方
+
+:::{.panel-tabset}
+## 書き方1
+
+::::{.columns}
+:::{.column width="40%"}
+```{r}
+#| eval: false
+結果1 <- 関数1(データ)
+結果2 <- 関数2(結果1)
+結果  <- 関数3(結果2)
+```
+:::
+
+:::{.column width="60%"}
+![](Figs/handling1/pipe1.png){fig-align="center" width=60%}
+:::
+::::
+
+## 書き方2
+
+::::{.columns}
+:::{.column width="40%"}
+```{r}
+#| eval: false
+結果 <- 関数3(関数2(関数1(データ)))
+```
+:::
+
+:::{.column width="60%"}
+![](Figs/handling1/pipe2.png){fig-align="center"}
+:::
+::::
+
+## 書き方3
+
+::::{.columns}
+:::{.column width="30%"}
+```{r}
+#| eval: false
+結果 <- データ |> 
+  関数1() |> 
+  関数2() |> 
+  関数3()
+```
+:::
+
+:::{.column width="70%"}
+![](Figs/handling1/pipe3.png){fig-align="center"}
+:::
+::::
+:::
+
+## 参考）`%>%`：もう一つのパイプ演算子
+
+R内蔵演算子としてパイプ演算子（`|>`）が追加
+
+* 2021年5月リリースされたR 4.1からR内蔵のパイプ演算子`|>`が登場
+* それまでは{magrittr}パッケージが提供する`%>%`を使用
+   * {magrittr}は{tidyverse}を読み込むと自動的に読み込まれる。
+* 使い方はほぼ同じ
+   * ただし、演算子の左側のオブジェクトを右側の**第一引数**として渡す場合のみ
+   * 第一引数以外の引数として渡す場合は使い方が異なる。
+* インターネット、教科書などでは`%>%`を使用するケースがまだ多いが、今後の主流は`|>`になると予想されるため、本講義では`|>`を使用する。
+   * むろん、現段階では`%>%`を使っても良いし、`%>%`を使ったコードを`|>`に置換して使っても**ほぼ**問題にならない。
+
+## 参考）`%>%`と`|>`の比較
+
+#### 渡す先が第一引数の場合
+
+* R内蔵のパイプ（native pipe; `|>`）、{magrittr}のパイプ（`%>%`）の使い方は同じ
+
+```{r}
+#| eval: false
+# {magrittr}のパイプ演算子
+X %>% sum(na.rm = TRUE) %>% print()
+# R内蔵のパイプ演算子
+X |> sum(na.rm = TRUE) |> print()
+```
+
+#### 渡す先が第一引数でない場合
+
+* 実引数として渡す箇所に`.` (tidyverse)、`_` (native pipe)を入力
+
+```{r}
+#| eval: false
+# {magrittr}のパイプ演算子
+my_data %>%
+  lm(y ~ x1 + x2 + x3, data = .)
+# R内蔵のパイプ演算子
+my_data |>
+  lm(y ~ x1 + x2 + x3, data = _)
+```
+
+# {dplyr}: 列の抽出
+
+## {dplyr}とは
+
+![](https://www.tidyverse.org/blog/2020/06/dplyr-1-0-0/dplyr.png){width=20% fig-align="center"}
+
+* 表形式データ (データフレームやtibble)を操作するパッケージ
+* 第8回の講義で解説した行・列の抽出も簡単に可能
+* {tidyverse}を読み込む際に自動的に読み込まれる
+   * {tidyverse}はパッケージを集めたパッケージであり、{dplyr}もその一部
+
+```{r}
+#| eval: false
+library(tidyverse)
+```
+
+## 実習用データ
+
+`countries.csv`: 186カ国の社会経済・政治体制のデータ
+
+```{r}
+#| message: false
+# Dataフォルダー内のcountries.csvを読み込み、dfという名のオブジェクトとして作業環境に格納
+library(tidyverse)
+df <- read_csv("Data/countries.csv")
+df
+```
+
+## 実習用データの確認
+
+186行、18列のデータ（= 186カ国、18変数）
+
+```{r}
+dim(df)
+```
+
+変数の一覧
+
+```{r}
+names(df)
+```
+
+## 各変数について
+
+詳細は[教科書第18.2章](https://www.jaysong.net/RBook/visualization2.html#visual2-data)を参照
+
+|変数名|説明||変数名|説明|
+|---|---|---|---|---|
+|`Country`|国名||`OECD`|OECD加盟有無|
+|`Population`|人口||`HDI_2018`|人間開発指数 (2018年)|
+|`Area`|面積( $\text{km}^2$ )||`Polity_Score`|政治体制のスコア|
+|`GDP`|国内総生産（ドル）||`Polity_Type`|政治体制|
+|`PPP`|購買力平価国内総生産||`FH_PR`|政治的自由|
+|`GDP_per_capita`|一人当たりGDP||`FH_CL`|市民的自由|
+|`PPP_per_capita`|一人当たりPPP||`FH_Total`|`FH_PR` + `FH_CL`|
+|`G7`|G7加盟有無||`FH_Status`|自由の状態|
+|`G20`|G20加盟有無||`Continent`|大陸|
+
+## 列の選択（抽出）: 書き方
+
+`select()`関数を使用
+
+:::: {.columns}
+
+::: {.column width="45%"}
+#### パイプを使わない書き方
+
+```{r}
+#| eval: false
+select(データ, 変数名1, 変数名2, ...)
+```
+:::
+
+::: {.column width="10%"}
+
+:::
+
+::: {.column width="45%"}
+#### パイプを使う書き方
+
+```{r}
+#| eval: false
+データ |>
+  select(変数名1, 変数名2, ...)
+```
+:::
+
+::::
+
+::: {.callout-important icon=false}
+## 注意: `select()`関数は複数ある!
+
+`select()`関数は{dplyr}だけでなく、{MASS}からも提供されるが、別の関数である。
+
+* {MASS}もデータ分析において頻繁に使われるパッケージであるため、`select()`だけだと、どのパッケージの`select()`か分からなくなる場合がある。
+* エラーが生じる場合は、`dplyr::select()`など、パッケージ名を指定すること
+:::
+
+<!--- --->
+
+## 列の選択（抽出）: 例
+
+`df`から`Country`、`Population`、`HDI_2018`列を抽出し、最初の5行のみ出力
+
+```{r}
+#| code-line-numbers: "2"
+df |>                                      # dfから
+  select(Country, Population, HDI_2018) |> # Country, Population, HDI_2018のみ抽出して
+  head(n = 5)                              # 最初の5行を出力する
+```
+
+この時点では抽出・出力されただけ。抽出した結果を`df2`という名で作業環境内に格納するためには
+
+```{r}
+#| eval: false
+df2 <- df |>
+  select(Country, Population, HDI_2018)
+```
+
+::: {.callout-important icon=false}
+## 課題では格納が必要な場合もある
+
+課題の問題には「出力せよ」だけでなく、「格納した上で出力せよ」といった形式もある。加工したデータを引き続き使うためには格納が必須であるため、問題文を注意深く読むこと。
+:::
+
+<!--- --->
+
+## 列の選択と変数名の変更
+
+変数名の変更と抽出を同時に行うことも可能
+
+* `新しい変数名 = 既存の変数名`
+
+**例)** `HDI_2018`の変数名を`HDI`に変更
+
+```{r}
+df |>
+  select(Country, Population, HDI = HDI_2018)
+```
+
+<!--- --->
+
+## 抽出せず、変数名のみ変更
+
+`rename()`関数を使用
+
+```{r}
+#| eval: false
+データ |>
+  rename(新しい変数名 = 既存の変数名)
+```
+
+**例)** `Population`を`Jinko`に、`Area`を`Menseki`に変更
+
+```{r}
+#| code-line-numbers: "2"
+df |>
+  rename(Jinko = Population, Menseki = Area)
+```
+
+<!--- --->
+
+## 列の除外
+
+変数名の前に`!` (推奨)、または`-`を付ける
+
+* 2つ以上の変数を除外する場合、変数名を`c()`でまとめる。
+
+**例)** `df`から`GDP_per_capita`と`PPP_per_capita`を除外
+
+```{r}
+df |>
+  select(!c(GDP_per_capita, PPP_per_capita))
+```
+
+<!--- --->
+
+## 隣接する列の同時選択
+
+`:`を使用
+
+* `Country`から`PPP`までの列: `Country:PPP`
+* `Country:PPP`は`Country, Population, Area, GDP, PPP`と同じ意味
+
+**例)** `df`の`Country`〜`PPP`, `HDI_2018`列を抽出
+
+```{r}
+df |>
+  select(Country:PPP, HDI_2018)
+```
+
+<!--- --->
+
+## 高度な変数選択
+
+* 特定の文字列で始まる列を選択: `starts_with()`
+   * 例)FHで始まる列の選択: `starts_with("FH")`
+* 特定の文字列で終わる列を選択: `ends_with()`
+* 特定の文字列を含む列を選択: `contains()`
+
+**例)** `df`から`Country`, `"FH"`で始まる列を抽出
+
+```{r}
+df |>
+  select(Country, starts_with("FH"))
+```
+
+* 応用) `!starts_with("FH")`: `"FH"`で始まる列を除外
+
+<!--- --->
+
+## 列の順番変更: `select()`使用
+
+抽出後のデータフレームにおける変数は`select()`内で指定された順番に
+
+**例)** `G7`から`OECD`列を`Country`と`Population`の間へ移動
+
+```{r}
+#| code-line-numbers: "2"
+df |>
+  select(Country, G7:OECD,
+         Population:PPP_per_capita, HDI_2018:Continent)
+```
+
+<!--- --->
+
+## 列の順番変更: `relocate()`使用
+
+`relocate()`の使い方
+
+* `.after = XXX`: `XXX`列の後ろへ移動 / `.before = YYY`: `YYY`列の前へ移動
+
+```{r}
+#| eval: false
+データ |>
+  relocate(移動したい変数名, .after = 変更先)
+```
+
+**例)** `G7`から`OECD`列を`Country`の後ろへ移動
+
+```{r}
+df |>
+  relocate(G7:OECD, .after = Country) # .before = PopulationもOK
+```
+
+<!--- --->
+
+# {dplyr}: 行の抽出
+
+<!--- --->
+
+## 行の抽出: 書き方
+
+`filter()`関数を使用
+
+パイプを使わない書き方
+
+```{r}
+#| eval: false
+filter(データ, 条件1, 条件2, ...)
+```
+
+パイプを使う書き方
+
+```{r}
+#| eval: false
+データ |>
+  filter(条件1, 条件2, ...)
+```
+
+<!--- --->
+
+## 行の抽出: 例
+
+**例)** `df`から`Continent`が`"Europe"`の行を抽出し、`Country`〜`PPP`, `HDI_2018`列を抽出し、`HDI_2018`は`HDI`に変更
+
+* `filter()`と`select()`の組み合わせ
+* 以下の例の場合、`filter()`と`select()`の順番を逆にすることは不可
+   * `select()`後、`Continent`変数がなくなるため
+
+```{r}
+#| code-line-numbers: "2"
+df |>
+  filter(Continent == "Oceania") |>
+  select(Country:PPP, HDI = HDI_2018)
+```
+
+<!--- --->
+
+## 行の抽出: 2つ以上の条件（AND）
+
+2つ以上の条件を**同時に満たす**行を抽出
+
+* `,`で条件式を追加するだけ (`&`もOK; むしろ`&`を推奨)
+
+**例)** `df`から「`Continent`が`"Asia"`（条件1）」、「`HDI_2018`が0.8以上（条件2）」の行を抽出し、`Country`と`HDI_2018`列を抽出
+
+* 条件1 AND 条件2 $\Rightarrow$ 条件1 & 条件3
+
+```{r}
+df |>
+  filter(Continent == "Asia" & HDI_2018 >= 0.8) |>
+  select(Country, HDI_2018)
+```
+
+<!--- --->
+
+## 行の抽出: 2つ以上の条件（OR）
+
+2つ以上の条件を**片方か両方に満たす**行を抽出
+
+* `|`で条件式を追加するだけ
+
+**例)** `df`から「`Continent`が`"Asia"`（条件1）か`"Oceania"`（条件2）」であり、かつ「`HDI_2018`が0.9以上（条件3）」の行を抽出し、`Country`と`HDI_2018`、`Continent`列を抽出
+
+* (条件1 OR 条件2) AND 条件3 $\Rightarrow$ (条件1 | 条件2) & 条件3
+
+```{r}
+df |>
+  filter((Continent == "Asia" | Continent == "Oceania") & HDI_2018 >= 0.9) |>
+  select(Country, HDI_2018, Continent)
+```
+
+<!--- --->
+
+## `%in%`演算子
+
+`%in%`: `|`の代わりに使用可能な便利な演算子
+
+**例)** `Continent`の値が`c("Asia", "Oceainia")`の要素に含まれている場合
+
+```{r}
+df |>
+  filter(Continent %in% c("Asia", "Oceania") & HDI_2018 >= 0.9) |>
+  select(Country, HDI_2018, Continent)
+```
+
+## 欠損値が含まれた行の扱い
+
+`df`の`PPP`が欠損している行を抽出し、`Country`から`PPP`列まで出力
+
+* `変数名 == NA`を条件にしてはいけない
+
+```{r}
+df |>
+  filter(PPP == NA) |>
+  select(Country:PPP)
+```
+
+## 欠損値が含まれた行の扱い
+
+`df`の`PPP`が欠損している行を抽出し、`Country`から`PPP`列まで出力
+
+* 正解: `is.na(変数名)`
+
+```{r}
+df |>
+  filter(is.na(PPP)) |>
+  select(Country:PPP)
+```
+
+## 欠損値が含まれた行の除外
+
+`df`の`PPP`が欠損している行を**除外**し、`Country`から`PPP`列まで出力
+
+* 否定を意味する`!`を使用する
+
+```{r}
+df |>
+  filter(!is.na(PPP)) |>
+  select(Country:PPP)
+```
+
+## もう一つの方法
+
+`drop_na()`関数を利用
+
+* `()`内で指定した変数が欠損している行をすべて除外（複数指定可）
+
+```{r}
+df |>
+  drop_na(PPP, Polity_Score) |> # PPPとPolity_Scoreどちらか欠損した行を除外
+  select(Country:PPP, Polity_Score)
+```
+
+# {dplyr}: 行のソート
+
+## 行のソート: 書き方
+
+`arrange()`関数を使用
+
+パイプを使わない書き方
+
+```{r}
+#| eval: false
+arrange(データ, 変数名1, 変数名2, ...)
+```
+
+パイプを使う書き方
+
+```{r}
+#| eval: false
+データ |> arrange(変数名1, 変数名2, ...)
+```
+
+基本的には昇順 (値が小さい行が先にくる)
+
+* 降順にする場合は`desc(変数名)`
+* `変数名1`を基準にソートし、同点の場合は`変数名2`を基準に
+
+## 行のソート: 例
+
+**例)** `df`から`Continent`の値が`"Africa"`の行のみを抽出し、`Polity_Score`が高い行を上位にする。そして、`Country`と`PPP_per_capita`、`Polity_Score`列のみ残す。
+
+* Polity Scoreが高い (低い) = より民主主義 (権威主義)に近い
+
+```{r}
+#| code-line-numbers: "3"
+df |>
+  filter(Continent == "Africa") |>
+  arrange(desc(Polity_Score)) |>
+  select(Country, PPP_per_capita, Polity_Score)
+```
+
+## 行のソート: 応用
+
+* `df`からアフリカのみを抽出し、`Polity_Score`が低い行を上位に
+* `Polity_Score`が同点の場合、`PPP_per_capita`が高い行を上位に
+* `Country`と`Polity_Score`, `PPP_per_capita`列のみ残す
+* `Polity_Score`は`Polity`に、`PPP_per_capita`は`PPP`と名前を変更
+
+```{r}
+#| code-line-numbers: "3"
+df |>
+  filter(Continent == "Africa") |>
+  arrange(Polity_Score, desc(PPP_per_capita)) |>
+  select(Country, Polity = Polity_Score, PPP = PPP_per_capita)
+```
+
+# データのグルーピングと要約
+
+## 記述統計量
+
+変数が持つ情報を要約した数値
+
+* 詳細は後期の「マクロ政治データ分析実習」で
+
+元の情報: 
+
+```{r}
+MathScore <- c(82, 45, 69, 94, 88, 73, NA, 51, 90, 63)
+```
+
+:::: {.columns}
+
+::: {.column width="45%"}
+`MathScore`を代表する値
+
+```{r}
+# 平均値
+mean(MathScore, na.rm = TRUE) 
+# 中央値
+median(MathScore, na.rm = TRUE)
+```
+:::
+
+::: {.column width="10%"}
+:::
+
+::: {.column width="45%"}
+`MathScore`のばらつきの具合
+
+```{r}
+# 不偏分散
+var(MathScore, na.rm = TRUE)
+# 不偏標準偏差
+sd(MathScore, na.rm = TRUE)
+# 四分位範囲
+IQR(MathScore, na.rm = TRUE)
+```
+:::
+
+::::
+
+## `summarise()`の使い方
+
+`summarise()`: 記述統計量を計算する{dplyr}の関数
+
+```r
+データフレーム |>
+  summarise(記述統計の関数(変数名, ...))
+```
+
+記述統計の関数の例
+
+* `mean()`: 平均値
+* `median()`: 中央値
+* `sd()`: 不偏分散の平方根（一般的に「標準偏差」と呼ばれるもの）
+* `var()`: 不偏分散
+* `IQR()`: 四分位範囲
+* `min()`、`max()`: 最小値と最大値
+* `n()`: ケース数（引数不要）
+* その他（教科書[第14.1.2章](https://www.jaysong.net/RBook/datahandling2.html#summarise%E3%81%AB%E4%BD%BF%E3%81%88%E3%82%8B%E4%BE%BF%E5%88%A9%E3%81%AA%E9%96%A2%E6%95%B0)）
+
+## 記述統計量の計算（1）
+
+**例)** `df`の`Population`と`Area`の平均値（`mean()`）を計算
+
+```{r}
+df |>
+  summarise(mean(Population),
+            mean(Area))
+```
+
+## 記述統計量の計算（2）
+
+`summarise()`内に異なる関数を使うことも可能
+
+**例)** `df`の`Population`と`Area`の平均値（`mean()`）と標準偏差（`sd()`）を計算
+
+```{r}
+df |>
+  summarise(mean(Population),
+            sd(Population),
+            mean(Area),
+            sd(Area))
+```
+
+## 出力された結果をより見やすく
+
+`summarise()`内に`出力される結果の列名 = 関数()`を指定
+
+**例)** `df`の`Population`と`Area`の平均値（`mean()`）と標準偏差（`sd()`）を計算し、結果の列名を`Mean_Pop`、`SD_Pop`などとする
+
+```{r}
+Pop_Area_df <- df |>
+  summarise(Mean_Pop  = mean(Population),
+            SD_Pop    = sd(Population),
+            Mean_Area = mean(Area),
+            SD_Area   = sd(Area))
+Pop_Area_df
+```
+
+## グループごとの記述統計量
+
+{dplyr}の`group_by()`を使用
+
+```{r}
+#| eval: false
+#| code-line-numbers: "2"
+データフレーム名 |>
+  group_by(グループ化する変数名) |>
+  summarise(...)
+```
+
+**例)** `df`の`Continent`でデータをグループ化し、`PPP_per_capita`の平均値を計算
+
+```{r}
+# PPP_per_capitaが欠損している国もあるので、na.rm = TRUEを追加
+df |>
+  group_by(Continent) |>
+  summarise(Mean_PPP = mean(PPP_per_capita, na.rm = TRUE))
+```
+
+::: aside
+`group_by()`を使わず、`summarise()`の内部に`.by = グルーピングする変数名`のような書き方でも良い（{dplyr} 1.1.0から）
+:::
+
+## 複数の変数でグルーピング
+
+**例)** `df`の`Continent`と`G20`でデータをグループ化し、`HDI_2018`の平均値を計算
+
+```{r}
+#| message: true
+df |>
+  group_by(Continent, G20) |>
+  summarise(Mean_HDI = mean(HDI_2018, na.rm = TRUE))
+```
+
+## グルービング後の`summarise()`
+
+謎のメッセージが出力される
+
+```
+## `summarise()` has grouped output by 'Continent'. You can override using 
+the `.groups` argument.
+```
+
+とりあえず、`group_by()`の後に`summarise()`を使う場合、`summarise()`の最後に`.groups = "drop"`を追加する。
+
+* 理由は割愛するが、詳細は教科書[第14.2章](https://www.jaysong.net/RBook/datahandling2.html#sec-handling2-group)を参照
+* 多くの場合、メッセージが出力されるだけで、問題が生じることはあまりない。
+* しかし、複数の変数でグルーピングしたり、記述統計量が複数計算される関数（`quantile()`など）を使う場合、問題が生じる可能性あり
+  * 特に`summarise()`の後に更にパイプ（`|>`）を使って計算を続ける場合
+* とりあえず、`.groups = "drop"`をしておけば安全
+* `summarise()`の代わりに`reframe()`を使えば`.groups = "drop"`は不要（{dplyr} 1.1.0から）
+
+## `.groups = "drop"`を追加する
+
+謎のメッセージが出力されなくなる
+
+```{r}
+#| code-line-numbers: "4"
+df |>
+  group_by(Continent, G20) |>
+  summarise(Mean_HDI = mean(HDI_2018, na.rm = TRUE),
+            .groups  = "drop")
+```
+
+## グループごとのケース数を計算
+
+`summarise()`の中に`n()`を使用
+
+```{r}
+#| code-line-numbers: "5"
+df |>
+  group_by(Continent) |>
+  summarise(Mean_PPP = mean(PPP_per_capita, na.rm = TRUE),
+            SD_PPP   = sd(PPP_per_capita, na.rm = TRUE),
+            Cases    = n())
+```
+
+## 参考）より効率的な方法
+
+`across()`関数を利用: 詳細は教科書[第14.1章](https://www.jaysong.net/RBook/datahandling2.html#summarise%E3%81%AB%E3%82%88%E3%82%8B%E8%A8%98%E8%BF%B0%E7%B5%B1%E8%A8%88%E9%87%8F%E3%81%AE%E8%A8%88%E7%AE%97)を参照
+
+**例)** `df`の`Population`から`PPP`列まで平均値と標準偏差を計算し、結果の変数名は`元の変数名_Mean`、`元の変数名_SD`とする
+
+```{r}
+df |>
+  summarise(across(Population:PPP,
+                   .fns = list(Mean = ~mean(.x, na.rm = TRUE),
+                               SD   = ~mean(.x, na.rm = TRUE))))
+```
+
+# 変数の計算
+
+## 変数の計算
+
+`mutate()`: データフレームの変数を用いた計算を行い、新しい列として追加
+
+* 新しい列名として既存の列名を指定すると上書きされる
+* 新しく追加された列は最後に位置する（指定可能）
+
+```{r}
+#| eval: false
+データフレーム名 |>
+  mutate(新しい列名 = 計算式)
+```
+
+**例)** `df`の`Population`を`Area`で割り（=人口密度）、`Density`という名の列として追加する
+
+:::: {.columns}
+
+::: {.column width="48%"}
+#### {dplyr}を使わない方法
+
+```{r}
+#| eval: false
+df$Density <- df$Population / df$Area
+```
+:::
+
+::: {.column width="4%"}
+:::
+
+::: {.column width="48%"}
+#### {dplyr}を使う方法
+
+```{r}
+#| eval: false
+df |>
+  mutate(Density = Population / Area)
+```
+:::
+
+::::
+
+## {dplyr}の例
+
+**例)** `df`の`Population`を`Area`で割り（人口密度）、`Density`という名の列として追加する
+
+* 新しく追加された列は最後に位置する
+   * ただし、上書きの場合、位置はそのまま
+
+```{r}
+#| code-line-numbers: "2"
+df |>
+  mutate(Density = Population / Area) |>
+  print(n = 5) # 最初の5行のみ出力
+```
+
+## 新しい列の位置指定
+
+`mutate()`内に`.after`、または`.before`を指定
+
+* `relocate()`関数と同じ仕組み（第9回）
+
+**例)** `Population`を`Area`で割り、`Density`という名の新しい列`Area`の後に追加する。
+
+```{r}
+#| code-line-numbers: "3"
+df |>
+  mutate(Density = Population / Area, 
+         .after  = Area)
+```
+
+## 変数の計算いろいろ（1）
+
+各国が世界人口に占める割合を計算し、降順で出力
+
+1. `df`の`Population`の合計を`Total_Pop`という列として追加する。
+2. `Population`を`Total_Pop`で割り、100を掛ける。結果は`Share_Pop`という名の列として`Population`後に追加する。
+3. `Country`から`Share_Pop`までの列のみ残す。
+4. `Total_Pop`列を除外する。
+5. `Share_Pop`が大きい順で行を並び替える
+
+## 変数の計算いろいろ（1）
+
+```{r}
+df |> 
+  # Total_Popを作らずにShare_Pop作成時に直接sum(Population)を入れてもOK
+  mutate(Total_Pop = sum(Population),
+         Share_Pop = Population / Total_Pop * 100,
+         .after    = Population) |>
+  select(Country:Share_Pop) |>
+  select(!Total_Pop) |>
+  arrange(desc(Share_Pop))
+```
+
+## 変数の計算いろいろ（2）
+
+G7、G20、OECDのいずれかに加盟している国を「先進国」、それ以外は「その他」とし、二つのグループの人口密度、人間開発指数、民主主義度の平均値を出力する。
+
+1. `df`を利用する
+2. `Developed`という列を追加し、`G7`、`G20`、`OECD`のいずれかに加盟した国なら`"先進国"`、それ以外なら`"その他"`とする。
+3. 人口密度を`Density`という名の列として追加する。
+3. `HDI_2018`と`Polity_Score`のいずれかが欠損した行を除外する。
+4. `Developed`変数でデータをグルーピングする。
+5. `HDI_2018`、`Polity_Score`、`Density`の平均値を求める。
+6. `df2`という名前のオブジェクトとして作業環境内に格納する。
+
+## 変数の計算いろいろ（2）
+
+```{r}
+df2 <- df |>
+  mutate(Developed = G7 + G20 + OECD,
+         Developed = if_else(Developed > 1, "先進国", "その他"), # 上書き
+         Density   = Population / Area) |>
+  filter(!is.na(HDI_2018), !is.na(Polity_Score)) |>
+  group_by(Developed) |>
+  summarise(Density = mean(Density),
+            HDI     = mean(HDI_2018),
+            Polity  = mean(Polity_Score))
+
+df2
+```
+
+## `summarise()`の結果を並び替えたい
+
+`df2`を`"先進国"` > `"その他"`の順番で表示させたい。
+
+* `summarise()`を行う場合、グルーピング変数のアルファベット順で表示される。
+* ただし、日本語の場合、50音順にはならない。
+   * ひらがな、カタカナなら50音順になるが、漢字は $\times$
+* したがって、`summarise()`の前にグルーピング変数を**Factor型に変換**する必要がある。
+   * Factor型: **順序付き**の文字型
+   * `factor(Factor型にしたい変数名, levels = c(各要素の順番を指定))`
+   * 例）`X`という名前の変数があり、`"A"`、`"B"`、`"C"`という値のみで構成され、順序をB>C>Aにしたい場合
+      * `factor(X, levels = c("B", "A", "C"))`
+
+## `Developed`をFactor型に
+
+```{r}
+#| code-line-numbers: "4"
+df |>
+  mutate(Developed = G7 + G20 + OECD,
+         Developed = if_else(Developed > 1, "先進国", "その他"),
+         Developed = factor(Developed, levels = c("先進国", "その他")),
+         Density   = Population / Area) |>
+  filter(!is.na(HDI_2018), !is.na(Polity_Score)) |>
+  group_by(Developed) |>
+  summarise(Density = mean(Density),
+            HDI     = mean(HDI_2018),
+            Polity  = mean(Polity_Score))
+```
+
+## 変数のリコーディング: 2値の例
+
+`mutate()`内に`if_else()`を使用（または、`ifelse()`）
+
+* `df`の`OECD`が`1`なら`"OECD加盟国"`、それ以外なら`"OECD非加盟国"`に変換し、`OECD_J`という列として追加
+
+```{r}
+#| eval: false
+df |>
+  mutate(OECD_J = if_else(OECD == 1, "OECD加盟国", "OECD非加盟国"))
+```
+
+**例)** 変換前
+
+```{r}
+df |>
+  group_by(OECD) |>
+  summarise(PPP = mean(PPP_per_capita, na.rm = TRUE),
+            HDI = mean(HDI_2018, na.rm = TRUE),
+            FH  = mean(FH_Total, na.rm = TRUE))
+```
+
+## 変数のリコーディング: 2値の例
+
+**例)** 変換後
+
+```{r}
+#| code-line-numbers: "2"
+df |>
+  mutate(OECD_J = if_else(OECD == 1, "OECD加盟国", "OECD非加盟国")) |>
+  group_by(OECD = OECD_J) |> # 「=」で列名の変更が可能
+  summarise(PPP = mean(PPP_per_capita, na.rm = TRUE),
+            HDI = mean(HDI_2018, na.rm = TRUE),
+            FH  = mean(FH_Total, na.rm = TRUE))
+```
+
+## 変数のリコーディング: 3値以上の例
+
+`mutate()`内に`case_when()`を使用
+
+```{r}
+#| eval: false
+データフレーム名 |>
+  mutate(新しい変数名 = case_when(条件1 ~ 新しい値,
+                                条件2 ~ 新しい値,
+                                ...
+                                TRUE ~ 新しい値))
+```
+
+* `TRUE ~ 新しい値`は「上記の条件全てが満たされ**ない**場合の値」を意味する
+   * `.default = "新しい値"`でもOK（{dplyr} 1.1.0から）
+
+## 変数のリコーディング: 3値以上の例
+
+**例)** `df`の`Continent`を日本語にし、`Continent_J`として追加
+
+```{r}
+df |>
+  mutate(Continent_J = case_when(Continent == "Africa"  ~ "アフリカ",
+                                 Continent == "America" ~ "アメリカ",
+                                 Continent == "Asia"    ~ "アジア",
+                                 Continent == "Europe"  ~ "ヨーロッパ",
+                                 TRUE                   ~ "オセアニア")) |>
+  group_by(大陸 = Continent_J) |>
+  # 日本語は非推奨だが、一応使える（_と.を除く特殊記号不可）
+  summarise(OECD加盟国比率 = mean(OECD),
+            国家数        = n())
+```
+
+## 変数のリコーディング: 応用
+
+**例)** `Continent`が`AP`列を追加し、`"Asia"`か`"Oceania"`、`"America"`なら1、以外は0
+
+**方法1**: `if_else()`の利用
+
+```{r}
+#| eval: false
+df |>
+  mutate(AP = if_else(Continent %in% c("Asia", "America", "Oceania"), 1, 0))
+```
+
+**方法2**: `case_when()`の利用
+
+```{r}
+#| eval: false
+df |>
+  mutate(AP = case_when(Continent == "Asia"    ~ 1, 
+                        Continent == "America" ~ 1, 
+                        Continent == "Oceania" ~ 1,
+                        TRUE                   ~ 0))
+```
+
+**方法3**: `case_when()` + `%in%`の利用
+
+```{r}
+#| eval: false
+df |>
+  mutate(AP = case_when(Continent %in% c("Asia", "America", "Oceania") ~ 1, 
+                        TRUE                                           ~ 0))
+```
+
+## `NA`ではない欠損値もあることに注意
+
+世論調査などの場合、欠損値が`NA`でなく、`9`や`99`、`""`などの場合がある。
+
+**例)** `my_data`の例
+
+* `YoungAge`変数を作成し、`Age`が39以下なら`1`、それ以外は`0`にする。ただし、999なら`NA`とする。
+* `HighEduc2`変数を作成し、`HighEduc`が1なら`"大卒以上"`、それ以外は`"大卒未満"`にする。ただし、9なら`NA`とする。
+
+:::: {.columns}
+
+::: {.column width=70%}
+```{r}
+my_data <- tibble(ID       = 1:10,
+                  Age      = c(32, 35, 57, 999, 74, 
+                               66, 999, 49, 78, 67),
+                  HighEduc = c(1, 0, 0, 1, 0,
+                               9, 1, 1, 9, 9))
+```
+:::
+
+::: {.column width=30%}
+```{r}
+my_data
+```
+:::
+
+::::
+
+## 欠損値を指定する場合
+
+* 戻り値として`NA`を指定（`if_else()`も同様）
+
+```{r}
+my_data |>
+  mutate(YoungAge  = case_when(Age == 999 ~ NA,
+                               Age <=  39 ~ 1,
+                               TRUE       ~ 0),
+         HighEduc2 = case_when(HighEduc == 9 ~ NA,
+                               HighEduc == 1 ~ "大卒以上",
+                               TRUE          ~ "大卒未満"))
+```
+
+## 特定の値を欠損値にコーディング場合
+
+特定の値を欠損値とし、それ以外の値は元も値にする場合
+
+* 主に`if_else()`を使用し、条件に合致した場合は`NA`を、合致しない場合は元の変数のままにする。
+
+```{r}
+my_data |>
+  mutate(Age      = if_else(Age      == 999, NA, Age),
+         HighEduc = if_else(HighEduc == 9,   NA, HighEduc))
+```
+
+## 特定の値を欠損値にコーディング場合
+
+`if_else()`でなく、`case_when()`を使うことも可能
+
+* 欠損を意味する値が複数の場合、`case_when()`を使うか、OR演算子（`|` / `%in%`）を用いた`if_else()`を使用する。
+
+```{r}
+my_data |>
+  mutate(Age      = case_when(Age == 999 ~ NA, 
+                              TRUE       ~ Age),
+         HighEduc = case_when(HighEduc == 9 ~ NA, 
+                              TRUE          ~ HighEduc))
+```
+
+## 参考）特定の値を欠損値にコーディング場合
+
+{naniar}パッケージの`replace_with_na()`関数を利用
+
+* 引数はリスト型オブジェクトであり、リストの中には`変数名 = 欠損値の値`
+* 欠損値の値が複数の場合、`変数名 = c(値1, 値2, ...)`
+* 似たような関数として{expss}の`na_if()`関数
+
+```{r}
+library(naniar) # 事前に install.package(naniar) でインストール
+my_data |>
+  # Ageは999、HighEducは9が欠損値
+  replace_with_na(list(Age = 999, HighEduc = 9))
+```
+
+## 参考）`mutate()`における複数の処理
+
+同じ内容のコードであるため、好きな書き方で問題ないが、まとめた方が効率的
+
+#### 一つの`mutate()`内に2つの処理
+
+```{r}
+#| eval: false
+my_data |>
+  mutate(Age      = if_else(Age      == 999 ~ NA, TRUE ~ Age),
+         HighEduc = if_else(HighEduc == 9   ~ NA, TRUE ~ HighEduc))
+```
+
+#### 一つの`mutate()`内に1つの処理
+
+```{r}
+#| eval: false
+my_data |>
+  mutate(Age = if_else(Age == 999 ~ NA, TRUE ~ Age)) |>
+  mutate(HighEduc = if_else(HighEduc == 9 ~ NA, TRUE ~ HighEduc))
+```
+
+
+# {dplyr}: データの結合
+
+## データの結合: 行
+
+`bind_rows()`を利用: 変数名が一致する必要がある
+
+* 以下の例はいずれのdata.frameも`ID`、`Name`、`Score`で構成されている。
+   * `ID`、`Name`、`Score`の順番は一致しなくても良い（上のdata.frameの順番に調整される）。
+
+:::: {.columns}
+
+::: {.column width=48%}
+**結合前**
+
+```{r}
+#| include: false
+Data1 <- data.frame(ID    = 1:3, 
+                    Name  = c("Aさん", "Bさん", "Cさん"),
+                    Score = c(77, 89, 41))
+Data2 <- data.frame(ID    = 4:5, 
+                    Name  = c("Xさん", "Yさん"),
+                    Score = c(98, 78))
+```
+
+```{r}
+Data1
+Data2
+```
+:::
+
+::: {.column width=4%}
+:::
+
+::: {.column width=48%}
+**結合後**
+
+```{r}
+bind_rows(Data1, Data2)
+```
+:::
+
+::::
+
+<!--- --->
+
+## データの結合: 行
+
+結合前のデータ識別変数の追加
+
+* 結合するデータを`list()`でまとめ、`.id`引数を追加する
+* `list()`の内部では`"識別変数の値" = 結合するデータ`と定義
+
+**例)** 結合後、`Class`という列を追加し、元々`Data1`だった行は`"1組"`、`Data2`だった行には`"2組"`を格納する。
+
+```{r}
+bind_rows(list("1組" = Data1, "2組" = Data2),
+          .id = "Class")
+```
+
+<!--- --->
+
+## データの結合: 列
+
+`*_join()`: 結合に使う識別用の変数（**キー変数**）が必要（以下では`City`）
+
+:::: {.columns}
+
+::: {.column width=48%}
+**結合前**
+
+```{r}
+#| echo: false
+Data1 <- data.frame(City  = c("Tokyo", "Osaka", "Kochi"),
+                    Pop   = c(927, 148, 76),
+                    Area  = c(2194, 828, 7104))
+```
+
+```{r}
+Data1
+```
+:::
+
+::: {.column width=4%}
+:::
+
+::: {.column width=48%}
+**結合前**
+
+```{r}
+#| echo: false
+Data2 <- data.frame(City  = c("Kochi", "Osaka", "Tokyo"),
+                    Food  = c("Katsuo", "Takoyaki", "Ramen"))
+```
+
+```{r}
+Data2
+```
+:::
+
+::::
+
+**結合後**
+
+```{r}
+left_join(Data1, Data2, by = "City")
+```
+
+<!--- --->
+
+## 列結合に使う関数
+
+識別子は両データに含まれているが、一致しないケースがある。
+
+* どのデータの識別子を優先するか
+
+<br/>
+
+1. `left_join()`
+   * 左側のデータの識別子を優先する
+   * 空欄は欠損値として埋められる
+2. `right_join()`
+   * 右側のデータの識別子を優先する
+   * 空欄は欠損値として埋められる
+3. `inner_join()`
+   * 両データの識別子に共通する行のみを残して結合
+4. `full_join()`
+   * 両データの識別子に存在する行すべて結合
+   * 空欄は欠損値として埋められる
+
+## `left_join()`の仕組み
+
+`left_join(データ1, データ2, by = "識別用変数名")`
+
+* データ1を温存する
+* 欠損しているセルは欠損値（`NA`）で埋められる
+
+::: {layout="[49,-2, 40]"}
+![](Figs/handling3/Merge_Left.png)
+
+![](Figs/handling3/left-join.gif)
+:::
+
+## `right_join()`の仕組み
+
+`right_join(データ1, データ2, by = "識別用変数名")`
+
+* データ2を温存する
+* 欠損しているセルは欠損値（`NA`）で埋められる
+
+:::{layout="[49,-2, 40]"}
+![](Figs/handling3/Merge_Right.png)
+
+![](Figs/handling3/right-join.gif)
+:::
+
+## `inner_join()`の仕組み
+
+`inner_join(データ1, データ2, by = "識別用変数名")`
+
+* データ1とデータ2で識別子が共通する行のみ結合
+
+:::{layout="[49,-2, 40]"}
+![](Figs/handling3/Merge_Inner.png)
+
+![](Figs/handling3/inner-join.gif)
+:::
+
+<!--- --->
+
+## `full_join()`の仕組み
+
+`full_join(データ1, データ2, by = "識別用変数名")`
+
+* データ1とデータ2をすべて温存
+* 欠損しているセルは欠損値（`NA`）で埋められる
+
+:::{layout="[49,-2, 40]"}
+![](Figs/handling3/Merge_Full.png)
+
+![](Figs/handling3/full-join.gif)
+:::
+
+<!--- --->
+
+## 比較 (1)
+
+```{r}
+df1 <- tibble(Pref  = c("東京", "大阪", "京都"),
+              Score = c(3.5, 4, 4.2))
+df2 <- tibble(Pref  = c("東京", "大阪", "高知"),
+              N     = c(3220, 1325, 111))
+```
+
+:::: {.columns}
+
+::: {.column width=48%}
+```{r}
+df1
+```
+:::
+
+::: {.column width=4%}
+:::
+
+::: {.column width=48%}
+```{r}
+df2
+```
+:::
+
+::::
+
+<!--- --->
+
+## 比較 (2)
+
+`by = "識別用の変数名"`は複数用いることも可能（例: 都道府県名&年度で結合）
+
+* `by = c("識別用の変数名1", "識別用の変数名2")`
+
+:::: {.columns}
+
+::: {.column width=48%}
+```{r}
+left_join(df1, df2, by = "Pref")
+right_join(df1, df2, by = "Pref")
+```
+:::
+
+::: {.column width=4%}
+:::
+
+::: {.column width=48%}
+```{r}
+inner_join(df1, df2, by = "Pref")
+full_join(df1, df2, by = "Pref")
+```
+:::
+
+::::
+
+# {tidyr}: 整然データ構造
+
+## 整然データ構造とは
+
+Tidy data: Hadley Wickhamが提唱した**データ分析に適したデータ構造**
+
+:::: {.columns}
+
+::: {.column width=66%}
+* **整然データ**、簡潔データと呼ばれる。
+   * 対概念は非整然データ、雑然データ（messy data）
+* パソコンにとって読みやすいデータ $\neq$ 人間にとって読みやすいデータ
+* {tidyr}パッケージは雑然データを整然データへ変形するパッケージ
+* 次回紹介する{ggplot2}は整然データを前提として開発されたパッケージ
+
+#### 4つの原則
+
+1. 1つの列は、1つの変数を表す
+2. 1つの行は、1つの観測を表す
+3. 1つのセルは、1つの値を表す
+4. 1つの表は、1つの観測単位をもつ
+:::
+
+::: {.column width=2%}
+:::
+
+::: {.column width=32%}
+![](Figs/handling3/TidyingUp.jpg)
+:::
+
+::::
+
+<!--- --->
+
+## 原則1: 1列1変数
+
+* 1列には1つの変数のみ
+  * 3人の被験者に対し、薬を飲む前後の数学成績を測定した場合
+  * 薬を飲む前: Control / 薬を飲んだ後: Treatment
+
+![](Figs/handling3/TidyData1.png){fig-align="center"}
+
+<!--- --->
+
+## 原則2: 1行1観察
+
+* 1観察 $\neq$ 1値
+  * 観察: 観察単位ごとに測定された**値の集合**
+  * 観察単位: 人、企業、国、時間など
+* 以下の例の場合、観察単位は「人 $\times$ 時間 」
+
+![](Figs/handling3/TidyData2.png){fig-align="center"}
+
+<!--- --->
+
+## 原則3: 1セル1値
+
+* この原則に反するケースは多くない
+* **例外)** 1セルに`2020年8月24日`という値がある場合
+  * 分析の目的によっては年月日を全て異なるセルに割り当てる必要もある
+  * このままで問題とならないケースも
+
+![](Figs/handling3/TidyData3.png){fig-align="center"}
+
+<!--- --->
+
+## 原則4: 1表1単位
+
+* 政府統計: 日本を代表する雑然データ
+  * データの中身は良いが、構造が...
+  * 表に「国」、「都道府県」、「市区町村」、「行政区」の単位が混在
+
+![](Figs/handling3/TidyData4.png){width=65% fig-align="center"}
+
+
+<!--- --->
+
+## 原則4: 1表1単位
+
+* 「1表1単位」原則を満たさない場合、`filter()`関数等で、異なる単位の行を除外
+   * 以降、解説する{tidyr}でなく、{dplyr}で対応可能
+
+![](Figs/handling3/TidyData5.png){fig-align="center"}
+
+<!--- --->
+
+## {tidyr}パッケージ
+
+![](Figs/handling3/tidyr.png){fig-align="center"}
+
+雑然データから整然データへ変形をサポートするパッケージ
+
+* `pivot_longer()`: Wide型データからLong型データへ
+   * 原則1・2に反するデータを整然データへ変換 (最も頻繁に使われる)
+* `pivot_wider()`: Long型データからWide型データへ
+   * 人間には雑然データの方が読みやすい場合がある（原則1の例）
+* `separate()`: セルの分割（「年月日」から「年」、「月」、「日」へ）
+   * 原則3に反するデータを整然データへ変換
+* 原則4に反するデータは分析単位が異なる行を`filter()`などで除外
+
+<!--- --->
+
+## 実習用データ
+
+`covid_sample.csv`: 中国、日本、韓国、モンゴル、台湾の5日間COVID-19新規感染者数
+
+* サポートページからダウンロード
+* データ出典:[Johns Hopkins University Center for Systems Science and Engineering](https://github.com/CSSEGISandData/COVID-19)
+
+```{r}
+COVID_df <- read_csv("Data/covid_sample.csv")
+COVID_df
+```
+
+## このデータの問題点
+
+* 観察単位は? 測定した変数は?
+  * 観察単位: 地域 $\times$ 時間
+  * 変数: 新規感染者数、人口
+  * 2つの観察時点 + 2つの変数 = 計4つの変数 $\rightarrow$ 整然データ
+* 新規感染者数が5列にわたって格納されている $\rightarrow$ 雑然データ
+
+```{r}
+#| echo: false
+knitr::kable(COVID_df)
+```
+
+## Wide型からLong型へ
+
+* 整然な`COVID_df`の構造は?
+  * 5列を1列にまとめるため、縦に長くなる
+  * WideからLongへ
+
+```{r}
+#| echo: false
+COVID_df |> 
+  pivot_longer(cols      = `2022/06/09`:`2022/06/13`,
+               names_to  = "Date",
+               values_to = "New_Cases")
+```
+
+## `pivot_longer()`: Wide to Long
+
+* `cols`は`dplyr::select()`と同じ使い方
+  * `c()`で個別の変数名を指定することも、`:`や`starts_with()`を使うこともOK
+  * **注意:** 変数名が数字で始まったり、記号が含まれている場合、変数名を`` ` ``か`"`で囲む
+    * 列名が日付の場合、数字で始まったり、記号（`/`や`-`など）が含まれるケースが多い
+  
+```{r}
+#| eval: false
+データ |>
+  pivot_longer(cols      = 変数が格納されている列,
+               names_to  = "元の列名が入る変数名",
+               values_to = "変数の値が入る変数名")
+```
+
+## `pivot_longer()`: WideからLongへ
+
+* `cols = starts_with("2022")`もOK
+
+```{r}
+#| code-line-numbers: "2-4"
+COVID_Long <- COVID_df |> 
+  pivot_longer(cols      = "2022/06/09":"2022/06/13",
+               names_to  = "Date",
+               values_to = "New_Cases")
+COVID_Long
+```
+
+## `pivot_wider()`: LongからWideへ
+
+* Long型をWide型へ戻す関数
+  * 人間にとってはLong型よりWide型の方が読みやすいケースも多い
+  * 1列に2つの変数が入っている場合もある
+
+```{r}
+#| code-line-numbers: "2,3"
+COVID_Long |>
+  pivot_wider(names_from  = "Date",
+              values_from = "New_Cases")
+```
+
+## `pivot_longer()`と`pivot_wider()`
+
+![](Figs/handling3/wide_long.gif){fig-align="center"}
+
+## `separate()`: 列の分割
+
+`COVID_Long`の`Date`列を`Year`、`Month`、`Day`に分けたい
+
+* **例)** `Date`列を`"/"`を基準に分割する
+
+```{r}
+#| eval: false
+データ |>
+  separate(col  = "分割する列名",
+           into = c("分割後の列名1", "分割後の列名2", ...),
+           sep  = "分割する基準")
+```
+
+## `separate()`: 列の分割
+
+```{r}
+#| code-line-numbers: "2-4"
+COVID_Long |>
+  separate(col  = "Date",
+           into = c("Year", "Month", "Day"),
+           sep  = "/")
+```
+
+## 参考）分割の基準となる記号がない場合
+
+**例)** `City_Data`の`City`列が「都道府県名+市区町村」
+
+* 「最初の3文字」と「残り」で分割することは出来ない（神奈川、和歌山、鹿児島）
+* 任意の2文字の後に「都」、「道」、「府」、「県」が付くか、任意の3文字の後に「県」が付く箇所を見つけて分割
+   * かなり複雑
+
+```{r}
+#| echo: false
+City_Data <- tibble(City = c("北海道音威子府村",
+                             "大阪府高槻市",
+                             "広島県府中市",
+                             "鹿児島県指宿市"),
+                    Pop  = c(693, 347424, 36471, 38207))
+
+City_Data
+```
+
+## 参考）分割の基準となる記号がない場合（続）
+
+**正規表現（regular expression; 正則表現）**の知識が必要
+
+* テキスト分析に興味があるなら必須（前期・後期含めて、本講義では解説しない）
+
+```{r}
+City_Data |>
+   # 任意の2文字の後に「都道府県」のいずれかが来るか、
+   # 任意の3文字の後に「県」が来たら、そこまでをブロック1、残りをブロック2とする
+   # Cityの値を「ブロック1-ブロック2」に置換する
+   mutate(City = str_replace(City, "^(.{2}[都道府県]|.{3}県)(.+)", 
+                             "\\1-\\2")) |>
+   # 「-」を基準に列を分割
+   separate(col  = "City", into = c("Pref", "City"), sep  = "-")
+```
+
+## {tidyr}と{dplyr}の組み合わせ
+
+{tidyr}と{dplyr}を組み合わせることも可能
+
+* **例)** 100万人当たりの新規感染者数を計算し、国ごとに平均値を計算
+
+```{r}
+COVID_df |> 
+  pivot_longer(cols      = "2022/06/09":"2022/06/13",
+               names_to  = "Date",
+               values_to = "New_Cases") |>
+   mutate(New_Case_per_1M = New_Cases / Population * 1000000) |>
+   group_by(Country) |>
+   summarise(New_Case_per_1M = mean(New_Case_per_1M))
+```
+
+## データハンドリングに慣れるためには
+
+* とりあえず、たくさんのデータをいじってみる
+* たくさんのエラーメッセージに出会うこと
+* パイプ（`|>`）を使いすぎないように
+   * 中級以上になると、自分が書いたコードの結果が予想できるため、たくさんのパイプを使っても問題は大きくない
+   * 一方、初心者の場合、パイプを使いすぎず、2〜3回ごとに別途のオブジェクトとして保存したり、結果を確認していくこと
+   * パイプが多すぎるとどこがエラーの原因かの特定が困難に（慣れたらすぐに見つかるが）
+
+## 長過ぎるコードブロックの例
+
+慣れたらこれくらいは長い方でもないが...
+
+```{r}
+#| eval: false
+COVID_df |> 
+  pivot_longer(cols      = "2022/06/09":"2022/06/13",
+               names_to  = "Date",
+               values_to = "New_Cases") |>
+  mutate(New_Case_per_1M = New_Cases / Population * 1000000,
+         Country         = case_when(Country == "China"    ~ "中国",
+                                     Country == "Japan"    ~ "日本",
+                                     Country == "Korea"    ~ "韓国",
+                                     Country == "Mongolia" ~ "モンゴル",
+                                     TRUE                  ~ "台湾"),
+         Country         = factor(Country, levels = c("中国", "日本", "韓国", "モンゴル", "台湾")),
+         Date            = as.Date(Date),
+         Date            = format(Date, "%Y-%m-%d")) |>
+  ggplot(aes(x = Date, y = New_Case_per_1M, group = Country)) +
+  geom_line(aes(color = Country), linewidth = 1) +
+  geom_point(aes(fill = Country), 
+             shape = 21, color = "white", size = 3) +
+  labs(x = "日付", y = "100万人当たり新規感染者数 (人)", color = "") +
+  guides(fill = "none") +
+  theme_bw(base_size = 14) +
+  theme(legend.position = "bottom")
+```

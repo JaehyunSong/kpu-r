@@ -1,0 +1,7 @@
+---
+title: "最終課題"
+metadata-files: 
+  - _material.yml
+---
+
+近日中、公開

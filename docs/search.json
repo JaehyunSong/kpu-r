@@ -4,14 +4,14 @@
     "href": "syllabus/syllabus.html",
     "title": "情報処理応用演習",
     "section": "",
-    "text": "講義名：情報処理応用演習\n講義日: 未定\n場所: 未定\n講義内容: Rの使い方\n\nRの基本的な操作 & Quarto\nデータの入出力\nデータのハンドリング（前処理）\nデータの可視化\n\n統計学、確率、多変量解析、因果推論の授業ではないことに注意\n到達目標: Rを用いたデータ分析の教科書が読める土台づくり"
+    "text": "講義名：情報処理応用演習\n講義日: 2023年10月7・14・28日\n場所: 1号館2階・情報処理室\n講義内容: Rの使い方\n\nRの基本的な操作 & Quarto\nデータの入出力\nデータのハンドリング（前処理）\nデータの可視化\n\n統計学、確率、多変量解析、因果推論の授業ではないことに注意\n到達目標: Rを用いたデータ分析の教科書が読める土台づくり"
   },
   {
     "objectID": "syllabus/syllabus.html#概要",
     "href": "syllabus/syllabus.html#概要",
     "title": "情報処理応用演習",
     "section": "",
-    "text": "講義名：情報処理応用演習\n講義日: 未定\n場所: 未定\n講義内容: Rの使い方\n\nRの基本的な操作 & Quarto\nデータの入出力\nデータのハンドリング（前処理）\nデータの可視化\n\n統計学、確率、多変量解析、因果推論の授業ではないことに注意\n到達目標: Rを用いたデータ分析の教科書が読める土台づくり"
+    "text": "講義名：情報処理応用演習\n講義日: 2023年10月7・14・28日\n場所: 1号館2階・情報処理室\n講義内容: Rの使い方\n\nRの基本的な操作 & Quarto\nデータの入出力\nデータのハンドリング（前処理）\nデータの可視化\n\n統計学、確率、多変量解析、因果推論の授業ではないことに注意\n到達目標: Rを用いたデータ分析の教科書が読める土台づくり"
   },
   {
     "objectID": "syllabus/syllabus.html#担当教員",
@@ -54,6 +54,692 @@
     "title": "情報処理応用演習",
     "section": "成績評価",
     "text": "成績評価\n\n平常点: 30%\n課題: 70%"
+  },
+  {
+    "objectID": "slides/day01.html#講義概要",
+    "href": "slides/day01.html#講義概要",
+    "title": "情報処理応用演習",
+    "section": "講義概要",
+    "text": "講義概要\n\n講義日: 2023年10月7・14・28日の2〜4コース\n\n10月28日は3〜4コース\n\n場所: 1号館2階・情報処理室\n講義内容: Rの使い方\n\nRの基本的な操作 & Quarto\nデータの入出力\nデータのハンドリング（前処理）\nデータの可視化\n\n統計学、確率、多変量解析、因果推論の授業ではない。\n\n後期の授業ではRの使い方について解説しない。\n\n到達目標: Rを用いたデータ分析の教科書が読める土台づくり"
+  },
+  {
+    "objectID": "slides/day01.html#講義内容予定",
+    "href": "slides/day01.html#講義内容予定",
+    "title": "情報処理応用演習",
+    "section": "講義内容（予定）",
+    "text": "講義内容（予定）\n\n第1回（2023/10/07）\n\nRとRStudioの導入（JDCat分析ツールを利用）\n基本的な操作\nQuartoの使い方\n\n第2回（2023/10/14）\n\nデータハンドリング（{dplyr}と{tidyr}）\n\n第3回（2023/10/28）\n\n可視化（{ggplot2}）"
+  },
+  {
+    "objectID": "slides/day01.html#講師紹介",
+    "href": "slides/day01.html#講師紹介",
+    "title": "情報処理応用演習",
+    "section": "講師紹介",
+    "text": "講師紹介\n\n\n\n\n\n\n\nLINEスタンプ絶賛販売中!\n\n\n\n\n\n\n宋(そん)  財泫(じぇひょん) (SONG JAEHYUN)\n\n関西大学総合情報学部 准教授\n博士（政治学）\n\n専門は政治行動論、選挙研究、政治学方法論\n趣味はゲームはラーメン屋巡り\n\n好きなラーメンは家系と二郎インスパイア、汁なし全般\n最近やっているゲームはFF XIV\n\n\n\n\n song@kansai-u.ac.jp\n https://www.jaysong.net"
+  },
+  {
+    "objectID": "slides/day01.html#前提知識",
+    "href": "slides/day01.html#前提知識",
+    "title": "情報処理応用演習",
+    "section": "前提知識",
+    "text": "前提知識\n\nファイル・システムの理解\n\nフォルダー (ディレクトリ)の概念\n相対パスと絶対パスの違いと書き方\nC:/AAA/BBB/CCC.txtや~/AAA/BBB/CCC.textの意味が理解できること\nサポートページの「ファイル・システム」、「プロジェクト管理」、「ファイル管理」を読んでおくこと\nこれができないとデータの読み込みすらきでない。\n\nブラインド・タッチ (重要)\n\n期末レポートは第15回の授業中に執筆する。\nタイピングが遅いと、90分内に期末レポートの完成ができない。\n第15回の授業までにブラインドタッチの練習を推奨\nこの授業に限らず、現代社会で極めて重要なスキル"
+  },
+  {
+    "objectID": "slides/day01.html#教科書",
+    "href": "slides/day01.html#教科書",
+    "title": "情報処理応用演習",
+    "section": "教科書",
+    "text": "教科書\n宋財泫・矢内勇生.『私たちのR: ベストプラクティスの探求』Web-book\n\n本講義内容を全てカバーする\n無料 (https://www.jaysong.net/RBook)"
+  },
+  {
+    "objectID": "slides/day01.html#参考書",
+    "href": "slides/day01.html#参考書",
+    "title": "情報処理応用演習",
+    "section": "参考書",
+    "text": "参考書\n\n松村優哉 他. 2021. 『改訂2版 RユーザのためのRStudio[実践]入門』技術評論社\nGarrett Grolemund and Hadley Wickham. 2017. R for Data Science. O’Reilly.\n\n邦訳『Rではじめるデータサイエンス』(原著は無料: https://r4ds.had.co.nz/)\n\nJared P. Lander. 2018. R for Everyone. Addison-Wesley Professional.\n\n邦訳『みんなのR』"
+  },
+  {
+    "objectID": "slides/day01.html#成績評価",
+    "href": "slides/day01.html#成績評価",
+    "title": "情報処理応用演習",
+    "section": "成績評価",
+    "text": "成績評価\n\n平常点（30%）\n課題（70%）\n\n詳細は10月14日にアナウンス"
+  },
+  {
+    "objectID": "slides/day01.html#授業内容のフィードバックについて",
+    "href": "slides/day01.html#授業内容のフィードバックについて",
+    "title": "情報処理応用演習",
+    "section": "授業内容のフィードバックについて",
+    "text": "授業内容のフィードバックについて\n\nメール: song@kansai-u.ac.jp\n対面（授業前後）"
+  },
+  {
+    "objectID": "slides/day01.html#rとは",
+    "href": "slides/day01.html#rとは",
+    "title": "情報処理応用演習",
+    "section": "Rとは",
+    "text": "Rとは\n\n\n\n\n\n\n統計、データ分析、作図のためのインタープリタープログラミング言語\n1976年開発されたS言語の後継者\nRoss IhakaとRobert Clifford Gentlemanが開発\n統計分析のためのソフトウェアは星の数ほど存在"
+  },
+  {
+    "objectID": "slides/day01.html#統計ソフトウェア言語",
+    "href": "slides/day01.html#統計ソフトウェア言語",
+    "title": "情報処理応用演習",
+    "section": "統計ソフトウェア/言語",
+    "text": "統計ソフトウェア/言語\n有償\n\nSAS\nSPSS\nStata\nMATLAB\n\n無償\n\nPSPP: SPSSにとてもよく似た無料ソフトウェア\nJASP/jamovi: 裏で動いているのはR\ngretl: 時系列分析など、計量経済学で利用される手法に特化したソフト\nGNU Octave: MATLABとほぼ同じ文法をもつ無料言語\nHAD: 清水裕士先生が開発しているExcelベースのデータ分析マクロ\n\nただし、Excelが有償ソフト"
+  },
+  {
+    "objectID": "slides/day01.html#rのライバルたちどれも無料",
+    "href": "slides/day01.html#rのライバルたちどれも無料",
+    "title": "情報処理応用演習",
+    "section": "Rのライバルたち（どれも無料）",
+    "text": "Rのライバルたち（どれも無料）\n\n現在のデータサイエンス業界において標準はR + Python\nどれもGUI（Graphical User Interface）でなく、CUI（Character User Interface）\n\n\n\n\n\n\n\n\nPython\n\n汎用プログラミング言語\n機械分析に強い\n豊富なパッケージ\nRより速く、Juliaより遅い\n\n\n\n\n\n\n\n\n\nJulia\n\n統計プログラミング言語\n非常に高速\nパッケージがRやPythonに比べ、少ない"
+  },
+  {
+    "objectID": "slides/day01.html#why-r",
+    "href": "slides/day01.html#why-r",
+    "title": "情報処理応用演習",
+    "section": "Why R?",
+    "text": "Why R?\nR界隈の神様、Hadley Wickham（羽鳥先生）によると… (Hadley 2019)\n\n無料、オープンソース、多くのプラットフォームで利用可能\nオンライン、オフラインの両方で、多様なRコミュニティが存在\n膨大なパッケージが用意されている。\n分析結果を伝達する強力なツールを提供（R Markdown）\n代表的な統合開発環境であるRStudioはデータサイエンス、対話型のデータ分析、そして統計的プログラミングが必要とするものに最適化されている。\n多くの統計学や機械学習の研究者は自分の研究成果とRパッケージを同時に公開している。\nデータ分析を特化した言語（欠損値、データフレーム、ベクトル化など）\n関数型プログラミングのための最適な環境を提供\nRStudio社は営利企業であるものの、その収益の多くをオープンソースコミュニティーに投資している。\nメタプログラミングが非常に強力\nRはC、C++、Fortranのようなhigh-performance言語と容易に結合できるように設計されている。"
+  },
+  {
+    "objectID": "slides/day01.html#guiとcui",
+    "href": "slides/day01.html#guiとcui",
+    "title": "情報処理応用演習",
+    "section": "GUIとCUI",
+    "text": "GUIとCUI\n\n\n\n\n\n\nGUI：マウスでポチポチするだけで操作できる環境\n\n間違いがほぼ起きない\n柔軟性が低い（開発元が提供する機能しか使えない）\n分析の再現が難しい（出来ないわけではない）\n\nCUI：全ての操作を文字列ベース（=キーボード）で行う\n\n一文字でも間違えるとエラーが出たり\n柔軟性が高い（カスタマイズ自由）\n分析の再現性が非常に高い（コードさえ保存しておけばOK）"
+  },
+  {
+    "objectID": "slides/day01.html#guiとcuiの操作の違い",
+    "href": "slides/day01.html#guiとcuiの操作の違い",
+    "title": "情報処理応用演習",
+    "section": "GUIとCUIの操作の違い",
+    "text": "GUIとCUIの操作の違い\nData.csvを読み込み、Xという変数の平均値と分散を計算するまでの手順\n\n\nGUI (SPSS)の例\n\n「ファイル」→「開く」→「データ」をクリック\nファイルを選択し、「開く」をクリック\n「分析」→「記述統計」→「記述統計」をクリック\n左側のパネルからXを右側の「変数」パネルへ移動\n「オブション」をクリック\n「散らばり」の「分散」にチェック\n「続行」をクリック→「OK」をクリック\n\n\n\n\nCUI (R)の例\nMyData &lt;- read.csv(\"Data.csv\")\nmean(MyData$X)\nvar(MyData$X)"
+  },
+  {
+    "objectID": "slides/day01.html#統合開発環境ide",
+    "href": "slides/day01.html#統合開発環境ide",
+    "title": "情報処理応用演習",
+    "section": "統合開発環境（IDE）",
+    "text": "統合開発環境（IDE）\n\nR Studioが代表的（ほぼ一択）\n\n他にもR Tools for Visual Studio、VS Code、Atom、Sublime Text、Vim、Emacsなど\n\nIDEの使用は必須ではないが、生産性に大きく向上させる。\nデータ分析、プログラミングの手助けをする優秀な秘書\n\nファイルの管理、うろ覚えのコマンドの、コードの色分けなどを自動的に行う。\nコードの実行結果の画面をコードと同時に表示\nこれまでの作業を記録"
+  },
+  {
+    "objectID": "slides/day01.html#rとrstudioの導入",
+    "href": "slides/day01.html#rとrstudioの導入",
+    "title": "情報処理応用演習",
+    "section": "RとRStudioの導入",
+    "text": "RとRStudioの導入\n\n本講義のサポートページを参照しながら、宋と一緒にやってみよう。\n\n\n\n\n導入 \\(\\neq\\) 起動\n\n\n　Rの「導入」はアプリのインストールの概念に近い。一方、「起動」はアプリの実行である。スマホのアプリを使う度にインストールする人はいないだろう。Rの導入は1回のみとし、複数回行わないこと。何かの不具合が生じるわけではないが、サーバー立ち上げ用のURLにアクセスする度に、サーバーが増え、自分が使っていたサーバーが何だったのかが分からなくなる。今後の授業では「サーバー立ち上げ用のURL」でなく、「起動用のURL」からアクセスすること。"
+  },
+  {
+    "objectID": "slides/day01.html#プロジェクト機能について",
+    "href": "slides/day01.html#プロジェクト機能について",
+    "title": "情報処理応用演習",
+    "section": "「プロジェクト」機能について",
+    "text": "「プロジェクト」機能について\n\n本講義のサポートページを参照\n\nRの使い方の「ファイルシステム」、「プロジェクト管理」、「ファイル管理」すべてを読むこと\n教科書の「ファイルシステム」も合わせて読もう。\n\n毎回の講義、課題ごとに独立したプロジェクトを作ること\nファイル・システムに関する知識（パス、相対パス、絶対パス）がない場合、プロジェクト機能は必須\n\nファイル・システムを知っている宋でも常にプロジェクト機能を使用している。"
+  },
+  {
+    "objectID": "slides/day01.html#電卓としてのrと算術演算子",
+    "href": "slides/day01.html#電卓としてのrと算術演算子",
+    "title": "情報処理応用演習",
+    "section": "電卓としてのRと算術演算子",
+    "text": "電卓としてのRと算術演算子\n\nStep 1: File &gt; New File &gt; R Script\nStep 2: Sourceペインの大きさを最大化する。\nStep 3: Sourceペインに以下のように入力する\n\n\n1 + 2 + 3\n\n\nStep 4: Step 3で入力した行に移動し、「Cmd + Return（macOS）」または「Ctrl + Enter（Linux/Windows）」\n\nConsoleペインに以下のように出力されればOK\n\n\n\n\n[1] 6"
+  },
+  {
+    "objectID": "slides/day01.html#rの算術演算子",
+    "href": "slides/day01.html#rの算術演算子",
+    "title": "情報処理応用演習",
+    "section": "Rの算術演算子",
+    "text": "Rの算術演算子\n\n結果として何らかの数字が返される\n累乗（^）を除き、演算子の前後にはスペースを入れるのがRの流儀\n\n必須ではないが、コードが読みやすくなる\n\n\n\n\n\n演算子\n意味\n例\n結果\n\n\n\n\n+\n和\n2 + 5\n7\n\n\n-\n差\n2 - 8\n-6\n\n\n*\n積\n7 * 3\n21\n\n\n/\n商\n16 / 5\n3.2\n\n\n^、**\n累乗（べき乗）\n2^3または2 ** 3\n8\n\n\n%%\n剰余 (モジュロ)\n18 %% 7\n4\n\n\n%/%\n整数商\n18 %/% 7\n2"
+  },
+  {
+    "objectID": "slides/day01.html#rの論理演算子",
+    "href": "slides/day01.html#rの論理演算子",
+    "title": "情報処理応用演習",
+    "section": "Rの論理演算子",
+    "text": "Rの論理演算子\n\n真（TRUE）か偽（FALSE）の値を返す演算子\n\n\n3 &gt; 2 # 3は2より大きいか\n\n[1] TRUE\n\n5 &lt;= 10 # 5は10以下か\n\n[1] TRUE\n\n2 + 3 == 1 # 2 + 3は1に等しいか\n\n[1] FALSE\n\n2 + 2 != 2 * 2 # 2 + 3は2 * 2と等しくないか\n\n[1] FALSE\n\n(2 + 2) != (2 * 2) # こっちの方がもう少し読みやすい\n\n[1] FALSE"
+  },
+  {
+    "objectID": "slides/day01.html#rの論理演算子まとめ",
+    "href": "slides/day01.html#rの論理演算子まとめ",
+    "title": "情報処理応用演習",
+    "section": "Rの論理演算子（まとめ）",
+    "text": "Rの論理演算子（まとめ）\n\n「等しい」は=でなく、==であることに注意すること\n\n=は代入演算子として機能する（他の言語と同じ）。\n\n\n\n\n\n演算子\n意味\n例\n結果\n\n\n\n\nx &lt; y\nxはyより小さい\n3 &lt; 1\nFALSE\n\n\nx &lt;= y\nxはyと等しいか、小さい\n2 &lt;= 2\nTRUE\n\n\nx &gt; y\nxはyより大きい\n6 &gt; 5\nTRUE\n\n\nx &gt;= y\nxはyと等しいか、大きい\n4 &gt;= 5\nFALSE\n\n\nx == y\nxとyは等しい\n(2 + 3) == (4 + 1)\nTRUE\n\n\nx != y\nxとyは等しくない\n((2 * 3) + 1) != (2 * (3 + 1))\nTRUE"
+  },
+  {
+    "objectID": "slides/day01.html#論理演算子-andとor",
+    "href": "slides/day01.html#論理演算子-andとor",
+    "title": "情報処理応用演習",
+    "section": "論理演算子: ANDとOR",
+    "text": "論理演算子: ANDとOR\nAND演算子: &\n\n&を挟む左右の両側がTRUEの場合のみTRUEを返す\n\n\n(2 + 3 == 5) & (1 * 2 == 3) # TRUE and FALSEだから\n\n[1] FALSE\n\n(2 + 2 == 4) & (2 * 2 == 4) # TRUE and TRUEだから\n\n[1] TRUE\n\n\n\nOR演算子: |\n\n|を挟む左右の片側、あるいは両側がTRUEの場合のみTRUEを返す\n\n\n(2 + 3 == 5) | (1 * 2 == 3) # TRUE or FALSEだから\n\n[1] TRUE\n\n(2 + 2 != 4) | (2 * 2 != 4) # FALSE or FALSEだから\n\n[1] FALSE"
+  },
+  {
+    "objectID": "slides/day01.html#rにおけるベクトル",
+    "href": "slides/day01.html#rにおけるベクトル",
+    "title": "情報処理応用演習",
+    "section": "Rにおけるベクトル",
+    "text": "Rにおけるベクトル\nベクトル（vector）: Rにおけるデータの最小単位\n\n同じデータ型（数値、文字列など）\n\n数値と文字列が混在するベクトルは作成不可\n\n長さは1以上\n\n1や\"Cat\"は長さ1のベクトル\n\nc()関数で作成\n\n()の中にベクトルの要素を入力\n長さ1のベクトルの場合、c()は省略可能"
+  },
+  {
+    "objectID": "slides/day01.html#ベクトルの作成",
+    "href": "slides/day01.html#ベクトルの作成",
+    "title": "情報処理応用演習",
+    "section": "ベクトルの作成",
+    "text": "ベクトルの作成\n\n&lt;-演算子で格納\n\nベクトル名という名前のオブジェクト（object）が生成され、作業環境内に保存される。\n「作業環境」や「オブジェクト」の概念は次回解説\n格納済みのオブジェクトのリストはコンソール上でls()または、RStudioの「Environment」タブで確認\n\n格納しない場合、作業環境に保存されず、出力のみ\n\nベクトル名 &lt;- c(要素1, 要素2, ...)\n\n例1: 要素が1, 2, 3, 4, 5の長さ5の数値型ベクトル\n\nベクトルをmy_vector1という名前で作業環境に格納\n\n\nmy_vector1 &lt;- c(1, 2, 3, 4, 5)\n\n\n例2: 要素が”Cat”, “Lion”, “Tiger”の長さ3の文字型ベクトルをmy_vector2という名で格納\n\n文字は必ず\"か'で囲む\n\n\nmy_vector2 &lt;- c(\"Cat\", \"Lion\", \"Tiger\")"
+  },
+  {
+    "objectID": "slides/day01.html#オブジェクトの名前",
+    "href": "slides/day01.html#オブジェクトの名前",
+    "title": "情報処理応用演習",
+    "section": "オブジェクトの名前",
+    "text": "オブジェクトの名前\n基本的にオブジェクト名は何でも良いが、いくつかの禁則事項がある\n\n特殊記号、スペース禁止（例外: _と.）\n\nスペースの代わりに_か.が使われるが、_を推奨\n\n数字、または_、.で始まるオブジェクト名\n予約語は使えない（forやifなど）\n\n使える予約語もあるが、非推奨\n\n日本語、ハングル、簡体字、アラビア文字も可能であるが、非推奨\n\n\n良いオブジェクト名は\n\nオブジェクト名を見るだけで、中身の内容が想像できる\n短いオブジェクト名"
+  },
+  {
+    "objectID": "slides/day01.html#オブジェクトの出力",
+    "href": "slides/day01.html#オブジェクトの出力",
+    "title": "情報処理応用演習",
+    "section": "オブジェクトの出力",
+    "text": "オブジェクトの出力\n\nオブジェクト名のみ入力\nprint(オブジェクト名)\n\n\nmy_vector1 # print(my_vector1) でもOK\n\n[1] 1 2 3 4 5\n\nmy_vector2 # print(my_vector2) でもOK\n\n[1] \"Cat\"   \"Lion\"  \"Tiger\"\n\n\n\nRを再起動すると作業環境が初期化されるため、もう一回作成する必要がある。\n\nコードを記録し、残すことが重要"
+  },
+  {
+    "objectID": "slides/day01.html#参考等差数列ベクトルの作り方",
+    "href": "slides/day01.html#参考等差数列ベクトルの作り方",
+    "title": "情報処理応用演習",
+    "section": "参考）等差数列ベクトルの作り方",
+    "text": "参考）等差数列ベクトルの作り方\n\n\n公差 = 1の等差数列\n\n:演算子を利用\n\n\nc(1, 2, 3, 4, 5, 6, 7)\n\n[1] 1 2 3 4 5 6 7\n\n1:7\n\n[1] 1 2 3 4 5 6 7\n\n8:3\n\n[1] 8 7 6 5 4 3\n\n\n\n\n\n公差 \\(\\neq\\) 1の等差数列\n\nseq()関数の使用 (byで公差を指定)\n\n\nc(1, 3, 5, 7, 9)\n\n[1] 1 3 5 7 9\n\nseq(1, 9, by = 2)   # 1から9までの公差2の等差数列\n\n[1] 1 3 5 7 9\n\nseq(1, 5, by = 0.5) # 1から5までの公差0.5の等差数列\n\n[1] 1.0 1.5 2.0 2.5 3.0 3.5 4.0 4.5 5.0\n\nseq(8, 3, by = -1)  # 8から3までの公差-1の等差数列\n\n[1] 8 7 6 5 4 3"
+  },
+  {
+    "objectID": "slides/day01.html#ベクトル同士の演算",
+    "href": "slides/day01.html#ベクトル同士の演算",
+    "title": "情報処理応用演習",
+    "section": "ベクトル同士の演算",
+    "text": "ベクトル同士の演算\n例) ベクトルXとベクトルY同士の演算\n\nケース1： Xの長さ = Yの長さ\nケース2： Xの長さ \\(\\neq\\) Yの長さ\n\n\n参考) ベクトルの長さの求め方\n\nlength()関数を使用\n\n\nlength(my_vector1) # c(1, 2, 3, 4, 5)\n\n[1] 5\n\nlength(my_vector2) # c(\"Cat\", \"Lion\", \"Tiger\")\n\n[1] 3"
+  },
+  {
+    "objectID": "slides/day01.html#ケース1-ベクトルの長さが同じ場合",
+    "href": "slides/day01.html#ケース1-ベクトルの長さが同じ場合",
+    "title": "情報処理応用演習",
+    "section": "ケース1: ベクトルの長さが同じ場合",
+    "text": "ケース1: ベクトルの長さが同じ場合\n\n同じ位置の要素同士の演算\n\n\n\n\nベクトル/位置\n1番目\n2番目\n3番目\n4番目\n5番目\n6番目\n\n\n\n\nmy_vec1\n1\n2\n3\n4\n5\n6\n\n\n\n\\(\\times\\)\n\\(\\times\\)\n\\(\\times\\)\n\\(\\times\\)\n\\(\\times\\)\n\\(\\times\\)\n\n\nmy_vec2\n0\n1\n2\n0\n1\n2\n\n\n結果\n0\n2\n6\n0\n5\n12\n\n\n\n\n\n# my_vec1とmy_vec2は同じ長さ\nmy_vec1 &lt;- c(1, 2, 3, 4, 5, 6) # 長さ6のベクトル\nmy_vec2 &lt;- c(0, 1, 2, 0, 1, 2) # 長さ6のベクトル\nmy_vec1 * my_vec2\n\n[1]  0  2  6  0  5 12"
+  },
+  {
+    "objectID": "slides/day01.html#ケース2-ベクトルの長さが異なる場合",
+    "href": "slides/day01.html#ケース2-ベクトルの長さが異なる場合",
+    "title": "情報処理応用演習",
+    "section": "ケース2: ベクトルの長さが異なる場合",
+    "text": "ケース2: ベクトルの長さが異なる場合\n\n短い方のベクトルがリサイクルされる（ベクトル・リサイクル）。\n\nmy_vec4の方が短いため、足りない分（太字の部分）はリサイクルされる。\n\n\n\n\n\nベクトル/位置\n1番目\n2番目\n3番目\n4番目\n5番目\n6番目\n\n\n\n\nmy_vec3\n1\n2\n3\n4\n5\n6\n\n\n\n\\(\\times\\)\n\\(\\times\\)\n\\(\\times\\)\n\\(\\times\\)\n\\(\\times\\)\n\\(\\times\\)\n\n\nmy_vec4\n0\n1\n0\n1\n0\n1\n\n\n結果\n0\n2\n0\n4\n0\n6\n\n\n\n\n\n# my_vec3とmy_vec4の長さは異なる\nmy_vec3 &lt;- c(1, 2, 3, 4, 5, 6) # 長さ6のベクトル\nmy_vec4 &lt;- c(0, 1)             # 長さ2のベクトル\nmy_vec3 * my_vec4\n\n[1] 0 2 0 4 0 6"
+  },
+  {
+    "objectID": "slides/day01.html#ベクトル要素の抽出",
+    "href": "slides/day01.html#ベクトル要素の抽出",
+    "title": "情報処理応用演習",
+    "section": "ベクトル要素の抽出",
+    "text": "ベクトル要素の抽出\nベクトルから任意の要素を抽出する2つの方法\n\n方法1: 抽出する要素の位置を指定する。\n方法2: 論理演算子を利用する。\n\n\n例) 11, 12, 13, …, 19, 20が格納されたmy_vec5\n\nmy_vec5 &lt;- 11:20 # my_vec &lt;- seq(11, 20, by = 1) と同じ\nmy_vec5\n\n [1] 11 12 13 14 15 16 17 18 19 20\n\n\n\n\n\n\n位置\n1\n2\n3\n4\n5\n6\n7\n8\n9\n10\n\n\n\n\nmy_vec5\n11\n12\n13\n14\n15\n16\n17\n18\n19\n20\n\n\n\n\n他の言語と違い、位置の番号は0からでなく、1からスタートすることに注意"
+  },
+  {
+    "objectID": "slides/day01.html#要素の抽出-位置指定",
+    "href": "slides/day01.html#要素の抽出-位置指定",
+    "title": "情報処理応用演習",
+    "section": "要素の抽出: 位置指定",
+    "text": "要素の抽出: 位置指定\n\nベクトル名[抽出する要素の位置]\n\n例1) my_vec5の3番目の要素\n\nmy_vec5[3]\n\n[1] 13\n\n\n例2) my_vec5の2, 3, 4, 5番目の要素\n\n[]内に抽出する要素の位置を表すベクトルを指定\npos_vec、c(2, 3, 4, 5)、seq(2, 5, by = 1)、2:5はすべて同じ意味\n\n\npos_vec &lt;- c(2, 3, 4, 5)\nmy_vec5[pos_vec]\n\n[1] 12 13 14 15\n\nmy_vec5[c(2, 3, 4, 5)]\n\n[1] 12 13 14 15\n\nmy_vec5[seq(2, 5, by = 1)]\n\n[1] 12 13 14 15\n\nmy_vec5[2:5]\n\n[1] 12 13 14 15"
+  },
+  {
+    "objectID": "slides/day01.html#要素の抽出-論理演算子の利用",
+    "href": "slides/day01.html#要素の抽出-論理演算子の利用",
+    "title": "情報処理応用演習",
+    "section": "要素の抽出: 論理演算子の利用",
+    "text": "要素の抽出: 論理演算子の利用\n\nそれぞれの要素に対し、抽出するか（TRUE）しないか（FALSE）を指定\n表形式データにおける行の抽出を自由自在に操るためには必須知識（第9回）\n\n例1) my_vec5から1, 4, 7, 9, 10番目の要素を抽出\n\n[]内にベクトルの長さ分のベクトルを更に入力する必要があるため、あまり使わない方法\n\n\n# my_vec5[c(1, 4, 7, 9, 10)] と同じ結果\nmy_vec5[c(TRUE, FALSE, FALSE, TRUE, FALSE, FALSE, TRUE, FALSE, TRUE, TRUE)]\n\n[1] 11 14 17 19 20\n\n\n例2) my_vec5から奇数のみ抽出（論理演算子の利用）\n\n# my_vec5を2で割った場合、余りが1ならTRUE、その他はFALSE\nmy_vec5 %% 2 == 1\n\n [1]  TRUE FALSE  TRUE FALSE  TRUE FALSE  TRUE FALSE  TRUE FALSE\n\nmy_vec5[my_vec5 %% 2 == 1]\n\n[1] 11 13 15 17 19"
+  },
+  {
+    "objectID": "slides/day01.html#表形式データの読み込み",
+    "href": "slides/day01.html#表形式データの読み込み",
+    "title": "情報処理応用演習",
+    "section": "表形式データの読み込み",
+    "text": "表形式データの読み込み\n{tidyverse}パッケージが提供するread_csv()関数を利用\n\nオブジェクト名 &lt;- read_csv(\"パスを含むファイル名\")\n以下の例はプロジェクト・フォルダー内にDataという名の下位フォルダーがあり、その中にPref_Vote.csvが保存されている場合。\n\nパスは\"Data/Pref_Vote.csv\"\n予めデータをJDCat分析ツールのサーバーにアップロードしておくこと。\n\nファイルアップロードの方法はサポートページの「Rの使い方 &gt; ファイル管理」を参照\n\n\n\n\nlibrary(tidyverse)\nmy_data &lt;- read_csv(\"Data/Pref_Vote.csv\")\n\n\n\n\n注意：read_csv()とread.csv()は区別しよう。\n\n\n　両方.csv形式データを読み込む関数であるが、read.csv()はR内蔵関数、read_csv()は{tidyverse}を読み込まないと使用できない関数である。後者の方が見やすいメリットがある。本講義ではread_csv()のみを使用する。課題の際、read.csv()関数を使うと減点とする。"
+  },
+  {
+    "objectID": "slides/day01.html#データの出力",
+    "href": "slides/day01.html#データの出力",
+    "title": "情報処理応用演習",
+    "section": "データの出力",
+    "text": "データの出力\n\nオブジェクト名、またはprint(オブジェクト名)\n\n\n# my_dataの中身の出力するコード\n# print(my_data) でもOK\nmy_data\n\n# A tibble: 47 × 13\n      ID Pref   Zaisei Over65 Under30 Jimin Minshin Komei Kyosan Ishin Shamin\n   &lt;dbl&gt; &lt;chr&gt;   &lt;dbl&gt;  &lt;dbl&gt;   &lt;dbl&gt; &lt;dbl&gt;   &lt;dbl&gt; &lt;dbl&gt;  &lt;dbl&gt; &lt;dbl&gt;  &lt;dbl&gt;\n 1     1 北海道  0.419   29.1    24.7  32.8    30.6 13.4    3.43 11.4    1.68\n 2     2 青森県  0.332   30.1    23.9  40.4    24.6 12.8    3.82  8.92   3.41\n 3     3 岩手県  0.341   30.4    24.5  34.9    22.4  8.61   5.16 11.2    5.29\n 4     4 宮城県  0.596   25.8    27.3  36.7    25.4 13.4    3.97  9.99   3.62\n 5     5 秋田県  0.299   33.8    21.4  43.5    22.7 11.2    5.17  7.56   5.12\n 6     6 山形県  0.342   30.8    24.8  42.5    21.5 11.8    4.3   7.6    5.2 \n 7     7 福島県  0.509   28.7    25.2  33.8    28.3 11.0    3.43 10.4    3.24\n 8     8 茨城県  0.633   26.8    26.6  40.6    19.0 15.0    6.67 10.1    2.88\n 9     9 栃木県  0.622   25.9    26.8  38.8    21.6 12.4   10.9   7      2.05\n10    10 群馬県  0.603   27.6    26.6  42.1    19.3 13.8    5.61 10      2.44\n# ℹ 37 more rows\n# ℹ 2 more variables: Region2 &lt;dbl&gt;, Region6 &lt;dbl&gt;"
+  },
+  {
+    "objectID": "slides/day01.html#データが全部見えない",
+    "href": "slides/day01.html#データが全部見えない",
+    "title": "情報処理応用演習",
+    "section": "データが全部見えない?",
+    "text": "データが全部見えない?\n1行目\n\n意味: 47行13列の表形式データ\n\n# A tibble: 47 × 13\n\n最終行\n\n意味: 表示された行以外にも更に37行があり、Region2とRegion6は画面では省略されている。\n\n文字サイズが小さい or 画面が大きい場合は省略されず、13列がすべて出力される場合もある。\n\n\n# … with 37 more rows, and 2 more variables: Region2 &lt;dbl&gt;, Region6 &lt;dbl&gt;"
+  },
+  {
+    "objectID": "slides/day01.html#読み込んだデータの出力",
+    "href": "slides/day01.html#読み込んだデータの出力",
+    "title": "情報処理応用演習",
+    "section": "読み込んだデータの出力",
+    "text": "読み込んだデータの出力\n\nデフォルト出力行数の指定最後の6行最後のn行\n\n\n\nオブジェクト名、またはprint(オブジェクト名)\n\n\nmy_data\n\n# A tibble: 47 × 13\n      ID Pref   Zaisei Over65 Under30 Jimin Minshin Komei Kyosan Ishin Shamin\n   &lt;dbl&gt; &lt;chr&gt;   &lt;dbl&gt;  &lt;dbl&gt;   &lt;dbl&gt; &lt;dbl&gt;   &lt;dbl&gt; &lt;dbl&gt;  &lt;dbl&gt; &lt;dbl&gt;  &lt;dbl&gt;\n 1     1 北海道  0.419   29.1    24.7  32.8    30.6 13.4    3.43 11.4    1.68\n 2     2 青森県  0.332   30.1    23.9  40.4    24.6 12.8    3.82  8.92   3.41\n 3     3 岩手県  0.341   30.4    24.5  34.9    22.4  8.61   5.16 11.2    5.29\n 4     4 宮城県  0.596   25.8    27.3  36.7    25.4 13.4    3.97  9.99   3.62\n 5     5 秋田県  0.299   33.8    21.4  43.5    22.7 11.2    5.17  7.56   5.12\n 6     6 山形県  0.342   30.8    24.8  42.5    21.5 11.8    4.3   7.6    5.2 \n 7     7 福島県  0.509   28.7    25.2  33.8    28.3 11.0    3.43 10.4    3.24\n 8     8 茨城県  0.633   26.8    26.6  40.6    19.0 15.0    6.67 10.1    2.88\n 9     9 栃木県  0.622   25.9    26.8  38.8    21.6 12.4   10.9   7      2.05\n10    10 群馬県  0.603   27.6    26.6  42.1    19.3 13.8    5.61 10      2.44\n# ℹ 37 more rows\n# ℹ 2 more variables: Region2 &lt;dbl&gt;, Region6 &lt;dbl&gt;\n\n\n\n\n\nprint(オブジェクト名, n = 行数)\n\n\nprint(my_data, n = 15)\n\n# A tibble: 47 × 13\n      ID Pref     Zaisei Over65 Under30 Jimin Minshin Komei Kyosan Ishin Shamin\n   &lt;dbl&gt; &lt;chr&gt;     &lt;dbl&gt;  &lt;dbl&gt;   &lt;dbl&gt; &lt;dbl&gt;   &lt;dbl&gt; &lt;dbl&gt;  &lt;dbl&gt; &lt;dbl&gt;  &lt;dbl&gt;\n 1     1 北海道    0.419   29.1    24.7  32.8    30.6 13.4    3.43 11.4    1.68\n 2     2 青森県    0.332   30.1    23.9  40.4    24.6 12.8    3.82  8.92   3.41\n 3     3 岩手県    0.341   30.4    24.5  34.9    22.4  8.61   5.16 11.2    5.29\n 4     4 宮城県    0.596   25.8    27.3  36.7    25.4 13.4    3.97  9.99   3.62\n 5     5 秋田県    0.299   33.8    21.4  43.5    22.7 11.2    5.17  7.56   5.12\n 6     6 山形県    0.342   30.8    24.8  42.5    21.5 11.8    4.3   7.6    5.2 \n 7     7 福島県    0.509   28.7    25.2  33.8    28.3 11.0    3.43 10.4    3.24\n 8     8 茨城県    0.633   26.8    26.6  40.6    19.0 15.0    6.67 10.1    2.88\n 9     9 栃木県    0.622   25.9    26.8  38.8    21.6 12.4   10.9   7      2.05\n10    10 群馬県    0.603   27.6    26.6  42.1    19.3 13.8    5.61 10      2.44\n11    11 埼玉県    0.765   24.8    27.7  32.3    20.4 16      7.23 13.9    1.91\n12    12 千葉県    0.777   25.9    26.7  37.8    21.7 14.0    5.46 11.3    2.01\n13    13 東京都    1.00    22.7    27.4  34.4    19.8 11.4    7.34 14.2    2.82\n14    14 神奈川県  0.917   23.9    27.8  34.9    21.5 12.2    7.77 12.5    2.79\n15    15 新潟県    0.435   29.9    25.2  43.7    25.2  8.27   4.39  8      3.76\n# ℹ 32 more rows\n# ℹ 2 more variables: Region2 &lt;dbl&gt;, Region6 &lt;dbl&gt;\n\n\n\n\n\ntail(オブジェクト名)\n\n\ntail(my_data)\n\n# A tibble: 6 × 13\n     ID Pref     Zaisei Over65 Under30 Jimin Minshin Komei Kyosan Ishin Shamin\n  &lt;dbl&gt; &lt;chr&gt;     &lt;dbl&gt;  &lt;dbl&gt;   &lt;dbl&gt; &lt;dbl&gt;   &lt;dbl&gt; &lt;dbl&gt;  &lt;dbl&gt; &lt;dbl&gt;  &lt;dbl&gt;\n1    42 長崎県    0.316   29.6    25.8  41.7    20.7  16.9   5.12  6.27   3.48\n2    43 熊本県    0.387   28.8    27.2  46.5    19.3  15.3   4.53  6.32   2.6 \n3    44 大分県    0.358   30.4    25.6  39.4    18.4  13.3   4.42  6.85  13.0 \n4    45 宮崎県    0.320   29.5    26.3  40.1    14.5  17.1   5.74  7.27   6.81\n5    46 鹿児島県  0.321   29.4    26.0  46.0    16.2  14.5   6.47  6.52   3.62\n6    47 沖縄県    0.315   19.6    33.4  27.8    13.3  15.1   7.66 15.6   12.1 \n# ℹ 2 more variables: Region2 &lt;dbl&gt;, Region6 &lt;dbl&gt;\n\n\n\n\n\ntail(オブジェクト名, n = 行数)\n\nhead()で使うと最初のn行の出力も可能\n\n\n\ntail(my_data, n = 10)\n\n# A tibble: 10 × 13\n      ID Pref     Zaisei Over65 Under30 Jimin Minshin Komei Kyosan Ishin Shamin\n   &lt;dbl&gt; &lt;chr&gt;     &lt;dbl&gt;  &lt;dbl&gt;   &lt;dbl&gt; &lt;dbl&gt;   &lt;dbl&gt; &lt;dbl&gt;  &lt;dbl&gt; &lt;dbl&gt;  &lt;dbl&gt;\n 1    38 愛媛県    0.412   30.6    24.8  43.6    19.3  14.8   6.77  6.97   2.4 \n 2    39 高知県    0.245   32.8    23.6  37.0    17.0  15.8   3.93 17.4    2.91\n 3    40 福岡県    0.618   25.9    28.2  36.5    19.1  17.2   7.03 10.8    3.33\n 4    41 佐賀県    0.329   27.7    28.0  43.5    21.1  15.5   4.85  5.67   4.16\n 5    42 長崎県    0.316   29.6    25.8  41.7    20.7  16.9   5.12  6.27   3.48\n 6    43 熊本県    0.387   28.8    27.2  46.5    19.3  15.3   4.53  6.32   2.6 \n 7    44 大分県    0.358   30.4    25.6  39.4    18.4  13.3   4.42  6.85  13.0 \n 8    45 宮崎県    0.320   29.5    26.3  40.1    14.5  17.1   5.74  7.27   6.81\n 9    46 鹿児島県  0.321   29.4    26.0  46.0    16.2  14.5   6.47  6.52   3.62\n10    47 沖縄県    0.315   19.6    33.4  27.8    13.3  15.1   7.66 15.6   12.1 \n# ℹ 2 more variables: Region2 &lt;dbl&gt;, Region6 &lt;dbl&gt;"
+  },
+  {
+    "objectID": "slides/day01.html#csv以外の表形式データ",
+    "href": "slides/day01.html#csv以外の表形式データ",
+    "title": "情報処理応用演習",
+    "section": ".csv以外の表形式データ",
+    "text": ".csv以外の表形式データ\n.csv形式ファイルは表形式データの定番であり、標準\n\n他にも様々な形式のデータがあり、Rで読み込み可能（以下は一部の例）\n\n\n\n\nソフトウェア名\n拡張子\n使用パッケージ\n関数\n\n\n\n\nMicrosoft Excel\n.xls、.xlsx\n{readxl}\nread_excle()\n\n\nLibreOffice / OpenOffice\n.ods\n{readODS}\nread_ods()\n\n\nSPSS\n.sav\n{haven}\nread_stata()\n\n\nStata\n.dta\n{haven}\nread_spss()\n\n\nSAS\n.sas7bdat\n{haven}\nread_sas()"
+  },
+  {
+    "objectID": "slides/day01.html#r-markdown-quartoとは",
+    "href": "slides/day01.html#r-markdown-quartoとは",
+    "title": "情報処理応用演習",
+    "section": "R Markdown / Quartoとは",
+    "text": "R Markdown / Quartoとは\n\n\n\n\n\nR Markdown\n\n\n\nR + Markdown\nRのコードと結果、文章が一つの文書としてまとまったもの\n\nHTML、Microsoft Word（.docx）、PDF等\n\nスライド、ホームページ、ポスター、書籍なども作成可能\n\n\n\n\n\n\n\nQuarto\n\n\n\n読み方は「クゥオート」（クワトロじゃない）\n断片化されつつあるR Markdown生態系を一つに統合したもの\n\nR Markdownだとホームページには{blogdown}、書籍執筆は{bookdown}、スライド作成は{xaringan}など\n本講義のスライド、サポートページ、教科書、宋のホームページも全てQuartoで作成\n\nR Markdownと使い方はほぼ同じ\n\n本講義ではQuartoを使用\n\nPython/Julia/Observable JSも使用可能"
+  },
+  {
+    "objectID": "slides/day01.html#プレーンテキストとリッチテキスト",
+    "href": "slides/day01.html#プレーンテキストとリッチテキスト",
+    "title": "情報処理応用演習",
+    "section": "プレーンテキストとリッチテキスト",
+    "text": "プレーンテキストとリッチテキスト\n\nPlain text: 書式情報などが含まれていない純粋なテキストのみで構成されている文書\n\nmacOSの「テキストエディット」、Windowsの「メモ帳」など\n\nRich text: 書式情報だけでなく、図表なども含まれる文書\n\nMicrosoft Word、Apple Pagesなど\n\n書式情報の例: 文書の余白、行間の幅、文字サイズ、太さ、色\nリッチテキストには文字情報以外にも様々な書式情報が含まれているため、サイズが大きく、パソコンへの負担も大きい"
+  },
+  {
+    "objectID": "slides/day01.html#プレーンからリッチへ",
+    "href": "slides/day01.html#プレーンからリッチへ",
+    "title": "情報処理応用演習",
+    "section": "プレーンからリッチへ",
+    "text": "プレーンからリッチへ\n\nMarkup言語：プレーンテキストをリッチテキストへ変換するための言語\nHTML（HyperText Markup Language）が代表的\n\n例1） &lt;b&gt;と&lt;/b&gt;で囲まれた文字は太字として出力される。\n例2） &lt;a&gt;と&lt;/a&gt;で囲まれた文字はリンクであり、&lt;a&gt;のhref引数で指定されたリンク先へ飛ばされる。\n\n\nInput:\nこの文字は&lt;b&gt;太字&lt;/b&gt;にしましょう。&lt;br/&gt;\nこの文字は&lt;a href = \"https://www.jaysong.net\"&gt;リンク&lt;/a&gt;にしましょう。\nOutput:\nこの文字は太字にしましょう。 この文字はリンクにしましょう。"
+  },
+  {
+    "objectID": "slides/day01.html#markdownとは",
+    "href": "slides/day01.html#markdownとは",
+    "title": "情報処理応用演習",
+    "section": "Markdownとは",
+    "text": "Markdownとは\n\nMarkdown（）: Markup言語の軽量版\n\n文章作成に必要なタグ（tag）をより簡単に記述できる。\nブラインドタッチに慣れればWordよりも素早く文書を作成することができるようになる。\n\n\n\n以下の2つのコードは同じ結果を返す。\nMarkupの場合（HTML）\nこの文字は&lt;b&gt;太字&lt;/b&gt;にしましょう。&lt;br/&gt;\nこの文字は&lt;a href = \"https://www.jaysong.net\"&gt;リンク&lt;/a&gt;にしましょう。\nMarkdownの場合\nこの文字は**太字**にしましょう。\n\nこの文字は[リンク](https://www.jaysong.net)にしましょう。\n結果\nこの文字は太字にしましょう。\nこの文字はリンクにしましょう。"
+  },
+  {
+    "objectID": "slides/day01.html#markup-vs.-markdown",
+    "href": "slides/day01.html#markup-vs.-markdown",
+    "title": "情報処理応用演習",
+    "section": "Markup vs. Markdown",
+    "text": "Markup vs. Markdown\n表の作成\n\n\nMarkup\n&lt;table&gt;\n    &lt;thead style = \"font-weight:bold;\"&gt;\n        &lt;td&gt;ID&lt;/td&gt;\n        &lt;td&gt;Name&lt;/td&gt;\n    &lt;/thead&gt;\n    &lt;tr&gt;\n        &lt;td&gt;1&lt;/td&gt;\n        &lt;td&gt;Song&lt;/td&gt;\n    &lt;/tr&gt;\n    &lt;tr&gt;\n        &lt;td&gt;2&lt;/td&gt;\n        &lt;td&gt;Yanai&lt;/td&gt;\n    &lt;/tr&gt;\n&lt;/table&gt;\n\n\n\nMarkdown\n| ID | Name |\n|----|------|\n| 1  | Song |\n| 2  | Hata |\n綺麗に揃えなくてもOK\n|ID|Name|\n|---|---|\n|1|Song|\n|2|Hata|\n\n\n\nOutput\n\n\n\nID\nName\n\n\n\n\n1\nSong\n\n\n2\nHata"
+  },
+  {
+    "objectID": "slides/day01.html#markup-vs.-markdown-1",
+    "href": "slides/day01.html#markup-vs.-markdown-1",
+    "title": "情報処理応用演習",
+    "section": "Markup vs. Markdown",
+    "text": "Markup vs. Markdown\n箇条書き\n\n\nMarkup\n&lt;ul&gt;\n  &lt;li&gt;箇条書き1&lt;/li&gt;\n    &lt;ul&gt;\n      &lt;li&gt;箇条書き1A&lt;/li&gt;\n      &lt;li&gt;箇条書き1B&lt;/li&gt;\n    &lt;/ul&gt;\n  &lt;li&gt;箇条書き2&lt;/li&gt;\n  &lt;li&gt;箇条書き3&lt;/li&gt;\n&lt;/ul&gt;\n\n\n\nMarkdown\n* 箇条書き1\n  * 箇条書き1A\n  * 箇条書き1B\n* 箇条書き2\n* 箇条書き3\n\n\n\nOutput\n\n箇条書き1\n\n箇条書き1A\n箇条書き1B\n\n箇条書き2\n箇条書き3"
+  },
+  {
+    "objectID": "slides/day01.html#qmdファイルの生成",
+    "href": "slides/day01.html#qmdファイルの生成",
+    "title": "情報処理応用演習",
+    "section": ".qmdファイルの生成",
+    "text": ".qmdファイルの生成\n\nRStudioを起動し、プロジェクトを作成する。\nFile &gt; New &gt; Quarto Document…を選択する。\nOKをクリックする。\nYAMLヘッダーを修正する。\nファイルを保存する（File &gt; Save）。\n\nショートカットキー: ⌘+S（macOS）、または Ctrl + S (Windows)\n\nSourceペイン上段のRenderをクリックする。"
+  },
+  {
+    "objectID": "slides/day01.html#yamlヘッダー",
+    "href": "slides/day01.html#yamlヘッダー",
+    "title": "情報処理応用演習",
+    "section": "YAMLヘッダー",
+    "text": "YAMLヘッダー\n.qmdファイル最上段に位置する文書の情報に関する内容\n\n最初はtitleとformatのみになっているため、適宜修正（場合によってはtitleのみになっている）\n\n---\ntitle: \"はじめてのQuarto\"\nauthor: \"府大花子\"\ndate: \"2023/10/07\"\nformat: html\nlang: ja\n---\n\ntitle: 文書のタイトル\n\nsubtitle:でサブタイトルも付けられる。\n\nauthor: 文書の作成者\ndate: 日付（「年/月/日」形式で入力）\n\ndate: todayに修正すると、Renderした日の日付が自動的につけられる。\n\nformat: 出力形式（htmlのままで良い）\nlang: 出力言語（デフォルトはen）"
+  },
+  {
+    "objectID": "slides/day01.html#markdownの文法-文章の改行",
+    "href": "slides/day01.html#markdownの文法-文章の改行",
+    "title": "情報処理応用演習",
+    "section": "Markdownの文法: 文章の改行",
+    "text": "Markdownの文法: 文章の改行\n1回のみの改行は連続した文字列として認識するため、文章を改行するためには、必ず2回改行が必要\n\n\nInput\nこれは文章1です。\nこれは文章2です。\nOutput\nこれは文章1です。 これは文章2です。\n\n\n\nInput\nこれは文章1です。\n\nこれは文章2です。\nOutput\nこれは文章1です。\nこれは文章2です。"
+  },
+  {
+    "objectID": "slides/day01.html#markdownの文法-強調",
+    "href": "slides/day01.html#markdownの文法-強調",
+    "title": "情報処理応用演習",
+    "section": "Markdownの文法: 強調",
+    "text": "Markdownの文法: 強調\n\n英語の強調はイタリック、日本語の強調は太字を使用\n\nInput\n文章の一部を**太字**にしてみましょう。\n\nThe G7 consists of Canada, France, Germany, Italy, *Japan*, UK, and USA.\n\n~~取り消し線~~はあまり使わないかも。\n\n&lt;u&gt;アンダーライン&lt;/u&gt;はHTMLタグを使います。\nOutput\n文章の一部を太字にしてみましょう。\nThe G7 consists of Canada, France, Germany, Italy, Japan, UK, and USA.\n取り消し線はあまり使わないかも。\nアンダーラインはHTMLタグを使います。"
+  },
+  {
+    "objectID": "slides/day01.html#markdownの文法-リンク",
+    "href": "slides/day01.html#markdownの文法-リンク",
+    "title": "情報処理応用演習",
+    "section": "Markdownの文法: リンク",
+    "text": "Markdownの文法: リンク\n\n[リンク文](URL)\n[]で囲まれた文章をクリックすると()内で指定したURLへ移動\n\nInput\n[ここ](https://www.jaysong.net)をクリックすると、宋のHPへ移動します。\nOutput\nここをクリックすると、宋のHPへ移動します。"
+  },
+  {
+    "objectID": "slides/day01.html#markdownの文法-見出し",
+    "href": "slides/day01.html#markdownの文法-見出し",
+    "title": "情報処理応用演習",
+    "section": "Markdownの文法: 見出し",
+    "text": "Markdownの文法: 見出し\n\n# + 半角スペース + 見出し（#が多いほど小さくなる）\n\nInput\n# 見出し1 (ヘッディング1)\n## 見出し2 (ヘッディング2)\n### 見出し3 (ヘッディング3)\n#### 見出し4 (ヘッディング4)\nOutput\n\n見出し1 (ヘッディング1)\n\n\n見出し2 (ヘッディング2)\n\n\n見出し3 (ヘッディング3)\n\n\n見出し4 (ヘッディング4)"
+  },
+  {
+    "objectID": "slides/day01.html#markdownの文法-水平線",
+    "href": "slides/day01.html#markdownの文法-水平線",
+    "title": "情報処理応用演習",
+    "section": "Markdownの文法: 水平線",
+    "text": "Markdownの文法: 水平線\n\n任意の行に---を挿入\n章と章の区切り、節と節の区切りなどに使用\n\nInput\n文章1\n\n---\n\n文章2\nOutput\n文章1\n\n文章2"
+  },
+  {
+    "objectID": "slides/day01.html#markdownの文法-箇条書き順序なし",
+    "href": "slides/day01.html#markdownの文法-箇条書き順序なし",
+    "title": "情報処理応用演習",
+    "section": "Markdownの文法: 箇条書き（順序なし）",
+    "text": "Markdownの文法: 箇条書き（順序なし）\n\n* + 半角スペース + 文字列\n階層構造にする場合、*の前に半角スペースを3個以上入れる\n*の代わりに-も可\n\n\n\nInput\n* リスト1\n* リスト2\n   * リスト2-1\n      * リスト2-1-1\n      * リスト2-1-2\n   * リスト2-1\n* リスト3\n\n\n\nOutput\n\nリスト1\nリスト2\n\nリスト2-1\n\nリスト2-1-1\nリスト2-1-2\n\nリスト2-1\n\nリスト3"
+  },
+  {
+    "objectID": "slides/day01.html#markdownの文法-箇条書き順序付き",
+    "href": "slides/day01.html#markdownの文法-箇条書き順序付き",
+    "title": "情報処理応用演習",
+    "section": "Markdownの文法: 箇条書き（順序付き）",
+    "text": "Markdownの文法: 箇条書き（順序付き）\n\n1. + 半角スペース + 文字列\n1.の箇所は任意の数字でもOK。1.、2.、…も可\n階層構造にする場合、1.の前に半角スペースを3個入れる\n1.と*の組み合わせも可能\n\n\n\nInput\n1. リスト1\n2. リスト2\n   1. リスト2-1\n      1. リスト2-1-1\n      2. リスト2-1-2\n   2. リスト2-1\n3. リスト3\n\n\n\nOutput\n\nリスト1\nリスト2\n\nリスト2-1\n\nリスト2-1-1\nリスト2-1-2\n\nリスト2-1\n\nリスト3"
+  },
+  {
+    "objectID": "slides/day01.html#markdownの文法-数式",
+    "href": "slides/day01.html#markdownの文法-数式",
+    "title": "情報処理応用演習",
+    "section": "Markdownの文法: 数式",
+    "text": "Markdownの文法: 数式\n\n文中数式は$数式$、独立した行の数式は$$で囲む\n\\(\\LaTeX\\) の数式表記法を理解する必要がある\n\nInput\n文中の数式の例: $e = mc^2$\n\n独立した数式の例は、\n\n$$\ny_i \\sim \\text{Normal}(\\mathbf{X} \\boldsymbol{\\beta}, \\sigma).\n$$\n\nのように書きます。\nOutput\n文中の数式の例: \\(e = mc^2\\)\n独立した数式の例は、\n\\[\ny_i \\sim \\text{Normal}(\\mathbf{X} \\boldsymbol{\\beta}, \\sigma).\n\\]\nのように書きます。"
+  },
+  {
+    "objectID": "slides/day01.html#markdownの文法-表",
+    "href": "slides/day01.html#markdownの文法-表",
+    "title": "情報処理応用演習",
+    "section": "Markdownの文法: 表",
+    "text": "Markdownの文法: 表\n\n行は改行で、列は|で区切る\n1行目は表のヘッダーであり、|---|で区切る（-は1個以上でOK）\n\n|---|と|:---|は左揃え、|---:|は右揃え、|:---:|は中央揃え\n\n\n\n\nInput\n|ID |Name   |Birth (Year)|Pref   |\n|:-:|-------|-----------:|-------|\n|1  |Ogura  |1852        |Tokyo  |\n|2  |Tsurumi|1858        |Tochigi|\n|3  |Yoshida|1858        |Fukuoka|\n|4  |Hotta  |1859        |Chiba  |\n|5  |Inoue  |1847        |Nagano |\n|6  |Tezuka |1862        |Tokyo  |\n|7  |Shikata|1857        |Saitama|\n|8  |Nomura |1855        |Gunma  |\n\n\n\nOutput\n\n\n\nID\nName\nBirth (Year)\nPref\n\n\n\n\n1\nOgura\n1852\nTokyo\n\n\n2\nTsurumi\n1858\nTochigi\n\n\n3\nYoshida\n1858\nFukuoka\n\n\n4\nHotta\n1859\nChiba\n\n\n5\nInoue\n1847\nNagano\n\n\n6\nTezuka\n1862\nTokyo\n\n\n7\nShikata\n1857\nSaitama\n\n\n8\nNomura\n1855\nGunma"
+  },
+  {
+    "objectID": "slides/day01.html#markdownの文法-コメント",
+    "href": "slides/day01.html#markdownの文法-コメント",
+    "title": "情報処理応用演習",
+    "section": "Markdownの文法: コメント",
+    "text": "Markdownの文法: コメント\n出力に影響されないコメントを入れる場合\n\n&lt;!--と--&gt;内に囲む\n&lt;!--と--&gt;の間の文章は出力されない\n自分用のメモ、とりあえず出力させない内容などに使用\nチャンク内コメントは#（チャンクは後に解説）\n\n\n\nInput:\nこれは文章1です。\n\n&lt;!--\nこれはコメントです。\n--&gt;\n\nこれは文章2です。\n\n\n\nOutput:\nこれは文章1です。\n\nこれは文章2です。"
+  },
+  {
+    "objectID": "slides/day01.html#markdownの文法-その他",
+    "href": "slides/day01.html#markdownの文法-その他",
+    "title": "情報処理応用演習",
+    "section": "Markdownの文法: その他",
+    "text": "Markdownの文法: その他\n教科書の「R Markdown入門」と「Quarto入門」を参照\n\n図の挿入\n脚注\n引用\nQuarto独自の機能など"
+  },
+  {
+    "objectID": "slides/day01.html#rコードの挿入チャンクchunk",
+    "href": "slides/day01.html#rコードの挿入チャンクchunk",
+    "title": "情報処理応用演習",
+    "section": "Rコードの挿入：チャンク（Chunk）",
+    "text": "Rコードの挿入：チャンク（Chunk）\nRのコードを挿入する領域\n\n```{r}と```で囲む。\n\nチャンクの外にコードを書いても文章として認識する。\nチャンク内においてMarkdown文法は通用しない。純粋なRコードのみ。\n`は「バッククォート（back quote）」と読む。\nチャンクの前後は必ず改行する（下のコードの4・9行目のように）。\n\nコードの出力 &gt; 結果の出力の順番\n\n\n\nInput\nここはチャンクの外\n\nここに書いたものは文章として扱われる。\n\n```{r}\nx &lt;- 5 # 円の半径\nprint(3.14 * x^2)\n```\n\nここに書いたのも文章\n\n\n\nOutput\nここはチャンクの外\nここに書いたものは文章として扱われる。\n\nx &lt;- 5 # 円の半径\nprint(3.14 * x^2)\n\n[1] 78.5\n\n\nここに書いたのも文章"
+  },
+  {
+    "objectID": "slides/day01.html#rコードの挿入チャンクのオプション",
+    "href": "slides/day01.html#rコードの挿入チャンクのオプション",
+    "title": "情報処理応用演習",
+    "section": "Rコードの挿入：チャンクのオプション",
+    "text": "Rコードの挿入：チャンクのオプション\nチャンク内に各チャンクのオプションが指定可能\n\n\nチャンクオプションの付け方\n```{r}\n#| label: my_chunk_1\n#| warning: false\n#| echo: false\n#| fig-width: 8\n#| fig-align: center\n\nRのコード\n```\n\n他にも数十のオプションの指定が可能\n\nR Markdown Cheetsheet\nQuarto公式ホームページ\n\n\n\n\n\n\n#| label: チャンクの名前\n\nチャンクに名前を付ける\n\n#| eval: false\n\nコードのみ出力し、結果は出力しない\n\n#| echo: false\n\n結果のみ出力し、コードは出力しない\n\n#| fig-width: 5\n\n出力される図の幅を8インチに\n\n#| fig-height: 500px\n\n出力される図の幅を高さを500ピクセルに\n\n#| fig-align: center\n\n出力される図を中央揃えに\n\n#| warning: false\n\n警告メッセージを隠す\n\n#| error: true\n\nエラーが発生してもとりあえずRenderする"
+  },
+  {
+    "objectID": "slides/day01.html#rコード-インラインコード",
+    "href": "slides/day01.html#rコード-インラインコード",
+    "title": "情報処理応用演習",
+    "section": "Rコード: インラインコード",
+    "text": "Rコード: インラインコード\n文章内にRコードの結果を埋め込む場合\n\n`rと`の間にコードを挿入\n単に`で囲まれたものはコードのように表示してくれるものの、そのコードは実行されない。文中に短いコードのみを入れたり、変数名、関数名を示す際に使う機能である。\n\n\n\nInput:\n```{r}\nX &lt;- c(2, 3, 5, 7, 11)\n```\n\n変数`X`の平均値は`r mean(X)`です。\n\n\n\nOutput:\n\nX &lt;- c(2, 3, 5, 7, 11)\n\n変数Xの平均値は5.6です。"
+  },
+  {
+    "objectID": "slides/day01.html#再現再生可能な研究",
+    "href": "slides/day01.html#再現再生可能な研究",
+    "title": "情報処理応用演習",
+    "section": "再現・再生可能な研究",
+    "text": "再現・再生可能な研究\n国里 (2020)による定義\n\n学会、分野によっては正反対の概念になる場合もある (Barba 2018)\n\n\n再生可能性 (Reproducibility)\n\n同じデータ + 同じ方法 = 同じ結果\nQuarto/R Markdownの主な目的は再生可能性\n\n\n再現可能性 (Replicability)\n\n新しいデータ + 同じ方法 = 同じ結果\n新しいデータ + 違う方法 = 同じ結果\n\n\n\n参考文献\n\n国里愛彦. 2020.「再現可能な心理学研究入門」『専修大学人間科学論集:心理学篇』10. 21-33.\nLorena A. Barba. 2018. “Terminologies for Reproducible Research.” ArXiv. 1802.03311"
+  },
+  {
+    "objectID": "slides/day01.html#quartor-markdownと再生可能性",
+    "href": "slides/day01.html#quartor-markdownと再生可能性",
+    "title": "情報処理応用演習",
+    "section": "Quarto/R Markdownと再生可能性",
+    "text": "Quarto/R Markdownと再生可能性\n\n具体的にどのような手順で分析が行われたかが分かる\n\nコードを記録&公開\n\nコードに対する説明が付いている\n\n自分が書いたコードであっても、昔書いたコードは読みにくい\n過去、自分が行った分析の再生する出来ない場合も\n\n今、教壇に立っている人の話ではない\n\n\nコードと結果が同時に照会できる\n\nわざわざRを立ち上げなくても、その場で分析の手順が分かる"
+  },
+  {
+    "objectID": "slides/day01.html#再生可能な研究を目指して",
+    "href": "slides/day01.html#再生可能な研究を目指して",
+    "title": "情報処理応用演習",
+    "section": "再生可能な研究を目指して",
+    "text": "再生可能な研究を目指して\n\n可能な限り、詳細な説明を付ける\n\n文章領域では「以下のコードがどのような目的で書かれたコードであるか」などを明示する。\nチャンク内にもこまめにコメント（#）を付ける\n\n理想としては一行ごとにコメントを付ける\n\n\n\n悪い例 (悪くはないが、良くもない)\nx &lt;- rep(NA, 5)\n良い例\nx &lt;- rep(NA, 5) # 欠損値で埋められた長さ5のベクトル"
+  },
+  {
+    "objectID": "slides/day01.html#再生可能な研究を目指して-1",
+    "href": "slides/day01.html#再生可能な研究を目指して-1",
+    "title": "情報処理応用演習",
+    "section": "再生可能な研究を目指して",
+    "text": "再生可能な研究を目指して\n\nコードを分かりやすく書く\n\n長いオブジェクト名を避ける\n分かりやすいオブジェクト名\n適宜スペースと字下げを入れるなど\n読みやすいコードの書き方（前回講義を参照）\n\nデータについても詳細に書く\n\nどのように収集されたデータであるのか\nどのような変数があるのか\n\n\n\n\nhttps://www.jaysong.net/kpu-r/"
+  },
+  {
+    "objectID": "materials/day03.html",
+    "href": "materials/day03.html",
+    "title": "第3回 講義資料",
+    "section": "",
+    "text": "新しいタブで開く\n\n\n\n\n\n\n\nスライドの印刷方法\n\n\n\n　本講義のスライドはPC閲覧を前提としているため、印刷は推奨しない。たとえば、タブが含まれているページの場合、1つ目のタブのみ印刷されるといったデメリットがある。しかし、どうしてもスライドを印刷したい場合は、以下の手順でスライドをPDFに保存し、印刷すること。\n\nGoogle Chromeブラウザーで本ページを開く。\n\nMicrosoft Explore、Edge、Firefox、Operaなどで試してみても良いものの、作動は保証しない。\n\n本ページ上段の「 新しいタブで開く」をクリックする。\nスライドが表示されたらキーボードの「E」、または「e」キーを押す。\nmacOSならCommand（⌘） + P、WindowsならControl（Ctrl）+ Pを押す。\n出力先をPDFにする。\n用紙のレイアウトを横向き（Landscape）に指定する。\n余白をなしにする。\n背景画像のオプションにチェックを入れる。\n保存\n保存されたPDFファイルをプリントする。\n\n　上記の手順はQuarto（本サポートページおよびスライドの作成言語）の開発元が公開している方法である。今後、より簡単なプリント方法が考案される可能性もある。詳細はQuarto公式ホームページを参照すること。"
+  },
+  {
+    "objectID": "materials/day03.html#スライド",
+    "href": "materials/day03.html#スライド",
+    "title": "第3回 講義資料",
+    "section": "",
+    "text": "新しいタブで開く\n\n\n\n\n\n\n\nスライドの印刷方法\n\n\n\n　本講義のスライドはPC閲覧を前提としているため、印刷は推奨しない。たとえば、タブが含まれているページの場合、1つ目のタブのみ印刷されるといったデメリットがある。しかし、どうしてもスライドを印刷したい場合は、以下の手順でスライドをPDFに保存し、印刷すること。\n\nGoogle Chromeブラウザーで本ページを開く。\n\nMicrosoft Explore、Edge、Firefox、Operaなどで試してみても良いものの、作動は保証しない。\n\n本ページ上段の「 新しいタブで開く」をクリックする。\nスライドが表示されたらキーボードの「E」、または「e」キーを押す。\nmacOSならCommand（⌘） + P、WindowsならControl（Ctrl）+ Pを押す。\n出力先をPDFにする。\n用紙のレイアウトを横向き（Landscape）に指定する。\n余白をなしにする。\n背景画像のオプションにチェックを入れる。\n保存\n保存されたPDFファイルをプリントする。\n\n　上記の手順はQuarto（本サポートページおよびスライドの作成言語）の開発元が公開している方法である。今後、より簡単なプリント方法が考案される可能性もある。詳細はQuarto公式ホームページを参照すること。"
+  },
+  {
+    "objectID": "materials/day01.html",
+    "href": "materials/day01.html",
+    "title": "第1回 講義資料",
+    "section": "",
+    "text": "新しいタブで開く\n\n\n\n\n\n\n\nスライドの印刷方法\n\n\n\n　本講義のスライドはPC閲覧を前提としているため、印刷は推奨しない。たとえば、タブが含まれているページの場合、1つ目のタブのみ印刷されるといったデメリットがある。しかし、どうしてもスライドを印刷したい場合は、以下の手順でスライドをPDFに保存し、印刷すること。\n\nGoogle Chromeブラウザーで本ページを開く。\n\nMicrosoft Explore、Edge、Firefox、Operaなどで試してみても良いものの、作動は保証しない。\n\n本ページ上段の「 新しいタブで開く」をクリックする。\nスライドが表示されたらキーボードの「E」、または「e」キーを押す。\nmacOSならCommand（⌘） + P、WindowsならControl（Ctrl）+ Pを押す。\n出力先をPDFにする。\n用紙のレイアウトを横向き（Landscape）に指定する。\n余白をなしにする。\n背景画像のオプションにチェックを入れる。\n保存\n保存されたPDFファイルをプリントする。\n\n　上記の手順はQuarto（本サポートページおよびスライドの作成言語）の開発元が公開している方法である。今後、より簡単なプリント方法が考案される可能性もある。詳細はQuarto公式ホームページを参照すること。"
+  },
+  {
+    "objectID": "materials/day01.html#スライド",
+    "href": "materials/day01.html#スライド",
+    "title": "第1回 講義資料",
+    "section": "",
+    "text": "新しいタブで開く\n\n\n\n\n\n\n\nスライドの印刷方法\n\n\n\n　本講義のスライドはPC閲覧を前提としているため、印刷は推奨しない。たとえば、タブが含まれているページの場合、1つ目のタブのみ印刷されるといったデメリットがある。しかし、どうしてもスライドを印刷したい場合は、以下の手順でスライドをPDFに保存し、印刷すること。\n\nGoogle Chromeブラウザーで本ページを開く。\n\nMicrosoft Explore、Edge、Firefox、Operaなどで試してみても良いものの、作動は保証しない。\n\n本ページ上段の「 新しいタブで開く」をクリックする。\nスライドが表示されたらキーボードの「E」、または「e」キーを押す。\nmacOSならCommand（⌘） + P、WindowsならControl（Ctrl）+ Pを押す。\n出力先をPDFにする。\n用紙のレイアウトを横向き（Landscape）に指定する。\n余白をなしにする。\n背景画像のオプションにチェックを入れる。\n保存\n保存されたPDFファイルをプリントする。\n\n　上記の手順はQuarto（本サポートページおよびスライドの作成言語）の開発元が公開している方法である。今後、より簡単なプリント方法が考案される可能性もある。詳細はQuarto公式ホームページを参照すること。"
+  },
+  {
+    "objectID": "intro/project.html",
+    "href": "intro/project.html",
+    "title": "プロジェクト管理",
+    "section": "",
+    "text": "なぜプロジェクト機能を使う必要があるのか\n\n\n\n　「なぜプロジェクト機能を使うのか」を知るためにはファイルシステムに関する理解が必要だ。もし、「ファイルシステム」という単語や「絶対パス」、「相対パス」という単語を聞いたことのない人はファイル・システムも予め読んでおこう。"
+  },
+  {
+    "objectID": "intro/project.html#プロジェクトの作成",
+    "href": "intro/project.html#プロジェクトの作成",
+    "title": "プロジェクト管理",
+    "section": "プロジェクトの作成",
+    "text": "プロジェクトの作成\n手順1: File &gt; New Project…をクリックする。\n\n\n\n\n\n手順2: New Directoryをクリックする。\n\n\n\n\n\n手順3: New Projectをクリックする。\n\n\n\n\n\n手順4: Directory name:にプロジェクト名を入力し、Create Projectをクリックする。\n\n\n\n\n\n\n\n\n\n\n\n注意: プロジェクト名の付け方\n\n\n\n　プロジェクト名にはローマ字、数字のみを使おう。つまり、日本語、中国語、韓国語、全角文字、スペースはなるべく使わないこと。空白を入れたい場合はスペースの代わりにアンダースコア（_）を使おう。"
+  },
+  {
+    "objectID": "intro/project.html#プロジェクトの開き方",
+    "href": "intro/project.html#プロジェクトの開き方",
+    "title": "プロジェクト管理",
+    "section": "プロジェクトの開き方",
+    "text": "プロジェクトの開き方\n　プロジェクトを作成すれば、自動的に出来たてのプロジェクトが開かれる。しかし、JDCat分析ツールから一旦ログアウトし、改めてRStudioを起動する場合、プロジェクトをロードする必要がある。\n手順1: File &gt; Open Project…をクリックする。\n\n\n\n\n\n手順2: プロジェクト・フォルダー名をダブルクリックする。\n\n\n\n\n\n手順3: .Rprojで終わるファイルをダブルクリックする。\n\n\n\n\n\nプロジェクトが正しくロードされている場合、RStudioの右上にプロジェクト名が表示される。\n\n\n\n\n\n\n\n\n\n\n\n常にプロジェクト機能を使おう!\n\n\n\n　RStudionの右上のプロジェクト名表示が「Project: (None)」になっていることは、現在プロジェクトを開いていないことを意味する。簡単な計算機として使う目的以外（つまり、授業中の実習や課題）は必ずプロジェクト機能を使おう。"
+  },
+  {
+    "objectID": "intro/install.html",
+    "href": "intro/install.html",
+    "title": "Rの導入",
+    "section": "",
+    "text": "注意!!!\n\n\n\n　初期設定は国立情報学研究所（以下、NII）のサーバーに自分の作業用スペースを借りる作業である。つまり、初期設定を繰り返すことはNIIのサーバー（のスペース）をいくつも借りることとなり、サーバーを圧迫してしまう可能性がある（一つのアカウントで作成可能なサーバー数は最大10個まで）。したがって、以下の初期設定は授業全体を通じて1回のみ実行すること。\n　既存のサーバーが使えないなどの問題が生じない限り、このページへのアクセスは不要である。次回から右上のをクリックして、既存のサーバーを立ち上げること。"
+  },
+  {
+    "objectID": "intro/install.html#初期設定",
+    "href": "intro/install.html#初期設定",
+    "title": "Rの導入",
+    "section": "1 初期設定",
+    "text": "1 初期設定\n　本講義の実習はJDCat分析ツールの使用を推奨する。自分のPCにインストールしたR + RStudio、RStuio.cloud、大学PCにインストールされているR + RStudioなどの使用を妨げないが1、本ページの資料と同じ結果が得られることは保証しない。また、実習・分析中に起きた不具合についても授業中には対応しない（オフィスアワーなどでは対応可能）。\n　以下ではJDCat分析ツールを用いたRおよびRStudioの導入方法について解説する。\n手順1: 以下のアドレスにアクセスする。\n\nhttps://binder.cs.rcos.nii.ac.jp/v2/gh/JaehyunSong/Binder_R/HEAD\n\n\n\n\n\n\n\n注意!!!\n\n\n\n　何回も強調するが、以上のURLは授業全体を通じて1回のみアクセスすること。このURLはアプリに例えると、「インストール」であり、1回だけで十分だ。使いたいアプリを起動する度にインストールする愚かな人はいないだろう。自分の貴重な時間を無駄にし、スマホの容量を圧迫するだけなら、まだましだが、JDCat分析システムは他人も使うシステムだ。つまり、以上のURLを2回以上クリックすることは明らかに迷惑行為である。次回から本サポートページ右上のをクリックして、既存のサーバーを立ち上げること。\n\n\n手順2: 所属機関に「京都府立大学」、または「Kyoto Prefectual University」を入力・選択し、「選択」をクリックする。このような画面が表示されない場合は手順2から5は飛ばしても良い。\n\n\n\n\n\n手順3: 自分の大学のIDをパスワードを入力する。\n\n\n\n\n\n手順4: このまま「同意します」をクリックする。\n\n\n\n\n\n手順5: 以下のような画面が表示されたらしばらく待つ。\n\n\n\n\n\n手順6: 以下のような画面が表示されたら初期設定は完了\n\n\n\n\n\n手順7: 初期設定が終わったら、すぐRおよびRStudioが利用可能だが、ここでは一旦右上の「Logout」をクリックし、タブ (or ウィンドウ) を閉じる。"
+  },
+  {
+    "objectID": "intro/install.html#jdcat分析ツールの起動",
+    "href": "intro/install.html#jdcat分析ツールの起動",
+    "title": "Rの導入",
+    "section": "2 JDCat分析ツールの起動",
+    "text": "2 JDCat分析ツールの起動\n初期設定が終わったら、今後、以下の手順でJDCat分析ツールを起動する。\n手順1: 以下のアドレスにアクセスするか、本ページの右上にある右上の  ボタンをクリックする（右クリックし、新しいタブ or ウィンドウで開くことを推奨する）。\n\nhttps://jupyter.cs.rcos.nii.ac.jp/\n\n手順2: 必要に応じて認証を行う（初期設定の手順2, 3, 4と同じ）。\n手順3: サーバーリストが表示される。URL列のアドレスをクリックする。\n\n参考) 初期設定を1回のみ行ったら1行のみ表示されるため混同することはないが、個人利用などを目的に初期設定を複数回行った場合は2行以上が表示されるだろう。本講義に使うサーバーのURLをクリックすること。\n\n\n\n\n\n\n手順4: 以下のような画面が表示されたらJDCat分析ツールの起動完了である。この画面を今後、「JupyterHub（ジュピターハブ）のホーム画面」と呼ぶ。"
+  },
+  {
+    "objectID": "intro/install.html#rstudioの起動",
+    "href": "intro/install.html#rstudioの起動",
+    "title": "Rの導入",
+    "section": "3 RStudioの起動",
+    "text": "3 RStudioの起動\n手順1: JupyterHubのホーム画面の右上の「New」をクリックし、「RStudio」をクリックする。\n\n\n\n\n\n手順2: 以下の画面が表示されたら、RStudioの起動完了である（RStudioの見栄は初期状態の場合、白ベースである）。"
+  },
+  {
+    "objectID": "intro/install.html#rstudioの終了",
+    "href": "intro/install.html#rstudioの終了",
+    "title": "Rの導入",
+    "section": "4 RStudioの終了",
+    "text": "4 RStudioの終了\n手順1: RStudio画面右上のオレンジ色のボタンをクリックする。\n\n\n\n\n\n手順2: 以下のダイアログが表示されたらタブ、またはウィンドウを閉じる。"
+  },
+  {
+    "objectID": "intro/filesystem.html",
+    "href": "intro/filesystem.html",
+    "title": "ファイル・システム",
+    "section": "",
+    "text": "PC内に存在するほとんどのファイルは「名前.拡張子」と名付けられている1。名前の拡張子は.で区切られており、名前は英数字と_のみで構成することを推奨する（ファイル名に.が推奨されない理由の一つが名前と拡張子を区分する文字として使われるからだ）。ここで注目したいのはファイルの名前でなく、拡張子のことだ。拡張子とはファイルの特徴を示すものである。たとえば、拡張子が.htmlであれば、ウェブページ形式を意味し、.pngなら図、.pdfなら図・文書、.exeなら実行ファイル、.dmgならディスクイメージを意味する。ファイル名がFigure01.pngならFigure01という名の画像ファイルであることを意味する2。この拡張子によって、パソコンは当該ファイルをどのアプリケーションで開くかを判定する。.exeファイルをダブルクリックするとアプリケーションが立ち上がるし、.pdfファイルをダブルクリックするとPDFビュアーソフトが起動され、中身が表示される。\n　これは拡張子を変えると問題が生じ得ることを意味する。画像ファイルであるFigure01.pngのファイル名を動画ファイル拡張子であるMovie01.mp4に修正しても、そのファイルは動画ファイルにはならない。また、拡張子が.mp4になると、そのファイルを開く際、動画プレイヤーが起動されるが、ファイルの中身は画像ファイルのままなのでエラーが出る。したがって、拡張子は勝手に変えてはならない。たまに課題の結果物としてファイルを提出する際、自分の名前を入れたくてファイル名をXXXX.htmlからXXXX.html_Songへ変更して提出する場合がある。しかし、これは大きな間違いだ。もやはこのファイルはHTMLファイル（.html）でなく、未知のファイル形式（.html_Song）として認識され、ダブルクリックしてもPCはどのアプリケーションで開けば良いかが分からなくなる。ファイル名を修正するならXXXX_Song.htmlのように修正しよう3。\n　Rを用いたデータ分析の場面において頻繁に登場する拡張子は以下の通りである。ファイルの名前は大文字と小文字を区別するが、拡張子の場合、区別されないケースが多い。\n\n\n\n\n\n\n\n\n拡張子\n説明\n備考\n\n\n\n\n.R\nRスクリプトファイル\n\n\n\n.Rproj\nRプロジェクトファイル\n\n\n\n.Rmd\nR Markdownファイル\n\n\n\n.qmd\nQuartoファイル\nRMarkdownに似たようなもの\n\n\n.csv\n表形式ファイル\n業界標準のフォーマット\n\n\n.xlsx or .xls\n表形式ファイル\nExcelで使うフォーマット\n\n\n.dta\n表形式ファイル\nStataで使うフォーマット\n\n\n.sav\n表形式ファイル\nSPSSで使うフォーマット\n\n\n.html\nウェブページファイル\nR Markdown/QuartoをKnitした場合に得られる\n\n\n.png\n画像ファイル\n\n\n\n.pdf\n画像/文書ファイル\n画像にも文書にもなるファイル"
+  },
+  {
+    "objectID": "intro/filesystem.html#拡張子",
+    "href": "intro/filesystem.html#拡張子",
+    "title": "ファイル・システム",
+    "section": "",
+    "text": "PC内に存在するほとんどのファイルは「名前.拡張子」と名付けられている1。名前の拡張子は.で区切られており、名前は英数字と_のみで構成することを推奨する（ファイル名に.が推奨されない理由の一つが名前と拡張子を区分する文字として使われるからだ）。ここで注目したいのはファイルの名前でなく、拡張子のことだ。拡張子とはファイルの特徴を示すものである。たとえば、拡張子が.htmlであれば、ウェブページ形式を意味し、.pngなら図、.pdfなら図・文書、.exeなら実行ファイル、.dmgならディスクイメージを意味する。ファイル名がFigure01.pngならFigure01という名の画像ファイルであることを意味する2。この拡張子によって、パソコンは当該ファイルをどのアプリケーションで開くかを判定する。.exeファイルをダブルクリックするとアプリケーションが立ち上がるし、.pdfファイルをダブルクリックするとPDFビュアーソフトが起動され、中身が表示される。\n　これは拡張子を変えると問題が生じ得ることを意味する。画像ファイルであるFigure01.pngのファイル名を動画ファイル拡張子であるMovie01.mp4に修正しても、そのファイルは動画ファイルにはならない。また、拡張子が.mp4になると、そのファイルを開く際、動画プレイヤーが起動されるが、ファイルの中身は画像ファイルのままなのでエラーが出る。したがって、拡張子は勝手に変えてはならない。たまに課題の結果物としてファイルを提出する際、自分の名前を入れたくてファイル名をXXXX.htmlからXXXX.html_Songへ変更して提出する場合がある。しかし、これは大きな間違いだ。もやはこのファイルはHTMLファイル（.html）でなく、未知のファイル形式（.html_Song）として認識され、ダブルクリックしてもPCはどのアプリケーションで開けば良いかが分からなくなる。ファイル名を修正するならXXXX_Song.htmlのように修正しよう3。\n　Rを用いたデータ分析の場面において頻繁に登場する拡張子は以下の通りである。ファイルの名前は大文字と小文字を区別するが、拡張子の場合、区別されないケースが多い。\n\n\n\n\n\n\n\n\n拡張子\n説明\n備考\n\n\n\n\n.R\nRスクリプトファイル\n\n\n\n.Rproj\nRプロジェクトファイル\n\n\n\n.Rmd\nR Markdownファイル\n\n\n\n.qmd\nQuartoファイル\nRMarkdownに似たようなもの\n\n\n.csv\n表形式ファイル\n業界標準のフォーマット\n\n\n.xlsx or .xls\n表形式ファイル\nExcelで使うフォーマット\n\n\n.dta\n表形式ファイル\nStataで使うフォーマット\n\n\n.sav\n表形式ファイル\nSPSSで使うフォーマット\n\n\n.html\nウェブページファイル\nR Markdown/QuartoをKnitした場合に得られる\n\n\n.png\n画像ファイル\n\n\n\n.pdf\n画像/文書ファイル\n画像にも文書にもなるファイル"
+  },
+  {
+    "objectID": "intro/filesystem.html#ファイルシステム",
+    "href": "intro/filesystem.html#ファイルシステム",
+    "title": "ファイル・システム",
+    "section": "2 ファイルシステム",
+    "text": "2 ファイルシステム\n　R上でファイルを入出力を行うためにはファイルシステム（file system）を理解する必要がある。\n\n2.1 ファイルの入出力\n　そもそも、ファイルの「入出力」とは何だろうか。これはコンピューターの構造に関わる話なので極めて難しい内容であるが、我々のような消費者（end user）側から見れば、ファイルの入力（input）とは、いわゆるファイルの読み込みを意味し、多くの場合、表形式のデータ（.csv、.xlsxなど）をR上に読み込む作業を意味する。また、ファイルの出力（output）とは、いわゆるファイルの保存だ。たとえば、作成したスクリプトを.R形式で保存したり、加工済みのデータを.csv形式で保存したり、作成した図を.png、.pdf形式で保存したり、作成した文書を.pdf、.html形式で保存したりすることがファイルの出力だ。\n\n\n2.2 パスとは\n　ファイルを読み込む場合はファイル名を指定する必要がある。また、ファイルを書き出す場合もファイルに名付ける必要がある。そしてファイル名は名前.拡張子である。ただし、これらのファイルは全て一箇所に集まっているわけではない。もし、全てのファイルが一箇所に集まっていると、必要なファイルを探すのは非常に難しい。通常、PC内には数万のファイルがある。これらのファイルから必要なファイルを探すのは至難の業だろう。したがって、これらのファイルをいくつかの部屋に分けて保管し、この部屋のことをフォルダー（folder）、またはディレクトリ（directory）と呼ぶ（ここでは「フォルダー」と呼ぶとする）。パス（path）とは特定のファイルの位置と名前の書き方である。つまり、「どこのどのファイルを読み込むか」、「このファイルをどの名前でどこに保存するか」に関する書き方であり、プログラミングを学習する上で必須の知識と言っても過言ではない。\n　このパスという概念は我々が住んでいる居住地の「住所」と類似した概念だ。もし、日本に「都道府県」も「市区町村」も「〜丁目、〜番、〜号」という概念がないとしよう。ここでAmazonで魚を購入し、受取先を指定する場合はどうすれば良いだろうか。日本に人が数十人しか住んでいないのであれば、「XXXさんの家」と書くだけで十分かも知れない。しかし、日本には1億人以上の人がある。「ソンさんの家」と書いても届かないだろう。届いたとしても数年、あるいは数十年後に魚の化石の状態で届くかも知れない。そもそも日本に「ソンさん」はこの授業の担当教員以外にもいくらでもいる（ちなみに송（Song; 宋・松）さんも、손（Sohn; 孫）さんも、성（Seong/Sung; 成・星）さんも、선（Sun/Seon; 宣）さんも韓国語では発音が全く別だが、日本ではソンさんになってしまう。）。それぞれの家を何かの区域内に位置づけないとモノが届くまで数年かかってしまう。そこで必要なのが住所だ。「東京都千代田区永田町1丁目7番1号の田中さん」は「東京都」、「千代田区」、「永田町」、「1丁目」、「7番」、「1号」、「田中さん」で構成される。これをファイルシステムに例えると、東京都というフォルダーの中に千代田区というフォルダーがあり、その中には永田町というフォルダー、その中に1丁目といるファルダー、…が存在する。むろん、一つのフォルダーには複数のフォルダーが存在する可能性もある。東京都のフォルダーには千代田区以外にも大田区、中野区、文京区、葛飾区といった複数のフォルダーがあり、千代田区の中にも複数のフォルダーがある。最後の「田中さん」は受け取る人、コンピューターでいうファイル名である。\n　この住所と受取人のことをコンピューターではパス（path）と呼ぶ。それぞれのフォルダーは/で区切られる（macOS/Linuxでは/、Windowsでは\\または￥; JDCat分析ツールはLinuxベースであるため、/で区切られる）。先ほどの住所の例だと、東京都/千代田区/永田町/1丁目/7番/1号/田中さんとなる（macOS/Linuxの場合）。左に行くほど上位のフォルダーとなり、最後のものはファイル名である。ただし、コンピュターではパスの最初に/を付ける。Windowsなら主にC:\\でスタートし、C:\\東京都\\千代田区\\永田町\\1丁目\\7番\\1号\\田中さんとなる（\\の代わりに￥と表示される場合もある）。\n　たとえば、以下のような構造でファイルが保存されているとしよう。拡張子が付いているものはファイル、それ以外はフォルダー、1行目の.は最上位フォルダーである。\n\n\n                      levelName\n1  .                           \n2   ¦--Day01                   \n3   ¦   ¦--Day01.Rproj         \n4   ¦   ¦--Script01.R          \n5   ¦   ¦--Script02.R          \n6   ¦   ¦--Data                \n7   ¦   ¦   ¦--raw_data.csv    \n8   ¦   ¦   °--cleaned_data.csv\n9   ¦   °--Figs                \n10  ¦       ¦--Figure01.png    \n11  ¦       °--Figure02.png    \n12  °--Day02                   \n13      ¦--Day02.Rproj         \n14      ¦--Script01.R          \n15      ¦--Document01.qmd      \n16      ¦--Document01.html     \n17      ¦--Data                \n18      ¦   °--my_data.csv     \n19      °--Figs                \n20          ¦--Old             \n21          ¦   ¦--Figure01.pdf\n22          ¦   ¦--Figure02.pdf\n23          ¦   °--Figure03.pdf\n24          °--New             \n25              °--Figure01.png\n\n\n　ここでread_csv()関数を使ってDay01フォルダー内のDataフォルダー内のraw_data.csvを読み込む場合はread_csv(\"/Day01/Data/raw_data.csv\")となる。また、ggsave()を用いて、Day02内のFigs内のNew内にFigure02.pngという名で図を保存する場合は、ggsave(filename = \"/Day02/Figs/New/Figure02.png\", ...)と入力する必要がある。しかし、通常、パスを指定する際に、/（WindownならC:\\）から始めることは滅多にない。それは「作業フォルダーはパスで省略可能」だからだ。"
+  },
+  {
+    "objectID": "intro/filesystem.html#rstudioのプロジェクト機能",
+    "href": "intro/filesystem.html#rstudioのプロジェクト機能",
+    "title": "ファイル・システム",
+    "section": "3 RStudioのプロジェクト機能",
+    "text": "3 RStudioのプロジェクト機能\n　Rでファイルを入出力する時に頭に入れておくべき概念として「作業フォルダー（working folder/working directory）」がある。通常、Rの作業フォルダーはmacOSだと/Users/ユーザー名/、JDCat分析ツールだと/home/joyvan/が作業フォルダーだ。そして、パスを指定する場合、作業フォルダーは省略することができる。つまり、現在の作業フォルダーが/home/joyvan/なら\"/home/joyvan/Day01/Data/raw_data.csv\"は\"Day01/Data/raw_data.csv\"に、\"/home/joyvan/Day02/Figs/New/Figure02.png\"は\"Day02/Figs/New/Figure02.png\"に省略される。我々が郵便局で手紙を送る際、住所にわざわざ「日本国」と書かないものと同じである。作業フォルダーはRコンソール上でgetwd()と入力すれば出力される。macOSなら/Users/ユーザー名、JDCat分析ツールなら/home/joyvanと出力される。\n\n\n\n\n\n\n最上位フォルダーの話\n\n\n\n　macOSとLinuxに限定した話であるが、最上位フォルダーは/であり、これはシステム上の最上位フォルダーである。個人レベルの最上位フォルダーはmacOSだと/Users/ユーザー名、JDCat分析ツールだと/home/joyvanである。そして、この個人レベルの最上位フォルダーは~/と表記することができる。Rコンソールでgetwd()を入力し、以上のように出力されれば個人レベルの最上位フォルダー（~/）が作業フォルダーになっている理解しても良い。ちなみに、WindowsはC:\\がシステム上の最上位フォルダーである。\n\n\n　もし、自分がこれから全ての作業をDay03という名のフォルダー内で完結するとする。つまり、保存するスクリプト（たとえば、Script.R）もDay03に保存し、図（たとえば、FigureA.png）はDay03のFigsフォルダーに、読み込む表形式データ（たとえば、Day03_Data.csv）もDay03の中のDataフォルダーに入れるとする。この場合、それぞれのファイルのパスはDay03/Script.R、Day03/Figs/FigureA.png、Day03/Data/Day03_Data.csvとなる（作業フォルダーが~/であるため、~/は省略可能）。全ての作業が同じフォルダー（とその下位フォルダー）内で行うとしたら、パス名にDay03も不要な気がする。そこで必要なのがRStudioのプロジェクト機能である。\n　RStudioでDay03というプロジェクトを作成すると、Day03フォルダーが自動的に生成され、Day03.Rprojというファイルも生成される。プロジェクトを最上位フォルダーに作成したのであれば、~/Day03/Day03.Rprojファイルが生成されるのである。ここでRStudioのFile &gt; Open ProjectでこのDay03.Rprojファイルを開くとRStudio画面の右上にプロジェクト名が表示され、作業フォルダーがDay03.Rprojが保存されているフォルダー、つまり~/Day03へ変更される（プロジェクトが開かれていな場合は「Project: (None)」と表示される）。実際、JDCat分析ツールでXXXという名前のプロジェクトを生成し、そのプロジェクトを開けば作業フォルダーは/home/joyvan/XXX/（=~/XXX/）になる（getwd()で確認可能）。これは大変便利な機能である。なぜなら作業フォルダーまでのパスは全て省略可能だからだ。これまでDay03/Script.R、Day03/Figs/FigureA.png、Day03/Data/Day03_Data.csvだったパスが、それぞれScript.R、Figs/FigureA.png、Data/Day03_Data.csvになる。\n　また、何らかの理由でDay03フォルダーの名前をDay05に変更したとしよう。もし、プロジェクト機能を使っていないのであれば、パスのDay03を全てDay05に変更する必要がある。しかし、プロジェクト機能を使っているのであれば、.Rprojファイルが存在するフォルダーが作業フォルダーになるため、そもそもパスにDay03は存在しない。つまり、修正不要ということだ。ちなみに、プロジェクトを一旦作成したら、そのプロジェクトのフォルダー名や.Rprojファイルの名前は自由に修正しても良いし、フォルダー名と.Rprojファイルの名前が一致しなくても良い。\n　以上の内容を住所と郵便の話で例えるとしよう。社内でも郵便物の行き来は頻繁に行われる。とりわけ面積が広く、キャンパスも複数ある大学なら尚更だ。たとえば、「京都府京都市左京区下鴨半木町1-5 京都府立大学 ラーメン学部」の宋が「京都府京都市左京区下鴨半木町1-5 京都府立大学 蕎麦学部」の秦に郵便を送る場合、同じ大学であるにも関わらず、住所を全て書くのは面倒なことであろう。ここで京都府立大学専用の郵便局を作れば問題は解決される（これは「学内便」と呼ばれる）。そうすれば差出人は「ラーメン学部　宋」、受取人は「蕎麦学部　秦」と書くだけで郵便物は届く。つまり、「京都府京都市左京区下鴨半木町1-5 京都府立大学」は省略できる（同じ市区町村内の引っ越した際、転入・転出届けの住所欄に市区町村名までは省略できるのと同じ）。また、京都府立大学がなぜかキャンパスを滋賀県に移転した場合を考えてみよう（もはや京都府立大学ではないが…）。学内便がなければ、郵便物の住所を全て「滋賀県〜」に変えなければならない。しかし、学内便が存在すればこれまで使ってきた「ラーメン学部　宋」という表記は有効であろう。\n　このようにRStudioのプロジェクト機能は必須といっても過言ではない。簡単な計算目的として使う場合は問題ないが、何かの分析をする時、授業の実習時、課題時には必ずRStudioの右上が「Project: (None)」になっていないことを確認しよう。\n\n\n\n\n\n\n絶対パスと相対パス\n\n\n\n　これまで紹介したパスの書き方で/（WindowsならC:\\）から始まるパスは、絶対パス（absolute path）またはフルパス（full path）と呼ばれる。これはファイル名を最上位フォルダーを起点に書く方法である。一方、/（WindowsならC:\\）で始まらないパスは相対パス（relative path）呼ばれ、ファイル名を作業フォルダーを起点に書く方法である。"
+  },
+  {
+    "objectID": "intro/filesystem.html#本講義でおすすめするフォルダー構造",
+    "href": "intro/filesystem.html#本講義でおすすめするフォルダー構造",
+    "title": "ファイル・システム",
+    "section": "4 本講義でおすすめするフォルダー構造",
+    "text": "4 本講義でおすすめするフォルダー構造\n　プロジェクトを作成すれば、プロジェクトフォルダー内に以下のようなフォルダーを作成しよう。\n\n表形式のデータを読み込んだり、保存したりするのであればDataフォルダーをプロジェクトフォルダー内に作成する。\n\n.csv、.xlsx、.sav、.dtaのような表形式ファイルはDataフォルダーに入れる。\nデータを加工し、保存する場合はData/ファイル名.csvなどと指定する。\n\n図を作成し、保存する予定があれば、Figsフォルダーをプロジェクトフォルダー内に作成する。\n\n図を保存する場合、ファイルのパスをFigs/ファイル名.pngやFigs/ファイル名.pdfとする。\n\n\n　よく分からない場合はとりあえずプロジェクトフォルダー内にDataとFigsというフォルダーを作っておこう。ただし、.R、.qmdなどコードファイルはプロジェクトフォルダーの下位フォルダーに入れず、プロジェクトフォルダーの直に入れよう4。この場合、R Markdown / Quartoで作成された文書（.html、.pdfなど）は.Rmdや.qmdファイルと同じフォルダーに保存される（別途の設定をすれば別フォルダーに保存することも可能だが、そこまではしなくても良い）。"
+  },
+  {
+    "objectID": "intro/filesystem.html#参考",
+    "href": "intro/filesystem.html#参考",
+    "title": "ファイル・システム",
+    "section": "5 参考",
+    "text": "5 参考\n　以下の内容も合わせて読むことを強く推奨する。\n\n宋財泫・矢内勇生.『私たちのR』の「ファイルシステム」"
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Introduction to R@KPU",
+    "section": "",
+    "text": "本ウェブサイトは京都府立大学「情報処理応用演習」のサポートページです。本ページはPC画面での閲覧を推奨します。"
+  },
+  {
+    "objectID": "index.html#本ページにおけるコードと結果の表示について",
+    "href": "index.html#本ページにおけるコードと結果の表示について",
+    "title": "Introduction to R@KPU",
+    "section": "本ページにおけるコードと結果の表示について",
+    "text": "本ページにおけるコードと結果の表示について\n\nコードは以下のように背景に色が付けられている部分です。\n\n\nprint(\"Hello!\")\n\n\nコードの中で#で始まる内容はコメントであり、分析に影響を与えません。ただし、\"や'で囲まれた#はコメントではありません。また、行の途中から#が入る場合、#以降は実行されません。\n\n\n# Hello!を出力するコード\nprint(\"Hello!\")\n\n# \"や'内の#はコメントではない\nprint(\"この#はコメントではありません\")\n\nprint(\"Hello World!\") # Hello World!を出力\n\n\nコードの右端に表示される丸付き数字（、など）は各行の解説を意味する。数字部分にマウスのカーソルを乗せると解説が表示される。\n\n\ndf |&gt; \n1   select(ID, Col1:Col3, Col8) |&gt;\n2   filter(ID &lt;= 100) |&gt;\n   print(n = Inf)\n\n\n1\n\ndfからID列、Col1からCol3列、Col8列を抽出する。\n\n2\n\nIDの値が100以下の行を抽出する。\n\n\n\n\n\n出力結果は灰色の枠線で囲まれた領域です。\n\n\n\n[1] \"Hello!\"\n\n\n\nオブジェクト名は変数名や関数名()のように文中の色付き背景で示された部分です。\nパッケージ名は{}で囲みます。tidyverseパッケージの場合、{tidyverse}と表記します。\n\nただし、パッケージ名を{}で囲むのは一般的な表記ではありません（もちろん、囲む人も大勢にいます）。\n\n\n\n\n\n\n\n\nページ情報\n\n\n\n\n最終更新日: 2023年10月06日\n開発環境\n\nmacOS Sonoma 14.0\nFirefox 118.0.1\nR version 4.3.1 (2023-06-16)\nRStudio 2023.09.0+463\nQuarto 1.4.330\nR package {quarto} 1.3"
+  },
+  {
+    "objectID": "intro/file.html",
+    "href": "intro/file.html",
+    "title": "ファイル管理",
+    "section": "",
+    "text": "「ファイル・システム」も合わせて読もう！\n\n\n\n　本ページの内容を読む前に、ファイルシステムの詳細などを解説した「ファイル・システム」も合わせて読むことを強く推奨する。\nフォルダー/ファイルの管理はJupyterHub内でも、RStudio内でもできるが、ここではRStudio側で管理する方法を紹介する。RStudioを起動し、作業するプロジェクトを開き、Filesペインを確認しよう。RStudioを経由したフォルダー/ファイルの管理は全てFilesペイン上で行われる。"
+  },
+  {
+    "objectID": "intro/file.html#フォルダーの管理",
+    "href": "intro/file.html#フォルダーの管理",
+    "title": "ファイル管理",
+    "section": "フォルダーの管理",
+    "text": "フォルダーの管理\n　講義、または課題ごとのプロジェクトを作ったら、JupyterHubにプロジェクトのフォルダーが生成される。各プロジェクトごとにRスクリプト、Markdownファイル、出力物（図、文書など）が管理できるが、プロジェクト内のファイルが多くなる可能性もある。この場合、プロジェクト・フォルダー内に更に下位フォルダーを作成し、ファイルを管理した方が望ましい。\n\nフォルダーの作成\n手順1: 現在、Filesペインで表示されているフォルダーがプロジェクトの最上位フォルダーであることを確認する。「Home &gt; プロジェクト名」と表示されていれば問題ない。\n\n\n\n\n\n手順2: New Folderをクリックする。\n\n\n\n\n\n手順3: 作成するフォルダーの名前を入力する。ここではデータなどを集めておくDataという名のフォルダーを作成する。\n\n\n\n\n\n手順4: 正しくフォルダーが作成されているかを確認する。\n\n\n\n\n\n\n\n\n\n\n\nフォルダー名の付け方\n\n\n\nフォルダー名にはローマ字、数字のみを使おう。スペースもなるべく使わず、空白を入れたい場合はスペースの代わりにアンダースコア（_）を使おう。\n\n\n\n\n\n\n\n\nフォルダー in フォルダー\n\n\n\nフォルダー内に更にフォルダーを作成することもできる。一つのフォルダー内にファイルが多すぎる場合、更にフォルダー分けして管理した方が効率的だろう。\n\n\n\n\nフォルダーの削除\n\n\n\n\n\n\nフォルダーの削除は慎重に!\n\n\n\nフォルダーを削除するとフォルダー内のファイルも全て削除される。削除する前には慎重にフォルダー内のファイルを確認しておくこと。\n\n\n手順1: 削除するフォルダーの左にチェックを付け、Deleteをクリックする。\n\n\n\n\n\n手順2: Yesをクリックする。"
+  },
+  {
+    "objectID": "intro/file.html#ファイルの管理",
+    "href": "intro/file.html#ファイルの管理",
+    "title": "ファイル管理",
+    "section": "ファイルの管理",
+    "text": "ファイルの管理\n　分析に使用するデータセットを自分のPCにダウンロードしてもそのままJDCat分析ツールで使うことはできない。JDCat分析ツールで使用するためには、ファイルをアップロードする必要がある。これはデータだけでなく、本講義の課題用ファイルについても同様である。\n\nファイルのアップロード\n手順1: ファイルをアップロードしたいフォルダーへ移動する。\n\n下位フォルダーへの移動: フォルダー名をクリックする。\n上位フォルダーへの移動: 「..」をクリックするか、パスが表示されているバーで移動先をクリックする。\n\n手順2: ファイルのアップロード先が正しいかを確認し、Uploadをクリックする。\n\n以下の例はHomework_01プロジェクト・フォルダー内のDataフォルダーがアップロード先である。\n\n\n\n\n\n\n手順3: File to upload:でアップロードしたいファイルを選択する。\n\n\n\n\n\n\n\n\n\n\n\n複数のファイルをアップロードしたい場合\n\n\n\nRStudio上でファイルは一度の一つしかアップロードできない。複数のファイルを同時にアップロードしたい場合は、この作業を繰り返すか、JupyterHubのホーム画面でアップロードする必要がある。\n\n\n手順4: アップロードするファイルをダブルクリックする。\n\n以下ではPrev_Vote.csvというファイルをアップロードする例である。\n\n\n\n\n\n\n手順5: OKをクリックする。\n\n\n\n\n\n手順6: 正しくファイルがアップロードされているかを確認する。\n\n\n\n\n\n\n\nファイルのダウンロード\n　作成した図表をLaTex/Microsoft Word/Powerpoint/Pages/Keynoteなどで使うためには、その図表を自分のPCにダウンロードする必要がある。同様に、課題の出力物をLMSに提出するためにも、出力物を一旦自分のPCにダウンロードしてから提出する必要がある。\n\n\n\n\n\n\n複数ファイルのダウンロード\n\n\n\nアップロードは一度ごとに一つのファイルしかアップロードできないが、ダウンロードは複数のファイルを同時にダウンロードできる。ただし、個別のファイルがダウンロードされるのではなく、一つのファイルととして圧縮（zip形式）されてからダウンロードされる。ダウンロード後はファイルを解凍すること。\n\n\n手順1: ダウンロードするファイル名の左にチェックを付ける。\n\n以下ではMicro_HW01.htmlというファイルをダウンロードする例である。\n\n\n\n\n\n\n手順2: More &gt; Export…をクリックする。\n\n\n\n\n\n手順3: Downloadをクリックする。\n\n\n\n\n\n\n\n\n\n\n\n課題の出力物は提出する前に必ず確認を!!\n\n\n\nLMSで課題を提出するためには出力物を提出する必要があるが、提出する前にダウンロードしたファイルを必ず確認しよう。間違ったファイルを提出した場合でも提出期限内なら差し替え可能だが、期限が過ぎた場合、理由を問わず差し替えは認めない。また、間違ったファイルが提出されたことを宋が個別に知らせることもないため注意しよう。\n\n\n\n\nファイルの削除\nフォルダーの削除と同じ手順で削除できる。\n\n\n\n\n\n\nファイルの場所が分からない\n\n\n\nFileペインではファイルの一覧が確認できる。しかし、これらのファイルがどのフォルダーに入っているかが分からない場合もあろう。この場合、Fileペインの上段バーを確認すること。そこに現在表示されているファイルのパスが表示されている。「Home&gt;プロジェクト名」と表示されている場合、Fileペインに見えるファイルはプロジェクト・フォルダ―直に入っていることを意味する（右上のプロジェクト名とFileペインのプロジェクト名が一致しているか確認すること）。これらのファイルのパスは\"ファイル名\"のみで良い。上段バーのパスが「Home&gt;プロジェクト名&gt;Data」になっている場合、表示されているファイルはプロジェクト・フォルダー内のDataフォルダーに入っていることを意味する。これらのファイルのパスは\"Data/ファイル名\"となる。"
+  },
+  {
+    "objectID": "intro/homework.html",
+    "href": "intro/homework.html",
+    "title": "課題の取り組み方",
+    "section": "",
+    "text": "課題の取り組み方が分からない?\n\n\n\n　必ず宋と相談すること。"
+  },
+  {
+    "objectID": "intro/homework.html#step1-課題ファイル一式の入手",
+    "href": "intro/homework.html#step1-課題ファイル一式の入手",
+    "title": "課題の取り組み方",
+    "section": "Step1: 課題ファイル一式の入手",
+    "text": "Step1: 課題ファイル一式の入手\n手順1: LMSの授業ページから「第XX回 課題資料」を選択する。\n\n以下の画面は2021年度のページである。\nタイトルは「第XX回 課題資料」でなく「第XX回 課題用ファイル」など変更される可能性もある。\n\n\n\n\n\n\n手順2: 通常、課題ファイルは2つであるが、1つのみ、または3つ以上の場合もある。それぞれの資料の「添付資料」クリックする。\n\n\n\n\n\n手順3: 新しいウィンドウが表示される。ここでファイル名をクリックするとファイルがダウンロードされる。この作業を全ファイルに対して行うこと。"
+  },
+  {
+    "objectID": "intro/homework.html#step2-課題ファイルのアップロード",
+    "href": "intro/homework.html#step2-課題ファイルのアップロード",
+    "title": "課題の取り組み方",
+    "section": "Step2: 課題ファイルのアップロード",
+    "text": "Step2: 課題ファイルのアップロード\n手順1: JDCat分析ツールへアクセスし、RStudioを起動する。\n手順2: 課題用のプロジェクトを作成する。プロジェクト名は任意だが、Homework_XXやHW_XXなど、分かりやすい名前を付けよう。\n手順3: ダウンロードしたファイルにデータ（.csvなど）がある場合、プロジェクト・フォルダー内にDataというフォルダーを作成する。\n手順4: ダウンロードしたファイルをアップロードする。課題用ファイル（.qmdファイル）はプロジェクト・フォルダー直に、課題用データ（.csv、.xlsxなど）は手順3で作成したDataにアップロードする。\n\n\n\n\n\n\nプロジェクト、フォルダー、ファイルの管理\n\n\n\n　以下のページを参照すること。\n\nファイル・システム\nプロジェクト管理\nファイル管理"
+  },
+  {
+    "objectID": "intro/homework.html#step3-頑張る",
+    "href": "intro/homework.html#step3-頑張る",
+    "title": "課題の取り組み方",
+    "section": "Step3: 頑張る",
+    "text": "Step3: 頑張る\n　一部の課題を除き、本講義の課題は本サポートページの「課題」メニューに掲載されている画面と同じ結果が得られるようにコードを書くことである。\n\n\n\n\n\n\n学籍番号と名前を忘れずに!\n\n\n\n　課題用ファイル（.qmd）の2行目には「情20-0012 関大太郎」と名前が記入されている。課題に取り組む前にまず学籍番号と名前を修正しよう。毎年、関大太郎と関大花子さんから提出された課題が散見されるが、この場合、課題未提出とみなす。むろん、自分の名前が関大太郎/関大花子なら学籍番号のみ修正しても良い。\n\n\n　一部の課題を除き、履修者がやることは「学籍番号と氏名の修正」と「チャンク（chunk）内にコードを入力すること」、そして最後に「Knit」することだけである。チャンク内には# ここにコードと既に何かが書いてあるが、この# ここにコードの行は消してからコードを書くこと。あっても減点にはならない（印象は悪くなるかも知れない）。"
+  },
+  {
+    "objectID": "intro/homework.html#step4-出力物のダウンロード",
+    "href": "intro/homework.html#step4-出力物のダウンロード",
+    "title": "課題の取り組み方",
+    "section": "Step4: 出力物のダウンロード",
+    "text": "Step4: 出力物のダウンロード\n　本講義の課題は一部を除き、成果として.htmlファイルを提出する。Knit後のHTMLファイルは元のqmdファイル名.htmlである。こちらのファイルをダウンロードしよう。.qmdも一緒にダウンロードして良いが、指定された形式のファイルを提出すること。.htmlファイルを提出しなければならないのに、.qmdファイルを提出した場合は未提出とみなす。\n\n\n\n\n\n\n右クリックしてダウンロードは厳禁!!!\n\n\n\n　出力物のダウンロード方法はファイル管理を参考すること。JupyterHubのホーム画面でファイルを右クリックして保存することは絶対にしないこと。開いてみれば分かるが、なんの情報もない（ほぼ）空っぽのファイルがダウンロードされる。提出期限が過ぎてから「知りませんでした！ごめんなさい！てへっ」と言われても、宋は「そうか、残念！てへっ」としか言わないので、ダウンロードしたファイルは必ず一回自分で開いてみよう。"
+  },
+  {
+    "objectID": "intro/homework.html#step5-提出",
+    "href": "intro/homework.html#step5-提出",
+    "title": "課題の取り組み方",
+    "section": "Step5: 提出",
+    "text": "Step5: 提出\n手順1: LMSの授業ページから「第XX回 課題提出窓口」をクリックする。\n\n\n\n\n\n手順2: 指定された形式のファイルを添付し、「レポート提出」クリックする。\n\n提出されたら「202X-XX-XX XX:XX:XX にファイル xxxxxxxx が提出済みです。」と表示される。ここまでできたら終了ボタンをクリックする。\n\n\n\n\n\n\n\n\n\n\n\n\n課題がちゃんと提出されているか不安です…\n\n\n\n　自分が提出した課題はLMSの「マイレポート」から確認できる。\n\n\n\n\n\n　以下のように自分が提出した課題のリストが表示される。提出物のダウンロードもできるため、ファイルが問題なくアップロードされているかも確認できる。"
+  },
+  {
+    "objectID": "intro/packages.html",
+    "href": "intro/packages.html",
+    "title": "パッケージ",
+    "section": "",
+    "text": "Rには様々な関数（functions）が提供されている。算術平均値を求めるmean()、合計を求めるsum()、線形回帰分析を行うlm()、平均値の検定を行うt.test()などがあり、全てを列挙することはできない。しかし、データ分析の技術は日々発展し、Rがデフォルトで提供する関数では不可能ではないが、かなり長いコードが必要な分析を使わざる得ないケースもあろう。Rは開発元だけでなく、誰でも関数を作ることができる。通常なら数百行のコードが必要な分析を一行のコードで実行可能とする関数を多くのRユーザーが作ってきた。これらの関数を集めたのがパッケージである。Rにはグラフ作成に特化したパッケージ、機械学習に特化したパッケージ、テキスト分析に特化したパッケージなど、数千のパッケージが開発されている。このパッケージの豊富さがRの最大のメリットでもある。誰かが新しい分析手法を提案したら、数日内、あるいはその手法が論文として出版される前からRパッケージとして公開されるケースが多い。\n　Rの内蔵関数は料理における包丁のようなものである。包丁があれば理論上、食材を粉々にすることはできよう。料理の達人であれば、問題ないかも知れないが、我々のような一般人では時間もかかるし、途中でミスをおかすかも知れない。一方、ミキサーを使えばだれても簡単に食材を粉々にすることも出来るし、（ミキサーが不良でないなら）ミスの恐れもほぼない。このミキサーがRのパッケージのようなものだ。ミキサーとRパッケージの違いは、ミキサーの入手には金がかかる一方、Rパッケージは無料で入手できる点だ。"
+  },
+  {
+    "objectID": "intro/packages.html#パッケージとは",
+    "href": "intro/packages.html#パッケージとは",
+    "title": "パッケージ",
+    "section": "",
+    "text": "Rには様々な関数（functions）が提供されている。算術平均値を求めるmean()、合計を求めるsum()、線形回帰分析を行うlm()、平均値の検定を行うt.test()などがあり、全てを列挙することはできない。しかし、データ分析の技術は日々発展し、Rがデフォルトで提供する関数では不可能ではないが、かなり長いコードが必要な分析を使わざる得ないケースもあろう。Rは開発元だけでなく、誰でも関数を作ることができる。通常なら数百行のコードが必要な分析を一行のコードで実行可能とする関数を多くのRユーザーが作ってきた。これらの関数を集めたのがパッケージである。Rにはグラフ作成に特化したパッケージ、機械学習に特化したパッケージ、テキスト分析に特化したパッケージなど、数千のパッケージが開発されている。このパッケージの豊富さがRの最大のメリットでもある。誰かが新しい分析手法を提案したら、数日内、あるいはその手法が論文として出版される前からRパッケージとして公開されるケースが多い。\n　Rの内蔵関数は料理における包丁のようなものである。包丁があれば理論上、食材を粉々にすることはできよう。料理の達人であれば、問題ないかも知れないが、我々のような一般人では時間もかかるし、途中でミスをおかすかも知れない。一方、ミキサーを使えばだれても簡単に食材を粉々にすることも出来るし、（ミキサーが不良でないなら）ミスの恐れもほぼない。このミキサーがRのパッケージのようなものだ。ミキサーとRパッケージの違いは、ミキサーの入手には金がかかる一方、Rパッケージは無料で入手できる点だ。"
+  },
+  {
+    "objectID": "intro/packages.html#インストール",
+    "href": "intro/packages.html#インストール",
+    "title": "パッケージ",
+    "section": "インストール",
+    "text": "インストール\n　Rには数万以上のパッケージが存在し、Rをインストールするだけでも数十のパッケージが自動的にインストールされる。しかし、データ分析/ハンドリング/可視化の手法は日々発展しており、R内蔵パッケージだけでは対応が難しい (できないわけではない)。したがって、必要に応じて新しいパッケージを導入する必要があるが、パッケージのインストールするにはConsoleペインに以下のように入力する。\n\n\n\nCode 01\n\ninstall.packages(\"インストールするパッケージ名\")\n\n\n　前期の「ミクロ政治データ分析実習」では{tidyverse}パッケージのみ使用する予定である。ただし、本講義ようにセッティングされた環境を導入する場合、{tidyverse}は既に導入済みであるため、以下のコードは実行しなくても良い。\n\n\n\nCode 02\n\ninstall.packages(\"tidyverse\")"
+  },
+  {
+    "objectID": "intro/packages.html#アップデート",
+    "href": "intro/packages.html#アップデート",
+    "title": "パッケージ",
+    "section": "アップデート",
+    "text": "アップデート\n　特定のパッケージをアップデートする方法はインストールと同じだが、一つ一つのパッケージが全て最新バージョンかどうかを確認するのは大変である。また、久々のアップデートで数十個のパッケージをアップデートする必要があるケースもあろう。この場合、RStudioの内蔵機能を使えば一瞬で更新可能なパッケージのリスト化、インストールができる。\n手順1: PackagesペインのUpdateをクリックする。\n\n\n\n\n\n手順2: アップデートしたいパッケージの左にチェックを付けるか、左下のSelect Allをクリックし、右下のInstall Updatesをクリックする。\n\n\n\n\n\n　インストール、またはアップデートの際、以下のようなメッセージが出力される場合がある。\n  There are binary versions available but the source versions\n  are later:\n      binary source needs_compilation\nterra 1.5-17 1.5-21              TRUE\nyaml   2.2.2  2.3.4              TRUE\n\nDo you want to install from sources the packages which need compilation? (Yes/no/cancel)\n　この場合、Consoleペイン上でYes、no、cancelのいずれかを入力してReturnキー (Enterキー)を押す必要がある。大文字と小文字は区別すること。どうしても最新のパッケージが欲しい場合はYesを入力すれば良いが、インストールに時間がかかる場合がある。一方、noを入力した場合は、若干古いバージョンがインストールされるが、インストールに必要な時間が短いため、基本的にはnoでも問題ないだろう。cancelを入力した場合はアップデートが全てキャンセルされる。\n\n\n\n\n\n\nインストールは1回でOK、読み込みは毎回必要\n\n\n\n　Rを削除して再インストールしたり、（クラウド版のRStudioなら）分析環境を新しく立ち上げない限り、パッケージのインストールは1回で十分だ。しかし、library()関数でパッケージを読み込む作業は、R（RStudio）を開く度に行う必要がある。つまり、読み込んだRパッケージはRを終了すると一旦外されることとなり、改めてRを開いたらもう一度読み込む必要がある。"
+  },
+  {
+    "objectID": "intro/packages.html#教科書",
+    "href": "intro/packages.html#教科書",
+    "title": "パッケージ",
+    "section": "教科書",
+    "text": "教科書\n『私たちのR』の第5章「Rパッケージ」: https://www.jaysong.net/RBook/packages.html"
   },
   {
     "objectID": "intro/rstudio.html",
@@ -105,249 +791,676 @@
     "text": "6 R Markdown\n\n6.1 Basic\n\n\n\n\n\n\n\n\n項目\n設定\n\n\n\n\nShow document outline by default\n\n\n\nSoft-wrap R markdown files\nチェック\n\n\nShow in document outline\nSections Only\n\n\nShow output preview in\nViewer Pane\n\n\nShow output inline for all R Markdown document\n\n\n\nShow equation and image previews\nNever\n\n\nEvaluate chunks in directory\nDocument\n\n\nExcute setup chunk automatically in notebooks\nチェック\n\n\nHide console automatically when executing notebook chunks\nチェック\n\n\n\n\n\n6.2 Advanced\n\n\n\n\n\n\n\n\n項目\n設定\n\n\n\n\nEnable chunk background highlight\nチェック\n\n\nShow inline toolbar for R code chunks\nチェック\n\n\nDisplay render command in R Markdown tab\n\n\n\n\n設定が終わったら右下のOK、またはApplyをクリックする。"
   },
   {
-    "objectID": "intro/packages.html",
-    "href": "intro/packages.html",
-    "title": "パッケージ",
+    "objectID": "materials/day02.html",
+    "href": "materials/day02.html",
+    "title": "第2回 講義資料",
     "section": "",
-    "text": "Rには様々な関数（functions）が提供されている。算術平均値を求めるmean()、合計を求めるsum()、線形回帰分析を行うlm()、平均値の検定を行うt.test()などがあり、全てを列挙することはできない。しかし、データ分析の技術は日々発展し、Rがデフォルトで提供する関数では不可能ではないが、かなり長いコードが必要な分析を使わざる得ないケースもあろう。Rは開発元だけでなく、誰でも関数を作ることができる。通常なら数百行のコードが必要な分析を一行のコードで実行可能とする関数を多くのRユーザーが作ってきた。これらの関数を集めたのがパッケージである。Rにはグラフ作成に特化したパッケージ、機械学習に特化したパッケージ、テキスト分析に特化したパッケージなど、数千のパッケージが開発されている。このパッケージの豊富さがRの最大のメリットでもある。誰かが新しい分析手法を提案したら、数日内、あるいはその手法が論文として出版される前からRパッケージとして公開されるケースが多い。\n　Rの内蔵関数は料理における包丁のようなものである。包丁があれば理論上、食材を粉々にすることはできよう。料理の達人であれば、問題ないかも知れないが、我々のような一般人では時間もかかるし、途中でミスをおかすかも知れない。一方、ミキサーを使えばだれても簡単に食材を粉々にすることも出来るし、（ミキサーが不良でないなら）ミスの恐れもほぼない。このミキサーがRのパッケージのようなものだ。ミキサーとRパッケージの違いは、ミキサーの入手には金がかかる一方、Rパッケージは無料で入手できる点だ。"
+    "text": "新しいタブで開く\n\n\n\n\n\n\n\nスライドの印刷方法\n\n\n\n　本講義のスライドはPC閲覧を前提としているため、印刷は推奨しない。たとえば、タブが含まれているページの場合、1つ目のタブのみ印刷されるといったデメリットがある。しかし、どうしてもスライドを印刷したい場合は、以下の手順でスライドをPDFに保存し、印刷すること。\n\nGoogle Chromeブラウザーで本ページを開く。\n\nMicrosoft Explore、Edge、Firefox、Operaなどで試してみても良いものの、作動は保証しない。\n\n本ページ上段の「 新しいタブで開く」をクリックする。\nスライドが表示されたらキーボードの「E」、または「e」キーを押す。\nmacOSならCommand（⌘） + P、WindowsならControl（Ctrl）+ Pを押す。\n出力先をPDFにする。\n用紙のレイアウトを横向き（Landscape）に指定する。\n余白をなしにする。\n背景画像のオプションにチェックを入れる。\n保存\n保存されたPDFファイルをプリントする。\n\n　上記の手順はQuarto（本サポートページおよびスライドの作成言語）の開発元が公開している方法である。今後、より簡単なプリント方法が考案される可能性もある。詳細はQuarto公式ホームページを参照すること。"
   },
   {
-    "objectID": "intro/packages.html#パッケージとは",
-    "href": "intro/packages.html#パッケージとは",
-    "title": "パッケージ",
+    "objectID": "materials/day02.html#スライド",
+    "href": "materials/day02.html#スライド",
+    "title": "第2回 講義資料",
     "section": "",
-    "text": "Rには様々な関数（functions）が提供されている。算術平均値を求めるmean()、合計を求めるsum()、線形回帰分析を行うlm()、平均値の検定を行うt.test()などがあり、全てを列挙することはできない。しかし、データ分析の技術は日々発展し、Rがデフォルトで提供する関数では不可能ではないが、かなり長いコードが必要な分析を使わざる得ないケースもあろう。Rは開発元だけでなく、誰でも関数を作ることができる。通常なら数百行のコードが必要な分析を一行のコードで実行可能とする関数を多くのRユーザーが作ってきた。これらの関数を集めたのがパッケージである。Rにはグラフ作成に特化したパッケージ、機械学習に特化したパッケージ、テキスト分析に特化したパッケージなど、数千のパッケージが開発されている。このパッケージの豊富さがRの最大のメリットでもある。誰かが新しい分析手法を提案したら、数日内、あるいはその手法が論文として出版される前からRパッケージとして公開されるケースが多い。\n　Rの内蔵関数は料理における包丁のようなものである。包丁があれば理論上、食材を粉々にすることはできよう。料理の達人であれば、問題ないかも知れないが、我々のような一般人では時間もかかるし、途中でミスをおかすかも知れない。一方、ミキサーを使えばだれても簡単に食材を粉々にすることも出来るし、（ミキサーが不良でないなら）ミスの恐れもほぼない。このミキサーがRのパッケージのようなものだ。ミキサーとRパッケージの違いは、ミキサーの入手には金がかかる一方、Rパッケージは無料で入手できる点だ。"
+    "text": "新しいタブで開く\n\n\n\n\n\n\n\nスライドの印刷方法\n\n\n\n　本講義のスライドはPC閲覧を前提としているため、印刷は推奨しない。たとえば、タブが含まれているページの場合、1つ目のタブのみ印刷されるといったデメリットがある。しかし、どうしてもスライドを印刷したい場合は、以下の手順でスライドをPDFに保存し、印刷すること。\n\nGoogle Chromeブラウザーで本ページを開く。\n\nMicrosoft Explore、Edge、Firefox、Operaなどで試してみても良いものの、作動は保証しない。\n\n本ページ上段の「 新しいタブで開く」をクリックする。\nスライドが表示されたらキーボードの「E」、または「e」キーを押す。\nmacOSならCommand（⌘） + P、WindowsならControl（Ctrl）+ Pを押す。\n出力先をPDFにする。\n用紙のレイアウトを横向き（Landscape）に指定する。\n余白をなしにする。\n背景画像のオプションにチェックを入れる。\n保存\n保存されたPDFファイルをプリントする。\n\n　上記の手順はQuarto（本サポートページおよびスライドの作成言語）の開発元が公開している方法である。今後、より簡単なプリント方法が考案される可能性もある。詳細はQuarto公式ホームページを参照すること。"
   },
   {
-    "objectID": "intro/packages.html#インストール",
-    "href": "intro/packages.html#インストール",
-    "title": "パッケージ",
-    "section": "インストール",
-    "text": "インストール\n　Rには数万以上のパッケージが存在し、Rをインストールするだけでも数十のパッケージが自動的にインストールされる。しかし、データ分析/ハンドリング/可視化の手法は日々発展しており、R内蔵パッケージだけでは対応が難しい (できないわけではない)。したがって、必要に応じて新しいパッケージを導入する必要があるが、パッケージのインストールするにはConsoleペインに以下のように入力する。\n\n\n\nCode 01\n\ninstall.packages(\"インストールするパッケージ名\")\n\n\n　前期の「ミクロ政治データ分析実習」では{tidyverse}パッケージのみ使用する予定である。ただし、本講義ようにセッティングされた環境を導入する場合、{tidyverse}は既に導入済みであるため、以下のコードは実行しなくても良い。\n\n\n\nCode 02\n\ninstall.packages(\"tidyverse\")"
-  },
-  {
-    "objectID": "intro/packages.html#アップデート",
-    "href": "intro/packages.html#アップデート",
-    "title": "パッケージ",
-    "section": "アップデート",
-    "text": "アップデート\n　特定のパッケージをアップデートする方法はインストールと同じだが、一つ一つのパッケージが全て最新バージョンかどうかを確認するのは大変である。また、久々のアップデートで数十個のパッケージをアップデートする必要があるケースもあろう。この場合、RStudioの内蔵機能を使えば一瞬で更新可能なパッケージのリスト化、インストールができる。\n手順1: PackagesペインのUpdateをクリックする。\n\n\n\n\n\n手順2: アップデートしたいパッケージの左にチェックを付けるか、左下のSelect Allをクリックし、右下のInstall Updatesをクリックする。\n\n\n\n\n\n　インストール、またはアップデートの際、以下のようなメッセージが出力される場合がある。\n  There are binary versions available but the source versions\n  are later:\n      binary source needs_compilation\nterra 1.5-17 1.5-21              TRUE\nyaml   2.2.2  2.3.4              TRUE\n\nDo you want to install from sources the packages which need compilation? (Yes/no/cancel)\n　この場合、Consoleペイン上でYes、no、cancelのいずれかを入力してReturnキー (Enterキー)を押す必要がある。大文字と小文字は区別すること。どうしても最新のパッケージが欲しい場合はYesを入力すれば良いが、インストールに時間がかかる場合がある。一方、noを入力した場合は、若干古いバージョンがインストールされるが、インストールに必要な時間が短いため、基本的にはnoでも問題ないだろう。cancelを入力した場合はアップデートが全てキャンセルされる。\n\n\n\n\n\n\nインストールは1回でOK、読み込みは毎回必要\n\n\n\n　Rを削除して再インストールしたり、（クラウド版のRStudioなら）分析環境を新しく立ち上げない限り、パッケージのインストールは1回で十分だ。しかし、library()関数でパッケージを読み込む作業は、R（RStudio）を開く度に行う必要がある。つまり、読み込んだRパッケージはRを終了すると一旦外されることとなり、改めてRを開いたらもう一度読み込む必要がある。"
-  },
-  {
-    "objectID": "intro/packages.html#教科書",
-    "href": "intro/packages.html#教科書",
-    "title": "パッケージ",
-    "section": "教科書",
-    "text": "教科書\n『私たちのR』の第5章「Rパッケージ」: https://www.jaysong.net/RBook/packages.html"
-  },
-  {
-    "objectID": "intro/homework.html",
-    "href": "intro/homework.html",
-    "title": "課題の取り組み方",
+    "objectID": "materials/final.html",
+    "href": "materials/final.html",
+    "title": "最終課題",
     "section": "",
-    "text": "課題の取り組み方が分からない?\n\n\n\n　必ず宋と相談すること。"
+    "text": "近日中、公開"
   },
   {
-    "objectID": "intro/homework.html#step1-課題ファイル一式の入手",
-    "href": "intro/homework.html#step1-課題ファイル一式の入手",
-    "title": "課題の取り組み方",
-    "section": "Step1: 課題ファイル一式の入手",
-    "text": "Step1: 課題ファイル一式の入手\n手順1: LMSの授業ページから「第XX回 課題資料」を選択する。\n\n以下の画面は2021年度のページである。\nタイトルは「第XX回 課題資料」でなく「第XX回 課題用ファイル」など変更される可能性もある。\n\n\n\n\n\n\n手順2: 通常、課題ファイルは2つであるが、1つのみ、または3つ以上の場合もある。それぞれの資料の「添付資料」クリックする。\n\n\n\n\n\n手順3: 新しいウィンドウが表示される。ここでファイル名をクリックするとファイルがダウンロードされる。この作業を全ファイルに対して行うこと。"
+    "objectID": "slides/day02.html#tidyverseの世界",
+    "href": "slides/day02.html#tidyverseの世界",
+    "title": "情報処理応用演習",
+    "section": "Tidyverseの世界",
+    "text": "Tidyverseの世界\n\n\n\n\n\nデータサイエンスのために考案された、強い信念と思想に基づいたRパッケージの集合\n\n{tidyverse}をインストールすることで導入可能\nTidyverseに属するパッケージは思想、文法およびデータ構造を共有\n\n{dplyr}、{tidyr}、{readr}、{ggplot2}など\n\nオブジェクトをパイプ演算子 (|&gt; or %&gt;%)で繋ぐ\n\nRのコードはlibrary(tidyverse)で始めよう!"
   },
   {
-    "objectID": "intro/homework.html#step2-課題ファイルのアップロード",
-    "href": "intro/homework.html#step2-課題ファイルのアップロード",
-    "title": "課題の取り組み方",
-    "section": "Step2: 課題ファイルのアップロード",
-    "text": "Step2: 課題ファイルのアップロード\n手順1: JDCat分析ツールへアクセスし、RStudioを起動する。\n手順2: 課題用のプロジェクトを作成する。プロジェクト名は任意だが、Homework_XXやHW_XXなど、分かりやすい名前を付けよう。\n手順3: ダウンロードしたファイルにデータ（.csvなど）がある場合、プロジェクト・フォルダー内にDataというフォルダーを作成する。\n手順4: ダウンロードしたファイルをアップロードする。課題用ファイル（.qmdファイル）はプロジェクト・フォルダー直に、課題用データ（.csv、.xlsxなど）は手順3で作成したDataにアップロードする。\n\n\n\n\n\n\nプロジェクト、フォルダー、ファイルの管理\n\n\n\n　以下のページを参照すること。\n\nファイル・システム\nプロジェクト管理\nファイル管理"
+    "objectID": "slides/day02.html#パイプ演算子",
+    "href": "slides/day02.html#パイプ演算子",
+    "title": "情報処理応用演習",
+    "section": "パイプ演算子",
+    "text": "パイプ演算子\nTidyverseにおいてオブジェクトは|&gt;で繋がっている。\n\n既存の書き方: 書き方と読み方が逆\n\n一般的なプログラミング言語共通\n書き方: print(sum(X)) (print、sum、Xの順で書く)\n読み方1: Xをsum()し、print()する (コードの順番と逆)\n読み方2: print()する内容はsum()で、sum()はXに対して行う（直感的でない読み方）\n\nTidyverseな書き方: 書き方と読み方が一致\n\n今どきのRの書き方\n書き方: X |&gt; sum() |&gt; print()\n読み方: Xをsum()し、print()する"
   },
   {
-    "objectID": "intro/homework.html#step3-頑張る",
-    "href": "intro/homework.html#step3-頑張る",
-    "title": "課題の取り組み方",
-    "section": "Step3: 頑張る",
-    "text": "Step3: 頑張る\n　一部の課題を除き、本講義の課題は本サポートページの「課題」メニューに掲載されている画面と同じ結果が得られるようにコードを書くことである。\n\n\n\n\n\n\n学籍番号と名前を忘れずに!\n\n\n\n　課題用ファイル（.qmd）の2行目には「情20-0012 関大太郎」と名前が記入されている。課題に取り組む前にまず学籍番号と名前を修正しよう。毎年、関大太郎と関大花子さんから提出された課題が散見されるが、この場合、課題未提出とみなす。むろん、自分の名前が関大太郎/関大花子なら学籍番号のみ修正しても良い。\n\n\n　一部の課題を除き、履修者がやることは「学籍番号と氏名の修正」と「チャンク（chunk）内にコードを入力すること」、そして最後に「Knit」することだけである。チャンク内には# ここにコードと既に何かが書いてあるが、この# ここにコードの行は消してからコードを書くこと。あっても減点にはならない（印象は悪くなるかも知れない）。"
+    "objectID": "slides/day02.html#パイプ演算子の仕組み",
+    "href": "slides/day02.html#パイプ演算子の仕組み",
+    "title": "情報処理応用演習",
+    "section": "パイプ演算子の仕組み",
+    "text": "パイプ演算子の仕組み\n\n|&gt;の左側を右側の最初の引数として渡すだけ\nX |&gt; 関数(Y)は関数(X, Y)と同じ\n\nX |&gt; sum(na.rm = TRUE)はsum(X, na.rm = TRUE)と同じ\n\nショートカットキーを使えば簡単に入力可能\n\nmacOS: Command (⌘) + Shift + m\nWindows/Linux: Control (Ctrl) + Shift + m\n\n二番目以降の引数として渡すことも可能（適宜、解説）\n\n\n\n既存の書き方\n\nX &lt;- c(2, 3, 5, NA, 11)\nprint(sum(X, na.rm = TRUE))\n\n[1] 21\n\n\n\n\n\nTidyverseな書き方\n\nX &lt;- c(2, 3, 5, NA, 11)\nX |&gt; sum(na.rm = TRUE) |&gt; print()\n\n[1] 21"
   },
   {
-    "objectID": "intro/homework.html#step4-出力物のダウンロード",
-    "href": "intro/homework.html#step4-出力物のダウンロード",
-    "title": "課題の取り組み方",
-    "section": "Step4: 出力物のダウンロード",
-    "text": "Step4: 出力物のダウンロード\n　本講義の課題は一部を除き、成果として.htmlファイルを提出する。Knit後のHTMLファイルは元のqmdファイル名.htmlである。こちらのファイルをダウンロードしよう。.qmdも一緒にダウンロードして良いが、指定された形式のファイルを提出すること。.htmlファイルを提出しなければならないのに、.qmdファイルを提出した場合は未提出とみなす。\n\n\n\n\n\n\n右クリックしてダウンロードは厳禁!!!\n\n\n\n　出力物のダウンロード方法はファイル管理を参考すること。JupyterHubのホーム画面でファイルを右クリックして保存することは絶対にしないこと。開いてみれば分かるが、なんの情報もない（ほぼ）空っぽのファイルがダウンロードされる。提出期限が過ぎてから「知りませんでした！ごめんなさい！てへっ」と言われても、宋は「そうか、残念！てへっ」としか言わないので、ダウンロードしたファイルは必ず一回自分で開いてみよう。"
+    "objectID": "slides/day02.html#様々な書き方",
+    "href": "slides/day02.html#様々な書き方",
+    "title": "情報処理応用演習",
+    "section": "様々な書き方",
+    "text": "様々な書き方\n\n書き方1書き方2書き方3\n\n\n\n\n\n結果1 &lt;- 関数1(データ)\n結果2 &lt;- 関数2(結果1)\n結果  &lt;- 関数3(結果2)\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n結果 &lt;- 関数3(関数2(関数1(データ)))\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n結果 &lt;- データ |&gt; \n  関数1() |&gt; \n  関数2() |&gt; \n  関数3()"
   },
   {
-    "objectID": "intro/homework.html#step5-提出",
-    "href": "intro/homework.html#step5-提出",
-    "title": "課題の取り組み方",
-    "section": "Step5: 提出",
-    "text": "Step5: 提出\n手順1: LMSの授業ページから「第XX回 課題提出窓口」をクリックする。\n\n\n\n\n\n手順2: 指定された形式のファイルを添付し、「レポート提出」クリックする。\n\n提出されたら「202X-XX-XX XX:XX:XX にファイル xxxxxxxx が提出済みです。」と表示される。ここまでできたら終了ボタンをクリックする。\n\n\n\n\n\n\n\n\n\n\n\n\n課題がちゃんと提出されているか不安です…\n\n\n\n　自分が提出した課題はLMSの「マイレポート」から確認できる。\n\n\n\n\n\n　以下のように自分が提出した課題のリストが表示される。提出物のダウンロードもできるため、ファイルが問題なくアップロードされているかも確認できる。"
+    "objectID": "slides/day02.html#参考もう一つのパイプ演算子",
+    "href": "slides/day02.html#参考もう一つのパイプ演算子",
+    "title": "情報処理応用演習",
+    "section": "参考）%>%：もう一つのパイプ演算子",
+    "text": "参考）%&gt;%：もう一つのパイプ演算子\nR内蔵演算子としてパイプ演算子（|&gt;）が追加\n\n2021年5月リリースされたR 4.1からR内蔵のパイプ演算子|&gt;が登場\nそれまでは{magrittr}パッケージが提供する%&gt;%を使用\n\n{magrittr}は{tidyverse}を読み込むと自動的に読み込まれる。\n\n使い方はほぼ同じ\n\nただし、演算子の左側のオブジェクトを右側の第一引数として渡す場合のみ\n第一引数以外の引数として渡す場合は使い方が異なる。\n\nインターネット、教科書などでは%&gt;%を使用するケースがまだ多いが、今後の主流は|&gt;になると予想されるため、本講義では|&gt;を使用する。\n\nむろん、現段階では%&gt;%を使っても良いし、%&gt;%を使ったコードを|&gt;に置換して使ってもほぼ問題にならない。"
   },
   {
-    "objectID": "intro/file.html",
-    "href": "intro/file.html",
-    "title": "ファイル管理",
-    "section": "",
-    "text": "「ファイル・システム」も合わせて読もう！\n\n\n\n　本ページの内容を読む前に、ファイルシステムの詳細などを解説した「ファイル・システム」も合わせて読むことを強く推奨する。\nフォルダー/ファイルの管理はJupyterHub内でも、RStudio内でもできるが、ここではRStudio側で管理する方法を紹介する。RStudioを起動し、作業するプロジェクトを開き、Filesペインを確認しよう。RStudioを経由したフォルダー/ファイルの管理は全てFilesペイン上で行われる。"
+    "objectID": "slides/day02.html#参考との比較",
+    "href": "slides/day02.html#参考との比較",
+    "title": "情報処理応用演習",
+    "section": "参考）%>%と|>の比較",
+    "text": "参考）%&gt;%と|&gt;の比較\n渡す先が第一引数の場合\n\nR内蔵のパイプ（native pipe; |&gt;）、{magrittr}のパイプ（%&gt;%）の使い方は同じ\n\n\n# {magrittr}のパイプ演算子\nX %&gt;% sum(na.rm = TRUE) %&gt;% print()\n# R内蔵のパイプ演算子\nX |&gt; sum(na.rm = TRUE) |&gt; print()\n\n渡す先が第一引数でない場合\n\n実引数として渡す箇所に. (tidyverse)、_ (native pipe)を入力\n\n\n# {magrittr}のパイプ演算子\nmy_data %&gt;%\n  lm(y ~ x1 + x2 + x3, data = .)\n# R内蔵のパイプ演算子\nmy_data |&gt;\n  lm(y ~ x1 + x2 + x3, data = _)"
   },
   {
-    "objectID": "intro/file.html#フォルダーの管理",
-    "href": "intro/file.html#フォルダーの管理",
-    "title": "ファイル管理",
-    "section": "フォルダーの管理",
-    "text": "フォルダーの管理\n　講義、または課題ごとのプロジェクトを作ったら、JupyterHubにプロジェクトのフォルダーが生成される。各プロジェクトごとにRスクリプト、Markdownファイル、出力物（図、文書など）が管理できるが、プロジェクト内のファイルが多くなる可能性もある。この場合、プロジェクト・フォルダー内に更に下位フォルダーを作成し、ファイルを管理した方が望ましい。\n\nフォルダーの作成\n手順1: 現在、Filesペインで表示されているフォルダーがプロジェクトの最上位フォルダーであることを確認する。「Home &gt; プロジェクト名」と表示されていれば問題ない。\n\n\n\n\n\n手順2: New Folderをクリックする。\n\n\n\n\n\n手順3: 作成するフォルダーの名前を入力する。ここではデータなどを集めておくDataという名のフォルダーを作成する。\n\n\n\n\n\n手順4: 正しくフォルダーが作成されているかを確認する。\n\n\n\n\n\n\n\n\n\n\n\nフォルダー名の付け方\n\n\n\nフォルダー名にはローマ字、数字のみを使おう。スペースもなるべく使わず、空白を入れたい場合はスペースの代わりにアンダースコア（_）を使おう。\n\n\n\n\n\n\n\n\nフォルダー in フォルダー\n\n\n\nフォルダー内に更にフォルダーを作成することもできる。一つのフォルダー内にファイルが多すぎる場合、更にフォルダー分けして管理した方が効率的だろう。\n\n\n\n\nフォルダーの削除\n\n\n\n\n\n\nフォルダーの削除は慎重に!\n\n\n\nフォルダーを削除するとフォルダー内のファイルも全て削除される。削除する前には慎重にフォルダー内のファイルを確認しておくこと。\n\n\n手順1: 削除するフォルダーの左にチェックを付け、Deleteをクリックする。\n\n\n\n\n\n手順2: Yesをクリックする。"
+    "objectID": "slides/day02.html#dplyrとは",
+    "href": "slides/day02.html#dplyrとは",
+    "title": "情報処理応用演習",
+    "section": "{dplyr}とは",
+    "text": "{dplyr}とは\n\n\n\n\n\n\n表形式データ (データフレームやtibble)を操作するパッケージ\n第8回の講義で解説した行・列の抽出も簡単に可能\n{tidyverse}を読み込む際に自動的に読み込まれる\n\n{tidyverse}はパッケージを集めたパッケージであり、{dplyr}もその一部\n\n\n\nlibrary(tidyverse)"
   },
   {
-    "objectID": "intro/file.html#ファイルの管理",
-    "href": "intro/file.html#ファイルの管理",
-    "title": "ファイル管理",
-    "section": "ファイルの管理",
-    "text": "ファイルの管理\n　分析に使用するデータセットを自分のPCにダウンロードしてもそのままJDCat分析ツールで使うことはできない。JDCat分析ツールで使用するためには、ファイルをアップロードする必要がある。これはデータだけでなく、本講義の課題用ファイルについても同様である。\n\nファイルのアップロード\n手順1: ファイルをアップロードしたいフォルダーへ移動する。\n\n下位フォルダーへの移動: フォルダー名をクリックする。\n上位フォルダーへの移動: 「..」をクリックするか、パスが表示されているバーで移動先をクリックする。\n\n手順2: ファイルのアップロード先が正しいかを確認し、Uploadをクリックする。\n\n以下の例はHomework_01プロジェクト・フォルダー内のDataフォルダーがアップロード先である。\n\n\n\n\n\n\n手順3: File to upload:でアップロードしたいファイルを選択する。\n\n\n\n\n\n\n\n\n\n\n\n複数のファイルをアップロードしたい場合\n\n\n\nRStudio上でファイルは一度の一つしかアップロードできない。複数のファイルを同時にアップロードしたい場合は、この作業を繰り返すか、JupyterHubのホーム画面でアップロードする必要がある。\n\n\n手順4: アップロードするファイルをダブルクリックする。\n\n以下ではPrev_Vote.csvというファイルをアップロードする例である。\n\n\n\n\n\n\n手順5: OKをクリックする。\n\n\n\n\n\n手順6: 正しくファイルがアップロードされているかを確認する。\n\n\n\n\n\n\n\nファイルのダウンロード\n　作成した図表をLaTex/Microsoft Word/Powerpoint/Pages/Keynoteなどで使うためには、その図表を自分のPCにダウンロードする必要がある。同様に、課題の出力物をLMSに提出するためにも、出力物を一旦自分のPCにダウンロードしてから提出する必要がある。\n\n\n\n\n\n\n複数ファイルのダウンロード\n\n\n\nアップロードは一度ごとに一つのファイルしかアップロードできないが、ダウンロードは複数のファイルを同時にダウンロードできる。ただし、個別のファイルがダウンロードされるのではなく、一つのファイルととして圧縮（zip形式）されてからダウンロードされる。ダウンロード後はファイルを解凍すること。\n\n\n手順1: ダウンロードするファイル名の左にチェックを付ける。\n\n以下ではMicro_HW01.htmlというファイルをダウンロードする例である。\n\n\n\n\n\n\n手順2: More &gt; Export…をクリックする。\n\n\n\n\n\n手順3: Downloadをクリックする。\n\n\n\n\n\n\n\n\n\n\n\n課題の出力物は提出する前に必ず確認を!!\n\n\n\nLMSで課題を提出するためには出力物を提出する必要があるが、提出する前にダウンロードしたファイルを必ず確認しよう。間違ったファイルを提出した場合でも提出期限内なら差し替え可能だが、期限が過ぎた場合、理由を問わず差し替えは認めない。また、間違ったファイルが提出されたことを宋が個別に知らせることもないため注意しよう。\n\n\n\n\nファイルの削除\nフォルダーの削除と同じ手順で削除できる。\n\n\n\n\n\n\nファイルの場所が分からない\n\n\n\nFileペインではファイルの一覧が確認できる。しかし、これらのファイルがどのフォルダーに入っているかが分からない場合もあろう。この場合、Fileペインの上段バーを確認すること。そこに現在表示されているファイルのパスが表示されている。「Home&gt;プロジェクト名」と表示されている場合、Fileペインに見えるファイルはプロジェクト・フォルダ―直に入っていることを意味する（右上のプロジェクト名とFileペインのプロジェクト名が一致しているか確認すること）。これらのファイルのパスは\"ファイル名\"のみで良い。上段バーのパスが「Home&gt;プロジェクト名&gt;Data」になっている場合、表示されているファイルはプロジェクト・フォルダー内のDataフォルダーに入っていることを意味する。これらのファイルのパスは\"Data/ファイル名\"となる。"
+    "objectID": "slides/day02.html#実習用データ",
+    "href": "slides/day02.html#実習用データ",
+    "title": "情報処理応用演習",
+    "section": "実習用データ",
+    "text": "実習用データ\ncountries.csv: 186カ国の社会経済・政治体制のデータ\n\n# Dataフォルダー内のcountries.csvを読み込み、dfという名のオブジェクトとして作業環境に格納\nlibrary(tidyverse)\ndf &lt;- read_csv(\"Data/countries.csv\")\ndf\n\n# A tibble: 186 × 18\n   Country  Population   Area    GDP     PPP GDP_per_capita PPP_per_capita    G7\n   &lt;chr&gt;         &lt;dbl&gt;  &lt;dbl&gt;  &lt;dbl&gt;   &lt;dbl&gt;          &lt;dbl&gt;          &lt;dbl&gt; &lt;dbl&gt;\n 1 Afghani…   38928346 6.53e5 1.91e4  8.27e4           491.          2125.     0\n 2 Albania     2877797 2.74e4 1.53e4  3.97e4          5309.         13781.     0\n 3 Algeria    43851044 2.38e6 1.70e5  4.97e5          3876.         11324.     0\n 4 Andorra       77265 4.7 e2 3.15e3 NA              40821.            NA      0\n 5 Angola     32866272 1.25e6 9.46e4  2.19e5          2879.          6649.     0\n 6 Antigua…      97929 4.4 e2 1.73e3  2.08e3         17643.         21267.     0\n 7 Argenti…   45195774 2.74e6 4.50e5  1.04e6          9949.         22938.     0\n 8 Armenia     2963243 2.85e4 1.37e4  3.84e4          4614.         12974.     0\n 9 Austral…   25499884 7.68e6 1.39e6  1.28e6         54615.         50001.     0\n10 Austria     9006398 8.24e4 4.46e5  5.03e5         49555.         55824.     0\n# ℹ 176 more rows\n# ℹ 10 more variables: G20 &lt;dbl&gt;, OECD &lt;dbl&gt;, HDI_2018 &lt;dbl&gt;,\n#   Polity_Score &lt;dbl&gt;, Polity_Type &lt;chr&gt;, FH_PR &lt;dbl&gt;, FH_CL &lt;dbl&gt;,\n#   FH_Total &lt;dbl&gt;, FH_Status &lt;chr&gt;, Continent &lt;chr&gt;"
   },
   {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "Introduction to R@KPU",
-    "section": "",
-    "text": "本ウェブサイトは京都府立大学「情報処理応用演習」のサポートページです。本ページはPC画面での閲覧を推奨します。"
+    "objectID": "slides/day02.html#実習用データの確認",
+    "href": "slides/day02.html#実習用データの確認",
+    "title": "情報処理応用演習",
+    "section": "実習用データの確認",
+    "text": "実習用データの確認\n186行、18列のデータ（= 186カ国、18変数）\n\ndim(df)\n\n[1] 186  18\n\n\n変数の一覧\n\nnames(df)\n\n [1] \"Country\"        \"Population\"     \"Area\"           \"GDP\"           \n [5] \"PPP\"            \"GDP_per_capita\" \"PPP_per_capita\" \"G7\"            \n [9] \"G20\"            \"OECD\"           \"HDI_2018\"       \"Polity_Score\"  \n[13] \"Polity_Type\"    \"FH_PR\"          \"FH_CL\"          \"FH_Total\"      \n[17] \"FH_Status\"      \"Continent\""
   },
   {
-    "objectID": "index.html#本ページにおけるコードと結果の表示について",
-    "href": "index.html#本ページにおけるコードと結果の表示について",
-    "title": "Introduction to R@KPU",
-    "section": "本ページにおけるコードと結果の表示について",
-    "text": "本ページにおけるコードと結果の表示について\n\nコードは以下のように背景に色が付けられている部分です。\n\n\nprint(\"Hello!\")\n\n\nコードの中で#で始まる内容はコメントであり、分析に影響を与えません。ただし、\"や'で囲まれた#はコメントではありません。また、行の途中から#が入る場合、#以降は実行されません。\n\n\n# Hello!を出力するコード\nprint(\"Hello!\")\n\n# \"や'内の#はコメントではない\nprint(\"この#はコメントではありません\")\n\nprint(\"Hello World!\") # Hello World!を出力\n\n\nコードの右端に表示される丸付き数字（、など）は各行の解説を意味する。数字部分にマウスのカーソルを乗せると解説が表示される。\n\n\ndf |&gt; \n1   select(ID, Col1:Col3, Col8) |&gt;\n2   filter(ID &lt;= 100) |&gt;\n   print(n = Inf)\n\n\n1\n\ndfからID列、Col1からCol3列、Col8列を抽出する。\n\n2\n\nIDの値が100以下の行を抽出する。\n\n\n\n\n\n出力結果は灰色の枠線で囲まれた領域です。\n\n\n\n[1] \"Hello!\"\n\n\n\nオブジェクト名は変数名や関数名()のように文中の色付き背景で示された部分です。\nパッケージ名は{}で囲みます。tidyverseパッケージの場合、{tidyverse}と表記します。\n\nただし、パッケージ名を{}で囲むのは一般的な表記ではありません（もちろん、囲む人も大勢にいます）。\n\n\n\n\n\n\n\n\nページ情報\n\n\n\n\n最終更新日: 2023年08月10日\n開発環境\n\nmacOS Ventura 13.5\nFirefox 116.0.2\nR version 4.3.1 (2023-06-16)\nRStudio 2023.06.0+421\nQuarto 1.4.232\nR package {quarto} 1.2"
+    "objectID": "slides/day02.html#各変数について",
+    "href": "slides/day02.html#各変数について",
+    "title": "情報処理応用演習",
+    "section": "各変数について",
+    "text": "各変数について\n詳細は教科書第18.2章を参照\n\n\n\n変数名\n説明\n\n変数名\n説明\n\n\n\n\nCountry\n国名\n\nOECD\nOECD加盟有無\n\n\nPopulation\n人口\n\nHDI_2018\n人間開発指数 (2018年)\n\n\nArea\n面積( \\(\\text{km}^2\\) )\n\nPolity_Score\n政治体制のスコア\n\n\nGDP\n国内総生産（ドル）\n\nPolity_Type\n政治体制\n\n\nPPP\n購買力平価国内総生産\n\nFH_PR\n政治的自由\n\n\nGDP_per_capita\n一人当たりGDP\n\nFH_CL\n市民的自由\n\n\nPPP_per_capita\n一人当たりPPP\n\nFH_Total\nFH_PR + FH_CL\n\n\nG7\nG7加盟有無\n\nFH_Status\n自由の状態\n\n\nG20\nG20加盟有無\n\nContinent\n大陸"
   },
   {
-    "objectID": "intro/faq.html",
-    "href": "intro/faq.html",
-    "title": "この授業の「あるある」",
-    "section": "",
-    "text": "ブラインドタッチ（キーボードを見ないでタイピングすること）は必須\n\n教員の画面、スライド、資料などを見ながらタイピングすることになるため、キーボードを見る暇はない\n\n1分間当たり150文字以上（英字）入力できること\n\nhttps://manabi-gakushu.benesse.ne.jp/gakushu/typing/eigonyuryoku.html\n200字以上が望ましい"
+    "objectID": "slides/day02.html#列の選択抽出-書き方",
+    "href": "slides/day02.html#列の選択抽出-書き方",
+    "title": "情報処理応用演習",
+    "section": "列の選択（抽出）: 書き方",
+    "text": "列の選択（抽出）: 書き方\nselect()関数を使用\n\n\nパイプを使わない書き方\n\nselect(データ, 変数名1, 変数名2, ...)\n\n\n\n\nパイプを使う書き方\n\nデータ |&gt;\n  select(変数名1, 変数名2, ...)\n\n\n\n\n\n\n注意: select()関数は複数ある!\n\n\nselect()関数は{dplyr}だけでなく、{MASS}からも提供されるが、別の関数である。\n\n{MASS}もデータ分析において頻繁に使われるパッケージであるため、select()だけだと、どのパッケージのselect()か分からなくなる場合がある。\nエラーが生じる場合は、dplyr::select()など、パッケージ名を指定すること"
   },
   {
-    "objectID": "intro/faq.html#タイピングの速度について",
-    "href": "intro/faq.html#タイピングの速度について",
-    "title": "この授業の「あるある」",
-    "section": "",
-    "text": "ブラインドタッチ（キーボードを見ないでタイピングすること）は必須\n\n教員の画面、スライド、資料などを見ながらタイピングすることになるため、キーボードを見る暇はない\n\n1分間当たり150文字以上（英字）入力できること\n\nhttps://manabi-gakushu.benesse.ne.jp/gakushu/typing/eigonyuryoku.html\n200字以上が望ましい"
+    "objectID": "slides/day02.html#列の選択抽出-例",
+    "href": "slides/day02.html#列の選択抽出-例",
+    "title": "情報処理応用演習",
+    "section": "列の選択（抽出）: 例",
+    "text": "列の選択（抽出）: 例\ndfからCountry、Population、HDI_2018列を抽出し、最初の5行のみ出力\n\ndf |&gt;                                      # dfから\n  select(Country, Population, HDI_2018) |&gt; # Country, Population, HDI_2018のみ抽出して\n  head(n = 5)                              # 最初の5行を出力する\n\n# A tibble: 5 × 3\n  Country     Population HDI_2018\n  &lt;chr&gt;            &lt;dbl&gt;    &lt;dbl&gt;\n1 Afghanistan   38928346    0.496\n2 Albania        2877797    0.791\n3 Algeria       43851044    0.759\n4 Andorra          77265    0.857\n5 Angola        32866272    0.574\n\n\nこの時点では抽出・出力されただけ。抽出した結果をdf2という名で作業環境内に格納するためには\n\ndf2 &lt;- df |&gt;\n  select(Country, Population, HDI_2018)\n\n\n\n\n課題では格納が必要な場合もある\n\n\n課題の問題には「出力せよ」だけでなく、「格納した上で出力せよ」といった形式もある。加工したデータを引き続き使うためには格納が必須であるため、問題文を注意深く読むこと。"
   },
   {
-    "objectID": "intro/faq.html#データが読み込めない",
-    "href": "intro/faq.html#データが読み込めない",
-    "title": "この授業の「あるある」",
-    "section": "データが読み込めない",
-    "text": "データが読み込めない\n\n99.999%の確率でパスの指定が間違っている（スペルミスを含む）。\nファイルシステムの理解がない場合は、プロジェクト機能を使おう。\n\nというか、必ずプロジェクト機能を使おう。ファイルシステムを理解している宋でもプロジェクト機能は常に使用している。"
+    "objectID": "slides/day02.html#列の選択と変数名の変更",
+    "href": "slides/day02.html#列の選択と変数名の変更",
+    "title": "情報処理応用演習",
+    "section": "列の選択と変数名の変更",
+    "text": "列の選択と変数名の変更\n変数名の変更と抽出を同時に行うことも可能\n\n新しい変数名 = 既存の変数名\n\n例) HDI_2018の変数名をHDIに変更\n\ndf |&gt;\n  select(Country, Population, HDI = HDI_2018)\n\n# A tibble: 186 × 3\n   Country             Population   HDI\n   &lt;chr&gt;                    &lt;dbl&gt; &lt;dbl&gt;\n 1 Afghanistan           38928346 0.496\n 2 Albania                2877797 0.791\n 3 Algeria               43851044 0.759\n 4 Andorra                  77265 0.857\n 5 Angola                32866272 0.574\n 6 Antigua and Barbuda      97929 0.776\n 7 Argentina             45195774 0.83 \n 8 Armenia                2963243 0.76 \n 9 Australia             25499884 0.938\n10 Austria                9006398 0.914\n# ℹ 176 more rows"
   },
   {
-    "objectID": "intro/faq.html#エラーが出た",
-    "href": "intro/faq.html#エラーが出た",
-    "title": "この授業の「あるある」",
-    "section": "エラーが出た!",
-    "text": "エラーが出た!\n\nエラーメッセージは読む。メッセージを読んで、その原因を特定しよう。\n\n何も考えずに教員やTAを呼ぶと、独学する時に同じエラーが出ても解決できなくなる。\n\nスペルミス\n\n最もよくあるミス。\n大文字と小文字の区分は厳格（Rに限らず全てのプログラミング言語共通）\nフォントサイズを大きくすると、スペルミスを発見しやすくなる。\n\nカッコ、コンマ忘れ\n\nカッコは開けたら必ず閉じる。"
+    "objectID": "slides/day02.html#抽出せず変数名のみ変更",
+    "href": "slides/day02.html#抽出せず変数名のみ変更",
+    "title": "情報処理応用演習",
+    "section": "抽出せず、変数名のみ変更",
+    "text": "抽出せず、変数名のみ変更\nrename()関数を使用\n\nデータ |&gt;\n  rename(新しい変数名 = 既存の変数名)\n\n例) PopulationをJinkoに、AreaをMensekiに変更\n\ndf |&gt;\n  rename(Jinko = Population, Menseki = Area)\n\n# A tibble: 186 × 18\n   Country      Jinko Menseki    GDP     PPP GDP_per_capita PPP_per_capita    G7\n   &lt;chr&gt;        &lt;dbl&gt;   &lt;dbl&gt;  &lt;dbl&gt;   &lt;dbl&gt;          &lt;dbl&gt;          &lt;dbl&gt; &lt;dbl&gt;\n 1 Afghanistan 3.89e7  652860 1.91e4  8.27e4           491.          2125.     0\n 2 Albania     2.88e6   27400 1.53e4  3.97e4          5309.         13781.     0\n 3 Algeria     4.39e7 2381740 1.70e5  4.97e5          3876.         11324.     0\n 4 Andorra     7.73e4     470 3.15e3 NA              40821.            NA      0\n 5 Angola      3.29e7 1246700 9.46e4  2.19e5          2879.          6649.     0\n 6 Antigua an… 9.79e4     440 1.73e3  2.08e3         17643.         21267.     0\n 7 Argentina   4.52e7 2736690 4.50e5  1.04e6          9949.         22938.     0\n 8 Armenia     2.96e6   28470 1.37e4  3.84e4          4614.         12974.     0\n 9 Australia   2.55e7 7682300 1.39e6  1.28e6         54615.         50001.     0\n10 Austria     9.01e6   82409 4.46e5  5.03e5         49555.         55824.     0\n# ℹ 176 more rows\n# ℹ 10 more variables: G20 &lt;dbl&gt;, OECD &lt;dbl&gt;, HDI_2018 &lt;dbl&gt;,\n#   Polity_Score &lt;dbl&gt;, Polity_Type &lt;chr&gt;, FH_PR &lt;dbl&gt;, FH_CL &lt;dbl&gt;,\n#   FH_Total &lt;dbl&gt;, FH_Status &lt;chr&gt;, Continent &lt;chr&gt;"
   },
   {
-    "objectID": "intro/faq.html#コードの実行順番",
-    "href": "intro/faq.html#コードの実行順番",
-    "title": "この授業の「あるある」",
-    "section": "コードの実行順番",
-    "text": "コードの実行順番\nData.csvという名の表形式データがあり、var1、var2、var3、var4、var5という列で構成されているとしよう。このデータを用いて以下のような処理を行うとする。\n\nData.csvを読み込みdfという名のオブジェクトとして格納する。\ndfからvar1、var3、var4列のみ残し、dfを上書きする。\ndfにsum_3_4という新しい列を追加し、その値はvar3とvar4の和とする。\n\n　以上の処理を行うコードは以下の通りである（つまり、以下のコードが正解例）。\n\n\n\n正しいコード\n\n# Block 1\ndf &lt;- read_csv(\"Data.csv\")\n\n# Block 2\ndf &lt;- df %&gt;%\n  select(var1, var3, var4)\n\n# Block 3\ndf &lt;- df %&gt;%\n  mutate(sum_3_4 = var3 + var4)\n\n\n　しかし、2番目のブロックで以下のような入力ミスがあったとしよう。\n\n\n\n間違ったコード\n\n# Block 1\ndf &lt;- read_csv(\"Data.csv\")\n\n# Block 2（var4がvar3になっている）\ndf &lt;- df %&gt;%\n  select(var1, var2, var3)\n\n# Block 3\ndf &lt;- df %&gt;%\n  mutate(sum_3_4 = var3 + var4)\n\n\n　この場合、3番目のブロックは正しく実行されない。なぜなら、2ブロック目においてvar4とvar5列を除外したため、3ブロック目のコードを実行する時点でdfにvar4列がないからだ。ここで2ブロック目のコードを正しいコードへ修正したとしよう（var1, var2, var3をvar1, var3, var4に修正）。そして2ブロック目のコードを実行する。どうなるだろうか。\n　結果はエラーである。最初はうまく行ったものの、なぜか今回はエラーが出る。これはなぜだろうか。既に我々はdfからvar1、var2、var3列のみを抽出した。つまり、今のdfにはvar4とvar5列は存在しない。そこでvar1、var3、var4を抽出するコードを実行してもvar4列が存在しないからエラーが発生する。\n　対処法は簡単だ。dfをvar1、var2、var3、var4、var5が全て入っている状態に戻すことだ。したがって、以上の例だと、2ブロック目のコードを修正した場合は1ブロック目から改めて実行する必要がある。\n　以上の話を難しく感じる場合は、コードミスを修正した後はコードを1行目から再実行することをおすすめする。"
+    "objectID": "slides/day02.html#列の除外",
+    "href": "slides/day02.html#列の除外",
+    "title": "情報処理応用演習",
+    "section": "列の除外",
+    "text": "列の除外\n変数名の前に! (推奨)、または-を付ける\n\n2つ以上の変数を除外する場合、変数名をc()でまとめる。\n\n例) dfからGDP_per_capitaとPPP_per_capitaを除外\n\ndf |&gt;\n  select(!c(GDP_per_capita, PPP_per_capita))\n\n# A tibble: 186 × 16\n   Country           Population   Area    GDP     PPP    G7   G20  OECD HDI_2018\n   &lt;chr&gt;                  &lt;dbl&gt;  &lt;dbl&gt;  &lt;dbl&gt;   &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;    &lt;dbl&gt;\n 1 Afghanistan         38928346 6.53e5 1.91e4  8.27e4     0     0     0    0.496\n 2 Albania              2877797 2.74e4 1.53e4  3.97e4     0     0     0    0.791\n 3 Algeria             43851044 2.38e6 1.70e5  4.97e5     0     0     0    0.759\n 4 Andorra                77265 4.7 e2 3.15e3 NA          0     0     0    0.857\n 5 Angola              32866272 1.25e6 9.46e4  2.19e5     0     0     0    0.574\n 6 Antigua and Barb…      97929 4.4 e2 1.73e3  2.08e3     0     0     0    0.776\n 7 Argentina           45195774 2.74e6 4.50e5  1.04e6     0     1     0    0.83 \n 8 Armenia              2963243 2.85e4 1.37e4  3.84e4     0     0     0    0.76 \n 9 Australia           25499884 7.68e6 1.39e6  1.28e6     0     1     1    0.938\n10 Austria              9006398 8.24e4 4.46e5  5.03e5     0     0     1    0.914\n# ℹ 176 more rows\n# ℹ 7 more variables: Polity_Score &lt;dbl&gt;, Polity_Type &lt;chr&gt;, FH_PR &lt;dbl&gt;,\n#   FH_CL &lt;dbl&gt;, FH_Total &lt;dbl&gt;, FH_Status &lt;chr&gt;, Continent &lt;chr&gt;"
   },
   {
-    "objectID": "intro/filesystem.html",
-    "href": "intro/filesystem.html",
-    "title": "ファイル・システム",
-    "section": "",
-    "text": "PC内に存在するほとんどのファイルは「名前.拡張子」と名付けられている1。名前の拡張子は.で区切られており、名前は英数字と_のみで構成することを推奨する（ファイル名に.が推奨されない理由の一つが名前と拡張子を区分する文字として使われるからだ）。ここで注目したいのはファイルの名前でなく、拡張子のことだ。拡張子とはファイルの特徴を示すものである。たとえば、拡張子が.htmlであれば、ウェブページ形式を意味し、.pngなら図、.pdfなら図・文書、.exeなら実行ファイル、.dmgならディスクイメージを意味する。ファイル名がFigure01.pngならFigure01という名の画像ファイルであることを意味する2。この拡張子によって、パソコンは当該ファイルをどのアプリケーションで開くかを判定する。.exeファイルをダブルクリックするとアプリケーションが立ち上がるし、.pdfファイルをダブルクリックするとPDFビュアーソフトが起動され、中身が表示される。\n　これは拡張子を変えると問題が生じ得ることを意味する。画像ファイルであるFigure01.pngのファイル名を動画ファイル拡張子であるMovie01.mp4に修正しても、そのファイルは動画ファイルにはならない。また、拡張子が.mp4になると、そのファイルを開く際、動画プレイヤーが起動されるが、ファイルの中身は画像ファイルのままなのでエラーが出る。したがって、拡張子は勝手に変えてはならない。たまに課題の結果物としてファイルを提出する際、自分の名前を入れたくてファイル名をXXXX.htmlからXXXX.html_Songへ変更して提出する場合がある。しかし、これは大きな間違いだ。もやはこのファイルはHTMLファイル（.html）でなく、未知のファイル形式（.html_Song）として認識され、ダブルクリックしてもPCはどのアプリケーションで開けば良いかが分からなくなる。ファイル名を修正するならXXXX_Song.htmlのように修正しよう3。\n　Rを用いたデータ分析の場面において頻繁に登場する拡張子は以下の通りである。ファイルの名前は大文字と小文字を区別するが、拡張子の場合、区別されないケースが多い。\n\n\n\n\n\n\n\n\n拡張子\n説明\n備考\n\n\n\n\n.R\nRスクリプトファイル\n\n\n\n.Rproj\nRプロジェクトファイル\n\n\n\n.Rmd\nR Markdownファイル\n\n\n\n.qmd\nQuartoファイル\nRMarkdownに似たようなもの\n\n\n.csv\n表形式ファイル\n業界標準のフォーマット\n\n\n.xlsx or .xls\n表形式ファイル\nExcelで使うフォーマット\n\n\n.dta\n表形式ファイル\nStataで使うフォーマット\n\n\n.sav\n表形式ファイル\nSPSSで使うフォーマット\n\n\n.html\nウェブページファイル\nR Markdown/QuartoをKnitした場合に得られる\n\n\n.png\n画像ファイル\n\n\n\n.pdf\n画像/文書ファイル\n画像にも文書にもなるファイル"
+    "objectID": "slides/day02.html#隣接する列の同時選択",
+    "href": "slides/day02.html#隣接する列の同時選択",
+    "title": "情報処理応用演習",
+    "section": "隣接する列の同時選択",
+    "text": "隣接する列の同時選択\n:を使用\n\nCountryからPPPまでの列: Country:PPP\nCountry:PPPはCountry, Population, Area, GDP, PPPと同じ意味\n\n例) dfのCountry〜PPP, HDI_2018列を抽出\n\ndf |&gt;\n  select(Country:PPP, HDI_2018)\n\n# A tibble: 186 × 6\n   Country             Population    Area      GDP      PPP HDI_2018\n   &lt;chr&gt;                    &lt;dbl&gt;   &lt;dbl&gt;    &lt;dbl&gt;    &lt;dbl&gt;    &lt;dbl&gt;\n 1 Afghanistan           38928346  652860   19101.   82737.    0.496\n 2 Albania                2877797   27400   15278.   39658.    0.791\n 3 Algeria               43851044 2381740  169988.  496572.    0.759\n 4 Andorra                  77265     470    3154.      NA     0.857\n 5 Angola                32866272 1246700   94635.  218533.    0.574\n 6 Antigua and Barbuda      97929     440    1728.    2083.    0.776\n 7 Argentina             45195774 2736690  449663. 1036721.    0.83 \n 8 Armenia                2963243   28470   13673.   38446.    0.76 \n 9 Australia             25499884 7682300 1392681. 1275027.    0.938\n10 Austria                9006398   82409  446315.  502771.    0.914\n# ℹ 176 more rows"
   },
   {
-    "objectID": "intro/filesystem.html#拡張子",
-    "href": "intro/filesystem.html#拡張子",
-    "title": "ファイル・システム",
-    "section": "",
-    "text": "PC内に存在するほとんどのファイルは「名前.拡張子」と名付けられている1。名前の拡張子は.で区切られており、名前は英数字と_のみで構成することを推奨する（ファイル名に.が推奨されない理由の一つが名前と拡張子を区分する文字として使われるからだ）。ここで注目したいのはファイルの名前でなく、拡張子のことだ。拡張子とはファイルの特徴を示すものである。たとえば、拡張子が.htmlであれば、ウェブページ形式を意味し、.pngなら図、.pdfなら図・文書、.exeなら実行ファイル、.dmgならディスクイメージを意味する。ファイル名がFigure01.pngならFigure01という名の画像ファイルであることを意味する2。この拡張子によって、パソコンは当該ファイルをどのアプリケーションで開くかを判定する。.exeファイルをダブルクリックするとアプリケーションが立ち上がるし、.pdfファイルをダブルクリックするとPDFビュアーソフトが起動され、中身が表示される。\n　これは拡張子を変えると問題が生じ得ることを意味する。画像ファイルであるFigure01.pngのファイル名を動画ファイル拡張子であるMovie01.mp4に修正しても、そのファイルは動画ファイルにはならない。また、拡張子が.mp4になると、そのファイルを開く際、動画プレイヤーが起動されるが、ファイルの中身は画像ファイルのままなのでエラーが出る。したがって、拡張子は勝手に変えてはならない。たまに課題の結果物としてファイルを提出する際、自分の名前を入れたくてファイル名をXXXX.htmlからXXXX.html_Songへ変更して提出する場合がある。しかし、これは大きな間違いだ。もやはこのファイルはHTMLファイル（.html）でなく、未知のファイル形式（.html_Song）として認識され、ダブルクリックしてもPCはどのアプリケーションで開けば良いかが分からなくなる。ファイル名を修正するならXXXX_Song.htmlのように修正しよう3。\n　Rを用いたデータ分析の場面において頻繁に登場する拡張子は以下の通りである。ファイルの名前は大文字と小文字を区別するが、拡張子の場合、区別されないケースが多い。\n\n\n\n\n\n\n\n\n拡張子\n説明\n備考\n\n\n\n\n.R\nRスクリプトファイル\n\n\n\n.Rproj\nRプロジェクトファイル\n\n\n\n.Rmd\nR Markdownファイル\n\n\n\n.qmd\nQuartoファイル\nRMarkdownに似たようなもの\n\n\n.csv\n表形式ファイル\n業界標準のフォーマット\n\n\n.xlsx or .xls\n表形式ファイル\nExcelで使うフォーマット\n\n\n.dta\n表形式ファイル\nStataで使うフォーマット\n\n\n.sav\n表形式ファイル\nSPSSで使うフォーマット\n\n\n.html\nウェブページファイル\nR Markdown/QuartoをKnitした場合に得られる\n\n\n.png\n画像ファイル\n\n\n\n.pdf\n画像/文書ファイル\n画像にも文書にもなるファイル"
+    "objectID": "slides/day02.html#高度な変数選択",
+    "href": "slides/day02.html#高度な変数選択",
+    "title": "情報処理応用演習",
+    "section": "高度な変数選択",
+    "text": "高度な変数選択\n\n特定の文字列で始まる列を選択: starts_with()\n\n例)FHで始まる列の選択: starts_with(\"FH\")\n\n特定の文字列で終わる列を選択: ends_with()\n特定の文字列を含む列を選択: contains()\n\n例) dfからCountry, \"FH\"で始まる列を抽出\n\ndf |&gt;\n  select(Country, starts_with(\"FH\"))\n\n# A tibble: 186 × 5\n   Country             FH_PR FH_CL FH_Total FH_Status\n   &lt;chr&gt;               &lt;dbl&gt; &lt;dbl&gt;    &lt;dbl&gt; &lt;chr&gt;    \n 1 Afghanistan            13    14       27 NF       \n 2 Albania                27    40       67 PF       \n 3 Algeria                10    24       34 NF       \n 4 Andorra                39    55       94 F        \n 5 Angola                 11    21       32 NF       \n 6 Antigua and Barbuda    33    52       85 F        \n 7 Argentina              35    50       85 F        \n 8 Armenia                21    32       53 PF       \n 9 Australia              40    57       97 F        \n10 Austria                37    56       93 F        \n# ℹ 176 more rows\n\n\n\n応用) !starts_with(\"FH\"): \"FH\"で始まる列を除外"
   },
   {
-    "objectID": "intro/filesystem.html#ファイルシステム",
-    "href": "intro/filesystem.html#ファイルシステム",
-    "title": "ファイル・システム",
-    "section": "2 ファイルシステム",
-    "text": "2 ファイルシステム\n　R上でファイルを入出力を行うためにはファイルシステム（file system）を理解する必要がある。\n\n2.1 ファイルの入出力\n　そもそも、ファイルの「入出力」とは何だろうか。これはコンピューターの構造に関わる話なので極めて難しい内容であるが、我々のような消費者（end user）側から見れば、ファイルの入力（input）とは、いわゆるファイルの読み込みを意味し、多くの場合、表形式のデータ（.csv、.xlsxなど）をR上に読み込む作業を意味する。また、ファイルの出力（output）とは、いわゆるファイルの保存だ。たとえば、作成したスクリプトを.R形式で保存したり、加工済みのデータを.csv形式で保存したり、作成した図を.png、.pdf形式で保存したり、作成した文書を.pdf、.html形式で保存したりすることがファイルの出力だ。\n\n\n2.2 パスとは\n　ファイルを読み込む場合はファイル名を指定する必要がある。また、ファイルを書き出す場合もファイルに名付ける必要がある。そしてファイル名は名前.拡張子である。ただし、これらのファイルは全て一箇所に集まっているわけではない。もし、全てのファイルが一箇所に集まっていると、必要なファイルを探すのは非常に難しい。通常、PC内には数万のファイルがある。これらのファイルから必要なファイルを探すのは至難の業だろう。したがって、これらのファイルをいくつかの部屋に分けて保管し、この部屋のことをフォルダー（folder）、またはディレクトリ（directory）と呼ぶ（ここでは「フォルダー」と呼ぶとする）。パス（path）とは特定のファイルの位置と名前の書き方である。つまり、「どこのどのファイルを読み込むか」、「このファイルをどの名前でどこに保存するか」に関する書き方であり、プログラミングを学習する上で必須の知識と言っても過言ではない。\n　このパスという概念は我々が住んでいる居住地の「住所」と類似した概念だ。もし、日本に「都道府県」も「市区町村」も「〜丁目、〜番、〜号」という概念がないとしよう。ここでAmazonで魚を購入し、受取先を指定する場合はどうすれば良いだろうか。日本に人が数十人しか住んでいないのであれば、「XXXさんの家」と書くだけで十分かも知れない。しかし、日本には1億人以上の人がある。「ソンさんの家」と書いても届かないだろう。届いたとしても数年、あるいは数十年後に魚の化石の状態で届くかも知れない。そもそも日本に「ソンさん」はこの授業の担当教員以外にもいくらでもいる（ちなみに송（Song; 宋・松）さんも、손（Sohn; 孫）さんも、성（Seong/Sung; 成・星）さんも、선（Sun/Seon; 宣）さんも韓国語では発音が全く別だが、日本ではソンさんになってしまう。）。それぞれの家を何かの区域内に位置づけないとモノが届くまで数年かかってしまう。そこで必要なのが住所だ。「東京都千代田区永田町1丁目7番1号の田中さん」は「東京都」、「千代田区」、「永田町」、「1丁目」、「7番」、「1号」、「田中さん」で構成される。これをファイルシステムに例えると、東京都というフォルダーの中に千代田区というフォルダーがあり、その中には永田町というフォルダー、その中に1丁目といるファルダー、…が存在する。むろん、一つのフォルダーには複数のフォルダーが存在する可能性もある。東京都のフォルダーには千代田区以外にも大田区、中野区、文京区、葛飾区といった複数のフォルダーがあり、千代田区の中にも複数のフォルダーがある。最後の「田中さん」は受け取る人、コンピューターでいうファイル名である。\n　この住所と受取人のことをコンピューターではパス（path）と呼ぶ。それぞれのフォルダーは/で区切られる（macOS/Linuxでは/、Windowsでは\\または￥; JDCat分析ツールはLinuxベースであるため、/で区切られる）。先ほどの住所の例だと、東京都/千代田区/永田町/1丁目/7番/1号/田中さんとなる（macOS/Linuxの場合）。左に行くほど上位のフォルダーとなり、最後のものはファイル名である。ただし、コンピュターではパスの最初に/を付ける。Windowsなら主にC:\\でスタートし、C:\\東京都\\千代田区\\永田町\\1丁目\\7番\\1号\\田中さんとなる（\\の代わりに￥と表示される場合もある）。\n　たとえば、以下のような構造でファイルが保存されているとしよう。拡張子が付いているものはファイル、それ以外はフォルダー、1行目の.は最上位フォルダーである。\n\n\n                      levelName\n1  .                           \n2   ¦--Day01                   \n3   ¦   ¦--Day01.Rproj         \n4   ¦   ¦--Script01.R          \n5   ¦   ¦--Script02.R          \n6   ¦   ¦--Data                \n7   ¦   ¦   ¦--raw_data.csv    \n8   ¦   ¦   °--cleaned_data.csv\n9   ¦   °--Figs                \n10  ¦       ¦--Figure01.png    \n11  ¦       °--Figure02.png    \n12  °--Day02                   \n13      ¦--Day02.Rproj         \n14      ¦--Script01.R          \n15      ¦--Document01.qmd      \n16      ¦--Document01.html     \n17      ¦--Data                \n18      ¦   °--my_data.csv     \n19      °--Figs                \n20          ¦--Old             \n21          ¦   ¦--Figure01.pdf\n22          ¦   ¦--Figure02.pdf\n23          ¦   °--Figure03.pdf\n24          °--New             \n25              °--Figure01.png\n\n\n　ここでread_csv()関数を使ってDay01フォルダー内のDataフォルダー内のraw_data.csvを読み込む場合はread_csv(\"/Day01/Data/raw_data.csv\")となる。また、ggsave()を用いて、Day02内のFigs内のNew内にFigure02.pngという名で図を保存する場合は、ggsave(filename = \"/Day02/Figs/New/Figure02.png\", ...)と入力する必要がある。しかし、通常、パスを指定する際に、/（WindownならC:\\）から始めることは滅多にない。それは「作業フォルダーはパスで省略可能」だからだ。"
+    "objectID": "slides/day02.html#列の順番変更-select使用",
+    "href": "slides/day02.html#列の順番変更-select使用",
+    "title": "情報処理応用演習",
+    "section": "列の順番変更: select()使用",
+    "text": "列の順番変更: select()使用\n抽出後のデータフレームにおける変数はselect()内で指定された順番に\n例) G7からOECD列をCountryとPopulationの間へ移動\n\ndf |&gt;\n  select(Country, G7:OECD,\n         Population:PPP_per_capita, HDI_2018:Continent)\n\n# A tibble: 186 × 18\n   Country        G7   G20  OECD Population   Area    GDP     PPP GDP_per_capita\n   &lt;chr&gt;       &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;      &lt;dbl&gt;  &lt;dbl&gt;  &lt;dbl&gt;   &lt;dbl&gt;          &lt;dbl&gt;\n 1 Afghanistan     0     0     0   38928346 6.53e5 1.91e4  8.27e4           491.\n 2 Albania         0     0     0    2877797 2.74e4 1.53e4  3.97e4          5309.\n 3 Algeria         0     0     0   43851044 2.38e6 1.70e5  4.97e5          3876.\n 4 Andorra         0     0     0      77265 4.7 e2 3.15e3 NA              40821.\n 5 Angola          0     0     0   32866272 1.25e6 9.46e4  2.19e5          2879.\n 6 Antigua an…     0     0     0      97929 4.4 e2 1.73e3  2.08e3         17643.\n 7 Argentina       0     1     0   45195774 2.74e6 4.50e5  1.04e6          9949.\n 8 Armenia         0     0     0    2963243 2.85e4 1.37e4  3.84e4          4614.\n 9 Australia       0     1     1   25499884 7.68e6 1.39e6  1.28e6         54615.\n10 Austria         0     0     1    9006398 8.24e4 4.46e5  5.03e5         49555.\n# ℹ 176 more rows\n# ℹ 9 more variables: PPP_per_capita &lt;dbl&gt;, HDI_2018 &lt;dbl&gt;, Polity_Score &lt;dbl&gt;,\n#   Polity_Type &lt;chr&gt;, FH_PR &lt;dbl&gt;, FH_CL &lt;dbl&gt;, FH_Total &lt;dbl&gt;,\n#   FH_Status &lt;chr&gt;, Continent &lt;chr&gt;"
   },
   {
-    "objectID": "intro/filesystem.html#rstudioのプロジェクト機能",
-    "href": "intro/filesystem.html#rstudioのプロジェクト機能",
-    "title": "ファイル・システム",
-    "section": "3 RStudioのプロジェクト機能",
-    "text": "3 RStudioのプロジェクト機能\n　Rでファイルを入出力する時に頭に入れておくべき概念として「作業フォルダー（working folder/working directory）」がある。通常、Rの作業フォルダーはmacOSだと/Users/ユーザー名/、JDCat分析ツールだと/home/joyvan/が作業フォルダーだ。そして、パスを指定する場合、作業フォルダーは省略することができる。つまり、現在の作業フォルダーが/home/joyvan/なら\"/home/joyvan/Day01/Data/raw_data.csv\"は\"Day01/Data/raw_data.csv\"に、\"/home/joyvan/Day02/Figs/New/Figure02.png\"は\"Day02/Figs/New/Figure02.png\"に省略される。我々が郵便局で手紙を送る際、住所にわざわざ「日本国」と書かないものと同じである。作業フォルダーはRコンソール上でgetwd()と入力すれば出力される。macOSなら/Users/ユーザー名、JDCat分析ツールなら/home/joyvanと出力される。\n\n\n\n\n\n\n最上位フォルダーの話\n\n\n\n　macOSとLinuxに限定した話であるが、最上位フォルダーは/であり、これはシステム上の最上位フォルダーである。個人レベルの最上位フォルダーはmacOSだと/Users/ユーザー名、JDCat分析ツールだと/home/joyvanである。そして、この個人レベルの最上位フォルダーは~/と表記することができる。Rコンソールでgetwd()を入力し、以上のように出力されれば個人レベルの最上位フォルダー（~/）が作業フォルダーになっている理解しても良い。ちなみに、WindowsはC:\\がシステム上の最上位フォルダーである。\n\n\n　もし、自分がこれから全ての作業をDay03という名のフォルダー内で完結するとする。つまり、保存するスクリプト（たとえば、Script.R）もDay03に保存し、図（たとえば、FigureA.png）はDay03のFigsフォルダーに、読み込む表形式データ（たとえば、Day03_Data.csv）もDay03の中のDataフォルダーに入れるとする。この場合、それぞれのファイルのパスはDay03/Script.R、Day03/Figs/FigureA.png、Day03/Data/Day03_Data.csvとなる（作業フォルダーが~/であるため、~/は省略可能）。全ての作業が同じフォルダー（とその下位フォルダー）内で行うとしたら、パス名にDay03も不要な気がする。そこで必要なのがRStudioのプロジェクト機能である。\n　RStudioでDay03というプロジェクトを作成すると、Day03フォルダーが自動的に生成され、Day03.Rprojというファイルも生成される。プロジェクトを最上位フォルダーに作成したのであれば、~/Day03/Day03.Rprojファイルが生成されるのである。ここでRStudioのFile &gt; Open ProjectでこのDay03.Rprojファイルを開くとRStudio画面の右上にプロジェクト名が表示され、作業フォルダーがDay03.Rprojが保存されているフォルダー、つまり~/Day03へ変更される（プロジェクトが開かれていな場合は「Project: (None)」と表示される）。実際、JDCat分析ツールでXXXという名前のプロジェクトを生成し、そのプロジェクトを開けば作業フォルダーは/home/joyvan/XXX/（=~/XXX/）になる（getwd()で確認可能）。これは大変便利な機能である。なぜなら作業フォルダーまでのパスは全て省略可能だからだ。これまでDay03/Script.R、Day03/Figs/FigureA.png、Day03/Data/Day03_Data.csvだったパスが、それぞれScript.R、Figs/FigureA.png、Data/Day03_Data.csvになる。\n　また、何らかの理由でDay03フォルダーの名前をDay05に変更したとしよう。もし、プロジェクト機能を使っていないのであれば、パスのDay03を全てDay05に変更する必要がある。しかし、プロジェクト機能を使っているのであれば、.Rprojファイルが存在するフォルダーが作業フォルダーになるため、そもそもパスにDay03は存在しない。つまり、修正不要ということだ。ちなみに、プロジェクトを一旦作成したら、そのプロジェクトのフォルダー名や.Rprojファイルの名前は自由に修正しても良いし、フォルダー名と.Rprojファイルの名前が一致しなくても良い。\n　以上の内容を住所と郵便の話で例えるとしよう。社内でも郵便物の行き来は頻繁に行われる。とりわけ面積が広く、キャンパスも複数ある大学なら尚更だ。たとえば、「京都府京都市左京区下鴨半木町1-5 京都府立大学 ラーメン学部」の宋が「京都府京都市左京区下鴨半木町1-5 京都府立大学 蕎麦学部」の秦に郵便を送る場合、同じ大学であるにも関わらず、住所を全て書くのは面倒なことであろう。ここで京都府立大学専用の郵便局を作れば問題は解決される（これは「学内便」と呼ばれる）。そうすれば差出人は「ラーメン学部　宋」、受取人は「蕎麦学部　秦」と書くだけで郵便物は届く。つまり、「京都府京都市左京区下鴨半木町1-5 京都府立大学」は省略できる（同じ市区町村内の引っ越した際、転入・転出届けの住所欄に市区町村名までは省略できるのと同じ）。また、京都府立大学がなぜかキャンパスを滋賀県に移転した場合を考えてみよう（もはや京都府立大学ではないが…）。学内便がなければ、郵便物の住所を全て「滋賀県〜」に変えなければならない。しかし、学内便が存在すればこれまで使ってきた「ラーメン学部　宋」という表記は有効であろう。\n　このようにRStudioのプロジェクト機能は必須といっても過言ではない。簡単な計算目的として使う場合は問題ないが、何かの分析をする時、授業の実習時、課題時には必ずRStudioの右上が「Project: (None)」になっていないことを確認しよう。\n\n\n\n\n\n\n絶対パスと相対パス\n\n\n\n　これまで紹介したパスの書き方で/（WindowsならC:\\）から始まるパスは、絶対パス（absolute path）またはフルパス（full path）と呼ばれる。これはファイル名を最上位フォルダーを起点に書く方法である。一方、/（WindowsならC:\\）で始まらないパスは相対パス（relative path）呼ばれ、ファイル名を作業フォルダーを起点に書く方法である。"
+    "objectID": "slides/day02.html#列の順番変更-relocate使用",
+    "href": "slides/day02.html#列の順番変更-relocate使用",
+    "title": "情報処理応用演習",
+    "section": "列の順番変更: relocate()使用",
+    "text": "列の順番変更: relocate()使用\nrelocate()の使い方\n\n.after = XXX: XXX列の後ろへ移動 / .before = YYY: YYY列の前へ移動\n\n\nデータ |&gt;\n  relocate(移動したい変数名, .after = 変更先)\n\n例) G7からOECD列をCountryの後ろへ移動\n\ndf |&gt;\n  relocate(G7:OECD, .after = Country) # .before = PopulationもOK\n\n# A tibble: 186 × 18\n   Country        G7   G20  OECD Population   Area    GDP     PPP GDP_per_capita\n   &lt;chr&gt;       &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;      &lt;dbl&gt;  &lt;dbl&gt;  &lt;dbl&gt;   &lt;dbl&gt;          &lt;dbl&gt;\n 1 Afghanistan     0     0     0   38928346 6.53e5 1.91e4  8.27e4           491.\n 2 Albania         0     0     0    2877797 2.74e4 1.53e4  3.97e4          5309.\n 3 Algeria         0     0     0   43851044 2.38e6 1.70e5  4.97e5          3876.\n 4 Andorra         0     0     0      77265 4.7 e2 3.15e3 NA              40821.\n 5 Angola          0     0     0   32866272 1.25e6 9.46e4  2.19e5          2879.\n 6 Antigua an…     0     0     0      97929 4.4 e2 1.73e3  2.08e3         17643.\n 7 Argentina       0     1     0   45195774 2.74e6 4.50e5  1.04e6          9949.\n 8 Armenia         0     0     0    2963243 2.85e4 1.37e4  3.84e4          4614.\n 9 Australia       0     1     1   25499884 7.68e6 1.39e6  1.28e6         54615.\n10 Austria         0     0     1    9006398 8.24e4 4.46e5  5.03e5         49555.\n# ℹ 176 more rows\n# ℹ 9 more variables: PPP_per_capita &lt;dbl&gt;, HDI_2018 &lt;dbl&gt;, Polity_Score &lt;dbl&gt;,\n#   Polity_Type &lt;chr&gt;, FH_PR &lt;dbl&gt;, FH_CL &lt;dbl&gt;, FH_Total &lt;dbl&gt;,\n#   FH_Status &lt;chr&gt;, Continent &lt;chr&gt;"
   },
   {
-    "objectID": "intro/filesystem.html#本講義でおすすめするフォルダー構造",
-    "href": "intro/filesystem.html#本講義でおすすめするフォルダー構造",
-    "title": "ファイル・システム",
-    "section": "4 本講義でおすすめするフォルダー構造",
-    "text": "4 本講義でおすすめするフォルダー構造\n　プロジェクトを作成すれば、プロジェクトフォルダー内に以下のようなフォルダーを作成しよう。\n\n表形式のデータを読み込んだり、保存したりするのであればDataフォルダーをプロジェクトフォルダー内に作成する。\n\n.csv、.xlsx、.sav、.dtaのような表形式ファイルはDataフォルダーに入れる。\nデータを加工し、保存する場合はData/ファイル名.csvなどと指定する。\n\n図を作成し、保存する予定があれば、Figsフォルダーをプロジェクトフォルダー内に作成する。\n\n図を保存する場合、ファイルのパスをFigs/ファイル名.pngやFigs/ファイル名.pdfとする。\n\n\n　よく分からない場合はとりあえずプロジェクトフォルダー内にDataとFigsというフォルダーを作っておこう。ただし、.R、.qmdなどコードファイルはプロジェクトフォルダーの下位フォルダーに入れず、プロジェクトフォルダーの直に入れよう4。この場合、R Markdown / Quartoで作成された文書（.html、.pdfなど）は.Rmdや.qmdファイルと同じフォルダーに保存される（別途の設定をすれば別フォルダーに保存することも可能だが、そこまではしなくても良い）。"
+    "objectID": "slides/day02.html#行の抽出-書き方",
+    "href": "slides/day02.html#行の抽出-書き方",
+    "title": "情報処理応用演習",
+    "section": "行の抽出: 書き方",
+    "text": "行の抽出: 書き方\nfilter()関数を使用\nパイプを使わない書き方\n\nfilter(データ, 条件1, 条件2, ...)\n\nパイプを使う書き方\n\nデータ |&gt;\n  filter(条件1, 条件2, ...)"
   },
   {
-    "objectID": "intro/filesystem.html#参考",
-    "href": "intro/filesystem.html#参考",
-    "title": "ファイル・システム",
-    "section": "5 参考",
-    "text": "5 参考\n　以下の内容も合わせて読むことを強く推奨する。\n\n宋財泫・矢内勇生.『私たちのR』の「ファイルシステム」"
+    "objectID": "slides/day02.html#行の抽出-例",
+    "href": "slides/day02.html#行の抽出-例",
+    "title": "情報処理応用演習",
+    "section": "行の抽出: 例",
+    "text": "行の抽出: 例\n例) dfからContinentが\"Europe\"の行を抽出し、Country〜PPP, HDI_2018列を抽出し、HDI_2018はHDIに変更\n\nfilter()とselect()の組み合わせ\n以下の例の場合、filter()とselect()の順番を逆にすることは不可\n\nselect()後、Continent変数がなくなるため\n\n\n\ndf |&gt;\n  filter(Continent == \"Oceania\") |&gt;\n  select(Country:PPP, HDI = HDI_2018)\n\n# A tibble: 4 × 6\n  Country          Population    Area      GDP      PPP   HDI\n  &lt;chr&gt;                 &lt;dbl&gt;   &lt;dbl&gt;    &lt;dbl&gt;    &lt;dbl&gt; &lt;dbl&gt;\n1 Australia          25499884 7682300 1392681. 1275027. 0.938\n2 Fiji                 896445   18270    5536.   12496. 0.724\n3 New Zealand         4842780  263820  206929.  204260. 0.921\n4 Papua New Guinea    8947024  452860   24970.   37319. 0.543"
   },
   {
-    "objectID": "intro/install.html",
-    "href": "intro/install.html",
-    "title": "Rの導入",
-    "section": "",
-    "text": "注意!!!\n\n\n\n　初期設定は国立情報学研究所（以下、NII）のサーバーに自分の作業用スペースを借りる作業である。つまり、初期設定を繰り返すことはNIIのサーバー（のスペース）をいくつも借りることとなり、サーバーを圧迫してしまう可能性がある（一つのアカウントで作成可能なサーバー数は最大10個まで）。したがって、以下の初期設定は授業全体を通じて1回のみ実行すること。\n　既存のサーバーが使えないなどの問題が生じない限り、このページへのアクセスは不要である。次回から右上のをクリックして、既存のサーバーを立ち上げること。"
+    "objectID": "slides/day02.html#行の抽出-2つ以上の条件and",
+    "href": "slides/day02.html#行の抽出-2つ以上の条件and",
+    "title": "情報処理応用演習",
+    "section": "行の抽出: 2つ以上の条件（AND）",
+    "text": "行の抽出: 2つ以上の条件（AND）\n2つ以上の条件を同時に満たす行を抽出\n\n,で条件式を追加するだけ (&もOK; むしろ&を推奨)\n\n例) dfから「Continentが\"Asia\"（条件1）」、「HDI_2018が0.8以上（条件2）」の行を抽出し、CountryとHDI_2018列を抽出\n\n条件1 AND 条件2 \\(\\Rightarrow\\) 条件1 & 条件3\n\n\ndf |&gt;\n  filter(Continent == \"Asia\" & HDI_2018 &gt;= 0.8) |&gt;\n  select(Country, HDI_2018)\n\n# A tibble: 13 × 2\n   Country              HDI_2018\n   &lt;chr&gt;                   &lt;dbl&gt;\n 1 Bahrain                 0.838\n 2 Brunei                  0.845\n 3 Israel                  0.906\n 4 Japan                   0.915\n 5 Kazakhstan              0.817\n 6 South Korea             0.906\n 7 Kuwait                  0.808\n 8 Malaysia                0.804\n 9 Oman                    0.834\n10 Qatar                   0.848\n11 Saudi Arabia            0.857\n12 Singapore               0.935\n13 United Arab Emirates    0.866"
   },
   {
-    "objectID": "intro/install.html#初期設定",
-    "href": "intro/install.html#初期設定",
-    "title": "Rの導入",
-    "section": "1 初期設定",
-    "text": "1 初期設定\n　本講義の実習はJDCat分析ツールの使用を推奨する。自分のPCにインストールしたR + RStudio、RStuio.cloud、大学PCにインストールされているR + RStudioなどの使用を妨げないが1、本ページの資料と同じ結果が得られることは保証しない。また、実習・分析中に起きた不具合についても授業中には対応しない（オフィスアワーなどでは対応可能）。\n　以下ではJDCat分析ツールを用いたRおよびRStudioの導入方法について解説する。\n手順1: 以下のアドレスにアクセスする。\n\nhttps://binder.cs.rcos.nii.ac.jp/v2/gh/JaehyunSong/Binder_R/HEAD\n\n\n\n\n\n\n\n注意!!!\n\n\n\n　何回も強調するが、以上のURLは授業全体を通じて1回のみアクセスすること。このURLはアプリに例えると、「インストール」であり、1回だけで十分だ。使いたいアプリを起動する度にインストールする愚かな人はいないだろう。自分の貴重な時間を無駄にし、スマホの容量を圧迫するだけなら、まだましだが、JDCat分析システムは他人も使うシステムだ。つまり、以上のURLを2回以上クリックすることは明らかに迷惑行為である。次回から本サポートページ右上のをクリックして、既存のサーバーを立ち上げること。\n\n\n手順2: 所属機関に「京都府立大学」、または「Kyoto Prefectual University」を入力・選択し、「選択」をクリックする。このような画面が表示されない場合は手順2から5は飛ばしても良い。\n\n\n\n\n\n手順3: 自分の大学のIDをパスワードを入力する。\n\n\n\n\n\n手順4: このまま「同意します」をクリックする。\n\n\n\n\n\n手順5: 以下のような画面が表示されたらしばらく待つ。\n\n\n\n\n\n手順6: 以下のような画面が表示されたら初期設定は完了\n\n\n\n\n\n手順7: 初期設定が終わったら、すぐRおよびRStudioが利用可能だが、ここでは一旦右上の「Logout」をクリックし、タブ (or ウィンドウ) を閉じる。"
+    "objectID": "slides/day02.html#行の抽出-2つ以上の条件or",
+    "href": "slides/day02.html#行の抽出-2つ以上の条件or",
+    "title": "情報処理応用演習",
+    "section": "行の抽出: 2つ以上の条件（OR）",
+    "text": "行の抽出: 2つ以上の条件（OR）\n2つ以上の条件を片方か両方に満たす行を抽出\n\n|で条件式を追加するだけ\n\n例) dfから「Continentが\"Asia\"（条件1）か\"Oceania\"（条件2）」であり、かつ「HDI_2018が0.9以上（条件3）」の行を抽出し、CountryとHDI_2018、Continent列を抽出\n\n(条件1 OR 条件2) AND 条件3 \\(\\Rightarrow\\) (条件1 | 条件2) & 条件3\n\n\ndf |&gt;\n  filter((Continent == \"Asia\" | Continent == \"Oceania\") & HDI_2018 &gt;= 0.9) |&gt;\n  select(Country, HDI_2018, Continent)\n\n# A tibble: 6 × 3\n  Country     HDI_2018 Continent\n  &lt;chr&gt;          &lt;dbl&gt; &lt;chr&gt;    \n1 Australia      0.938 Oceania  \n2 Israel         0.906 Asia     \n3 Japan          0.915 Asia     \n4 South Korea    0.906 Asia     \n5 New Zealand    0.921 Oceania  \n6 Singapore      0.935 Asia"
   },
   {
-    "objectID": "intro/install.html#jdcat分析ツールの起動",
-    "href": "intro/install.html#jdcat分析ツールの起動",
-    "title": "Rの導入",
-    "section": "2 JDCat分析ツールの起動",
-    "text": "2 JDCat分析ツールの起動\n初期設定が終わったら、今後、以下の手順でJDCat分析ツールを起動する。\n手順1: 以下のアドレスにアクセスするか、本ページの右上にある右上の  ボタンをクリックする（右クリックし、新しいタブ or ウィンドウで開くことを推奨する）。\n\nhttps://jupyter.cs.rcos.nii.ac.jp/\n\n手順2: 必要に応じて認証を行う（初期設定の手順2, 3, 4と同じ）。\n手順3: サーバーリストが表示される。URL列のアドレスをクリックする。\n\n参考) 初期設定を1回のみ行ったら1行のみ表示されるため混同することはないが、個人利用などを目的に初期設定を複数回行った場合は2行以上が表示されるだろう。本講義に使うサーバーのURLをクリックすること。\n\n\n\n\n\n\n手順4: 以下のような画面が表示されたらJDCat分析ツールの起動完了である。この画面を今後、「JupyterHub（ジュピターハブ）のホーム画面」と呼ぶ。"
+    "objectID": "slides/day02.html#in演算子",
+    "href": "slides/day02.html#in演算子",
+    "title": "情報処理応用演習",
+    "section": "%in%演算子",
+    "text": "%in%演算子\n%in%: |の代わりに使用可能な便利な演算子\n例) Continentの値がc(\"Asia\", \"Oceainia\")の要素に含まれている場合\n\ndf |&gt;\n  filter(Continent %in% c(\"Asia\", \"Oceania\") & HDI_2018 &gt;= 0.9) |&gt;\n  select(Country, HDI_2018, Continent)\n\n# A tibble: 6 × 3\n  Country     HDI_2018 Continent\n  &lt;chr&gt;          &lt;dbl&gt; &lt;chr&gt;    \n1 Australia      0.938 Oceania  \n2 Israel         0.906 Asia     \n3 Japan          0.915 Asia     \n4 South Korea    0.906 Asia     \n5 New Zealand    0.921 Oceania  \n6 Singapore      0.935 Asia"
   },
   {
-    "objectID": "intro/install.html#rstudioの起動",
-    "href": "intro/install.html#rstudioの起動",
-    "title": "Rの導入",
-    "section": "3 RStudioの起動",
-    "text": "3 RStudioの起動\n手順1: JupyterHubのホーム画面の右上の「New」をクリックし、「RStudio」をクリックする。\n\n\n\n\n\n手順2: 以下の画面が表示されたら、RStudioの起動完了である（RStudioの見栄は初期状態の場合、白ベースである）。"
+    "objectID": "slides/day02.html#欠損値が含まれた行の扱い",
+    "href": "slides/day02.html#欠損値が含まれた行の扱い",
+    "title": "情報処理応用演習",
+    "section": "欠損値が含まれた行の扱い",
+    "text": "欠損値が含まれた行の扱い\ndfのPPPが欠損している行を抽出し、CountryからPPP列まで出力\n\n変数名 == NAを条件にしてはいけない\n\n\ndf |&gt;\n  filter(PPP == NA) |&gt;\n  select(Country:PPP)\n\n# A tibble: 0 × 5\n# ℹ 5 variables: Country &lt;chr&gt;, Population &lt;dbl&gt;, Area &lt;dbl&gt;, GDP &lt;dbl&gt;,\n#   PPP &lt;dbl&gt;"
   },
   {
-    "objectID": "intro/install.html#rstudioの終了",
-    "href": "intro/install.html#rstudioの終了",
-    "title": "Rの導入",
-    "section": "4 RStudioの終了",
-    "text": "4 RStudioの終了\n手順1: RStudio画面右上のオレンジ色のボタンをクリックする。\n\n\n\n\n\n手順2: 以下のダイアログが表示されたらタブ、またはウィンドウを閉じる。"
+    "objectID": "slides/day02.html#欠損値が含まれた行の扱い-1",
+    "href": "slides/day02.html#欠損値が含まれた行の扱い-1",
+    "title": "情報処理応用演習",
+    "section": "欠損値が含まれた行の扱い",
+    "text": "欠損値が含まれた行の扱い\ndfのPPPが欠損している行を抽出し、CountryからPPP列まで出力\n\n正解: is.na(変数名)\n\n\ndf |&gt;\n  filter(is.na(PPP)) |&gt;\n  select(Country:PPP)\n\n# A tibble: 8 × 5\n  Country        Population   Area     GDP   PPP\n  &lt;chr&gt;               &lt;dbl&gt;  &lt;dbl&gt;   &lt;dbl&gt; &lt;dbl&gt;\n1 Andorra             77265    470   3154.    NA\n2 Cuba             11326616 106440 100023     NA\n3 Holy See              801      0     NA     NA\n4 Liechtenstein       38128    160   6553.    NA\n5 Monaco              39242      1   7188.    NA\n6 Somalia          15893222 627340    917.    NA\n7 Syria            17500658 183630  40405.    NA\n8 Western Sahara     597339 266000    909.    NA"
   },
   {
-    "objectID": "intro/project.html",
-    "href": "intro/project.html",
-    "title": "プロジェクト管理",
-    "section": "",
-    "text": "なぜプロジェクト機能を使う必要があるのか\n\n\n\n　「なぜプロジェクト機能を使うのか」を知るためにはファイルシステムに関する理解が必要だ。もし、「ファイルシステム」という単語や「絶対パス」、「相対パス」という単語を聞いたことのない人はファイル・システムも予め読んでおこう。"
+    "objectID": "slides/day02.html#欠損値が含まれた行の除外",
+    "href": "slides/day02.html#欠損値が含まれた行の除外",
+    "title": "情報処理応用演習",
+    "section": "欠損値が含まれた行の除外",
+    "text": "欠損値が含まれた行の除外\ndfのPPPが欠損している行を除外し、CountryからPPP列まで出力\n\n否定を意味する!を使用する\n\n\ndf |&gt;\n  filter(!is.na(PPP)) |&gt;\n  select(Country:PPP)\n\n# A tibble: 178 × 5\n   Country             Population    Area      GDP      PPP\n   &lt;chr&gt;                    &lt;dbl&gt;   &lt;dbl&gt;    &lt;dbl&gt;    &lt;dbl&gt;\n 1 Afghanistan           38928346  652860   19101.   82737.\n 2 Albania                2877797   27400   15278.   39658.\n 3 Algeria               43851044 2381740  169988.  496572.\n 4 Angola                32866272 1246700   94635.  218533.\n 5 Antigua and Barbuda      97929     440    1728.    2083.\n 6 Argentina             45195774 2736690  449663. 1036721.\n 7 Armenia                2963243   28470   13673.   38446.\n 8 Australia             25499884 7682300 1392681. 1275027.\n 9 Austria                9006398   82409  446315.  502771.\n10 Azerbaijan            10139177   82658   48048.  144556.\n# ℹ 168 more rows"
   },
   {
-    "objectID": "intro/project.html#プロジェクトの作成",
-    "href": "intro/project.html#プロジェクトの作成",
-    "title": "プロジェクト管理",
-    "section": "プロジェクトの作成",
-    "text": "プロジェクトの作成\n手順1: File &gt; New Project…をクリックする。\n\n\n\n\n\n手順2: New Directoryをクリックする。\n\n\n\n\n\n手順3: New Projectをクリックする。\n\n\n\n\n\n手順4: Directory name:にプロジェクト名を入力し、Create Projectをクリックする。\n\n\n\n\n\n\n\n\n\n\n\n注意: プロジェクト名の付け方\n\n\n\n　プロジェクト名にはローマ字、数字のみを使おう。つまり、日本語、中国語、韓国語、全角文字、スペースはなるべく使わないこと。空白を入れたい場合はスペースの代わりにアンダースコア（_）を使おう。"
+    "objectID": "slides/day02.html#もう一つの方法",
+    "href": "slides/day02.html#もう一つの方法",
+    "title": "情報処理応用演習",
+    "section": "もう一つの方法",
+    "text": "もう一つの方法\ndrop_na()関数を利用\n\n()内で指定した変数が欠損している行をすべて除外（複数指定可）\n\n\ndf |&gt;\n  drop_na(PPP, Polity_Score) |&gt; # PPPとPolity_Scoreどちらか欠損した行を除外\n  select(Country:PPP, Polity_Score)\n\n# A tibble: 155 × 6\n   Country     Population    Area      GDP      PPP Polity_Score\n   &lt;chr&gt;            &lt;dbl&gt;   &lt;dbl&gt;    &lt;dbl&gt;    &lt;dbl&gt;        &lt;dbl&gt;\n 1 Afghanistan   38928346  652860   19101.   82737.           -1\n 2 Albania        2877797   27400   15278.   39658.            9\n 3 Algeria       43851044 2381740  169988.  496572.            2\n 4 Angola        32866272 1246700   94635.  218533.           -2\n 5 Argentina     45195774 2736690  449663. 1036721.            9\n 6 Armenia        2963243   28470   13673.   38446.            7\n 7 Australia     25499884 7682300 1392681. 1275027.           10\n 8 Austria        9006398   82409  446315.  502771.           10\n 9 Azerbaijan    10139177   82658   48048.  144556.           -7\n10 Bahrain        1701575     760   38574.   74230.          -10\n# ℹ 145 more rows"
   },
   {
-    "objectID": "intro/project.html#プロジェクトの開き方",
-    "href": "intro/project.html#プロジェクトの開き方",
-    "title": "プロジェクト管理",
-    "section": "プロジェクトの開き方",
-    "text": "プロジェクトの開き方\n　プロジェクトを作成すれば、自動的に出来たてのプロジェクトが開かれる。しかし、JDCat分析ツールから一旦ログアウトし、改めてRStudioを起動する場合、プロジェクトをロードする必要がある。\n手順1: File &gt; Open Project…をクリックする。\n\n\n\n\n\n手順2: プロジェクト・フォルダー名をダブルクリックする。\n\n\n\n\n\n手順3: .Rprojで終わるファイルをダブルクリックする。\n\n\n\n\n\nプロジェクトが正しくロードされている場合、RStudioの右上にプロジェクト名が表示される。\n\n\n\n\n\n\n\n\n\n\n\n常にプロジェクト機能を使おう!\n\n\n\n　RStudionの右上のプロジェクト名表示が「Project: (None)」になっていることは、現在プロジェクトを開いていないことを意味する。簡単な計算機として使う目的以外（つまり、授業中の実習や課題）は必ずプロジェクト機能を使おう。"
+    "objectID": "slides/day02.html#行のソート-書き方",
+    "href": "slides/day02.html#行のソート-書き方",
+    "title": "情報処理応用演習",
+    "section": "行のソート: 書き方",
+    "text": "行のソート: 書き方\narrange()関数を使用\nパイプを使わない書き方\n\narrange(データ, 変数名1, 変数名2, ...)\n\nパイプを使う書き方\n\nデータ |&gt; arrange(変数名1, 変数名2, ...)\n\n基本的には昇順 (値が小さい行が先にくる)\n\n降順にする場合はdesc(変数名)\n変数名1を基準にソートし、同点の場合は変数名2を基準に"
+  },
+  {
+    "objectID": "slides/day02.html#行のソート-例",
+    "href": "slides/day02.html#行のソート-例",
+    "title": "情報処理応用演習",
+    "section": "行のソート: 例",
+    "text": "行のソート: 例\n例) dfからContinentの値が\"Africa\"の行のみを抽出し、Polity_Scoreが高い行を上位にする。そして、CountryとPPP_per_capita、Polity_Score列のみ残す。\n\nPolity Scoreが高い (低い) = より民主主義 (権威主義)に近い\n\n\ndf |&gt;\n  filter(Continent == \"Africa\") |&gt;\n  arrange(desc(Polity_Score)) |&gt;\n  select(Country, PPP_per_capita, Polity_Score)\n\n# A tibble: 54 × 3\n   Country      PPP_per_capita Polity_Score\n   &lt;chr&gt;                 &lt;dbl&gt;        &lt;dbl&gt;\n 1 Mauritius            22637.           10\n 2 Kenya                 4105.            9\n 3 South Africa         12605.            9\n 4 Botswana             17311.            8\n 5 Ghana                 5097.            8\n 6 Lesotho               3019.            8\n 7 Benin                 3067.            7\n 8 Liberia               1461.            7\n 9 Nigeria               5018.            7\n10 Senegal               3248.            7\n# ℹ 44 more rows"
+  },
+  {
+    "objectID": "slides/day02.html#行のソート-応用",
+    "href": "slides/day02.html#行のソート-応用",
+    "title": "情報処理応用演習",
+    "section": "行のソート: 応用",
+    "text": "行のソート: 応用\n\ndfからアフリカのみを抽出し、Polity_Scoreが低い行を上位に\nPolity_Scoreが同点の場合、PPP_per_capitaが高い行を上位に\nCountryとPolity_Score, PPP_per_capita列のみ残す\nPolity_ScoreはPolityに、PPP_per_capitaはPPPと名前を変更\n\n\ndf |&gt;\n  filter(Continent == \"Africa\") |&gt;\n  arrange(Polity_Score, desc(PPP_per_capita)) |&gt;\n  select(Country, Polity = Polity_Score, PPP = PPP_per_capita)\n\n# A tibble: 54 × 3\n   Country             Polity    PPP\n   &lt;chr&gt;                &lt;dbl&gt;  &lt;dbl&gt;\n 1 Eswatini                -9  8634.\n 2 Eritrea                 -7  1860.\n 3 Equatorial Guinea       -6 19458.\n 4 Egypt                   -4 11198.\n 5 Morocco                 -4  7554.\n 6 Sudan                   -4  4063.\n 7 Cameroon                -4  3506.\n 8 Congo (Brazzaville)     -4  3191.\n 9 Comoros                 -3  3007.\n10 Rwanda                  -3  2008.\n# ℹ 44 more rows"
+  },
+  {
+    "objectID": "slides/day02.html#記述統計量",
+    "href": "slides/day02.html#記述統計量",
+    "title": "情報処理応用演習",
+    "section": "記述統計量",
+    "text": "記述統計量\n変数が持つ情報を要約した数値\n\n詳細は後期の「マクロ政治データ分析実習」で\n\n元の情報:\n\nMathScore &lt;- c(82, 45, 69, 94, 88, 73, NA, 51, 90, 63)\n\n\n\nMathScoreを代表する値\n\n# 平均値\nmean(MathScore, na.rm = TRUE) \n\n[1] 72.77778\n\n# 中央値\nmedian(MathScore, na.rm = TRUE)\n\n[1] 73\n\n\n\n\n\nMathScoreのばらつきの具合\n\n# 不偏分散\nvar(MathScore, na.rm = TRUE)\n\n[1] 302.4444\n\n# 不偏標準偏差\nsd(MathScore, na.rm = TRUE)\n\n[1] 17.39093\n\n# 四分位範囲\nIQR(MathScore, na.rm = TRUE)\n\n[1] 25"
+  },
+  {
+    "objectID": "slides/day02.html#summariseの使い方",
+    "href": "slides/day02.html#summariseの使い方",
+    "title": "情報処理応用演習",
+    "section": "summarise()の使い方",
+    "text": "summarise()の使い方\nsummarise(): 記述統計量を計算する{dplyr}の関数\nデータフレーム |&gt;\n  summarise(記述統計の関数(変数名, ...))\n記述統計の関数の例\n\nmean(): 平均値\nmedian(): 中央値\nsd(): 不偏分散の平方根（一般的に「標準偏差」と呼ばれるもの）\nvar(): 不偏分散\nIQR(): 四分位範囲\nmin()、max(): 最小値と最大値\nn(): ケース数（引数不要）\nその他（教科書第14.1.2章）"
+  },
+  {
+    "objectID": "slides/day02.html#記述統計量の計算1",
+    "href": "slides/day02.html#記述統計量の計算1",
+    "title": "情報処理応用演習",
+    "section": "記述統計量の計算（1）",
+    "text": "記述統計量の計算（1）\n例) dfのPopulationとAreaの平均値（mean()）を計算\n\ndf |&gt;\n  summarise(mean(Population),\n            mean(Area))\n\n# A tibble: 1 × 2\n  `mean(Population)` `mean(Area)`\n               &lt;dbl&gt;        &lt;dbl&gt;\n1          41737773.      696069."
+  },
+  {
+    "objectID": "slides/day02.html#記述統計量の計算2",
+    "href": "slides/day02.html#記述統計量の計算2",
+    "title": "情報処理応用演習",
+    "section": "記述統計量の計算（2）",
+    "text": "記述統計量の計算（2）\nsummarise()内に異なる関数を使うことも可能\n例) dfのPopulationとAreaの平均値（mean()）と標準偏差（sd()）を計算\n\ndf |&gt;\n  summarise(mean(Population),\n            sd(Population),\n            mean(Area),\n            sd(Area))\n\n# A tibble: 1 × 4\n  `mean(Population)` `sd(Population)` `mean(Area)` `sd(Area)`\n               &lt;dbl&gt;            &lt;dbl&gt;        &lt;dbl&gt;      &lt;dbl&gt;\n1          41737773.       151270298.      696069.   1872412."
+  },
+  {
+    "objectID": "slides/day02.html#出力された結果をより見やすく",
+    "href": "slides/day02.html#出力された結果をより見やすく",
+    "title": "情報処理応用演習",
+    "section": "出力された結果をより見やすく",
+    "text": "出力された結果をより見やすく\nsummarise()内に出力される結果の列名 = 関数()を指定\n例) dfのPopulationとAreaの平均値（mean()）と標準偏差（sd()）を計算し、結果の列名をMean_Pop、SD_Popなどとする\n\nPop_Area_df &lt;- df |&gt;\n  summarise(Mean_Pop  = mean(Population),\n            SD_Pop    = sd(Population),\n            Mean_Area = mean(Area),\n            SD_Area   = sd(Area))\nPop_Area_df\n\n# A tibble: 1 × 4\n   Mean_Pop     SD_Pop Mean_Area  SD_Area\n      &lt;dbl&gt;      &lt;dbl&gt;     &lt;dbl&gt;    &lt;dbl&gt;\n1 41737773. 151270298.   696069. 1872412."
+  },
+  {
+    "objectID": "slides/day02.html#グループごとの記述統計量",
+    "href": "slides/day02.html#グループごとの記述統計量",
+    "title": "情報処理応用演習",
+    "section": "グループごとの記述統計量",
+    "text": "グループごとの記述統計量\n{dplyr}のgroup_by()を使用\n\nデータフレーム名 |&gt;\n  group_by(グループ化する変数名) |&gt;\n  summarise(...)\n\n例) dfのContinentでデータをグループ化し、PPP_per_capitaの平均値を計算\n\n# PPP_per_capitaが欠損している国もあるので、na.rm = TRUEを追加\ndf |&gt;\n  group_by(Continent) |&gt;\n  summarise(Mean_PPP = mean(PPP_per_capita, na.rm = TRUE))\n\n# A tibble: 5 × 2\n  Continent Mean_PPP\n  &lt;chr&gt;        &lt;dbl&gt;\n1 Africa       5667.\n2 America     18100.\n3 Asia        22728.\n4 Europe      37783.\n5 Oceania     27573.\n\n\n\n\ngroup_by()を使わず、summarise()の内部に.by = グルーピングする変数名のような書き方でも良い（{dplyr} 1.1.0から）"
+  },
+  {
+    "objectID": "slides/day02.html#複数の変数でグルーピング",
+    "href": "slides/day02.html#複数の変数でグルーピング",
+    "title": "情報処理応用演習",
+    "section": "複数の変数でグルーピング",
+    "text": "複数の変数でグルーピング\n例) dfのContinentとG20でデータをグループ化し、HDI_2018の平均値を計算\n\ndf |&gt;\n  group_by(Continent, G20) |&gt;\n  summarise(Mean_HDI = mean(HDI_2018, na.rm = TRUE))\n\n`summarise()` has grouped output by 'Continent'. You can override using the\n`.groups` argument.\n\n\n# A tibble: 10 × 3\n# Groups:   Continent [5]\n   Continent   G20 Mean_HDI\n   &lt;chr&gt;     &lt;dbl&gt;    &lt;dbl&gt;\n 1 Africa        0    0.550\n 2 Africa        1    0.705\n 3 America       0    0.727\n 4 America       1    0.84 \n 5 Asia          0    0.710\n 6 Asia          1    0.798\n 7 Europe        0    0.859\n 8 Europe        1    0.877\n 9 Oceania       0    0.729\n10 Oceania       1    0.938"
+  },
+  {
+    "objectID": "slides/day02.html#グルービング後のsummarise",
+    "href": "slides/day02.html#グルービング後のsummarise",
+    "title": "情報処理応用演習",
+    "section": "グルービング後のsummarise()",
+    "text": "グルービング後のsummarise()\n謎のメッセージが出力される\n## `summarise()` has grouped output by 'Continent'. You can override using \nthe `.groups` argument.\nとりあえず、group_by()の後にsummarise()を使う場合、summarise()の最後に.groups = \"drop\"を追加する。\n\n理由は割愛するが、詳細は教科書第14.2章を参照\n多くの場合、メッセージが出力されるだけで、問題が生じることはあまりない。\nしかし、複数の変数でグルーピングしたり、記述統計量が複数計算される関数（quantile()など）を使う場合、問題が生じる可能性あり\n\n特にsummarise()の後に更にパイプ（|&gt;）を使って計算を続ける場合\n\nとりあえず、.groups = \"drop\"をしておけば安全\nsummarise()の代わりにreframe()を使えば.groups = \"drop\"は不要（{dplyr} 1.1.0から）"
+  },
+  {
+    "objectID": "slides/day02.html#groups-dropを追加する",
+    "href": "slides/day02.html#groups-dropを追加する",
+    "title": "情報処理応用演習",
+    "section": ".groups = \"drop\"を追加する",
+    "text": ".groups = \"drop\"を追加する\n謎のメッセージが出力されなくなる\n\ndf |&gt;\n  group_by(Continent, G20) |&gt;\n  summarise(Mean_HDI = mean(HDI_2018, na.rm = TRUE),\n            .groups  = \"drop\")\n\n# A tibble: 10 × 3\n   Continent   G20 Mean_HDI\n   &lt;chr&gt;     &lt;dbl&gt;    &lt;dbl&gt;\n 1 Africa        0    0.550\n 2 Africa        1    0.705\n 3 America       0    0.727\n 4 America       1    0.84 \n 5 Asia          0    0.710\n 6 Asia          1    0.798\n 7 Europe        0    0.859\n 8 Europe        1    0.877\n 9 Oceania       0    0.729\n10 Oceania       1    0.938"
+  },
+  {
+    "objectID": "slides/day02.html#グループごとのケース数を計算",
+    "href": "slides/day02.html#グループごとのケース数を計算",
+    "title": "情報処理応用演習",
+    "section": "グループごとのケース数を計算",
+    "text": "グループごとのケース数を計算\nsummarise()の中にn()を使用\n\ndf |&gt;\n  group_by(Continent) |&gt;\n  summarise(Mean_PPP = mean(PPP_per_capita, na.rm = TRUE),\n            SD_PPP   = sd(PPP_per_capita, na.rm = TRUE),\n            Cases    = n())\n\n# A tibble: 5 × 4\n  Continent Mean_PPP SD_PPP Cases\n  &lt;chr&gt;        &lt;dbl&gt;  &lt;dbl&gt; &lt;int&gt;\n1 Africa       5667.  6015.    54\n2 America     18100. 12601.    36\n3 Asia        22728. 24067.    42\n4 Europe      37783. 21276.    50\n5 Oceania     27573. 21984.     4"
+  },
+  {
+    "objectID": "slides/day02.html#参考より効率的な方法",
+    "href": "slides/day02.html#参考より効率的な方法",
+    "title": "情報処理応用演習",
+    "section": "参考）より効率的な方法",
+    "text": "参考）より効率的な方法\nacross()関数を利用: 詳細は教科書第14.1章を参照\n例) dfのPopulationからPPP列まで平均値と標準偏差を計算し、結果の変数名は元の変数名_Mean、元の変数名_SDとする\n\ndf |&gt;\n  summarise(across(Population:PPP,\n                   .fns = list(Mean = ~mean(.x, na.rm = TRUE),\n                               SD   = ~mean(.x, na.rm = TRUE))))\n\n# A tibble: 1 × 8\n  Population_Mean Population_SD Area_Mean Area_SD GDP_Mean  GDP_SD PPP_Mean\n            &lt;dbl&gt;         &lt;dbl&gt;     &lt;dbl&gt;   &lt;dbl&gt;    &lt;dbl&gt;   &lt;dbl&gt;    &lt;dbl&gt;\n1       41737773.     41737773.   696069. 696069.  473031. 473031.  717953.\n# ℹ 1 more variable: PPP_SD &lt;dbl&gt;"
+  },
+  {
+    "objectID": "slides/day02.html#変数の計算-1",
+    "href": "slides/day02.html#変数の計算-1",
+    "title": "情報処理応用演習",
+    "section": "変数の計算",
+    "text": "変数の計算\nmutate(): データフレームの変数を用いた計算を行い、新しい列として追加\n\n新しい列名として既存の列名を指定すると上書きされる\n新しく追加された列は最後に位置する（指定可能）\n\n\nデータフレーム名 |&gt;\n  mutate(新しい列名 = 計算式)\n\n例) dfのPopulationをAreaで割り（=人口密度）、Densityという名の列として追加する\n\n\n{dplyr}を使わない方法\n\ndf$Density &lt;- df$Population / df$Area\n\n\n\n\n{dplyr}を使う方法\n\ndf |&gt;\n  mutate(Density = Population / Area)"
+  },
+  {
+    "objectID": "slides/day02.html#dplyrの例",
+    "href": "slides/day02.html#dplyrの例",
+    "title": "情報処理応用演習",
+    "section": "{dplyr}の例",
+    "text": "{dplyr}の例\n例) dfのPopulationをAreaで割り（人口密度）、Densityという名の列として追加する\n\n新しく追加された列は最後に位置する\n\nただし、上書きの場合、位置はそのまま\n\n\n\ndf |&gt;\n  mutate(Density = Population / Area) |&gt;\n  print(n = 5) # 最初の5行のみ出力\n\n# A tibble: 186 × 19\n  Country   Population   Area    GDP     PPP GDP_per_capita PPP_per_capita    G7\n  &lt;chr&gt;          &lt;dbl&gt;  &lt;dbl&gt;  &lt;dbl&gt;   &lt;dbl&gt;          &lt;dbl&gt;          &lt;dbl&gt; &lt;dbl&gt;\n1 Afghanis…   38928346 6.53e5 1.91e4  82737.           491.          2125.     0\n2 Albania      2877797 2.74e4 1.53e4  39658.          5309.         13781.     0\n3 Algeria     43851044 2.38e6 1.70e5 496572.          3876.         11324.     0\n4 Andorra        77265 4.7 e2 3.15e3     NA          40821.            NA      0\n5 Angola      32866272 1.25e6 9.46e4 218533.          2879.          6649.     0\n# ℹ 181 more rows\n# ℹ 11 more variables: G20 &lt;dbl&gt;, OECD &lt;dbl&gt;, HDI_2018 &lt;dbl&gt;,\n#   Polity_Score &lt;dbl&gt;, Polity_Type &lt;chr&gt;, FH_PR &lt;dbl&gt;, FH_CL &lt;dbl&gt;,\n#   FH_Total &lt;dbl&gt;, FH_Status &lt;chr&gt;, Continent &lt;chr&gt;, Density &lt;dbl&gt;"
+  },
+  {
+    "objectID": "slides/day02.html#新しい列の位置指定",
+    "href": "slides/day02.html#新しい列の位置指定",
+    "title": "情報処理応用演習",
+    "section": "新しい列の位置指定",
+    "text": "新しい列の位置指定\nmutate()内に.after、または.beforeを指定\n\nrelocate()関数と同じ仕組み（第9回）\n\n例) PopulationをAreaで割り、Densityという名の新しい列Areaの後に追加する。\n\ndf |&gt;\n  mutate(Density = Population / Area, \n         .after  = Area)\n\n# A tibble: 186 × 19\n   Country             Population    Area Density     GDP     PPP GDP_per_capita\n   &lt;chr&gt;                    &lt;dbl&gt;   &lt;dbl&gt;   &lt;dbl&gt;   &lt;dbl&gt;   &lt;dbl&gt;          &lt;dbl&gt;\n 1 Afghanistan           38928346  652860   59.6   1.91e4  8.27e4           491.\n 2 Albania                2877797   27400  105.    1.53e4  3.97e4          5309.\n 3 Algeria               43851044 2381740   18.4   1.70e5  4.97e5          3876.\n 4 Andorra                  77265     470  164.    3.15e3 NA              40821.\n 5 Angola                32866272 1246700   26.4   9.46e4  2.19e5          2879.\n 6 Antigua and Barbuda      97929     440  223.    1.73e3  2.08e3         17643.\n 7 Argentina             45195774 2736690   16.5   4.50e5  1.04e6          9949.\n 8 Armenia                2963243   28470  104.    1.37e4  3.84e4          4614.\n 9 Australia             25499884 7682300    3.32  1.39e6  1.28e6         54615.\n10 Austria                9006398   82409  109.    4.46e5  5.03e5         49555.\n# ℹ 176 more rows\n# ℹ 12 more variables: PPP_per_capita &lt;dbl&gt;, G7 &lt;dbl&gt;, G20 &lt;dbl&gt;, OECD &lt;dbl&gt;,\n#   HDI_2018 &lt;dbl&gt;, Polity_Score &lt;dbl&gt;, Polity_Type &lt;chr&gt;, FH_PR &lt;dbl&gt;,\n#   FH_CL &lt;dbl&gt;, FH_Total &lt;dbl&gt;, FH_Status &lt;chr&gt;, Continent &lt;chr&gt;"
+  },
+  {
+    "objectID": "slides/day02.html#変数の計算いろいろ1",
+    "href": "slides/day02.html#変数の計算いろいろ1",
+    "title": "情報処理応用演習",
+    "section": "変数の計算いろいろ（1）",
+    "text": "変数の計算いろいろ（1）\n各国が世界人口に占める割合を計算し、降順で出力\n\ndfのPopulationの合計をTotal_Popという列として追加する。\nPopulationをTotal_Popで割り、100を掛ける。結果はShare_Popという名の列としてPopulation後に追加する。\nCountryからShare_Popまでの列のみ残す。\nTotal_Pop列を除外する。\nShare_Popが大きい順で行を並び替える"
+  },
+  {
+    "objectID": "slides/day02.html#変数の計算いろいろ1-1",
+    "href": "slides/day02.html#変数の計算いろいろ1-1",
+    "title": "情報処理応用演習",
+    "section": "変数の計算いろいろ（1）",
+    "text": "変数の計算いろいろ（1）\n\ndf |&gt; \n  # Total_Popを作らずにShare_Pop作成時に直接sum(Population)を入れてもOK\n  mutate(Total_Pop = sum(Population),\n         Share_Pop = Population / Total_Pop * 100,\n         .after    = Population) |&gt;\n  select(Country:Share_Pop) |&gt;\n  select(!Total_Pop) |&gt;\n  arrange(desc(Share_Pop))\n\n# A tibble: 186 × 3\n   Country       Population Share_Pop\n   &lt;chr&gt;              &lt;dbl&gt;     &lt;dbl&gt;\n 1 China         1447470092     18.6 \n 2 India         1380004385     17.8 \n 3 United States  334308644      4.31\n 4 Indonesia      273523615      3.52\n 5 Pakistan       220892340      2.85\n 6 Brazil         212559417      2.74\n 7 Nigeria        206139589      2.66\n 8 Bangladesh     164689383      2.12\n 9 Russia         145934462      1.88\n10 Mexico         128932753      1.66\n# ℹ 176 more rows"
+  },
+  {
+    "objectID": "slides/day02.html#変数の計算いろいろ2",
+    "href": "slides/day02.html#変数の計算いろいろ2",
+    "title": "情報処理応用演習",
+    "section": "変数の計算いろいろ（2）",
+    "text": "変数の計算いろいろ（2）\nG7、G20、OECDのいずれかに加盟している国を「先進国」、それ以外は「その他」とし、二つのグループの人口密度、人間開発指数、民主主義度の平均値を出力する。\n\ndfを利用する\nDevelopedという列を追加し、G7、G20、OECDのいずれかに加盟した国なら\"先進国\"、それ以外なら\"その他\"とする。\n人口密度をDensityという名の列として追加する。\nHDI_2018とPolity_Scoreのいずれかが欠損した行を除外する。\nDeveloped変数でデータをグルーピングする。\nHDI_2018、Polity_Score、Densityの平均値を求める。\ndf2という名前のオブジェクトとして作業環境内に格納する。"
+  },
+  {
+    "objectID": "slides/day02.html#変数の計算いろいろ2-1",
+    "href": "slides/day02.html#変数の計算いろいろ2-1",
+    "title": "情報処理応用演習",
+    "section": "変数の計算いろいろ（2）",
+    "text": "変数の計算いろいろ（2）\n\ndf2 &lt;- df |&gt;\n  mutate(Developed = G7 + G20 + OECD,\n         Developed = if_else(Developed &gt; 1, \"先進国\", \"その他\"), # 上書き\n         Density   = Population / Area) |&gt;\n  filter(!is.na(HDI_2018), !is.na(Polity_Score)) |&gt;\n  group_by(Developed) |&gt;\n  summarise(Density = mean(Density),\n            HDI     = mean(HDI_2018),\n            Polity  = mean(Polity_Score))\n\ndf2\n\n# A tibble: 2 × 4\n  Developed Density   HDI Polity\n  &lt;chr&gt;       &lt;dbl&gt; &lt;dbl&gt;  &lt;dbl&gt;\n1 その他       197. 0.695   3.92\n2 先進国       174. 0.892   7.91"
+  },
+  {
+    "objectID": "slides/day02.html#summariseの結果を並び替えたい",
+    "href": "slides/day02.html#summariseの結果を並び替えたい",
+    "title": "情報処理応用演習",
+    "section": "summarise()の結果を並び替えたい",
+    "text": "summarise()の結果を並び替えたい\ndf2を\"先進国\" &gt; \"その他\"の順番で表示させたい。\n\nsummarise()を行う場合、グルーピング変数のアルファベット順で表示される。\nただし、日本語の場合、50音順にはならない。\n\nひらがな、カタカナなら50音順になるが、漢字は \\(\\times\\)\n\nしたがって、summarise()の前にグルーピング変数をFactor型に変換する必要がある。\n\nFactor型: 順序付きの文字型\nfactor(Factor型にしたい変数名, levels = c(各要素の順番を指定))\n例）Xという名前の変数があり、\"A\"、\"B\"、\"C\"という値のみで構成され、順序をB&gt;C&gt;Aにしたい場合\n\nfactor(X, levels = c(\"B\", \"A\", \"C\"))"
+  },
+  {
+    "objectID": "slides/day02.html#developedをfactor型に",
+    "href": "slides/day02.html#developedをfactor型に",
+    "title": "情報処理応用演習",
+    "section": "DevelopedをFactor型に",
+    "text": "DevelopedをFactor型に\n\ndf |&gt;\n  mutate(Developed = G7 + G20 + OECD,\n         Developed = if_else(Developed &gt; 1, \"先進国\", \"その他\"),\n         Developed = factor(Developed, levels = c(\"先進国\", \"その他\")),\n         Density   = Population / Area) |&gt;\n  filter(!is.na(HDI_2018), !is.na(Polity_Score)) |&gt;\n  group_by(Developed) |&gt;\n  summarise(Density = mean(Density),\n            HDI     = mean(HDI_2018),\n            Polity  = mean(Polity_Score))\n\n# A tibble: 2 × 4\n  Developed Density   HDI Polity\n  &lt;fct&gt;       &lt;dbl&gt; &lt;dbl&gt;  &lt;dbl&gt;\n1 先進国       174. 0.892   7.91\n2 その他       197. 0.695   3.92"
+  },
+  {
+    "objectID": "slides/day02.html#変数のリコーディング-2値の例",
+    "href": "slides/day02.html#変数のリコーディング-2値の例",
+    "title": "情報処理応用演習",
+    "section": "変数のリコーディング: 2値の例",
+    "text": "変数のリコーディング: 2値の例\nmutate()内にif_else()を使用（または、ifelse()）\n\ndfのOECDが1なら\"OECD加盟国\"、それ以外なら\"OECD非加盟国\"に変換し、OECD_Jという列として追加\n\n\ndf |&gt;\n  mutate(OECD_J = if_else(OECD == 1, \"OECD加盟国\", \"OECD非加盟国\"))\n\n例) 変換前\n\ndf |&gt;\n  group_by(OECD) |&gt;\n  summarise(PPP = mean(PPP_per_capita, na.rm = TRUE),\n            HDI = mean(HDI_2018, na.rm = TRUE),\n            FH  = mean(FH_Total, na.rm = TRUE))\n\n# A tibble: 2 × 4\n   OECD    PPP   HDI    FH\n  &lt;dbl&gt;  &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;\n1     0 14229. 0.667  49.9\n2     1 46000. 0.894  89.1"
+  },
+  {
+    "objectID": "slides/day02.html#変数のリコーディング-2値の例-1",
+    "href": "slides/day02.html#変数のリコーディング-2値の例-1",
+    "title": "情報処理応用演習",
+    "section": "変数のリコーディング: 2値の例",
+    "text": "変数のリコーディング: 2値の例\n例) 変換後\n\ndf |&gt;\n  mutate(OECD_J = if_else(OECD == 1, \"OECD加盟国\", \"OECD非加盟国\")) |&gt;\n  group_by(OECD = OECD_J) |&gt; # 「=」で列名の変更が可能\n  summarise(PPP = mean(PPP_per_capita, na.rm = TRUE),\n            HDI = mean(HDI_2018, na.rm = TRUE),\n            FH  = mean(FH_Total, na.rm = TRUE))\n\n# A tibble: 2 × 4\n  OECD            PPP   HDI    FH\n  &lt;chr&gt;         &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;\n1 OECD加盟国   46000. 0.894  89.1\n2 OECD非加盟国 14229. 0.667  49.9"
+  },
+  {
+    "objectID": "slides/day02.html#変数のリコーディング-3値以上の例",
+    "href": "slides/day02.html#変数のリコーディング-3値以上の例",
+    "title": "情報処理応用演習",
+    "section": "変数のリコーディング: 3値以上の例",
+    "text": "変数のリコーディング: 3値以上の例\nmutate()内にcase_when()を使用\n\nデータフレーム名 |&gt;\n  mutate(新しい変数名 = case_when(条件1 ~ 新しい値,\n                                条件2 ~ 新しい値,\n                                ...\n                                TRUE ~ 新しい値))\n\n\nTRUE ~ 新しい値は「上記の条件全てが満たされない場合の値」を意味する\n\n.default = \"新しい値\"でもOK（{dplyr} 1.1.0から）"
+  },
+  {
+    "objectID": "slides/day02.html#変数のリコーディング-3値以上の例-1",
+    "href": "slides/day02.html#変数のリコーディング-3値以上の例-1",
+    "title": "情報処理応用演習",
+    "section": "変数のリコーディング: 3値以上の例",
+    "text": "変数のリコーディング: 3値以上の例\n例) dfのContinentを日本語にし、Continent_Jとして追加\n\ndf |&gt;\n  mutate(Continent_J = case_when(Continent == \"Africa\"  ~ \"アフリカ\",\n                                 Continent == \"America\" ~ \"アメリカ\",\n                                 Continent == \"Asia\"    ~ \"アジア\",\n                                 Continent == \"Europe\"  ~ \"ヨーロッパ\",\n                                 TRUE                   ~ \"オセアニア\")) |&gt;\n  group_by(大陸 = Continent_J) |&gt;\n  # 日本語は非推奨だが、一応使える（_と.を除く特殊記号不可）\n  summarise(OECD加盟国比率 = mean(OECD),\n            国家数        = n())\n\n# A tibble: 5 × 3\n  大陸       OECD加盟国比率 国家数\n  &lt;chr&gt;               &lt;dbl&gt;  &lt;int&gt;\n1 アジア             0.0714     42\n2 アフリカ           0          54\n3 アメリカ           0.139      36\n4 オセアニア         0.5         4\n5 ヨーロッパ         0.54       50"
+  },
+  {
+    "objectID": "slides/day02.html#変数のリコーディング-応用",
+    "href": "slides/day02.html#変数のリコーディング-応用",
+    "title": "情報処理応用演習",
+    "section": "変数のリコーディング: 応用",
+    "text": "変数のリコーディング: 応用\n例) ContinentがAP列を追加し、\"Asia\"か\"Oceania\"、\"America\"なら1、以外は0\n方法1: if_else()の利用\n\ndf |&gt;\n  mutate(AP = if_else(Continent %in% c(\"Asia\", \"America\", \"Oceania\"), 1, 0))\n\n方法2: case_when()の利用\n\ndf |&gt;\n  mutate(AP = case_when(Continent == \"Asia\"    ~ 1, \n                        Continent == \"America\" ~ 1, \n                        Continent == \"Oceania\" ~ 1,\n                        TRUE                   ~ 0))\n\n方法3: case_when() + %in%の利用\n\ndf |&gt;\n  mutate(AP = case_when(Continent %in% c(\"Asia\", \"America\", \"Oceania\") ~ 1, \n                        TRUE                                           ~ 0))"
+  },
+  {
+    "objectID": "slides/day02.html#naではない欠損値もあることに注意",
+    "href": "slides/day02.html#naではない欠損値もあることに注意",
+    "title": "情報処理応用演習",
+    "section": "NAではない欠損値もあることに注意",
+    "text": "NAではない欠損値もあることに注意\n世論調査などの場合、欠損値がNAでなく、9や99、\"\"などの場合がある。\n例) my_dataの例\n\nYoungAge変数を作成し、Ageが39以下なら1、それ以外は0にする。ただし、999ならNAとする。\nHighEduc2変数を作成し、HighEducが1なら\"大卒以上\"、それ以外は\"大卒未満\"にする。ただし、9ならNAとする。\n\n\n\n\nmy_data &lt;- tibble(ID       = 1:10,\n                  Age      = c(32, 35, 57, 999, 74, \n                               66, 999, 49, 78, 67),\n                  HighEduc = c(1, 0, 0, 1, 0,\n                               9, 1, 1, 9, 9))\n\n\n\nmy_data\n\n# A tibble: 10 × 3\n      ID   Age HighEduc\n   &lt;int&gt; &lt;dbl&gt;    &lt;dbl&gt;\n 1     1    32        1\n 2     2    35        0\n 3     3    57        0\n 4     4   999        1\n 5     5    74        0\n 6     6    66        9\n 7     7   999        1\n 8     8    49        1\n 9     9    78        9\n10    10    67        9"
+  },
+  {
+    "objectID": "slides/day02.html#欠損値を指定する場合",
+    "href": "slides/day02.html#欠損値を指定する場合",
+    "title": "情報処理応用演習",
+    "section": "欠損値を指定する場合",
+    "text": "欠損値を指定する場合\n\n戻り値としてNAを指定（if_else()も同様）\n\n\nmy_data |&gt;\n  mutate(YoungAge  = case_when(Age == 999 ~ NA,\n                               Age &lt;=  39 ~ 1,\n                               TRUE       ~ 0),\n         HighEduc2 = case_when(HighEduc == 9 ~ NA,\n                               HighEduc == 1 ~ \"大卒以上\",\n                               TRUE          ~ \"大卒未満\"))\n\n# A tibble: 10 × 5\n      ID   Age HighEduc YoungAge HighEduc2\n   &lt;int&gt; &lt;dbl&gt;    &lt;dbl&gt;    &lt;dbl&gt; &lt;chr&gt;    \n 1     1    32        1        1 大卒以上 \n 2     2    35        0        1 大卒未満 \n 3     3    57        0        0 大卒未満 \n 4     4   999        1       NA 大卒以上 \n 5     5    74        0        0 大卒未満 \n 6     6    66        9        0 &lt;NA&gt;     \n 7     7   999        1       NA 大卒以上 \n 8     8    49        1        0 大卒以上 \n 9     9    78        9        0 &lt;NA&gt;     \n10    10    67        9        0 &lt;NA&gt;"
+  },
+  {
+    "objectID": "slides/day02.html#特定の値を欠損値にコーディング場合",
+    "href": "slides/day02.html#特定の値を欠損値にコーディング場合",
+    "title": "情報処理応用演習",
+    "section": "特定の値を欠損値にコーディング場合",
+    "text": "特定の値を欠損値にコーディング場合\n特定の値を欠損値とし、それ以外の値は元も値にする場合\n\n主にif_else()を使用し、条件に合致した場合はNAを、合致しない場合は元の変数のままにする。\n\n\nmy_data |&gt;\n  mutate(Age      = if_else(Age      == 999, NA, Age),\n         HighEduc = if_else(HighEduc == 9,   NA, HighEduc))\n\n# A tibble: 10 × 3\n      ID   Age HighEduc\n   &lt;int&gt; &lt;dbl&gt;    &lt;dbl&gt;\n 1     1    32        1\n 2     2    35        0\n 3     3    57        0\n 4     4    NA        1\n 5     5    74        0\n 6     6    66       NA\n 7     7    NA        1\n 8     8    49        1\n 9     9    78       NA\n10    10    67       NA"
+  },
+  {
+    "objectID": "slides/day02.html#特定の値を欠損値にコーディング場合-1",
+    "href": "slides/day02.html#特定の値を欠損値にコーディング場合-1",
+    "title": "情報処理応用演習",
+    "section": "特定の値を欠損値にコーディング場合",
+    "text": "特定の値を欠損値にコーディング場合\nif_else()でなく、case_when()を使うことも可能\n\n欠損を意味する値が複数の場合、case_when()を使うか、OR演算子（| / %in%）を用いたif_else()を使用する。\n\n\nmy_data |&gt;\n  mutate(Age      = case_when(Age == 999 ~ NA, \n                              TRUE       ~ Age),\n         HighEduc = case_when(HighEduc == 9 ~ NA, \n                              TRUE          ~ HighEduc))\n\n# A tibble: 10 × 3\n      ID   Age HighEduc\n   &lt;int&gt; &lt;dbl&gt;    &lt;dbl&gt;\n 1     1    32        1\n 2     2    35        0\n 3     3    57        0\n 4     4    NA        1\n 5     5    74        0\n 6     6    66       NA\n 7     7    NA        1\n 8     8    49        1\n 9     9    78       NA\n10    10    67       NA"
+  },
+  {
+    "objectID": "slides/day02.html#参考特定の値を欠損値にコーディング場合",
+    "href": "slides/day02.html#参考特定の値を欠損値にコーディング場合",
+    "title": "情報処理応用演習",
+    "section": "参考）特定の値を欠損値にコーディング場合",
+    "text": "参考）特定の値を欠損値にコーディング場合\n{naniar}パッケージのreplace_with_na()関数を利用\n\n引数はリスト型オブジェクトであり、リストの中には変数名 = 欠損値の値\n欠損値の値が複数の場合、変数名 = c(値1, 値2, ...)\n似たような関数として{expss}のna_if()関数\n\n\nlibrary(naniar) # 事前に install.package(naniar) でインストール\nmy_data |&gt;\n  # Ageは999、HighEducは9が欠損値\n  replace_with_na(list(Age = 999, HighEduc = 9))\n\n# A tibble: 10 × 3\n      ID   Age HighEduc\n   &lt;int&gt; &lt;dbl&gt;    &lt;dbl&gt;\n 1     1    32        1\n 2     2    35        0\n 3     3    57        0\n 4     4    NA        1\n 5     5    74        0\n 6     6    66       NA\n 7     7    NA        1\n 8     8    49        1\n 9     9    78       NA\n10    10    67       NA"
+  },
+  {
+    "objectID": "slides/day02.html#参考mutateにおける複数の処理",
+    "href": "slides/day02.html#参考mutateにおける複数の処理",
+    "title": "情報処理応用演習",
+    "section": "参考）mutate()における複数の処理",
+    "text": "参考）mutate()における複数の処理\n同じ内容のコードであるため、好きな書き方で問題ないが、まとめた方が効率的\n一つのmutate()内に2つの処理\n\nmy_data |&gt;\n  mutate(Age      = if_else(Age      == 999 ~ NA, TRUE ~ Age),\n         HighEduc = if_else(HighEduc == 9   ~ NA, TRUE ~ HighEduc))\n\n一つのmutate()内に1つの処理\n\nmy_data |&gt;\n  mutate(Age = if_else(Age == 999 ~ NA, TRUE ~ Age)) |&gt;\n  mutate(HighEduc = if_else(HighEduc == 9 ~ NA, TRUE ~ HighEduc))"
+  },
+  {
+    "objectID": "slides/day02.html#データの結合-行",
+    "href": "slides/day02.html#データの結合-行",
+    "title": "情報処理応用演習",
+    "section": "データの結合: 行",
+    "text": "データの結合: 行\nbind_rows()を利用: 変数名が一致する必要がある\n\n以下の例はいずれのdata.frameもID、Name、Scoreで構成されている。\n\nID、Name、Scoreの順番は一致しなくても良い（上のdata.frameの順番に調整される）。\n\n\n\n\n結合前\n\nData1\n\n  ID  Name Score\n1  1 Aさん    77\n2  2 Bさん    89\n3  3 Cさん    41\n\nData2\n\n  ID  Name Score\n1  4 Xさん    98\n2  5 Yさん    78\n\n\n\n\n\n結合後\n\nbind_rows(Data1, Data2)\n\n  ID  Name Score\n1  1 Aさん    77\n2  2 Bさん    89\n3  3 Cさん    41\n4  4 Xさん    98\n5  5 Yさん    78"
+  },
+  {
+    "objectID": "slides/day02.html#データの結合-行-1",
+    "href": "slides/day02.html#データの結合-行-1",
+    "title": "情報処理応用演習",
+    "section": "データの結合: 行",
+    "text": "データの結合: 行\n結合前のデータ識別変数の追加\n\n結合するデータをlist()でまとめ、.id引数を追加する\nlist()の内部では\"識別変数の値\" = 結合するデータと定義\n\n例) 結合後、Classという列を追加し、元々Data1だった行は\"1組\"、Data2だった行には\"2組\"を格納する。\n\nbind_rows(list(\"1組\" = Data1, \"2組\" = Data2),\n          .id = \"Class\")\n\n  Class ID  Name Score\n1   1組  1 Aさん    77\n2   1組  2 Bさん    89\n3   1組  3 Cさん    41\n4   2組  4 Xさん    98\n5   2組  5 Yさん    78"
+  },
+  {
+    "objectID": "slides/day02.html#データの結合-列",
+    "href": "slides/day02.html#データの結合-列",
+    "title": "情報処理応用演習",
+    "section": "データの結合: 列",
+    "text": "データの結合: 列\n*_join(): 結合に使う識別用の変数（キー変数）が必要（以下ではCity）\n\n\n結合前\n\nData1\n\n   City Pop Area\n1 Tokyo 927 2194\n2 Osaka 148  828\n3 Kochi  76 7104\n\n\n\n\n\n結合前\n\nData2\n\n   City     Food\n1 Kochi   Katsuo\n2 Osaka Takoyaki\n3 Tokyo    Ramen\n\n\n\n\n結合後\n\nleft_join(Data1, Data2, by = \"City\")\n\n   City Pop Area     Food\n1 Tokyo 927 2194    Ramen\n2 Osaka 148  828 Takoyaki\n3 Kochi  76 7104   Katsuo"
+  },
+  {
+    "objectID": "slides/day02.html#列結合に使う関数",
+    "href": "slides/day02.html#列結合に使う関数",
+    "title": "情報処理応用演習",
+    "section": "列結合に使う関数",
+    "text": "列結合に使う関数\n識別子は両データに含まれているが、一致しないケースがある。\n\nどのデータの識別子を優先するか\n\n\n\nleft_join()\n\n左側のデータの識別子を優先する\n空欄は欠損値として埋められる\n\nright_join()\n\n右側のデータの識別子を優先する\n空欄は欠損値として埋められる\n\ninner_join()\n\n両データの識別子に共通する行のみを残して結合\n\nfull_join()\n\n両データの識別子に存在する行すべて結合\n空欄は欠損値として埋められる"
+  },
+  {
+    "objectID": "slides/day02.html#left_joinの仕組み",
+    "href": "slides/day02.html#left_joinの仕組み",
+    "title": "情報処理応用演習",
+    "section": "left_join()の仕組み",
+    "text": "left_join()の仕組み\nleft_join(データ1, データ2, by = \"識別用変数名\")\n\nデータ1を温存する\n欠損しているセルは欠損値（NA）で埋められる"
+  },
+  {
+    "objectID": "slides/day02.html#right_joinの仕組み",
+    "href": "slides/day02.html#right_joinの仕組み",
+    "title": "情報処理応用演習",
+    "section": "right_join()の仕組み",
+    "text": "right_join()の仕組み\nright_join(データ1, データ2, by = \"識別用変数名\")\n\nデータ2を温存する\n欠損しているセルは欠損値（NA）で埋められる"
+  },
+  {
+    "objectID": "slides/day02.html#inner_joinの仕組み",
+    "href": "slides/day02.html#inner_joinの仕組み",
+    "title": "情報処理応用演習",
+    "section": "inner_join()の仕組み",
+    "text": "inner_join()の仕組み\ninner_join(データ1, データ2, by = \"識別用変数名\")\n\nデータ1とデータ2で識別子が共通する行のみ結合"
+  },
+  {
+    "objectID": "slides/day02.html#full_joinの仕組み",
+    "href": "slides/day02.html#full_joinの仕組み",
+    "title": "情報処理応用演習",
+    "section": "full_join()の仕組み",
+    "text": "full_join()の仕組み\nfull_join(データ1, データ2, by = \"識別用変数名\")\n\nデータ1とデータ2をすべて温存\n欠損しているセルは欠損値（NA）で埋められる"
+  },
+  {
+    "objectID": "slides/day02.html#比較-1",
+    "href": "slides/day02.html#比較-1",
+    "title": "情報処理応用演習",
+    "section": "比較 (1)",
+    "text": "比較 (1)\n\ndf1 &lt;- tibble(Pref  = c(\"東京\", \"大阪\", \"京都\"),\n              Score = c(3.5, 4, 4.2))\ndf2 &lt;- tibble(Pref  = c(\"東京\", \"大阪\", \"高知\"),\n              N     = c(3220, 1325, 111))\n\n\n\n\ndf1\n\n# A tibble: 3 × 2\n  Pref  Score\n  &lt;chr&gt; &lt;dbl&gt;\n1 東京    3.5\n2 大阪    4  \n3 京都    4.2\n\n\n\n\n\n\ndf2\n\n# A tibble: 3 × 2\n  Pref      N\n  &lt;chr&gt; &lt;dbl&gt;\n1 東京   3220\n2 大阪   1325\n3 高知    111"
+  },
+  {
+    "objectID": "slides/day02.html#比較-2",
+    "href": "slides/day02.html#比較-2",
+    "title": "情報処理応用演習",
+    "section": "比較 (2)",
+    "text": "比較 (2)\nby = \"識別用の変数名\"は複数用いることも可能（例: 都道府県名&年度で結合）\n\nby = c(\"識別用の変数名1\", \"識別用の変数名2\")\n\n\n\n\nleft_join(df1, df2, by = \"Pref\")\n\n# A tibble: 3 × 3\n  Pref  Score     N\n  &lt;chr&gt; &lt;dbl&gt; &lt;dbl&gt;\n1 東京    3.5  3220\n2 大阪    4    1325\n3 京都    4.2    NA\n\nright_join(df1, df2, by = \"Pref\")\n\n# A tibble: 3 × 3\n  Pref  Score     N\n  &lt;chr&gt; &lt;dbl&gt; &lt;dbl&gt;\n1 東京    3.5  3220\n2 大阪    4    1325\n3 高知   NA     111\n\n\n\n\n\n\ninner_join(df1, df2, by = \"Pref\")\n\n# A tibble: 2 × 3\n  Pref  Score     N\n  &lt;chr&gt; &lt;dbl&gt; &lt;dbl&gt;\n1 東京    3.5  3220\n2 大阪    4    1325\n\nfull_join(df1, df2, by = \"Pref\")\n\n# A tibble: 4 × 3\n  Pref  Score     N\n  &lt;chr&gt; &lt;dbl&gt; &lt;dbl&gt;\n1 東京    3.5  3220\n2 大阪    4    1325\n3 京都    4.2    NA\n4 高知   NA     111"
+  },
+  {
+    "objectID": "slides/day02.html#整然データ構造とは",
+    "href": "slides/day02.html#整然データ構造とは",
+    "title": "情報処理応用演習",
+    "section": "整然データ構造とは",
+    "text": "整然データ構造とは\nTidy data: Hadley Wickhamが提唱したデータ分析に適したデータ構造\n\n\n\n整然データ、簡潔データと呼ばれる。\n\n対概念は非整然データ、雑然データ（messy data）\n\nパソコンにとって読みやすいデータ \\(\\neq\\) 人間にとって読みやすいデータ\n{tidyr}パッケージは雑然データを整然データへ変形するパッケージ\n次回紹介する{ggplot2}は整然データを前提として開発されたパッケージ\n\n4つの原則\n\n1つの列は、1つの変数を表す\n1つの行は、1つの観測を表す\n1つのセルは、1つの値を表す\n1つの表は、1つの観測単位をもつ"
+  },
+  {
+    "objectID": "slides/day02.html#原則1-1列1変数",
+    "href": "slides/day02.html#原則1-1列1変数",
+    "title": "情報処理応用演習",
+    "section": "原則1: 1列1変数",
+    "text": "原則1: 1列1変数\n\n1列には1つの変数のみ\n\n3人の被験者に対し、薬を飲む前後の数学成績を測定した場合\n薬を飲む前: Control / 薬を飲んだ後: Treatment"
+  },
+  {
+    "objectID": "slides/day02.html#原則2-1行1観察",
+    "href": "slides/day02.html#原則2-1行1観察",
+    "title": "情報処理応用演習",
+    "section": "原則2: 1行1観察",
+    "text": "原則2: 1行1観察\n\n1観察 \\(\\neq\\) 1値\n\n観察: 観察単位ごとに測定された値の集合\n観察単位: 人、企業、国、時間など\n\n以下の例の場合、観察単位は「人 \\(\\times\\) 時間 」"
+  },
+  {
+    "objectID": "slides/day02.html#原則3-1セル1値",
+    "href": "slides/day02.html#原則3-1セル1値",
+    "title": "情報処理応用演習",
+    "section": "原則3: 1セル1値",
+    "text": "原則3: 1セル1値\n\nこの原則に反するケースは多くない\n例外) 1セルに2020年8月24日という値がある場合\n\n分析の目的によっては年月日を全て異なるセルに割り当てる必要もある\nこのままで問題とならないケースも"
+  },
+  {
+    "objectID": "slides/day02.html#原則4-1表1単位",
+    "href": "slides/day02.html#原則4-1表1単位",
+    "title": "情報処理応用演習",
+    "section": "原則4: 1表1単位",
+    "text": "原則4: 1表1単位\n\n政府統計: 日本を代表する雑然データ\n\nデータの中身は良いが、構造が…\n表に「国」、「都道府県」、「市区町村」、「行政区」の単位が混在"
+  },
+  {
+    "objectID": "slides/day02.html#原則4-1表1単位-1",
+    "href": "slides/day02.html#原則4-1表1単位-1",
+    "title": "情報処理応用演習",
+    "section": "原則4: 1表1単位",
+    "text": "原則4: 1表1単位\n\n「1表1単位」原則を満たさない場合、filter()関数等で、異なる単位の行を除外\n\n以降、解説する{tidyr}でなく、{dplyr}で対応可能"
+  },
+  {
+    "objectID": "slides/day02.html#tidyrパッケージ",
+    "href": "slides/day02.html#tidyrパッケージ",
+    "title": "情報処理応用演習",
+    "section": "{tidyr}パッケージ",
+    "text": "{tidyr}パッケージ\n\n\n\n\n\n雑然データから整然データへ変形をサポートするパッケージ\n\npivot_longer(): Wide型データからLong型データへ\n\n原則1・2に反するデータを整然データへ変換 (最も頻繁に使われる)\n\npivot_wider(): Long型データからWide型データへ\n\n人間には雑然データの方が読みやすい場合がある（原則1の例）\n\nseparate(): セルの分割（「年月日」から「年」、「月」、「日」へ）\n\n原則3に反するデータを整然データへ変換\n\n原則4に反するデータは分析単位が異なる行をfilter()などで除外"
+  },
+  {
+    "objectID": "slides/day02.html#実習用データ-1",
+    "href": "slides/day02.html#実習用データ-1",
+    "title": "情報処理応用演習",
+    "section": "実習用データ",
+    "text": "実習用データ\ncovid_sample.csv: 中国、日本、韓国、モンゴル、台湾の5日間COVID-19新規感染者数\n\nサポートページからダウンロード\nデータ出典:Johns Hopkins University Center for Systems Science and Engineering\n\n\nCOVID_df &lt;- read_csv(\"Data/covid_sample.csv\")\nCOVID_df\n\n# A tibble: 5 × 7\n  Country  Population `2022/06/09` `2022/06/10` `2022/06/11` `2022/06/12`\n  &lt;chr&gt;         &lt;dbl&gt;        &lt;dbl&gt;        &lt;dbl&gt;        &lt;dbl&gt;        &lt;dbl&gt;\n1 China    1447470092          819          848         1114          990\n2 Japan     126476461        16788        15584        15338        13381\n3 Korea      51269185         9304         8428         7382         3828\n4 Mongolia    3278290            0            0            0            0\n5 Taiwan     23816775        72846        68293        79616        50567\n# ℹ 1 more variable: `2022/06/13` &lt;dbl&gt;"
+  },
+  {
+    "objectID": "slides/day02.html#このデータの問題点",
+    "href": "slides/day02.html#このデータの問題点",
+    "title": "情報処理応用演習",
+    "section": "このデータの問題点",
+    "text": "このデータの問題点\n\n観察単位は? 測定した変数は?\n\n観察単位: 地域 \\(\\times\\) 時間\n変数: 新規感染者数、人口\n2つの観察時点 + 2つの変数 = 計4つの変数 \\(\\rightarrow\\) 整然データ\n\n新規感染者数が5列にわたって格納されている \\(\\rightarrow\\) 雑然データ\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nCountry\nPopulation\n2022/06/09\n2022/06/10\n2022/06/11\n2022/06/12\n2022/06/13\n\n\n\n\nChina\n1447470092\n819\n848\n1114\n990\n957\n\n\nJapan\n126476461\n16788\n15584\n15338\n13381\n7942\n\n\nKorea\n51269185\n9304\n8428\n7382\n3828\n9768\n\n\nMongolia\n3278290\n0\n0\n0\n0\n1055\n\n\nTaiwan\n23816775\n72846\n68293\n79616\n50567\n45100"
+  },
+  {
+    "objectID": "slides/day02.html#wide型からlong型へ",
+    "href": "slides/day02.html#wide型からlong型へ",
+    "title": "情報処理応用演習",
+    "section": "Wide型からLong型へ",
+    "text": "Wide型からLong型へ\n\n整然なCOVID_dfの構造は?\n\n5列を1列にまとめるため、縦に長くなる\nWideからLongへ\n\n\n\n\n# A tibble: 25 × 4\n   Country Population Date       New_Cases\n   &lt;chr&gt;        &lt;dbl&gt; &lt;chr&gt;          &lt;dbl&gt;\n 1 China   1447470092 2022/06/09       819\n 2 China   1447470092 2022/06/10       848\n 3 China   1447470092 2022/06/11      1114\n 4 China   1447470092 2022/06/12       990\n 5 China   1447470092 2022/06/13       957\n 6 Japan    126476461 2022/06/09     16788\n 7 Japan    126476461 2022/06/10     15584\n 8 Japan    126476461 2022/06/11     15338\n 9 Japan    126476461 2022/06/12     13381\n10 Japan    126476461 2022/06/13      7942\n# ℹ 15 more rows"
+  },
+  {
+    "objectID": "slides/day02.html#pivot_longer-wide-to-long",
+    "href": "slides/day02.html#pivot_longer-wide-to-long",
+    "title": "情報処理応用演習",
+    "section": "pivot_longer(): Wide to Long",
+    "text": "pivot_longer(): Wide to Long\n\ncolsはdplyr::select()と同じ使い方\n\nc()で個別の変数名を指定することも、:やstarts_with()を使うこともOK\n注意: 変数名が数字で始まったり、記号が含まれている場合、変数名を`か\"で囲む\n\n列名が日付の場合、数字で始まったり、記号（/や-など）が含まれるケースが多い\n\n\n\n\nデータ |&gt;\n  pivot_longer(cols      = 変数が格納されている列,\n               names_to  = \"元の列名が入る変数名\",\n               values_to = \"変数の値が入る変数名\")"
+  },
+  {
+    "objectID": "slides/day02.html#pivot_longer-wideからlongへ",
+    "href": "slides/day02.html#pivot_longer-wideからlongへ",
+    "title": "情報処理応用演習",
+    "section": "pivot_longer(): WideからLongへ",
+    "text": "pivot_longer(): WideからLongへ\n\ncols = starts_with(\"2022\")もOK\n\n\nCOVID_Long &lt;- COVID_df |&gt; \n  pivot_longer(cols      = \"2022/06/09\":\"2022/06/13\",\n               names_to  = \"Date\",\n               values_to = \"New_Cases\")\nCOVID_Long\n\n# A tibble: 25 × 4\n   Country Population Date       New_Cases\n   &lt;chr&gt;        &lt;dbl&gt; &lt;chr&gt;          &lt;dbl&gt;\n 1 China   1447470092 2022/06/09       819\n 2 China   1447470092 2022/06/10       848\n 3 China   1447470092 2022/06/11      1114\n 4 China   1447470092 2022/06/12       990\n 5 China   1447470092 2022/06/13       957\n 6 Japan    126476461 2022/06/09     16788\n 7 Japan    126476461 2022/06/10     15584\n 8 Japan    126476461 2022/06/11     15338\n 9 Japan    126476461 2022/06/12     13381\n10 Japan    126476461 2022/06/13      7942\n# ℹ 15 more rows"
+  },
+  {
+    "objectID": "slides/day02.html#pivot_wider-longからwideへ",
+    "href": "slides/day02.html#pivot_wider-longからwideへ",
+    "title": "情報処理応用演習",
+    "section": "pivot_wider(): LongからWideへ",
+    "text": "pivot_wider(): LongからWideへ\n\nLong型をWide型へ戻す関数\n\n人間にとってはLong型よりWide型の方が読みやすいケースも多い\n1列に2つの変数が入っている場合もある\n\n\n\nCOVID_Long |&gt;\n  pivot_wider(names_from  = \"Date\",\n              values_from = \"New_Cases\")\n\n# A tibble: 5 × 7\n  Country  Population `2022/06/09` `2022/06/10` `2022/06/11` `2022/06/12`\n  &lt;chr&gt;         &lt;dbl&gt;        &lt;dbl&gt;        &lt;dbl&gt;        &lt;dbl&gt;        &lt;dbl&gt;\n1 China    1447470092          819          848         1114          990\n2 Japan     126476461        16788        15584        15338        13381\n3 Korea      51269185         9304         8428         7382         3828\n4 Mongolia    3278290            0            0            0            0\n5 Taiwan     23816775        72846        68293        79616        50567\n# ℹ 1 more variable: `2022/06/13` &lt;dbl&gt;"
+  },
+  {
+    "objectID": "slides/day02.html#pivot_longerとpivot_wider",
+    "href": "slides/day02.html#pivot_longerとpivot_wider",
+    "title": "情報処理応用演習",
+    "section": "pivot_longer()とpivot_wider()",
+    "text": "pivot_longer()とpivot_wider()"
+  },
+  {
+    "objectID": "slides/day02.html#separate-列の分割",
+    "href": "slides/day02.html#separate-列の分割",
+    "title": "情報処理応用演習",
+    "section": "separate(): 列の分割",
+    "text": "separate(): 列の分割\nCOVID_LongのDate列をYear、Month、Dayに分けたい\n\n例) Date列を\"/\"を基準に分割する\n\n\nデータ |&gt;\n  separate(col  = \"分割する列名\",\n           into = c(\"分割後の列名1\", \"分割後の列名2\", ...),\n           sep  = \"分割する基準\")"
+  },
+  {
+    "objectID": "slides/day02.html#separate-列の分割-1",
+    "href": "slides/day02.html#separate-列の分割-1",
+    "title": "情報処理応用演習",
+    "section": "separate(): 列の分割",
+    "text": "separate(): 列の分割\n\nCOVID_Long |&gt;\n  separate(col  = \"Date\",\n           into = c(\"Year\", \"Month\", \"Day\"),\n           sep  = \"/\")\n\n# A tibble: 25 × 6\n   Country Population Year  Month Day   New_Cases\n   &lt;chr&gt;        &lt;dbl&gt; &lt;chr&gt; &lt;chr&gt; &lt;chr&gt;     &lt;dbl&gt;\n 1 China   1447470092 2022  06    09          819\n 2 China   1447470092 2022  06    10          848\n 3 China   1447470092 2022  06    11         1114\n 4 China   1447470092 2022  06    12          990\n 5 China   1447470092 2022  06    13          957\n 6 Japan    126476461 2022  06    09        16788\n 7 Japan    126476461 2022  06    10        15584\n 8 Japan    126476461 2022  06    11        15338\n 9 Japan    126476461 2022  06    12        13381\n10 Japan    126476461 2022  06    13         7942\n# ℹ 15 more rows"
+  },
+  {
+    "objectID": "slides/day02.html#参考分割の基準となる記号がない場合",
+    "href": "slides/day02.html#参考分割の基準となる記号がない場合",
+    "title": "情報処理応用演習",
+    "section": "参考）分割の基準となる記号がない場合",
+    "text": "参考）分割の基準となる記号がない場合\n例) City_DataのCity列が「都道府県名+市区町村」\n\n「最初の3文字」と「残り」で分割することは出来ない（神奈川、和歌山、鹿児島）\n任意の2文字の後に「都」、「道」、「府」、「県」が付くか、任意の3文字の後に「県」が付く箇所を見つけて分割\n\nかなり複雑\n\n\n\n\n# A tibble: 4 × 2\n  City                Pop\n  &lt;chr&gt;             &lt;dbl&gt;\n1 北海道音威子府村    693\n2 大阪府高槻市     347424\n3 広島県府中市      36471\n4 鹿児島県指宿市    38207"
+  },
+  {
+    "objectID": "slides/day02.html#参考分割の基準となる記号がない場合続",
+    "href": "slides/day02.html#参考分割の基準となる記号がない場合続",
+    "title": "情報処理応用演習",
+    "section": "参考）分割の基準となる記号がない場合（続）",
+    "text": "参考）分割の基準となる記号がない場合（続）\n正規表現（regular expression; 正則表現）の知識が必要\n\nテキスト分析に興味があるなら必須（前期・後期含めて、本講義では解説しない）\n\n\nCity_Data |&gt;\n   # 任意の2文字の後に「都道府県」のいずれかが来るか、\n   # 任意の3文字の後に「県」が来たら、そこまでをブロック1、残りをブロック2とする\n   # Cityの値を「ブロック1-ブロック2」に置換する\n   mutate(City = str_replace(City, \"^(.{2}[都道府県]|.{3}県)(.+)\", \n                             \"\\\\1-\\\\2\")) |&gt;\n   # 「-」を基準に列を分割\n   separate(col  = \"City\", into = c(\"Pref\", \"City\"), sep  = \"-\")\n\n# A tibble: 4 × 3\n  Pref     City          Pop\n  &lt;chr&gt;    &lt;chr&gt;       &lt;dbl&gt;\n1 北海道   音威子府村    693\n2 大阪府   高槻市     347424\n3 広島県   府中市      36471\n4 鹿児島県 指宿市      38207"
+  },
+  {
+    "objectID": "slides/day02.html#tidyrとdplyrの組み合わせ",
+    "href": "slides/day02.html#tidyrとdplyrの組み合わせ",
+    "title": "情報処理応用演習",
+    "section": "{tidyr}と{dplyr}の組み合わせ",
+    "text": "{tidyr}と{dplyr}の組み合わせ\n{tidyr}と{dplyr}を組み合わせることも可能\n\n例) 100万人当たりの新規感染者数を計算し、国ごとに平均値を計算\n\n\nCOVID_df |&gt; \n  pivot_longer(cols      = \"2022/06/09\":\"2022/06/13\",\n               names_to  = \"Date\",\n               values_to = \"New_Cases\") |&gt;\n   mutate(New_Case_per_1M = New_Cases / Population * 1000000) |&gt;\n   group_by(Country) |&gt;\n   summarise(New_Case_per_1M = mean(New_Case_per_1M))\n\n# A tibble: 5 × 2\n  Country  New_Case_per_1M\n  &lt;chr&gt;              &lt;dbl&gt;\n1 China              0.653\n2 Japan            109.   \n3 Korea            151.   \n4 Mongolia          64.4  \n5 Taiwan          2657."
+  },
+  {
+    "objectID": "slides/day02.html#データハンドリングに慣れるためには",
+    "href": "slides/day02.html#データハンドリングに慣れるためには",
+    "title": "情報処理応用演習",
+    "section": "データハンドリングに慣れるためには",
+    "text": "データハンドリングに慣れるためには\n\nとりあえず、たくさんのデータをいじってみる\nたくさんのエラーメッセージに出会うこと\nパイプ（|&gt;）を使いすぎないように\n\n中級以上になると、自分が書いたコードの結果が予想できるため、たくさんのパイプを使っても問題は大きくない\n一方、初心者の場合、パイプを使いすぎず、2〜3回ごとに別途のオブジェクトとして保存したり、結果を確認していくこと\nパイプが多すぎるとどこがエラーの原因かの特定が困難に（慣れたらすぐに見つかるが）"
+  },
+  {
+    "objectID": "slides/day02.html#長過ぎるコードブロックの例",
+    "href": "slides/day02.html#長過ぎるコードブロックの例",
+    "title": "情報処理応用演習",
+    "section": "長過ぎるコードブロックの例",
+    "text": "長過ぎるコードブロックの例\n慣れたらこれくらいは長い方でもないが…\n\nCOVID_df |&gt; \n  pivot_longer(cols      = \"2022/06/09\":\"2022/06/13\",\n               names_to  = \"Date\",\n               values_to = \"New_Cases\") |&gt;\n  mutate(New_Case_per_1M = New_Cases / Population * 1000000,\n         Country         = case_when(Country == \"China\"    ~ \"中国\",\n                                     Country == \"Japan\"    ~ \"日本\",\n                                     Country == \"Korea\"    ~ \"韓国\",\n                                     Country == \"Mongolia\" ~ \"モンゴル\",\n                                     TRUE                  ~ \"台湾\"),\n         Country         = factor(Country, levels = c(\"中国\", \"日本\", \"韓国\", \"モンゴル\", \"台湾\")),\n         Date            = as.Date(Date),\n         Date            = format(Date, \"%Y-%m-%d\")) |&gt;\n  ggplot(aes(x = Date, y = New_Case_per_1M, group = Country)) +\n  geom_line(aes(color = Country), linewidth = 1) +\n  geom_point(aes(fill = Country), \n             shape = 21, color = \"white\", size = 3) +\n  labs(x = \"日付\", y = \"100万人当たり新規感染者数 (人)\", color = \"\") +\n  guides(fill = \"none\") +\n  theme_bw(base_size = 14) +\n  theme(legend.position = \"bottom\")\n\n\n\nhttps://www.jaysong.net/kpu-r/"
   },
   {
     "objectID": "syllabus/session.html",

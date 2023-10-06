@@ -1,0 +1,7 @@
+---
+subtitle: "第3回 可視化"
+date: "2023/10/28"
+format: revealjs
+metadata-files: 
+  - _slide.yml
+---

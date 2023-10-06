@@ -2,43 +2,67 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://www.jaysong.net/kpu-r/syllabus/syllabus.html</loc>
-    <lastmod>2023-08-10T02:59:51.028Z</lastmod>
+    <lastmod>2023-10-06T04:32:42.362Z</lastmod>
   </url>
   <url>
-    <loc>https://www.jaysong.net/kpu-r/intro/rstudio.html</loc>
-    <lastmod>2023-03-16T05:07:28.000Z</lastmod>
+    <loc>https://www.jaysong.net/kpu-r/slides/day03.html</loc>
+    <lastmod>2023-10-06T04:52:33.311Z</lastmod>
   </url>
   <url>
-    <loc>https://www.jaysong.net/kpu-r/intro/packages.html</loc>
-    <lastmod>2022-12-16T07:16:03.000Z</lastmod>
+    <loc>https://www.jaysong.net/kpu-r/slides/day01.html</loc>
+    <lastmod>2023-10-06T04:36:03.082Z</lastmod>
   </url>
   <url>
-    <loc>https://www.jaysong.net/kpu-r/intro/homework.html</loc>
-    <lastmod>2023-03-17T04:26:51.000Z</lastmod>
+    <loc>https://www.jaysong.net/kpu-r/materials/day03.html</loc>
+    <lastmod>2023-10-06T04:52:20.830Z</lastmod>
   </url>
   <url>
-    <loc>https://www.jaysong.net/kpu-r/intro/file.html</loc>
-    <lastmod>2023-02-21T06:36:58.000Z</lastmod>
+    <loc>https://www.jaysong.net/kpu-r/materials/day01.html</loc>
+    <lastmod>2023-10-06T04:51:11.304Z</lastmod>
   </url>
   <url>
-    <loc>https://www.jaysong.net/kpu-r/index.html</loc>
-    <lastmod>2023-08-10T02:36:27.790Z</lastmod>
-  </url>
-  <url>
-    <loc>https://www.jaysong.net/kpu-r/intro/faq.html</loc>
-    <lastmod>2023-01-17T02:35:55.000Z</lastmod>
-  </url>
-  <url>
-    <loc>https://www.jaysong.net/kpu-r/intro/filesystem.html</loc>
-    <lastmod>2023-08-10T02:51:14.346Z</lastmod>
+    <loc>https://www.jaysong.net/kpu-r/intro/project.html</loc>
+    <lastmod>2023-02-21T06:33:54.000Z</lastmod>
   </url>
   <url>
     <loc>https://www.jaysong.net/kpu-r/intro/install.html</loc>
     <lastmod>2023-08-10T02:47:32.099Z</lastmod>
   </url>
   <url>
-    <loc>https://www.jaysong.net/kpu-r/intro/project.html</loc>
-    <lastmod>2023-02-21T06:33:54.000Z</lastmod>
+    <loc>https://www.jaysong.net/kpu-r/intro/filesystem.html</loc>
+    <lastmod>2023-08-10T02:51:14.346Z</lastmod>
+  </url>
+  <url>
+    <loc>https://www.jaysong.net/kpu-r/index.html</loc>
+    <lastmod>2023-08-10T02:36:27.790Z</lastmod>
+  </url>
+  <url>
+    <loc>https://www.jaysong.net/kpu-r/intro/file.html</loc>
+    <lastmod>2023-02-21T06:36:58.000Z</lastmod>
+  </url>
+  <url>
+    <loc>https://www.jaysong.net/kpu-r/intro/homework.html</loc>
+    <lastmod>2023-03-17T04:26:51.000Z</lastmod>
+  </url>
+  <url>
+    <loc>https://www.jaysong.net/kpu-r/intro/packages.html</loc>
+    <lastmod>2022-12-16T07:16:03.000Z</lastmod>
+  </url>
+  <url>
+    <loc>https://www.jaysong.net/kpu-r/intro/rstudio.html</loc>
+    <lastmod>2023-03-16T05:07:28.000Z</lastmod>
+  </url>
+  <url>
+    <loc>https://www.jaysong.net/kpu-r/materials/day02.html</loc>
+    <lastmod>2023-10-06T04:51:47.110Z</lastmod>
+  </url>
+  <url>
+    <loc>https://www.jaysong.net/kpu-r/materials/final.html</loc>
+    <lastmod>2023-10-06T04:53:40.230Z</lastmod>
+  </url>
+  <url>
+    <loc>https://www.jaysong.net/kpu-r/slides/day02.html</loc>
+    <lastmod>2023-10-06T05:03:12.381Z</lastmod>
   </url>
   <url>
     <loc>https://www.jaysong.net/kpu-r/syllabus/session.html</loc>

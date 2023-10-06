@@ -2,12 +2,12 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="ja" xml:lang="ja"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.4.232">
+<meta name="generator" content="quarto-1.4.330">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Introduction to R@KPU - この授業の「あるある」</title>
+<title>Introduction to R@KPU - 第3回 講義資料</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -19,40 +19,6 @@ ul.task-list li input[type="checkbox"] {
   width: 0.8em;
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
-}
-/* CSS for syntax highlighting */
-pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
-pre > code.sourceCode > span:empty { height: 1.2em; }
-.sourceCode { overflow: visible; }
-code.sourceCode > span { color: inherit; text-decoration: inherit; }
-div.sourceCode { margin: 1em 0; }
-pre.sourceCode { margin: 0; }
-@media screen {
-div.sourceCode { overflow: auto; }
-}
-@media print {
-pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
-}
-pre.numberSource code
-  { counter-reset: source-line 0; }
-pre.numberSource code > span
-  { position: relative; left: -4em; counter-increment: source-line; }
-pre.numberSource code > span > a:first-child::before
-  { content: counter(source-line);
-    position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; display: inline-block;
-    -webkit-touch-callout: none; -webkit-user-select: none;
-    -khtml-user-select: none; -moz-user-select: none;
-    -ms-user-select: none; user-select: none;
-    padding: 0 4px; width: 4em;
-  }
-pre.numberSource { margin-left: 3em;  padding-left: 4px; }
-div.sourceCode
-  {   }
-@media screen {
-pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 </style>
 
@@ -134,73 +100,85 @@ gtag('config', 'G-K1QX6P69E5', { 'anonymize_ip': true});
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item dropdown ">
-    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-" role="button" data-bs-toggle="dropdown" aria-expanded="false" rel="" target="">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-" role="button" data-bs-toggle="dropdown" aria-expanded="false">
  <span class="menu-text">シラバス</span>
     </a>
     <ul class="dropdown-menu" aria-labelledby="nav-menu-">    
         <li>
-    <a class="dropdown-item" href="../syllabus/syllabus.html" rel="" target="">
+    <a class="dropdown-item" href="../syllabus/syllabus.html">
  <span class="dropdown-text">シラバス</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="../syllabus/session.html" rel="" target="">
+    <a class="dropdown-item" href="../syllabus/session.html">
  <span class="dropdown-text">セッション情報</span></a>
   </li>  
     </ul>
   </li>
   <li class="nav-item dropdown ">
-    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-rの使い方" role="button" data-bs-toggle="dropdown" aria-expanded="false" rel="" target="">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-rの使い方" role="button" data-bs-toggle="dropdown" aria-expanded="false">
  <span class="menu-text">Rの使い方</span>
     </a>
     <ul class="dropdown-menu" aria-labelledby="nav-menu-rの使い方">    
         <li>
-    <a class="dropdown-item" href="../intro/install.html" rel="" target="">
+    <a class="dropdown-item" href="../intro/install.html">
  <span class="dropdown-text">Rの導入</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="../intro/rstudio.html" rel="" target="">
+    <a class="dropdown-item" href="../intro/rstudio.html">
  <span class="dropdown-text">RStudioの設定</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="../intro/filesystem.html" rel="" target="">
+    <a class="dropdown-item" href="../intro/filesystem.html">
  <span class="dropdown-text">ファイル・システム</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="../intro/project.html" rel="" target="">
+    <a class="dropdown-item" href="../intro/project.html">
  <span class="dropdown-text">プロジェクト管理</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="../intro/file.html" rel="" target="">
+    <a class="dropdown-item" href="../intro/file.html">
  <span class="dropdown-text">ファイル管理</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="../intro/packages.html" rel="" target="">
+    <a class="dropdown-item" href="../intro/packages.html">
  <span class="dropdown-text">パッケージ</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="../intro/faq.html" rel="" target="">
- <span class="dropdown-text">この授業の「あるある」</span></a>
   </li>  
     </ul>
   </li>
   <li class="nav-item dropdown ">
-    <a class="nav-link dropdown-toggle" href="#" id="nav-menu--1" role="button" data-bs-toggle="dropdown" aria-expanded="false" rel="" target="">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu--1" role="button" data-bs-toggle="dropdown" aria-expanded="false">
  <span class="menu-text">講義資料</span>
     </a>
     <ul class="dropdown-menu" aria-labelledby="nav-menu--1">    
+        <li>
+    <a class="dropdown-item" href="../materials/day01.html">
+ <span class="dropdown-text">第1回 講義資料</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../materials/day02.html">
+ <span class="dropdown-text">第2回 講義資料</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../materials/day03.html">
+ <span class="dropdown-text">第3回 講義資料</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../materials/final.html">
+ <span class="dropdown-text">最終課題</span></a>
+  </li>  
     </ul>
   </li>
 </ul>
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
   <li class="nav-item compact">
-    <a class="nav-link" href="https://jupyter.cs.rcos.nii.ac.jp/" rel="" target=""><i class="bi bi-terminal" role="img">
+    <a class="nav-link" href="https://jupyter.cs.rcos.nii.ac.jp/"> <i class="bi bi-terminal" role="img">
 </i> 
- <span class="menu-text"></span></a>
+<span class="menu-text"></span></a>
   </li>  
   <li class="nav-item compact">
-    <a class="nav-link" href="https://www.jaysong.net/RBook/" rel="" target=""><i class="bi bi-book" role="img">
+    <a class="nav-link" href="https://www.jaysong.net/RBook/"> <i class="bi bi-book" role="img">
 </i> 
- <span class="menu-text"></span></a>
+<span class="menu-text"></span></a>
   </li>  
 </ul>
           </div> <!-- /navcollapse -->
@@ -213,7 +191,7 @@ gtag('config', 'G-K1QX6P69E5', { 'anonymize_ip': true});
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="サイドバーを切り替える" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../intro/faq.html">この授業の「あるある」</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../materials/day03.html">第3回 講義資料</a></li></ol></nav>
         <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="サイドバーを切り替える" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
     </div>
@@ -227,44 +205,26 @@ gtag('config', 'G-K1QX6P69E5', { 'anonymize_ip': true});
     <ul class="list-unstyled mt-1">
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../intro/install.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Rの導入</span></a>
+  <a href="../materials/day01.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">第1回 講義資料</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../intro/rstudio.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">RStudioの設定</span></a>
+  <a href="../materials/day02.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">第2回 講義資料</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../intro/filesystem.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">ファイル・システム</span></a>
+  <a href="../materials/day03.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text">第3回 講義資料</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../intro/project.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">プロジェクト管理</span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../intro/file.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">ファイル管理</span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../intro/packages.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">パッケージ</span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../intro/faq.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text">この授業の「あるある」</span></a>
+  <a href="../materials/final.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">最終課題</span></a>
   </div>
 </li>
     </ul>
@@ -278,7 +238,8 @@ gtag('config', 'G-K1QX6P69E5', { 'anonymize_ip': true});
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">この授業の「あるある」</h1>
+<h1 class="title">第3回 講義資料</h1>
+<p class="subtitle lead">ガイダンス</p>
 </div>
 
 
@@ -291,99 +252,42 @@ gtag('config', 'G-K1QX6P69E5', { 'anonymize_ip': true});
   </div>
   
 
+
 </header>
 
-<section id="タイピングの速度について" class="level2">
-<h2 class="anchored" data-anchor-id="タイピングの速度について">タイピングの速度について</h2>
-<ul>
-<li>ブラインドタッチ（キーボードを見ないでタイピングすること）は必須
-<ul>
-<li>教員の画面、スライド、資料などを見ながらタイピングすることになるため、キーボードを見る暇はない</li>
-</ul></li>
-<li>1分間当たり150文字以上（英字）入力できること
-<ul>
-<li><a href="https://manabi-gakushu.benesse.ne.jp/gakushu/typing/eigonyuryoku.html" class="uri">https://manabi-gakushu.benesse.ne.jp/gakushu/typing/eigonyuryoku.html</a></li>
-<li>200字以上が望ましい</li>
-</ul></li>
-</ul>
-</section>
-<section id="データが読み込めない" class="level2">
-<h2 class="anchored" data-anchor-id="データが読み込めない">データが読み込めない</h2>
-<ul>
-<li>99.999%の確率でパスの指定が間違っている（スペルミスを含む）。</li>
-<li><a href="../intro/filesystem.html">ファイルシステム</a>の理解がない場合は、<a href="../intro/project.html">プロジェクト機能</a>を使おう。
-<ul>
-<li>というか、必ずプロジェクト機能を使おう。ファイルシステムを理解している宋でもプロジェクト機能は常に使用している。</li>
-</ul></li>
-</ul>
-</section>
-<section id="エラーが出た" class="level2">
-<h2 class="anchored" data-anchor-id="エラーが出た">エラーが出た!</h2>
-<ul>
-<li><strong>エラーメッセージは読む。</strong>メッセージを読んで、その原因を特定しよう。
-<ul>
-<li>何も考えずに教員やTAを呼ぶと、独学する時に同じエラーが出ても解決できなくなる。</li>
-</ul></li>
-<li>スペルミス
-<ul>
-<li>最もよくあるミス。</li>
-<li>大文字と小文字の区分は厳格（Rに限らず全てのプログラミング言語共通）</li>
-<li>フォントサイズを大きくすると、スペルミスを発見しやすくなる。</li>
-</ul></li>
-<li>カッコ、コンマ忘れ
-<ul>
-<li>カッコは開けたら必ず閉じる。</li>
-</ul></li>
-</ul>
-</section>
-<section id="コードの実行順番" class="level2">
-<h2 class="anchored" data-anchor-id="コードの実行順番">コードの実行順番</h2>
-<p><code>Data.csv</code>という名の表形式データがあり、<code>var1</code>、<code>var2</code>、<code>var3</code>、<code>var4</code>、<code>var5</code>という列で構成されているとしよう。このデータを用いて以下のような処理を行うとする。</p>
+<section id="スライド" class="level2 unlisted">
+<h2 class="unlisted anchored" data-anchor-id="スライド">スライド</h2>
+<p><a href="../slides/day03.html" class="btn btn-primary btn-sm" target="_blank" role="button"><i class="bi bi-window"></i> 新しいタブで開く</a></p>
+<iframe class="slide-deck" src="../slides/day03.html" width="100%" style="aspect-ratio: 16 / 9.5;"></iframe>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+スライドの印刷方法
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>　<strong>本講義のスライドはPC閲覧を前提としているため、印刷は推奨しない</strong>。たとえば、タブが含まれているページの場合、1つ目のタブのみ印刷されるといったデメリットがある。しかし、どうしてもスライドを印刷したい場合は、以下の手順でスライドをPDFに保存し、印刷すること。</p>
 <ol type="1">
-<li><code>Data.csv</code>を読み込み<code>df</code>という名のオブジェクトとして格納する。</li>
-<li><code>df</code>から<code>var1</code>、<code>var3</code>、<code>var4</code>列のみ残し、<code>df</code>を上書きする。</li>
-<li><code>df</code>に<code>sum_3_4</code>という新しい列を追加し、その値は<code>var3</code>と<code>var4</code>の和とする。</li>
+<li>Google Chromeブラウザーで本ページを開く。
+<ul>
+<li>Microsoft Explore、Edge、Firefox、Operaなどで試してみても良いものの、作動は保証しない。</li>
+</ul></li>
+<li>本ページ上段の「<i class="bi bi-window"></i> 新しいタブで開く」をクリックする。</li>
+<li>スライドが表示されたらキーボードの「E」、または「e」キーを押す。</li>
+<li>macOSならCommand（⌘） + P、WindowsならControl（Ctrl）+ Pを押す。</li>
+<li>出力先をPDFにする。</li>
+<li>用紙のレイアウトを横向き（Landscape）に指定する。</li>
+<li>余白をなしにする。</li>
+<li>背景画像のオプションにチェックを入れる。</li>
+<li>保存</li>
+<li>保存されたPDFファイルをプリントする。</li>
 </ol>
-<p>　以上の処理を行うコードは以下の通りである（つまり、以下のコードが正解例）。</p>
-<div class="cell">
-<div class="code-with-filename">
-<div class="code-with-filename-file">
-<pre><strong>正しいコード</strong></pre>
-</div>
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Block 1</span></span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>df <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">"Data.csv"</span>)</span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Block 2</span></span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>df <span class="ot">&lt;-</span> df <span class="sc">%&gt;%</span></span>
-<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(var1, var3, var4)</span>
-<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="co"># Block 3</span></span>
-<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>df <span class="ot">&lt;-</span> df <span class="sc">%&gt;%</span></span>
-<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">sum_3_4 =</span> var3 <span class="sc">+</span> var4)</span></code><button title="コピー" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>　上記の手順はQuarto（本サポートページおよびスライドの作成言語）の開発元が公開している方法である。今後、より簡単なプリント方法が考案される可能性もある。詳細は<a href="https://quarto.org/docs/presentations/revealjs/presenting.html#print-to-pdf">Quarto公式ホームページ</a>を参照すること。</p>
 </div>
 </div>
-<p>　しかし、2番目のブロックで以下のような入力ミスがあったとしよう。</p>
-<div class="cell">
-<div class="code-with-filename">
-<div class="code-with-filename-file">
-<pre><strong>間違ったコード</strong></pre>
-</div>
-<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Block 1</span></span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>df <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">"Data.csv"</span>)</span>
-<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Block 2（var4がvar3になっている）</span></span>
-<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>df <span class="ot">&lt;-</span> df <span class="sc">%&gt;%</span></span>
-<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(var1, var2, var3)</span>
-<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a><span class="co"># Block 3</span></span>
-<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a>df <span class="ot">&lt;-</span> df <span class="sc">%&gt;%</span></span>
-<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">sum_3_4 =</span> var3 <span class="sc">+</span> var4)</span></code><button title="コピー" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-</div>
-<p>　この場合、3番目のブロックは正しく実行されない。なぜなら、2ブロック目において<code>var4</code>と<code>var5</code>列を除外したため、3ブロック目のコードを実行する時点で<code>df</code>に<code>var4</code>列がないからだ。ここで2ブロック目のコードを正しいコードへ修正したとしよう（<code>var1, var2, var3</code>を<code>var1, var3, var4</code>に修正）。そして2ブロック目のコードを実行する。どうなるだろうか。</p>
-<p>　結果はエラーである。最初はうまく行ったものの、なぜか今回はエラーが出る。これはなぜだろうか。既に我々は<code>df</code>から<code>var1</code>、<code>var2</code>、<code>var3</code>列のみを抽出した。つまり、今の<code>df</code>には<code>var4</code>と<code>var5</code>列は存在しない。そこで<code>var1</code>、<code>var3</code>、<code>var4</code>を抽出するコードを実行しても<code>var4</code>列が存在しないからエラーが発生する。</p>
-<p>　対処法は簡単だ。<code>df</code>を<code>var1</code>、<code>var2</code>、<code>var3</code>、<code>var4</code>、<code>var5</code>が全て入っている状態に戻すことだ。したがって、以上の例だと、2ブロック目のコードを修正した場合は1ブロック目から改めて実行する必要がある。</p>
-<p>　以上の話を難しく感じる場合は、コードミスを修正した後はコードを1行目から再実行することをおすすめする。</p>
 
 
 </section>
@@ -507,6 +411,16 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   }
   const xrefs = window.document.querySelectorAll('a.quarto-xref');
   const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
     if (id.startsWith('sec-')) {
       // Special case sections, only their first couple elements
       const container = document.createElement("div");
@@ -519,6 +433,11 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
         return note.innerHTML;
       }
     } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
       return note.innerHTML;
     }
   }
@@ -538,7 +457,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
         const note = window.document.getElementById(id);
         if (note !== null) {
           try {
-            const html = processXRef(id, note);
+            const html = processXRef(id, note.cloneNode(true));
             instance.setContent(html);
           } finally {
             instance.enable();
@@ -632,32 +551,33 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
         });
         selectedAnnoteEl = undefined;
       };
-      // Handle positioning of the toggle
-      window.addEventListener(
+        // Handle positioning of the toggle
+    window.addEventListener(
       "resize",
       throttle(() => {
+        console.log("RESIZE");
         elRect = undefined;
         if (selectedAnnoteEl) {
           selectCodeLines(selectedAnnoteEl);
         }
       }, 10)
-      );
-      function throttle(fn, ms) {
-      let throttle = false;
-      let timer;
-        return (...args) => {
-          if(!throttle) { // first call gets through
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
               fn.apply(this, args);
-              throttle = true;
-          } else { // all the others get throttled
-              if(timer) clearTimeout(timer); // cancel #2
-              timer = setTimeout(() => {
-                fn.apply(this, args);
-                timer = throttle = false;
-              }, ms);
-          }
-        };
-      }
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
       const annoteTargets = window.document.querySelectorAll('.code-annotation-anchor');
       for (let i=0; i<annoteTargets.length; i++) {
         const annoteTarget = annoteTargets[i];
@@ -760,12 +680,14 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
         return filterRegex.test(href) || localhostRegex.test(href);
     }
     // Inspect non-navigation links and adorn them if external
- 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item)');
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):(.quarto-navigation-tool)');
     for (var i=0; i<links.length; i++) {
       const link = links[i];
       if (!isInternal(link.href)) {
           // target, if specified
           link.setAttribute("target", "_blank");
+          // default icon
+          link.classList.add("external");
       }
     }
 });
