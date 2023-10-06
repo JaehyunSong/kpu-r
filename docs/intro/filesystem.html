@@ -285,7 +285,7 @@ gtag('config', 'G-K1QX6P69E5', { 'anonymize_ip': true});
 <section id="拡張子" class="level2" data-number="1">
 <h2 data-number="1" class="anchored" data-anchor-id="拡張子"><span class="header-section-number">1</span> 拡張子</h2>
 <p>　PC内に存在するほとんどのファイルは「<code>名前.拡張子</code>」と名付けられている<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a>。名前の拡張子は<code>.</code>で区切られており、名前は英数字と<code>_</code>のみで構成することを推奨する（ファイル名に<code>.</code>が推奨されない理由の一つが名前と拡張子を区分する文字として使われるからだ）。ここで注目したいのはファイルの名前でなく、拡張子のことだ。拡張子とはファイルの特徴を示すものである。たとえば、拡張子が<code>.html</code>であれば、ウェブページ形式を意味し、<code>.png</code>なら図、<code>.pdf</code>なら図・文書、<code>.exe</code>なら実行ファイル、<code>.dmg</code>ならディスクイメージを意味する。ファイル名が<code>Figure01.png</code>なら<code>Figure01</code>という名の画像ファイルであることを意味する<a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a>。この拡張子によって、パソコンは当該ファイルをどのアプリケーションで開くかを判定する。<code>.exe</code>ファイルをダブルクリックするとアプリケーションが立ち上がるし、<code>.pdf</code>ファイルをダブルクリックするとPDFビュアーソフトが起動され、中身が表示される。</p>
-<p>　これは拡張子を変えると問題が生じ得ることを意味する。画像ファイルである<code>Figure01.png</code>のファイル名を動画ファイル拡張子である<code>Movie01.mp4</code>に修正しても、そのファイルは動画ファイルにはならない。また、拡張子が<code>.mp4</code>になると、そのファイルを開く際、動画プレイヤーが起動されるが、ファイルの中身は画像ファイルのままなのでエラーが出る。したがって、拡張子は勝手に変えてはならない。たまに課題の結果物としてファイルを提出する際、自分の名前を入れたくてファイル名を<code>XXXX.html</code>から<code>XXXX.html_Song</code>へ変更して提出する場合がある。しかし、これは大きな間違いだ。もやはこのファイルはHTMLファイル（<code>.html</code>）でなく、未知のファイル形式（<code>.html_Song</code>）として認識され、ダブルクリックしてもPCはどのアプリケーションで開けば良いかが分からなくなる。ファイル名を修正するなら<code>XXXX_Song.html</code>のように修正しよう<a href="#fn3" class="footnote-ref" id="fnref3" role="doc-noteref"><sup>3</sup></a>。</p>
+<p>　これは拡張子を変えると問題が生じ得ることを意味する。画像ファイルである<code>Figure01.png</code>のファイル名を動画ファイル拡張子である<code>Movie01.mp4</code>に修正しても、そのファイルは動画ファイルにはならない。また、拡張子が<code>.mp4</code>になると、そのファイルを開く際、動画プレイヤーが起動されるが、ファイルの中身は画像ファイルのままなのでエラーが出る。したがって、拡張子は勝手に変えてはならない。たまに課題の結果物としてファイルを提出する際、自分の名前を入れたくてファイル名を<code>XXXX.html</code>から<code>XXXX.html_Song</code>へ変更して提出する場合がある。しかし、これは大きな間違いだ。もやはこのファイルはHTMLファイル（<code>.html</code>）でなく、未知のファイル形式（<code>.html_Song</code>）として認識され、ダブルクリックしてもPCはどのアプリケーションで開けば良いかが分からなくなる。ファイル名を修正するなら<code>XXXX_Song.html</code>のように修正しよう。</p>
 <p>　Rを用いたデータ分析の場面において頻繁に登場する拡張子は以下の通りである。ファイルの名前は大文字と小文字を区別するが、拡張子の場合、区別されないケースが多い。</p>
 <table class="table">
 <colgroup>
@@ -454,7 +454,7 @@ gtag('config', 'G-K1QX6P69E5', { 'anonymize_ip': true});
 <li>図を保存する場合、ファイルのパスを<code>Figs/ファイル名.png</code>や<code>Figs/ファイル名.pdf</code>とする。</li>
 </ul></li>
 </ul>
-<p>　よく分からない場合はとりあえずプロジェクトフォルダー内に<code>Data</code>と<code>Figs</code>というフォルダーを作っておこう。ただし、<code>.R</code>、<code>.qmd</code>などコードファイルはプロジェクトフォルダーの下位フォルダーに入れず、プロジェクトフォルダーの直に入れよう<a href="#fn4" class="footnote-ref" id="fnref4" role="doc-noteref"><sup>4</sup></a>。この場合、R Markdown / Quartoで作成された文書（<code>.html</code>、<code>.pdf</code>など）は<code>.Rmd</code>や<code>.qmd</code>ファイルと同じフォルダーに保存される（別途の設定をすれば別フォルダーに保存することも可能だが、そこまではしなくても良い）。</p>
+<p>　よく分からない場合はとりあえずプロジェクトフォルダー内に<code>Data</code>と<code>Figs</code>というフォルダーを作っておこう。ただし、<code>.R</code>、<code>.qmd</code>などコードファイルはプロジェクトフォルダーの下位フォルダーに入れず、プロジェクトフォルダーの直に入れよう<a href="#fn3" class="footnote-ref" id="fnref3" role="doc-noteref"><sup>3</sup></a>。この場合、R Markdown / Quartoで作成された文書（<code>.html</code>、<code>.pdf</code>など）は<code>.Rmd</code>や<code>.qmd</code>ファイルと同じフォルダーに保存される（別途の設定をすれば別フォルダーに保存することも可能だが、そこまではしなくても良い）。</p>
 </section>
 <section id="参考" class="level2" data-number="5">
 <h2 data-number="5" class="anchored" data-anchor-id="参考"><span class="header-section-number">5</span> 参考</h2>
@@ -472,8 +472,7 @@ gtag('config', 'G-K1QX6P69E5', { 'anonymize_ip': true});
 <ol>
 <li id="fn1"><p>一部、拡張子を持たないファイルもある。<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 <li id="fn2"><p>文書ファイルが<code>.pdf</code>以外にも<code>.docx</code>、<code>.odt</code>、<code>.txt</code>などがあるように、画像ファイルも<code>.png</code>だけでなく、<code>.jpg</code>、<code>.gif</code>、<code>.bmp</code>、<code>.svg</code>など様々なフォーマットがある。<a href="#fnref2" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-<li id="fn3"><p>ただし、LMSに提出する場合、ファイル名をわざわざ修正しなくても良い。教員側からダウンロードする際、勝手に学生番号と氏名が付いたファイル名になるからだ。<a href="#fnref3" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-<li id="fn4"><p>人によってはスクリプトファイルを<code>Script</code>フォルダー内に入れる人もいるが推奨しない。とりわけ、R MarkdownやQuartoの場合、コンソール上で実行時のパスとKnit時のパスの扱いが異なる場合が多い。プロジェクトフォルダーに入れておけば、問題は解決される。<a href="#fnref4" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn3"><p>人によってはスクリプトファイルを<code>Script</code>フォルダー内に入れる人もいるが推奨しない。とりわけ、R MarkdownやQuartoの場合、コンソール上で実行時のパスとKnit時のパスの扱いが異なる場合が多い。プロジェクトフォルダーに入れておけば、問題は解決される。<a href="#fnref3" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 </ol>
 </aside></div></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
