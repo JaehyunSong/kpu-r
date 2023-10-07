@@ -42,6 +42,8 @@ website:
           href: syllabus/syllabus.qmd
         - text: "セッション情報"
           href: syllabus/session.qmd
+        - text: "実習用データ"
+          href: "https://www.dropbox.com/scl/fo/lxv50bdiet725aw9x1iti/h?rlkey=49h0p8y605q0c0qq7j4k3k3tl&dl=0"
     - id: intro
       title: "Rの使い方"
       style: "docked"
