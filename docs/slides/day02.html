@@ -439,7 +439,7 @@
 <ul>
 <li>{dplyr}、{tidyr}、{readr}、{ggplot2}など</li>
 </ul></li>
-<li>オブジェクトを<strong>パイプ演算子</strong> (<code>|&gt;</code> or <code>%&gt;%</code>)で繋ぐ</li>
+<li>オブジェクトを<strong>パイプ演算子</strong>（<code>|&gt;</code> or <code>%&gt;%</code>）で繋ぐ</li>
 </ul>
 <p>Rのコードは<code>library(tidyverse)</code>で始めよう!</p>
 </section>
@@ -450,8 +450,8 @@
 <li>既存の書き方: <strong>書き方と読み方が逆</strong>
 <ul>
 <li>一般的なプログラミング言語共通</li>
-<li>書き方: <code>print(sum(X))</code> (<code>print</code>、<code>sum</code>、<code>X</code>の順で書く)</li>
-<li>読み方1: <code>X</code>を<code>sum()</code>し、<code>print()</code>する (コードの順番と逆)</li>
+<li>書き方: <code>print(sum(X))</code>（<code>print</code>、<code>sum</code>、<code>X</code>の順で書く）</li>
+<li>読み方1: <code>X</code>を<code>sum()</code>し、<code>print()</code>する（コードの順番と逆）</li>
 <li>読み方2: <code>print()</code>する内容は<code>sum()</code>で、<code>sum()</code>は<code>X</code>に対して行う（直感的でない読み方）</li>
 </ul></li>
 <li>Tidyverseな書き方: <strong>書き方と読み方が一致</strong>
@@ -593,7 +593,7 @@
 </div>
 <h4 id="渡す先が第一引数でない場合">渡す先が第一引数でない場合</h4>
 <ul>
-<li>実引数として渡す箇所に<code>.</code> (tidyverse)、<code>_</code> (native pipe)を入力</li>
+<li>実引数として渡す箇所に<code>.</code>（<code>%&gt;%</code>）、<code>_</code>（<code>|&gt;</code>）を入力</li>
 </ul>
 <div class="cell" data-layout-align="center">
 <div class="sourceCode cell-code" id="cb9"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1"></a><span class="co"># {magrittr}のパイプ演算子</span></span>
@@ -632,27 +632,26 @@
 <h2>実習用データ</h2>
 <p><code>countries.csv</code>: 186カ国の社会経済・政治体制のデータ</p>
 <div class="cell" data-layout-align="center">
-<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1"></a><span class="co"># Dataフォルダー内のcountries.csvを読み込み、dfという名のオブジェクトとして作業環境に格納</span></span>
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1"></a><span class="co"># Dataフォルダー内のcountries.csv |&gt; を読み込み、dfという名のオブジェクトとして作業環境に格納</span></span>
 <span id="cb11-2"><a href="#cb11-2"></a><span class="fu">library</span>(tidyverse)</span>
 <span id="cb11-3"><a href="#cb11-3"></a>df <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">"Data/countries.csv"</span>)</span>
 <span id="cb11-4"><a href="#cb11-4"></a>df</span></code><button title="コピー" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 186 × 18
-   Country  Population   Area    GDP     PPP GDP_per_capita PPP_per_capita    G7
-   &lt;chr&gt;         &lt;dbl&gt;  &lt;dbl&gt;  &lt;dbl&gt;   &lt;dbl&gt;          &lt;dbl&gt;          &lt;dbl&gt; &lt;dbl&gt;
- 1 Afghani…   38928346 6.53e5 1.91e4  8.27e4           491.          2125.     0
- 2 Albania     2877797 2.74e4 1.53e4  3.97e4          5309.         13781.     0
- 3 Algeria    43851044 2.38e6 1.70e5  4.97e5          3876.         11324.     0
- 4 Andorra       77265 4.7 e2 3.15e3 NA              40821.            NA      0
- 5 Angola     32866272 1.25e6 9.46e4  2.19e5          2879.          6649.     0
- 6 Antigua…      97929 4.4 e2 1.73e3  2.08e3         17643.         21267.     0
- 7 Argenti…   45195774 2.74e6 4.50e5  1.04e6          9949.         22938.     0
- 8 Armenia     2963243 2.85e4 1.37e4  3.84e4          4614.         12974.     0
- 9 Austral…   25499884 7.68e6 1.39e6  1.28e6         54615.         50001.     0
-10 Austria     9006398 8.24e4 4.46e5  5.03e5         49555.         55824.     0
+   Country Population   Area    GDP     PPP GDP_per_capita PPP_per_capita    G7   G20  OECD HDI_2018
+   &lt;chr&gt;        &lt;dbl&gt;  &lt;dbl&gt;  &lt;dbl&gt;   &lt;dbl&gt;          &lt;dbl&gt;          &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;    &lt;dbl&gt;
+ 1 Afghan…   38928346 6.53e5 1.91e4  8.27e4           491.          2125.     0     0     0    0.496
+ 2 Albania    2877797 2.74e4 1.53e4  3.97e4          5309.         13781.     0     0     0    0.791
+ 3 Algeria   43851044 2.38e6 1.70e5  4.97e5          3876.         11324.     0     0     0    0.759
+ 4 Andorra      77265 4.7 e2 3.15e3 NA              40821.            NA      0     0     0    0.857
+ 5 Angola    32866272 1.25e6 9.46e4  2.19e5          2879.          6649.     0     0     0    0.574
+ 6 Antigu…      97929 4.4 e2 1.73e3  2.08e3         17643.         21267.     0     0     0    0.776
+ 7 Argent…   45195774 2.74e6 4.50e5  1.04e6          9949.         22938.     0     1     0    0.83 
+ 8 Armenia    2963243 2.85e4 1.37e4  3.84e4          4614.         12974.     0     0     0    0.76 
+ 9 Austra…   25499884 7.68e6 1.39e6  1.28e6         54615.         50001.     0     1     1    0.938
+10 Austria    9006398 8.24e4 4.46e5  5.03e5         49555.         55824.     0     0     1    0.914
 # ℹ 176 more rows
-# ℹ 10 more variables: G20 &lt;dbl&gt;, OECD &lt;dbl&gt;, HDI_2018 &lt;dbl&gt;,
-#   Polity_Score &lt;dbl&gt;, Polity_Type &lt;chr&gt;, FH_PR &lt;dbl&gt;, FH_CL &lt;dbl&gt;,
+# ℹ 7 more variables: Polity_Score &lt;dbl&gt;, Polity_Type &lt;chr&gt;, FH_PR &lt;dbl&gt;, FH_CL &lt;dbl&gt;,
 #   FH_Total &lt;dbl&gt;, FH_Status &lt;chr&gt;, Continent &lt;chr&gt;</code></pre>
 </div>
 </div>
@@ -670,11 +669,10 @@
 <div class="cell" data-layout-align="center">
 <div class="sourceCode cell-code" id="cb15"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1"></a><span class="fu">names</span>(df)</span></code><button title="コピー" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code> [1] "Country"        "Population"     "Area"           "GDP"           
- [5] "PPP"            "GDP_per_capita" "PPP_per_capita" "G7"            
- [9] "G20"            "OECD"           "HDI_2018"       "Polity_Score"  
-[13] "Polity_Type"    "FH_PR"          "FH_CL"          "FH_Total"      
-[17] "FH_Status"      "Continent"     </code></pre>
+<pre><code> [1] "Country"        "Population"     "Area"           "GDP"            "PPP"           
+ [6] "GDP_per_capita" "PPP_per_capita" "G7"             "G20"            "OECD"          
+[11] "HDI_2018"       "Polity_Score"   "Polity_Type"    "FH_PR"          "FH_CL"         
+[16] "FH_Total"       "FH_Status"      "Continent"     </code></pre>
 </div>
 </div>
 </section>
@@ -816,17 +814,6 @@
 <div class="sourceCode cell-code" id="cb21"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1"></a>df2 <span class="ot">&lt;-</span> df <span class="sc">|&gt;</span></span>
 <span id="cb21-2"><a href="#cb21-2"></a>  <span class="fu">select</span>(Country, Population, HDI_2018)</span></code><button title="コピー" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div class="callout callout-important no-icon callout-titled callout-style-default">
-<div class="callout-body">
-<div class="callout-title">
-<p><strong>課題では格納が必要な場合もある</strong></p>
-</div>
-<div class="callout-content">
-<p>課題の問題には「出力せよ」だけでなく、「格納した上で出力せよ」といった形式もある。加工したデータを引き続き使うためには格納が必須であるため、問題文を注意深く読むこと。</p>
-</div>
-</div>
-</div>
-<!--- --->
 </section>
 <section id="列の選択と変数名の変更" class="slide level2">
 <h2>列の選択と変数名の変更</h2>
@@ -870,21 +857,20 @@
 <span id="cb25-2"><a href="#cb25-2"></a>  <span class="fu">rename</span>(<span class="at">Jinko =</span> Population, <span class="at">Menseki =</span> Area)</span></code><button title="コピー" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 186 × 18
-   Country      Jinko Menseki    GDP     PPP GDP_per_capita PPP_per_capita    G7
-   &lt;chr&gt;        &lt;dbl&gt;   &lt;dbl&gt;  &lt;dbl&gt;   &lt;dbl&gt;          &lt;dbl&gt;          &lt;dbl&gt; &lt;dbl&gt;
- 1 Afghanistan 3.89e7  652860 1.91e4  8.27e4           491.          2125.     0
- 2 Albania     2.88e6   27400 1.53e4  3.97e4          5309.         13781.     0
- 3 Algeria     4.39e7 2381740 1.70e5  4.97e5          3876.         11324.     0
- 4 Andorra     7.73e4     470 3.15e3 NA              40821.            NA      0
- 5 Angola      3.29e7 1246700 9.46e4  2.19e5          2879.          6649.     0
- 6 Antigua an… 9.79e4     440 1.73e3  2.08e3         17643.         21267.     0
- 7 Argentina   4.52e7 2736690 4.50e5  1.04e6          9949.         22938.     0
- 8 Armenia     2.96e6   28470 1.37e4  3.84e4          4614.         12974.     0
- 9 Australia   2.55e7 7682300 1.39e6  1.28e6         54615.         50001.     0
-10 Austria     9.01e6   82409 4.46e5  5.03e5         49555.         55824.     0
+   Country     Jinko Menseki    GDP     PPP GDP_per_capita PPP_per_capita    G7   G20  OECD HDI_2018
+   &lt;chr&gt;       &lt;dbl&gt;   &lt;dbl&gt;  &lt;dbl&gt;   &lt;dbl&gt;          &lt;dbl&gt;          &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;    &lt;dbl&gt;
+ 1 Afghanist… 3.89e7  652860 1.91e4  8.27e4           491.          2125.     0     0     0    0.496
+ 2 Albania    2.88e6   27400 1.53e4  3.97e4          5309.         13781.     0     0     0    0.791
+ 3 Algeria    4.39e7 2381740 1.70e5  4.97e5          3876.         11324.     0     0     0    0.759
+ 4 Andorra    7.73e4     470 3.15e3 NA              40821.            NA      0     0     0    0.857
+ 5 Angola     3.29e7 1246700 9.46e4  2.19e5          2879.          6649.     0     0     0    0.574
+ 6 Antigua a… 9.79e4     440 1.73e3  2.08e3         17643.         21267.     0     0     0    0.776
+ 7 Argentina  4.52e7 2736690 4.50e5  1.04e6          9949.         22938.     0     1     0    0.83 
+ 8 Armenia    2.96e6   28470 1.37e4  3.84e4          4614.         12974.     0     0     0    0.76 
+ 9 Australia  2.55e7 7682300 1.39e6  1.28e6         54615.         50001.     0     1     1    0.938
+10 Austria    9.01e6   82409 4.46e5  5.03e5         49555.         55824.     0     0     1    0.914
 # ℹ 176 more rows
-# ℹ 10 more variables: G20 &lt;dbl&gt;, OECD &lt;dbl&gt;, HDI_2018 &lt;dbl&gt;,
-#   Polity_Score &lt;dbl&gt;, Polity_Type &lt;chr&gt;, FH_PR &lt;dbl&gt;, FH_CL &lt;dbl&gt;,
+# ℹ 7 more variables: Polity_Score &lt;dbl&gt;, Polity_Type &lt;chr&gt;, FH_PR &lt;dbl&gt;, FH_CL &lt;dbl&gt;,
 #   FH_Total &lt;dbl&gt;, FH_Status &lt;chr&gt;, Continent &lt;chr&gt;</code></pre>
 </div>
 </div>
@@ -902,21 +888,20 @@
 <span id="cb27-2"><a href="#cb27-2"></a>  <span class="fu">select</span>(<span class="sc">!</span><span class="fu">c</span>(GDP_per_capita, PPP_per_capita))</span></code><button title="コピー" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 186 × 16
-   Country           Population   Area    GDP     PPP    G7   G20  OECD HDI_2018
-   &lt;chr&gt;                  &lt;dbl&gt;  &lt;dbl&gt;  &lt;dbl&gt;   &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;    &lt;dbl&gt;
- 1 Afghanistan         38928346 6.53e5 1.91e4  8.27e4     0     0     0    0.496
- 2 Albania              2877797 2.74e4 1.53e4  3.97e4     0     0     0    0.791
- 3 Algeria             43851044 2.38e6 1.70e5  4.97e5     0     0     0    0.759
- 4 Andorra                77265 4.7 e2 3.15e3 NA          0     0     0    0.857
- 5 Angola              32866272 1.25e6 9.46e4  2.19e5     0     0     0    0.574
- 6 Antigua and Barb…      97929 4.4 e2 1.73e3  2.08e3     0     0     0    0.776
- 7 Argentina           45195774 2.74e6 4.50e5  1.04e6     0     1     0    0.83 
- 8 Armenia              2963243 2.85e4 1.37e4  3.84e4     0     0     0    0.76 
- 9 Australia           25499884 7.68e6 1.39e6  1.28e6     0     1     1    0.938
-10 Austria              9006398 8.24e4 4.46e5  5.03e5     0     0     1    0.914
+   Country      Population   Area    GDP     PPP    G7   G20  OECD HDI_2018 Polity_Score Polity_Type
+   &lt;chr&gt;             &lt;dbl&gt;  &lt;dbl&gt;  &lt;dbl&gt;   &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;    &lt;dbl&gt;        &lt;dbl&gt; &lt;chr&gt;      
+ 1 Afghanistan    38928346 6.53e5 1.91e4  8.27e4     0     0     0    0.496           -1 Closed Ano…
+ 2 Albania         2877797 2.74e4 1.53e4  3.97e4     0     0     0    0.791            9 Democracy  
+ 3 Algeria        43851044 2.38e6 1.70e5  4.97e5     0     0     0    0.759            2 Open Anocr…
+ 4 Andorra           77265 4.7 e2 3.15e3 NA          0     0     0    0.857           NA &lt;NA&gt;       
+ 5 Angola         32866272 1.25e6 9.46e4  2.19e5     0     0     0    0.574           -2 Closed Ano…
+ 6 Antigua and…      97929 4.4 e2 1.73e3  2.08e3     0     0     0    0.776           NA &lt;NA&gt;       
+ 7 Argentina      45195774 2.74e6 4.50e5  1.04e6     0     1     0    0.83             9 Democracy  
+ 8 Armenia         2963243 2.85e4 1.37e4  3.84e4     0     0     0    0.76             7 Democracy  
+ 9 Australia      25499884 7.68e6 1.39e6  1.28e6     0     1     1    0.938           10 Full Democ…
+10 Austria         9006398 8.24e4 4.46e5  5.03e5     0     0     1    0.914           10 Full Democ…
 # ℹ 176 more rows
-# ℹ 7 more variables: Polity_Score &lt;dbl&gt;, Polity_Type &lt;chr&gt;, FH_PR &lt;dbl&gt;,
-#   FH_CL &lt;dbl&gt;, FH_Total &lt;dbl&gt;, FH_Status &lt;chr&gt;, Continent &lt;chr&gt;</code></pre>
+# ℹ 5 more variables: FH_PR &lt;dbl&gt;, FH_CL &lt;dbl&gt;, FH_Total &lt;dbl&gt;, FH_Status &lt;chr&gt;, Continent &lt;chr&gt;</code></pre>
 </div>
 </div>
 <!--- --->
@@ -997,22 +982,21 @@
 <span id="cb33-3"><a href="#cb33-3"></a>         Population<span class="sc">:</span>PPP_per_capita, HDI_2018<span class="sc">:</span>Continent)</span></code><button title="コピー" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 186 × 18
-   Country        G7   G20  OECD Population   Area    GDP     PPP GDP_per_capita
-   &lt;chr&gt;       &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;      &lt;dbl&gt;  &lt;dbl&gt;  &lt;dbl&gt;   &lt;dbl&gt;          &lt;dbl&gt;
- 1 Afghanistan     0     0     0   38928346 6.53e5 1.91e4  8.27e4           491.
- 2 Albania         0     0     0    2877797 2.74e4 1.53e4  3.97e4          5309.
- 3 Algeria         0     0     0   43851044 2.38e6 1.70e5  4.97e5          3876.
- 4 Andorra         0     0     0      77265 4.7 e2 3.15e3 NA              40821.
- 5 Angola          0     0     0   32866272 1.25e6 9.46e4  2.19e5          2879.
- 6 Antigua an…     0     0     0      97929 4.4 e2 1.73e3  2.08e3         17643.
- 7 Argentina       0     1     0   45195774 2.74e6 4.50e5  1.04e6          9949.
- 8 Armenia         0     0     0    2963243 2.85e4 1.37e4  3.84e4          4614.
- 9 Australia       0     1     1   25499884 7.68e6 1.39e6  1.28e6         54615.
-10 Austria         0     0     1    9006398 8.24e4 4.46e5  5.03e5         49555.
+   Country    G7   G20  OECD Population   Area    GDP     PPP GDP_per_capita PPP_per_capita HDI_2018
+   &lt;chr&gt;   &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;      &lt;dbl&gt;  &lt;dbl&gt;  &lt;dbl&gt;   &lt;dbl&gt;          &lt;dbl&gt;          &lt;dbl&gt;    &lt;dbl&gt;
+ 1 Afghan…     0     0     0   38928346 6.53e5 1.91e4  8.27e4           491.          2125.    0.496
+ 2 Albania     0     0     0    2877797 2.74e4 1.53e4  3.97e4          5309.         13781.    0.791
+ 3 Algeria     0     0     0   43851044 2.38e6 1.70e5  4.97e5          3876.         11324.    0.759
+ 4 Andorra     0     0     0      77265 4.7 e2 3.15e3 NA              40821.            NA     0.857
+ 5 Angola      0     0     0   32866272 1.25e6 9.46e4  2.19e5          2879.          6649.    0.574
+ 6 Antigu…     0     0     0      97929 4.4 e2 1.73e3  2.08e3         17643.         21267.    0.776
+ 7 Argent…     0     1     0   45195774 2.74e6 4.50e5  1.04e6          9949.         22938.    0.83 
+ 8 Armenia     0     0     0    2963243 2.85e4 1.37e4  3.84e4          4614.         12974.    0.76 
+ 9 Austra…     0     1     1   25499884 7.68e6 1.39e6  1.28e6         54615.         50001.    0.938
+10 Austria     0     0     1    9006398 8.24e4 4.46e5  5.03e5         49555.         55824.    0.914
 # ℹ 176 more rows
-# ℹ 9 more variables: PPP_per_capita &lt;dbl&gt;, HDI_2018 &lt;dbl&gt;, Polity_Score &lt;dbl&gt;,
-#   Polity_Type &lt;chr&gt;, FH_PR &lt;dbl&gt;, FH_CL &lt;dbl&gt;, FH_Total &lt;dbl&gt;,
-#   FH_Status &lt;chr&gt;, Continent &lt;chr&gt;</code></pre>
+# ℹ 7 more variables: Polity_Score &lt;dbl&gt;, Polity_Type &lt;chr&gt;, FH_PR &lt;dbl&gt;, FH_CL &lt;dbl&gt;,
+#   FH_Total &lt;dbl&gt;, FH_Status &lt;chr&gt;, Continent &lt;chr&gt;</code></pre>
 </div>
 </div>
 <!--- --->
@@ -1033,22 +1017,21 @@
 <span id="cb36-2"><a href="#cb36-2"></a>  <span class="fu">relocate</span>(G7<span class="sc">:</span>OECD, <span class="at">.after =</span> Country) <span class="co"># .before = PopulationもOK</span></span></code><button title="コピー" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 186 × 18
-   Country        G7   G20  OECD Population   Area    GDP     PPP GDP_per_capita
-   &lt;chr&gt;       &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;      &lt;dbl&gt;  &lt;dbl&gt;  &lt;dbl&gt;   &lt;dbl&gt;          &lt;dbl&gt;
- 1 Afghanistan     0     0     0   38928346 6.53e5 1.91e4  8.27e4           491.
- 2 Albania         0     0     0    2877797 2.74e4 1.53e4  3.97e4          5309.
- 3 Algeria         0     0     0   43851044 2.38e6 1.70e5  4.97e5          3876.
- 4 Andorra         0     0     0      77265 4.7 e2 3.15e3 NA              40821.
- 5 Angola          0     0     0   32866272 1.25e6 9.46e4  2.19e5          2879.
- 6 Antigua an…     0     0     0      97929 4.4 e2 1.73e3  2.08e3         17643.
- 7 Argentina       0     1     0   45195774 2.74e6 4.50e5  1.04e6          9949.
- 8 Armenia         0     0     0    2963243 2.85e4 1.37e4  3.84e4          4614.
- 9 Australia       0     1     1   25499884 7.68e6 1.39e6  1.28e6         54615.
-10 Austria         0     0     1    9006398 8.24e4 4.46e5  5.03e5         49555.
+   Country    G7   G20  OECD Population   Area    GDP     PPP GDP_per_capita PPP_per_capita HDI_2018
+   &lt;chr&gt;   &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;      &lt;dbl&gt;  &lt;dbl&gt;  &lt;dbl&gt;   &lt;dbl&gt;          &lt;dbl&gt;          &lt;dbl&gt;    &lt;dbl&gt;
+ 1 Afghan…     0     0     0   38928346 6.53e5 1.91e4  8.27e4           491.          2125.    0.496
+ 2 Albania     0     0     0    2877797 2.74e4 1.53e4  3.97e4          5309.         13781.    0.791
+ 3 Algeria     0     0     0   43851044 2.38e6 1.70e5  4.97e5          3876.         11324.    0.759
+ 4 Andorra     0     0     0      77265 4.7 e2 3.15e3 NA              40821.            NA     0.857
+ 5 Angola      0     0     0   32866272 1.25e6 9.46e4  2.19e5          2879.          6649.    0.574
+ 6 Antigu…     0     0     0      97929 4.4 e2 1.73e3  2.08e3         17643.         21267.    0.776
+ 7 Argent…     0     1     0   45195774 2.74e6 4.50e5  1.04e6          9949.         22938.    0.83 
+ 8 Armenia     0     0     0    2963243 2.85e4 1.37e4  3.84e4          4614.         12974.    0.76 
+ 9 Austra…     0     1     1   25499884 7.68e6 1.39e6  1.28e6         54615.         50001.    0.938
+10 Austria     0     0     1    9006398 8.24e4 4.46e5  5.03e5         49555.         55824.    0.914
 # ℹ 176 more rows
-# ℹ 9 more variables: PPP_per_capita &lt;dbl&gt;, HDI_2018 &lt;dbl&gt;, Polity_Score &lt;dbl&gt;,
-#   Polity_Type &lt;chr&gt;, FH_PR &lt;dbl&gt;, FH_CL &lt;dbl&gt;, FH_Total &lt;dbl&gt;,
-#   FH_Status &lt;chr&gt;, Continent &lt;chr&gt;</code></pre>
+# ℹ 7 more variables: Polity_Score &lt;dbl&gt;, Polity_Type &lt;chr&gt;, FH_PR &lt;dbl&gt;, FH_CL &lt;dbl&gt;,
+#   FH_Total &lt;dbl&gt;, FH_Status &lt;chr&gt;, Continent &lt;chr&gt;</code></pre>
 </div>
 </div>
 <!--- --->
@@ -1194,8 +1177,7 @@
 <span id="cb48-3"><a href="#cb48-3"></a>  <span class="fu">select</span>(Country<span class="sc">:</span>PPP)</span></code><button title="コピー" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 0 × 5
-# ℹ 5 variables: Country &lt;chr&gt;, Population &lt;dbl&gt;, Area &lt;dbl&gt;, GDP &lt;dbl&gt;,
-#   PPP &lt;dbl&gt;</code></pre>
+# ℹ 5 variables: Country &lt;chr&gt;, Population &lt;dbl&gt;, Area &lt;dbl&gt;, GDP &lt;dbl&gt;, PPP &lt;dbl&gt;</code></pre>
 </div>
 </div>
 </section>
@@ -1294,7 +1276,8 @@
 </div>
 <p>パイプを使う書き方</p>
 <div class="cell" data-layout-align="center">
-<div class="sourceCode cell-code" id="cb57"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb57-1"><a href="#cb57-1"></a>データ <span class="sc">|&gt;</span> <span class="fu">arrange</span>(変数名1, 変数名2, ...)</span></code><button title="コピー" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb57"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb57-1"><a href="#cb57-1"></a>データ <span class="sc">|&gt;</span> </span>
+<span id="cb57-2"><a href="#cb57-2"></a>  <span class="fu">arrange</span>(変数名1, 変数名2, ...)</span></code><button title="コピー" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>基本的には昇順 (値が小さい行が先にくる)</p>
 <ul>
@@ -1370,9 +1353,6 @@
 <section id="記述統計量" class="slide level2">
 <h2>記述統計量</h2>
 <p>変数が持つ情報を要約した数値</p>
-<ul>
-<li>詳細は後期の「マクロ政治データ分析実習」で</li>
-</ul>
 <p>元の情報:</p>
 <div class="cell" data-layout-align="center">
 <div class="sourceCode cell-code" id="cb62"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb62-1"><a href="#cb62-1"></a>MathScore <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">82</span>, <span class="dv">45</span>, <span class="dv">69</span>, <span class="dv">94</span>, <span class="dv">88</span>, <span class="dv">73</span>, <span class="cn">NA</span>, <span class="dv">51</span>, <span class="dv">90</span>, <span class="dv">63</span>)</span></code><button title="コピー" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -1522,8 +1502,7 @@
 <span id="cb83-2"><a href="#cb83-2"></a>  <span class="fu">group_by</span>(Continent, G20) <span class="sc">|&gt;</span></span>
 <span id="cb83-3"><a href="#cb83-3"></a>  <span class="fu">summarise</span>(<span class="at">Mean_HDI =</span> <span class="fu">mean</span>(HDI_2018, <span class="at">na.rm =</span> <span class="cn">TRUE</span>))</span></code><button title="コピー" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stderr">
-<pre><code>`summarise()` has grouped output by 'Continent'. You can override using the
-`.groups` argument.</code></pre>
+<pre><code>`summarise()` has grouped output by 'Continent'. You can override using the `.groups` argument.</code></pre>
 </div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 10 × 3
@@ -1546,8 +1525,7 @@
 <section id="グルービング後のsummarise" class="slide level2">
 <h2>グルービング後の<code>summarise()</code></h2>
 <p>謎のメッセージが出力される</p>
-<pre><code>## `summarise()` has grouped output by 'Continent'. You can override using 
-the `.groups` argument.</code></pre>
+<pre><code>## `summarise()` has grouped output by 'Continent'. You can override using the `.groups` argument.</code></pre>
 <p>とりあえず、<code>group_by()</code>の後に<code>summarise()</code>を使う場合、<code>summarise()</code>の最後に<code>.groups = "drop"</code>を追加する。</p>
 <ul>
 <li>理由は割愛するが、詳細は教科書<a href="https://www.jaysong.net/RBook/datahandling2.html#sec-handling2-group">第14.2章</a>を参照</li>
@@ -1617,10 +1595,9 @@ the `.groups` argument.</code></pre>
 <span id="cb91-4"><a href="#cb91-4"></a>                               <span class="at">SD   =</span> <span class="sc">~</span><span class="fu">mean</span>(.x, <span class="at">na.rm =</span> <span class="cn">TRUE</span>))))</span></code><button title="コピー" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 1 × 8
-  Population_Mean Population_SD Area_Mean Area_SD GDP_Mean  GDP_SD PPP_Mean
-            &lt;dbl&gt;         &lt;dbl&gt;     &lt;dbl&gt;   &lt;dbl&gt;    &lt;dbl&gt;   &lt;dbl&gt;    &lt;dbl&gt;
-1       41737773.     41737773.   696069. 696069.  473031. 473031.  717953.
-# ℹ 1 more variable: PPP_SD &lt;dbl&gt;</code></pre>
+  Population_Mean Population_SD Area_Mean Area_SD GDP_Mean  GDP_SD PPP_Mean  PPP_SD
+            &lt;dbl&gt;         &lt;dbl&gt;     &lt;dbl&gt;   &lt;dbl&gt;    &lt;dbl&gt;   &lt;dbl&gt;    &lt;dbl&gt;   &lt;dbl&gt;
+1       41737773.     41737773.   696069. 696069.  473031. 473031.  717953. 717953.</code></pre>
 </div>
 </div>
 </section></section>
@@ -1673,16 +1650,15 @@ the `.groups` argument.</code></pre>
 <span id="cb96-3"><a href="#cb96-3"></a>  <span class="fu">print</span>(<span class="at">n =</span> <span class="dv">5</span>) <span class="co"># 最初の5行のみ出力</span></span></code><button title="コピー" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 186 × 19
-  Country   Population   Area    GDP     PPP GDP_per_capita PPP_per_capita    G7
-  &lt;chr&gt;          &lt;dbl&gt;  &lt;dbl&gt;  &lt;dbl&gt;   &lt;dbl&gt;          &lt;dbl&gt;          &lt;dbl&gt; &lt;dbl&gt;
-1 Afghanis…   38928346 6.53e5 1.91e4  82737.           491.          2125.     0
-2 Albania      2877797 2.74e4 1.53e4  39658.          5309.         13781.     0
-3 Algeria     43851044 2.38e6 1.70e5 496572.          3876.         11324.     0
-4 Andorra        77265 4.7 e2 3.15e3     NA          40821.            NA      0
-5 Angola      32866272 1.25e6 9.46e4 218533.          2879.          6649.     0
+  Country  Population   Area    GDP     PPP GDP_per_capita PPP_per_capita    G7   G20  OECD HDI_2018
+  &lt;chr&gt;         &lt;dbl&gt;  &lt;dbl&gt;  &lt;dbl&gt;   &lt;dbl&gt;          &lt;dbl&gt;          &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;    &lt;dbl&gt;
+1 Afghani…   38928346 6.53e5 1.91e4  82737.           491.          2125.     0     0     0    0.496
+2 Albania     2877797 2.74e4 1.53e4  39658.          5309.         13781.     0     0     0    0.791
+3 Algeria    43851044 2.38e6 1.70e5 496572.          3876.         11324.     0     0     0    0.759
+4 Andorra       77265 4.7 e2 3.15e3     NA          40821.            NA      0     0     0    0.857
+5 Angola     32866272 1.25e6 9.46e4 218533.          2879.          6649.     0     0     0    0.574
 # ℹ 181 more rows
-# ℹ 11 more variables: G20 &lt;dbl&gt;, OECD &lt;dbl&gt;, HDI_2018 &lt;dbl&gt;,
-#   Polity_Score &lt;dbl&gt;, Polity_Type &lt;chr&gt;, FH_PR &lt;dbl&gt;, FH_CL &lt;dbl&gt;,
+# ℹ 8 more variables: Polity_Score &lt;dbl&gt;, Polity_Type &lt;chr&gt;, FH_PR &lt;dbl&gt;, FH_CL &lt;dbl&gt;,
 #   FH_Total &lt;dbl&gt;, FH_Status &lt;chr&gt;, Continent &lt;chr&gt;, Density &lt;dbl&gt;</code></pre>
 </div>
 </div>
@@ -1700,21 +1676,20 @@ the `.groups` argument.</code></pre>
 <span id="cb98-3"><a href="#cb98-3"></a>         <span class="at">.after  =</span> Area)</span></code><button title="コピー" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 186 × 19
-   Country             Population    Area Density     GDP     PPP GDP_per_capita
-   &lt;chr&gt;                    &lt;dbl&gt;   &lt;dbl&gt;   &lt;dbl&gt;   &lt;dbl&gt;   &lt;dbl&gt;          &lt;dbl&gt;
- 1 Afghanistan           38928346  652860   59.6   1.91e4  8.27e4           491.
- 2 Albania                2877797   27400  105.    1.53e4  3.97e4          5309.
- 3 Algeria               43851044 2381740   18.4   1.70e5  4.97e5          3876.
- 4 Andorra                  77265     470  164.    3.15e3 NA              40821.
- 5 Angola                32866272 1246700   26.4   9.46e4  2.19e5          2879.
- 6 Antigua and Barbuda      97929     440  223.    1.73e3  2.08e3         17643.
- 7 Argentina             45195774 2736690   16.5   4.50e5  1.04e6          9949.
- 8 Armenia                2963243   28470  104.    1.37e4  3.84e4          4614.
- 9 Australia             25499884 7682300    3.32  1.39e6  1.28e6         54615.
-10 Austria                9006398   82409  109.    4.46e5  5.03e5         49555.
+   Country  Population   Area Density    GDP     PPP GDP_per_capita PPP_per_capita    G7   G20  OECD
+   &lt;chr&gt;         &lt;dbl&gt;  &lt;dbl&gt;   &lt;dbl&gt;  &lt;dbl&gt;   &lt;dbl&gt;          &lt;dbl&gt;          &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;
+ 1 Afghani…   38928346 6.53e5   59.6  1.91e4  8.27e4           491.          2125.     0     0     0
+ 2 Albania     2877797 2.74e4  105.   1.53e4  3.97e4          5309.         13781.     0     0     0
+ 3 Algeria    43851044 2.38e6   18.4  1.70e5  4.97e5          3876.         11324.     0     0     0
+ 4 Andorra       77265 4.7 e2  164.   3.15e3 NA              40821.            NA      0     0     0
+ 5 Angola     32866272 1.25e6   26.4  9.46e4  2.19e5          2879.          6649.     0     0     0
+ 6 Antigua…      97929 4.4 e2  223.   1.73e3  2.08e3         17643.         21267.     0     0     0
+ 7 Argenti…   45195774 2.74e6   16.5  4.50e5  1.04e6          9949.         22938.     0     1     0
+ 8 Armenia     2963243 2.85e4  104.   1.37e4  3.84e4          4614.         12974.     0     0     0
+ 9 Austral…   25499884 7.68e6    3.32 1.39e6  1.28e6         54615.         50001.     0     1     1
+10 Austria     9006398 8.24e4  109.   4.46e5  5.03e5         49555.         55824.     0     0     1
 # ℹ 176 more rows
-# ℹ 12 more variables: PPP_per_capita &lt;dbl&gt;, G7 &lt;dbl&gt;, G20 &lt;dbl&gt;, OECD &lt;dbl&gt;,
-#   HDI_2018 &lt;dbl&gt;, Polity_Score &lt;dbl&gt;, Polity_Type &lt;chr&gt;, FH_PR &lt;dbl&gt;,
+# ℹ 8 more variables: HDI_2018 &lt;dbl&gt;, Polity_Score &lt;dbl&gt;, Polity_Type &lt;chr&gt;, FH_PR &lt;dbl&gt;,
 #   FH_CL &lt;dbl&gt;, FH_Total &lt;dbl&gt;, FH_Status &lt;chr&gt;, Continent &lt;chr&gt;</code></pre>
 </div>
 </div>
@@ -2048,7 +2023,7 @@ the `.groups` argument.</code></pre>
 <h2>特定の値を欠損値にコーディング場合</h2>
 <p><code>if_else()</code>でなく、<code>case_when()</code>を使うことも可能</p>
 <ul>
-<li>欠損を意味する値が複数の場合、<code>case_when()</code>を使うか、OR演算子（<code>|</code> / <code>%in%</code>）を用いた<code>if_else()</code>を使用する。</li>
+<li>欠損を意味する値が複数の場合、<code>case_when()</code>を使うか、OR演算子（<code>|</code>、または<code>%in%</code>）を用いた<code>if_else()</code>を使用する。</li>
 </ul>
 <div class="cell" data-layout-align="center">
 <div class="sourceCode cell-code" id="cb124"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb124-1"><a href="#cb124-1"></a>my_data <span class="sc">|&gt;</span></span>
@@ -2077,7 +2052,7 @@ the `.groups` argument.</code></pre>
 <h2>参考）特定の値を欠損値にコーディング場合</h2>
 <p>{naniar}パッケージの<code>replace_with_na()</code>関数を利用</p>
 <ul>
-<li>引数はリスト型オブジェクトであり、リストの中には<code>変数名 = 欠損値の値</code></li>
+<li>引数はリスト型オブジェクトであり、リスト（<code>list()</code>）の中には<code>変数名 = 欠損値の値</code></li>
 <li>欠損値の値が複数の場合、<code>変数名 = c(値1, 値2, ...)</code></li>
 <li>似たような関数として{expss}の<code>na_if()</code>関数</li>
 </ul>
@@ -2106,13 +2081,13 @@ the `.groups` argument.</code></pre>
 <section id="参考mutateにおける複数の処理" class="slide level2">
 <h2>参考）<code>mutate()</code>における複数の処理</h2>
 <p>同じ内容のコードであるため、好きな書き方で問題ないが、まとめた方が効率的</p>
-<h4 id="一つのmutate内に2つの処理">一つの<code>mutate()</code>内に2つの処理</h4>
+<h4 id="一つのmutate内に2つの処理推奨">一つの<code>mutate()</code>内に2つの処理（推奨）</h4>
 <div class="cell" data-layout-align="center">
 <div class="sourceCode cell-code" id="cb128"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb128-1"><a href="#cb128-1"></a>my_data <span class="sc">|&gt;</span></span>
 <span id="cb128-2"><a href="#cb128-2"></a>  <span class="fu">mutate</span>(<span class="at">Age      =</span> <span class="fu">if_else</span>(Age      <span class="sc">==</span> <span class="dv">999</span> <span class="sc">~</span> <span class="cn">NA</span>, <span class="cn">TRUE</span> <span class="sc">~</span> Age),</span>
 <span id="cb128-3"><a href="#cb128-3"></a>         <span class="at">HighEduc =</span> <span class="fu">if_else</span>(HighEduc <span class="sc">==</span> <span class="dv">9</span>   <span class="sc">~</span> <span class="cn">NA</span>, <span class="cn">TRUE</span> <span class="sc">~</span> HighEduc))</span></code><button title="コピー" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<h4 id="一つのmutate内に1つの処理">一つの<code>mutate()</code>内に1つの処理</h4>
+<h4 id="一つのmutate内に1つの処理非推奨">一つの<code>mutate()</code>内に1つの処理（非推奨）</h4>
 <div class="cell" data-layout-align="center">
 <div class="sourceCode cell-code" id="cb129"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb129-1"><a href="#cb129-1"></a>my_data <span class="sc">|&gt;</span></span>
 <span id="cb129-2"><a href="#cb129-2"></a>  <span class="fu">mutate</span>(<span class="at">Age =</span> <span class="fu">if_else</span>(Age <span class="sc">==</span> <span class="dv">999</span> <span class="sc">~</span> <span class="cn">NA</span>, <span class="cn">TRUE</span> <span class="sc">~</span> Age)) <span class="sc">|&gt;</span></span>
@@ -2168,7 +2143,6 @@ the `.groups` argument.</code></pre>
 </div>
 </div>
 </div>
-<!--- --->
 </section>
 <section id="データの結合-行-1" class="slide level2">
 <h2>データの結合: 行</h2>
@@ -2190,7 +2164,6 @@ the `.groups` argument.</code></pre>
 5   2組  5 Yさん    78</code></pre>
 </div>
 </div>
-<!--- --->
 </section>
 <section id="データの結合-列" class="slide level2">
 <h2>データの結合: 列</h2>
@@ -2232,7 +2205,6 @@ the `.groups` argument.</code></pre>
 3 Kochi  76 7104   Katsuo</code></pre>
 </div>
 </div>
-<!--- --->
 </section>
 <section id="列結合に使う関数" class="slide level2">
 <h2>列結合に使う関数</h2>
@@ -2324,7 +2296,6 @@ the `.groups` argument.</code></pre>
 </div>
 </div>
 </div>
-<!--- --->
 </section>
 <section id="full_joinの仕組み" class="slide level2">
 <h2><code>full_join()</code>の仕組み</h2>
@@ -2346,18 +2317,26 @@ the `.groups` argument.</code></pre>
 </div>
 </div>
 </div>
-<!--- --->
 </section>
-<section id="比較-1" class="slide level2">
-<h2>比較 (1)</h2>
+<section id="比較" class="slide level2">
+<h2>比較</h2>
+<p><code>by = "識別用の変数名"</code>は複数用いることも可能（例: 都道府県名&amp;年度で結合）</p>
+<ul>
+<li><code>by = c("識別用の変数名1", "識別用の変数名2")</code></li>
+</ul>
+<div class="panel-tabset">
+<ul id="tabset-2" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-2-1">データ</a></li><li><a href="#tabset-2-2"><code>left_join()</code></a></li><li><a href="#tabset-2-3"><code>right_join()</code></a></li><li><a href="#tabset-2-4"><code>inner_join()</code></a></li><li><a href="#tabset-2-5"><code>full_join()</code></a></li></ul>
+<div class="tab-content">
+<div id="tabset-2-1">
+<div class="columns">
+<div class="column" style="width:60%;">
 <div class="cell" data-layout-align="center">
 <div class="sourceCode cell-code" id="cb144"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb144-1"><a href="#cb144-1"></a>df1 <span class="ot">&lt;-</span> <span class="fu">tibble</span>(<span class="at">Pref  =</span> <span class="fu">c</span>(<span class="st">"東京"</span>, <span class="st">"大阪"</span>, <span class="st">"京都"</span>),</span>
 <span id="cb144-2"><a href="#cb144-2"></a>              <span class="at">Score =</span> <span class="fu">c</span>(<span class="fl">3.5</span>, <span class="dv">4</span>, <span class="fl">4.2</span>))</span>
 <span id="cb144-3"><a href="#cb144-3"></a>df2 <span class="ot">&lt;-</span> <span class="fu">tibble</span>(<span class="at">Pref  =</span> <span class="fu">c</span>(<span class="st">"東京"</span>, <span class="st">"大阪"</span>, <span class="st">"高知"</span>),</span>
 <span id="cb144-4"><a href="#cb144-4"></a>              <span class="at">N     =</span> <span class="fu">c</span>(<span class="dv">3220</span>, <span class="dv">1325</span>, <span class="dv">111</span>))</span></code><button title="コピー" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div class="columns">
-<div class="column" style="width:48%;">
+</div><div class="column" style="width:40%;">
 <div class="cell" data-layout-align="center">
 <div class="sourceCode cell-code" id="cb145"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb145-1"><a href="#cb145-1"></a>df1</span></code><button title="コピー" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
@@ -2368,11 +2347,6 @@ the `.groups` argument.</code></pre>
 2 大阪    4  
 3 京都    4.2</code></pre>
 </div>
-</div>
-</div><div class="column" style="width:4%;">
-
-</div><div class="column" style="width:48%;">
-<div class="cell" data-layout-align="center">
 <div class="sourceCode cell-code" id="cb147"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb147-1"><a href="#cb147-1"></a>df2</span></code><button title="コピー" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 3 × 2
@@ -2385,16 +2359,8 @@ the `.groups` argument.</code></pre>
 </div>
 </div>
 </div>
-<!--- --->
-</section>
-<section id="比較-2" class="slide level2">
-<h2>比較 (2)</h2>
-<p><code>by = "識別用の変数名"</code>は複数用いることも可能（例: 都道府県名&amp;年度で結合）</p>
-<ul>
-<li><code>by = c("識別用の変数名1", "識別用の変数名2")</code></li>
-</ul>
-<div class="columns">
-<div class="column" style="width:48%;">
+</div>
+<div id="tabset-2-2">
 <div class="cell" data-layout-align="center">
 <div class="sourceCode cell-code" id="cb149"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb149-1"><a href="#cb149-1"></a><span class="fu">left_join</span>(df1, df2, <span class="at">by =</span> <span class="st">"Pref"</span>)</span></code><button title="コピー" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
@@ -2405,6 +2371,10 @@ the `.groups` argument.</code></pre>
 2 大阪    4    1325
 3 京都    4.2    NA</code></pre>
 </div>
+</div>
+</div>
+<div id="tabset-2-3">
+<div class="cell" data-layout-align="center">
 <div class="sourceCode cell-code" id="cb151"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb151-1"><a href="#cb151-1"></a><span class="fu">right_join</span>(df1, df2, <span class="at">by =</span> <span class="st">"Pref"</span>)</span></code><button title="コピー" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 3 × 3
@@ -2415,9 +2385,8 @@ the `.groups` argument.</code></pre>
 3 高知   NA     111</code></pre>
 </div>
 </div>
-</div><div class="column" style="width:4%;">
-
-</div><div class="column" style="width:48%;">
+</div>
+<div id="tabset-2-4">
 <div class="cell" data-layout-align="center">
 <div class="sourceCode cell-code" id="cb153"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb153-1"><a href="#cb153-1"></a><span class="fu">inner_join</span>(df1, df2, <span class="at">by =</span> <span class="st">"Pref"</span>)</span></code><button title="コピー" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
@@ -2427,6 +2396,10 @@ the `.groups` argument.</code></pre>
 1 東京    3.5  3220
 2 大阪    4    1325</code></pre>
 </div>
+</div>
+</div>
+<div id="tabset-2-5">
+<div class="cell" data-layout-align="center">
 <div class="sourceCode cell-code" id="cb155"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb155-1"><a href="#cb155-1"></a><span class="fu">full_join</span>(df1, df2, <span class="at">by =</span> <span class="st">"Pref"</span>)</span></code><button title="コピー" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 4 × 3
@@ -2440,6 +2413,7 @@ the `.groups` argument.</code></pre>
 </div>
 </div>
 </div>
+</div>
 </section></section>
 <section>
 <section id="tidyr-整然データ構造" class="title-slide slide level1 center">
@@ -2448,7 +2422,7 @@ the `.groups` argument.</code></pre>
 </section>
 <section id="整然データ構造とは" class="slide level2">
 <h2>整然データ構造とは</h2>
-<p>Tidy data: Hadley Wickhamが提唱した<strong>データ分析に適したデータ構造</strong></p>
+<p>Tidy data：<a href="https://hadley.nz/">Hadley Wickham</a>が提唱した<strong>データ分析に適したデータ構造</strong></p>
 <div class="columns">
 <div class="column" style="width:66%;">
 <ul>
@@ -2473,15 +2447,14 @@ the `.groups` argument.</code></pre>
 <p><img data-src="Figs/handling3/TidyingUp.jpg"></p>
 </div>
 </div>
-<!--- --->
 </section>
-<section id="原則1-1列1変数" class="slide level2">
-<h2>原則1: 1列1変数</h2>
+<section id="原則11列1変数" class="slide level2">
+<h2>原則1：1列1変数</h2>
 <ul>
 <li>1列には1つの変数のみ
 <ul>
 <li>3人の被験者に対し、薬を飲む前後の数学成績を測定した場合</li>
-<li>薬を飲む前: Control / 薬を飲んだ後: Treatment</li>
+<li>薬を飲む前：Control / 薬を飲んだ後：Treatment</li>
 </ul></li>
 </ul>
 <div class="quarto-figure quarto-figure-center">
@@ -2489,15 +2462,14 @@ the `.groups` argument.</code></pre>
 <p><img data-src="Figs/handling3/TidyData1.png"></p>
 </figure>
 </div>
-<!--- --->
 </section>
-<section id="原則2-1行1観察" class="slide level2">
-<h2>原則2: 1行1観察</h2>
+<section id="原則21行1観察" class="slide level2">
+<h2>原則2：1行1観察</h2>
 <ul>
 <li>1観察 <span class="math inline">\(\neq\)</span> 1値
 <ul>
-<li>観察: 観察単位ごとに測定された<strong>値の集合</strong></li>
-<li>観察単位: 人、企業、国、時間など</li>
+<li>観察：観察単位ごとに測定された<strong>値の集合</strong></li>
+<li>観察単位：人、企業、国、時間など</li>
 </ul></li>
 <li>以下の例の場合、観察単位は「人 <span class="math inline">\(\times\)</span> 時間 」</li>
 </ul>
@@ -2506,10 +2478,9 @@ the `.groups` argument.</code></pre>
 <p><img data-src="Figs/handling3/TidyData2.png"></p>
 </figure>
 </div>
-<!--- --->
 </section>
-<section id="原則3-1セル1値" class="slide level2">
-<h2>原則3: 1セル1値</h2>
+<section id="原則31セル1値" class="slide level2">
+<h2>原則3：1セル1値</h2>
 <ul>
 <li>この原則に反するケースは多くない</li>
 <li><strong>例外)</strong> 1セルに<code>2020年8月24日</code>という値がある場合
@@ -2523,12 +2494,11 @@ the `.groups` argument.</code></pre>
 <p><img data-src="Figs/handling3/TidyData3.png"></p>
 </figure>
 </div>
-<!--- --->
 </section>
-<section id="原則4-1表1単位" class="slide level2">
-<h2>原則4: 1表1単位</h2>
+<section id="原則41表1単位" class="slide level2">
+<h2>原則4：1表1単位</h2>
 <ul>
-<li>政府統計: 日本を代表する雑然データ
+<li>政府統計：日本を代表する雑然データ
 <ul>
 <li>データの中身は良いが、構造が…</li>
 <li>表に「国」、「都道府県」、「市区町村」、「行政区」の単位が混在</li>
@@ -2539,9 +2509,8 @@ the `.groups` argument.</code></pre>
 <p><img data-src="Figs/handling3/TidyData4.png" style="width:65.0%"></p>
 </figure>
 </div>
-<!--- --->
 </section>
-<section id="原則4-1表1単位-1" class="slide level2">
+<section id="原則4-1表1単位" class="slide level2">
 <h2>原則4: 1表1単位</h2>
 <ul>
 <li>「1表1単位」原則を満たさない場合、<code>filter()</code>関数等で、異なる単位の行を除外
@@ -2554,7 +2523,6 @@ the `.groups` argument.</code></pre>
 <p><img data-src="Figs/handling3/TidyData5.png"></p>
 </figure>
 </div>
-<!--- --->
 </section>
 <section id="tidyrパッケージ" class="slide level2">
 <h2>{tidyr}パッケージ</h2>
@@ -2565,127 +2533,552 @@ the `.groups` argument.</code></pre>
 </div>
 <p>雑然データから整然データへ変形をサポートするパッケージ</p>
 <ul>
-<li><code>pivot_longer()</code>: Wide型データからLong型データへ
+<li><code>pivot_longer()</code>：Wide型データからLong型データへ
 <ul>
 <li>原則1・2に反するデータを整然データへ変換 (最も頻繁に使われる)</li>
 </ul></li>
-<li><code>pivot_wider()</code>: Long型データからWide型データへ
+<li><code>pivot_wider()</code>：Long型データからWide型データへ
 <ul>
 <li>人間には雑然データの方が読みやすい場合がある（原則1の例）</li>
 </ul></li>
-<li><code>separate()</code>: セルの分割（「年月日」から「年」、「月」、「日」へ）
+<li><code>separate()</code>：セルの分割（「年月日」から「年」、「月」、「日」へ）
 <ul>
 <li>原則3に反するデータを整然データへ変換</li>
 </ul></li>
 <li>原則4に反するデータは分析単位が異なる行を<code>filter()</code>などで除外</li>
 </ul>
-<!--- --->
 </section>
 <section id="実習用データ-1" class="slide level2">
 <h2>実習用データ</h2>
 <p><code>covid_sample.csv</code>: 中国、日本、韓国、モンゴル、台湾の5日間COVID-19新規感染者数</p>
 <ul>
-<li>サポートページからダウンロード</li>
-<li>データ出典:<a href="https://github.com/CSSEGISandData/COVID-19">Johns Hopkins University Center for Systems Science and Engineering</a></li>
+<li>データ出典：<a href="https://github.com/CSSEGISandData/COVID-19">Johns Hopkins University Center for Systems Science and Engineering</a></li>
 </ul>
 <div class="cell" data-layout-align="center">
 <div class="sourceCode cell-code" id="cb157"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb157-1"><a href="#cb157-1"></a>COVID_df <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">"Data/covid_sample.csv"</span>)</span>
 <span id="cb157-2"><a href="#cb157-2"></a>COVID_df</span></code><button title="コピー" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 5 × 7
-  Country  Population `2022/06/09` `2022/06/10` `2022/06/11` `2022/06/12`
-  &lt;chr&gt;         &lt;dbl&gt;        &lt;dbl&gt;        &lt;dbl&gt;        &lt;dbl&gt;        &lt;dbl&gt;
-1 China    1447470092          819          848         1114          990
-2 Japan     126476461        16788        15584        15338        13381
-3 Korea      51269185         9304         8428         7382         3828
-4 Mongolia    3278290            0            0            0            0
-5 Taiwan     23816775        72846        68293        79616        50567
-# ℹ 1 more variable: `2022/06/13` &lt;dbl&gt;</code></pre>
+  Country  Population `2022/06/09` `2022/06/10` `2022/06/11` `2022/06/12` `2022/06/13`
+  &lt;chr&gt;         &lt;dbl&gt;        &lt;dbl&gt;        &lt;dbl&gt;        &lt;dbl&gt;        &lt;dbl&gt;        &lt;dbl&gt;
+1 China    1447470092          819          848         1114          990          957
+2 Japan     126476461        16788        15584        15338        13381         7942
+3 Korea      51269185         9304         8428         7382         3828         9768
+4 Mongolia    3278290            0            0            0            0         1055
+5 Taiwan     23816775        72846        68293        79616        50567        45100</code></pre>
 </div>
 </div>
 </section>
 <section id="このデータの問題点" class="slide level2">
 <h2>このデータの問題点</h2>
 <ul>
-<li>観察単位は? 測定した変数は?
+<li>観察単位は？測定した変数は？
 <ul>
-<li>観察単位: 地域 <span class="math inline">\(\times\)</span> 時間</li>
-<li>変数: 新規感染者数、人口</li>
+<li>観察単位：地域 <span class="math inline">\(\times\)</span> 時間</li>
+<li>変数：地域、日付、新規感染者数、人口
+<ul>
+<li><span class="math inline">\(\Rightarrow\)</span> 実は4列のデータであるべき！</li>
+</ul></li>
 <li>2つの観察時点 + 2つの変数 = 計4つの変数 <span class="math inline">\(\rightarrow\)</span> 整然データ</li>
 </ul></li>
 <li>新規感染者数が5列にわたって格納されている <span class="math inline">\(\rightarrow\)</span> 雑然データ</li>
 </ul>
 <div class="cell" data-layout-align="center">
 <div class="cell-output-display">
-<table style="width:100%;">
-<colgroup>
-<col style="width: 11%">
-<col style="width: 14%">
-<col style="width: 14%">
-<col style="width: 14%">
-<col style="width: 14%">
-<col style="width: 14%">
-<col style="width: 14%">
-</colgroup>
-<thead>
-<tr class="header">
-<th style="text-align: left;">Country</th>
-<th style="text-align: right;">Population</th>
-<th style="text-align: right;">2022/06/09</th>
-<th style="text-align: right;">2022/06/10</th>
-<th style="text-align: right;">2022/06/11</th>
-<th style="text-align: right;">2022/06/12</th>
-<th style="text-align: right;">2022/06/13</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td style="text-align: left;">China</td>
-<td style="text-align: right;">1447470092</td>
-<td style="text-align: right;">819</td>
-<td style="text-align: right;">848</td>
-<td style="text-align: right;">1114</td>
-<td style="text-align: right;">990</td>
-<td style="text-align: right;">957</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">Japan</td>
-<td style="text-align: right;">126476461</td>
-<td style="text-align: right;">16788</td>
-<td style="text-align: right;">15584</td>
-<td style="text-align: right;">15338</td>
-<td style="text-align: right;">13381</td>
-<td style="text-align: right;">7942</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">Korea</td>
-<td style="text-align: right;">51269185</td>
-<td style="text-align: right;">9304</td>
-<td style="text-align: right;">8428</td>
-<td style="text-align: right;">7382</td>
-<td style="text-align: right;">3828</td>
-<td style="text-align: right;">9768</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">Mongolia</td>
-<td style="text-align: right;">3278290</td>
-<td style="text-align: right;">0</td>
-<td style="text-align: right;">0</td>
-<td style="text-align: right;">0</td>
-<td style="text-align: right;">0</td>
-<td style="text-align: right;">1055</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">Taiwan</td>
-<td style="text-align: right;">23816775</td>
-<td style="text-align: right;">72846</td>
-<td style="text-align: right;">68293</td>
-<td style="text-align: right;">79616</td>
-<td style="text-align: right;">50567</td>
-<td style="text-align: right;">45100</td>
-</tr>
-</tbody>
+<div id="nhfablvelb" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#nhfablvelb table {
+  font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+#nhfablvelb thead, #nhfablvelb tbody, #nhfablvelb tfoot, #nhfablvelb tr, #nhfablvelb td, #nhfablvelb th {
+  border-style: none;
+}
+
+#nhfablvelb p {
+  margin: 0;
+  padding: 0;
+}
+
+#nhfablvelb .gt_table {
+  display: table;
+  border-collapse: collapse;
+  line-height: normal;
+  margin-left: auto;
+  margin-right: auto;
+  color: #333333;
+  font-size: 32px;
+  font-weight: normal;
+  font-style: normal;
+  background-color: #FFFFFF;
+  width: auto;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #A8A8A8;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #A8A8A8;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+}
+
+#nhfablvelb .gt_caption {
+  padding-top: 4px;
+  padding-bottom: 4px;
+}
+
+#nhfablvelb .gt_title {
+  color: #333333;
+  font-size: 125%;
+  font-weight: initial;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-color: #FFFFFF;
+  border-bottom-width: 0;
+}
+
+#nhfablvelb .gt_subtitle {
+  color: #333333;
+  font-size: 85%;
+  font-weight: initial;
+  padding-top: 3px;
+  padding-bottom: 5px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-top-color: #FFFFFF;
+  border-top-width: 0;
+}
+
+#nhfablvelb .gt_heading {
+  background-color: #FFFFFF;
+  text-align: center;
+  border-bottom-color: #FFFFFF;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+}
+
+#nhfablvelb .gt_bottom_border {
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#nhfablvelb .gt_col_headings {
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+}
+
+#nhfablvelb .gt_col_heading {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: normal;
+  text-transform: inherit;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: bottom;
+  padding-top: 5px;
+  padding-bottom: 6px;
+  padding-left: 5px;
+  padding-right: 5px;
+  overflow-x: hidden;
+}
+
+#nhfablvelb .gt_column_spanner_outer {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: normal;
+  text-transform: inherit;
+  padding-top: 0;
+  padding-bottom: 0;
+  padding-left: 4px;
+  padding-right: 4px;
+}
+
+#nhfablvelb .gt_column_spanner_outer:first-child {
+  padding-left: 0;
+}
+
+#nhfablvelb .gt_column_spanner_outer:last-child {
+  padding-right: 0;
+}
+
+#nhfablvelb .gt_column_spanner {
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  vertical-align: bottom;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  overflow-x: hidden;
+  display: inline-block;
+  width: 100%;
+}
+
+#nhfablvelb .gt_spanner_row {
+  border-bottom-style: hidden;
+}
+
+#nhfablvelb .gt_group_heading {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: middle;
+  text-align: left;
+}
+
+#nhfablvelb .gt_empty_group_heading {
+  padding: 0.5px;
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  vertical-align: middle;
+}
+
+#nhfablvelb .gt_from_md > :first-child {
+  margin-top: 0;
+}
+
+#nhfablvelb .gt_from_md > :last-child {
+  margin-bottom: 0;
+}
+
+#nhfablvelb .gt_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  margin: 10px;
+  border-top-style: solid;
+  border-top-width: 1px;
+  border-top-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: middle;
+  overflow-x: hidden;
+}
+
+#nhfablvelb .gt_stub {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-right-style: solid;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#nhfablvelb .gt_stub_row_group {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-right-style: solid;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  padding-left: 5px;
+  padding-right: 5px;
+  vertical-align: top;
+}
+
+#nhfablvelb .gt_row_group_first td {
+  border-top-width: 2px;
+}
+
+#nhfablvelb .gt_row_group_first th {
+  border-top-width: 2px;
+}
+
+#nhfablvelb .gt_summary_row {
+  color: #333333;
+  background-color: #FFFFFF;
+  text-transform: inherit;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#nhfablvelb .gt_first_summary_row {
+  border-top-style: solid;
+  border-top-color: #D3D3D3;
+}
+
+#nhfablvelb .gt_first_summary_row.thick {
+  border-top-width: 2px;
+}
+
+#nhfablvelb .gt_last_summary_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#nhfablvelb .gt_grand_summary_row {
+  color: #333333;
+  background-color: #FFFFFF;
+  text-transform: inherit;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#nhfablvelb .gt_first_grand_summary_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-top-style: double;
+  border-top-width: 6px;
+  border-top-color: #D3D3D3;
+}
+
+#nhfablvelb .gt_last_grand_summary_row_top {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-style: double;
+  border-bottom-width: 6px;
+  border-bottom-color: #D3D3D3;
+}
+
+#nhfablvelb .gt_striped {
+  background-color: rgba(128, 128, 128, 0.05);
+}
+
+#nhfablvelb .gt_table_body {
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#nhfablvelb .gt_footnotes {
+  color: #333333;
+  background-color: #FFFFFF;
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+}
+
+#nhfablvelb .gt_footnote {
+  margin: 0px;
+  font-size: 90%;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#nhfablvelb .gt_sourcenotes {
+  color: #333333;
+  background-color: #FFFFFF;
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+}
+
+#nhfablvelb .gt_sourcenote {
+  font-size: 90%;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#nhfablvelb .gt_left {
+  text-align: left;
+}
+
+#nhfablvelb .gt_center {
+  text-align: center;
+}
+
+#nhfablvelb .gt_right {
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+}
+
+#nhfablvelb .gt_font_normal {
+  font-weight: normal;
+}
+
+#nhfablvelb .gt_font_bold {
+  font-weight: bold;
+}
+
+#nhfablvelb .gt_font_italic {
+  font-style: italic;
+}
+
+#nhfablvelb .gt_super {
+  font-size: 65%;
+}
+
+#nhfablvelb .gt_footnote_marks {
+  font-size: 75%;
+  vertical-align: 0.4em;
+  position: initial;
+}
+
+#nhfablvelb .gt_asterisk {
+  font-size: 100%;
+  vertical-align: 0;
+}
+
+#nhfablvelb .gt_indent_1 {
+  text-indent: 5px;
+}
+
+#nhfablvelb .gt_indent_2 {
+  text-indent: 10px;
+}
+
+#nhfablvelb .gt_indent_3 {
+  text-indent: 15px;
+}
+
+#nhfablvelb .gt_indent_4 {
+  text-indent: 20px;
+}
+
+#nhfablvelb .gt_indent_5 {
+  text-indent: 25px;
+}
+</style>
+<table class="gt_table" data-quarto-disable-processing="false" data-quarto-bootstrap="false">
+  <thead>
+    
+    <tr class="gt_col_headings">
+      <th class="gt_col_heading gt_columns_bottom_border gt_left" rowspan="1" colspan="1" scope="col" id="Country">Country</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" scope="col" id="Population">Population</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" scope="col" id="2022/06/09">2022/06/09</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" scope="col" id="2022/06/10">2022/06/10</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" scope="col" id="2022/06/11">2022/06/11</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" scope="col" id="2022/06/12">2022/06/12</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" scope="col" id="2022/06/13">2022/06/13</th>
+    </tr>
+  </thead>
+  <tbody class="gt_table_body">
+    <tr><td headers="Country" class="gt_row gt_left">China</td>
+<td headers="Population" class="gt_row gt_right">1447470092</td>
+<td headers="2022/06/09" class="gt_row gt_right">819</td>
+<td headers="2022/06/10" class="gt_row gt_right">848</td>
+<td headers="2022/06/11" class="gt_row gt_right">1114</td>
+<td headers="2022/06/12" class="gt_row gt_right">990</td>
+<td headers="2022/06/13" class="gt_row gt_right">957</td></tr>
+    <tr><td headers="Country" class="gt_row gt_left">Japan</td>
+<td headers="Population" class="gt_row gt_right">126476461</td>
+<td headers="2022/06/09" class="gt_row gt_right">16788</td>
+<td headers="2022/06/10" class="gt_row gt_right">15584</td>
+<td headers="2022/06/11" class="gt_row gt_right">15338</td>
+<td headers="2022/06/12" class="gt_row gt_right">13381</td>
+<td headers="2022/06/13" class="gt_row gt_right">7942</td></tr>
+    <tr><td headers="Country" class="gt_row gt_left">Korea</td>
+<td headers="Population" class="gt_row gt_right">51269185</td>
+<td headers="2022/06/09" class="gt_row gt_right">9304</td>
+<td headers="2022/06/10" class="gt_row gt_right">8428</td>
+<td headers="2022/06/11" class="gt_row gt_right">7382</td>
+<td headers="2022/06/12" class="gt_row gt_right">3828</td>
+<td headers="2022/06/13" class="gt_row gt_right">9768</td></tr>
+    <tr><td headers="Country" class="gt_row gt_left">Mongolia</td>
+<td headers="Population" class="gt_row gt_right">3278290</td>
+<td headers="2022/06/09" class="gt_row gt_right">0</td>
+<td headers="2022/06/10" class="gt_row gt_right">0</td>
+<td headers="2022/06/11" class="gt_row gt_right">0</td>
+<td headers="2022/06/12" class="gt_row gt_right">0</td>
+<td headers="2022/06/13" class="gt_row gt_right">1055</td></tr>
+    <tr><td headers="Country" class="gt_row gt_left">Taiwan</td>
+<td headers="Population" class="gt_row gt_right">23816775</td>
+<td headers="2022/06/09" class="gt_row gt_right">72846</td>
+<td headers="2022/06/10" class="gt_row gt_right">68293</td>
+<td headers="2022/06/11" class="gt_row gt_right">79616</td>
+<td headers="2022/06/12" class="gt_row gt_right">50567</td>
+<td headers="2022/06/13" class="gt_row gt_right">45100</td></tr>
+  </tbody>
+  
+  
 </table>
+</div>
 </div>
 </div>
 </section>
@@ -2743,7 +3136,7 @@ the `.groups` argument.</code></pre>
 </ul>
 <div class="cell" data-layout-align="center">
 <div class="sourceCode cell-code" id="cb161" data-code-line-numbers="2-4"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb161-1"><a href="#cb161-1"></a>COVID_Long <span class="ot">&lt;-</span> COVID_df <span class="sc">|&gt;</span> </span>
-<span id="cb161-2"><a href="#cb161-2"></a>  <span class="fu">pivot_longer</span>(<span class="at">cols      =</span> <span class="st">"2022/06/09"</span><span class="sc">:</span><span class="st">"2022/06/13"</span>,</span>
+<span id="cb161-2"><a href="#cb161-2"></a>  <span class="fu">pivot_longer</span>(<span class="at">cols      =</span> <span class="st">"2022/06/09"</span><span class="sc">:</span><span class="st">"2022/06/13"</span>, <span class="co"># 列名に記号「/」が含まれているので「"」で囲む</span></span>
 <span id="cb161-3"><a href="#cb161-3"></a>               <span class="at">names_to  =</span> <span class="st">"Date"</span>,</span>
 <span id="cb161-4"><a href="#cb161-4"></a>               <span class="at">values_to =</span> <span class="st">"New_Cases"</span>)</span>
 <span id="cb161-5"><a href="#cb161-5"></a>COVID_Long</span></code><button title="コピー" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -2780,14 +3173,13 @@ the `.groups` argument.</code></pre>
 <span id="cb163-3"><a href="#cb163-3"></a>              <span class="at">values_from =</span> <span class="st">"New_Cases"</span>)</span></code><button title="コピー" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 5 × 7
-  Country  Population `2022/06/09` `2022/06/10` `2022/06/11` `2022/06/12`
-  &lt;chr&gt;         &lt;dbl&gt;        &lt;dbl&gt;        &lt;dbl&gt;        &lt;dbl&gt;        &lt;dbl&gt;
-1 China    1447470092          819          848         1114          990
-2 Japan     126476461        16788        15584        15338        13381
-3 Korea      51269185         9304         8428         7382         3828
-4 Mongolia    3278290            0            0            0            0
-5 Taiwan     23816775        72846        68293        79616        50567
-# ℹ 1 more variable: `2022/06/13` &lt;dbl&gt;</code></pre>
+  Country  Population `2022/06/09` `2022/06/10` `2022/06/11` `2022/06/12` `2022/06/13`
+  &lt;chr&gt;         &lt;dbl&gt;        &lt;dbl&gt;        &lt;dbl&gt;        &lt;dbl&gt;        &lt;dbl&gt;        &lt;dbl&gt;
+1 China    1447470092          819          848         1114          990          957
+2 Japan     126476461        16788        15584        15338        13381         7942
+3 Korea      51269185         9304         8428         7382         3828         9768
+4 Mongolia    3278290            0            0            0            0         1055
+5 Taiwan     23816775        72846        68293        79616        50567        45100</code></pre>
 </div>
 </div>
 </section>
@@ -2863,7 +3255,7 @@ the `.groups` argument.</code></pre>
 <h2>参考）分割の基準となる記号がない場合（続）</h2>
 <p><strong>正規表現（regular expression; 正則表現）</strong>の知識が必要</p>
 <ul>
-<li>テキスト分析に興味があるなら必須（前期・後期含めて、本講義では解説しない）</li>
+<li>テキスト分析に興味があるなら必須（本講義では解説しない）</li>
 </ul>
 <div class="cell" data-layout-align="center">
 <div class="sourceCode cell-code" id="cb169"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb169-1"><a href="#cb169-1"></a>City_Data <span class="sc">|&gt;</span></span>

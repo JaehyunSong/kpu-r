@@ -6,6 +6,12 @@ metadata-files:
   - _slide.yml
 ---
 
+```{r}
+#| include: false
+options(width = 100)
+pacman::p_load(tidyverse, gt)
+```
+
 # Tidyverseの世界とパイプ演算子
 
 ## Tidyverseの世界
@@ -17,7 +23,7 @@ metadata-files:
 * {tidyverse}をインストールすることで導入可能
 * Tidyverseに属するパッケージは思想、文法およびデータ構造を共有
   * {dplyr}、{tidyr}、{readr}、{ggplot2}など
-* オブジェクトを**パイプ演算子** (`|>` or `%>%`)で繋ぐ
+* オブジェクトを**パイプ演算子**（`|>` or `%>%`）で繋ぐ
 
 Rのコードは`library(tidyverse)`で始めよう!
 
@@ -27,8 +33,8 @@ Tidyverseにおいてオブジェクトは`|>`で繋がっている。
 
 * 既存の書き方: **書き方と読み方が逆**
   * 一般的なプログラミング言語共通
-  * 書き方: `print(sum(X))` (`print`、`sum`、`X`の順で書く)
-  * 読み方1: `X`を`sum()`し、`print()`する (コードの順番と逆)
+  * 書き方: `print(sum(X))`（`print`、`sum`、`X`の順で書く）
+  * 読み方1: `X`を`sum()`し、`print()`する（コードの順番と逆）
   * 読み方2: `print()`する内容は`sum()`で、`sum()`は`X`に対して行う（直感的でない読み方）
 * Tidyverseな書き方: **書き方と読み方が一致**
   * 今どきのRの書き方
@@ -154,7 +160,7 @@ X |> sum(na.rm = TRUE) |> print()
 
 #### 渡す先が第一引数でない場合
 
-* 実引数として渡す箇所に`.` (tidyverse)、`_` (native pipe)を入力
+* 実引数として渡す箇所に`.`（`%>%`）、`_`（`|>`）を入力
 
 ```{r}
 #| eval: false
@@ -188,7 +194,7 @@ library(tidyverse)
 
 ```{r}
 #| message: false
-# Dataフォルダー内のcountries.csvを読み込み、dfという名のオブジェクトとして作業環境に格納
+# Dataフォルダー内のcountries.csv |> を読み込み、dfという名のオブジェクトとして作業環境に格納
 library(tidyverse)
 df <- read_csv("Data/countries.csv")
 df
@@ -284,14 +290,6 @@ df |>                                      # dfから
 df2 <- df |>
   select(Country, Population, HDI_2018)
 ```
-
-::: {.callout-important icon=false}
-## 課題では格納が必要な場合もある
-
-課題の問題には「出力せよ」だけでなく、「格納した上で出力せよ」といった形式もある。加工したデータを引き続き使うためには格納が必須であるため、問題文を注意深く読むこと。
-:::
-
-<!--- --->
 
 ## 列の選択と変数名の変更
 
@@ -568,7 +566,8 @@ arrange(データ, 変数名1, 変数名2, ...)
 
 ```{r}
 #| eval: false
-データ |> arrange(変数名1, 変数名2, ...)
+データ |> 
+  arrange(変数名1, 変数名2, ...)
 ```
 
 基本的には昇順 (値が小さい行が先にくる)
@@ -610,8 +609,6 @@ df |>
 ## 記述統計量
 
 変数が持つ情報を要約した数値
-
-* 詳細は後期の「マクロ政治データ分析実習」で
 
 元の情報: 
 
@@ -750,8 +747,7 @@ df |>
 謎のメッセージが出力される
 
 ```
-## `summarise()` has grouped output by 'Continent'. You can override using 
-the `.groups` argument.
+## `summarise()` has grouped output by 'Continent'. You can override using the `.groups` argument.
 ```
 
 とりあえず、`group_by()`の後に`summarise()`を使う場合、`summarise()`の最後に`.groups = "drop"`を追加する。
@@ -1113,7 +1109,7 @@ my_data |>
 
 `if_else()`でなく、`case_when()`を使うことも可能
 
-* 欠損を意味する値が複数の場合、`case_when()`を使うか、OR演算子（`|` / `%in%`）を用いた`if_else()`を使用する。
+* 欠損を意味する値が複数の場合、`case_when()`を使うか、OR演算子（`|`、または`%in%`）を用いた`if_else()`を使用する。
 
 ```{r}
 my_data |>
@@ -1127,7 +1123,7 @@ my_data |>
 
 {naniar}パッケージの`replace_with_na()`関数を利用
 
-* 引数はリスト型オブジェクトであり、リストの中には`変数名 = 欠損値の値`
+* 引数はリスト型オブジェクトであり、リスト（`list()`）の中には`変数名 = 欠損値の値`
 * 欠損値の値が複数の場合、`変数名 = c(値1, 値2, ...)`
 * 似たような関数として{expss}の`na_if()`関数
 
@@ -1142,7 +1138,7 @@ my_data |>
 
 同じ内容のコードであるため、好きな書き方で問題ないが、まとめた方が効率的
 
-#### 一つの`mutate()`内に2つの処理
+#### 一つの`mutate()`内に2つの処理（推奨）
 
 ```{r}
 #| eval: false
@@ -1151,7 +1147,7 @@ my_data |>
          HighEduc = if_else(HighEduc == 9   ~ NA, TRUE ~ HighEduc))
 ```
 
-#### 一つの`mutate()`内に1つの処理
+#### 一つの`mutate()`内に1つの処理（非推奨）
 
 ```{r}
 #| eval: false
@@ -1159,7 +1155,6 @@ my_data |>
   mutate(Age = if_else(Age == 999 ~ NA, TRUE ~ Age)) |>
   mutate(HighEduc = if_else(HighEduc == 9 ~ NA, TRUE ~ HighEduc))
 ```
-
 
 # {dplyr}: データの結合
 
@@ -1204,8 +1199,6 @@ bind_rows(Data1, Data2)
 
 ::::
 
-<!--- --->
-
 ## データの結合: 行
 
 結合前のデータ識別変数の追加
@@ -1219,8 +1212,6 @@ bind_rows(Data1, Data2)
 bind_rows(list("1組" = Data1, "2組" = Data2),
           .id = "Class")
 ```
-
-<!--- --->
 
 ## データの結合: 列
 
@@ -1267,8 +1258,6 @@ Data2
 ```{r}
 left_join(Data1, Data2, by = "City")
 ```
-
-<!--- --->
 
 ## 列結合に使う関数
 
@@ -1328,8 +1317,6 @@ left_join(Data1, Data2, by = "City")
 ![](Figs/handling3/inner-join.gif)
 :::
 
-<!--- --->
-
 ## `full_join()`の仕組み
 
 `full_join(データ1, データ2, by = "識別用変数名")`
@@ -1343,70 +1330,62 @@ left_join(Data1, Data2, by = "City")
 ![](Figs/handling3/full-join.gif)
 :::
 
-<!--- --->
+## 比較
 
-## 比較 (1)
+`by = "識別用の変数名"`は複数用いることも可能（例: 都道府県名&年度で結合）
 
+* `by = c("識別用の変数名1", "識別用の変数名2")`
+
+:::{.panel-tabset}
+## データ
+::::{.columns}
+:::{.column width=60%}
 ```{r}
 df1 <- tibble(Pref  = c("東京", "大阪", "京都"),
               Score = c(3.5, 4, 4.2))
 df2 <- tibble(Pref  = c("東京", "大阪", "高知"),
               N     = c(3220, 1325, 111))
 ```
+:::
 
-:::: {.columns}
-
-::: {.column width=48%}
+:::{.column width=40%}
 ```{r}
 df1
-```
-:::
-
-::: {.column width=4%}
-:::
-
-::: {.column width=48%}
-```{r}
 df2
 ```
 :::
-
 ::::
 
-<!--- --->
+## `left_join()`
 
-## 比較 (2)
-
-`by = "識別用の変数名"`は複数用いることも可能（例: 都道府県名&年度で結合）
-
-* `by = c("識別用の変数名1", "識別用の変数名2")`
-
-:::: {.columns}
-
-::: {.column width=48%}
 ```{r}
 left_join(df1, df2, by = "Pref")
+```
+
+## `right_join()`
+
+```{r}
 right_join(df1, df2, by = "Pref")
 ```
-:::
 
-::: {.column width=4%}
-:::
+## `inner_join()`
 
-::: {.column width=48%}
 ```{r}
 inner_join(df1, df2, by = "Pref")
+```
+
+## `full_join()`
+
+```{r}
 full_join(df1, df2, by = "Pref")
 ```
 :::
-
-::::
 
 # {tidyr}: 整然データ構造
 
 ## 整然データ構造とは
 
-Tidy data: Hadley Wickhamが提唱した**データ分析に適したデータ構造**
+Tidy data：[Hadley Wickham](https://hadley.nz/)が提唱した**データ分析に適したデータ構造**
 
 :::: {.columns}
 
@@ -1434,30 +1413,24 @@ Tidy data: Hadley Wickhamが提唱した**データ分析に適したデータ�
 
 ::::
 
-<!--- --->
-
-## 原則1: 1列1変数
+## 原則1：1列1変数
 
 * 1列には1つの変数のみ
   * 3人の被験者に対し、薬を飲む前後の数学成績を測定した場合
-  * 薬を飲む前: Control / 薬を飲んだ後: Treatment
+  * 薬を飲む前：Control / 薬を飲んだ後：Treatment
 
 ![](Figs/handling3/TidyData1.png){fig-align="center"}
 
-<!--- --->
-
-## 原則2: 1行1観察
+## 原則2：1行1観察
 
 * 1観察 $\neq$ 1値
-  * 観察: 観察単位ごとに測定された**値の集合**
-  * 観察単位: 人、企業、国、時間など
+  * 観察：観察単位ごとに測定された**値の集合**
+  * 観察単位：人、企業、国、時間など
 * 以下の例の場合、観察単位は「人 $\times$ 時間 」
 
 ![](Figs/handling3/TidyData2.png){fig-align="center"}
 
-<!--- --->
-
-## 原則3: 1セル1値
+## 原則3：1セル1値
 
 * この原則に反するケースは多くない
 * **例外)** 1セルに`2020年8月24日`という値がある場合
@@ -1466,18 +1439,13 @@ Tidy data: Hadley Wickhamが提唱した**データ分析に適したデータ�
 
 ![](Figs/handling3/TidyData3.png){fig-align="center"}
 
-<!--- --->
+## 原則4：1表1単位
 
-## 原則4: 1表1単位
-
-* 政府統計: 日本を代表する雑然データ
+* 政府統計：日本を代表する雑然データ
   * データの中身は良いが、構造が...
   * 表に「国」、「都道府県」、「市区町村」、「行政区」の単位が混在
 
 ![](Figs/handling3/TidyData4.png){width=65% fig-align="center"}
-
-
-<!--- --->
 
 ## 原則4: 1表1単位
 
@@ -1486,30 +1454,25 @@ Tidy data: Hadley Wickhamが提唱した**データ分析に適したデータ�
 
 ![](Figs/handling3/TidyData5.png){fig-align="center"}
 
-<!--- --->
-
 ## {tidyr}パッケージ
 
 ![](Figs/handling3/tidyr.png){fig-align="center"}
 
 雑然データから整然データへ変形をサポートするパッケージ
 
-* `pivot_longer()`: Wide型データからLong型データへ
+* `pivot_longer()`：Wide型データからLong型データへ
    * 原則1・2に反するデータを整然データへ変換 (最も頻繁に使われる)
-* `pivot_wider()`: Long型データからWide型データへ
+* `pivot_wider()`：Long型データからWide型データへ
    * 人間には雑然データの方が読みやすい場合がある（原則1の例）
-* `separate()`: セルの分割（「年月日」から「年」、「月」、「日」へ）
+* `separate()`：セルの分割（「年月日」から「年」、「月」、「日」へ）
    * 原則3に反するデータを整然データへ変換
 * 原則4に反するデータは分析単位が異なる行を`filter()`などで除外
-
-<!--- --->
 
 ## 実習用データ
 
 `covid_sample.csv`: 中国、日本、韓国、モンゴル、台湾の5日間COVID-19新規感染者数
 
-* サポートページからダウンロード
-* データ出典:[Johns Hopkins University Center for Systems Science and Engineering](https://github.com/CSSEGISandData/COVID-19)
+* データ出典：[Johns Hopkins University Center for Systems Science and Engineering](https://github.com/CSSEGISandData/COVID-19)
 
 ```{r}
 COVID_df <- read_csv("Data/covid_sample.csv")
@@ -1518,15 +1481,18 @@ COVID_df
 
 ## このデータの問題点
 
-* 観察単位は? 測定した変数は?
-  * 観察単位: 地域 $\times$ 時間
-  * 変数: 新規感染者数、人口
+* 観察単位は？測定した変数は？
+  * 観察単位：地域 $\times$ 時間
+  * 変数：地域、日付、新規感染者数、人口
+     * $\Rightarrow$ 実は4列のデータであるべき！
   * 2つの観察時点 + 2つの変数 = 計4つの変数 $\rightarrow$ 整然データ
 * 新規感染者数が5列にわたって格納されている $\rightarrow$ 雑然データ
 
 ```{r}
 #| echo: false
-knitr::kable(COVID_df)
+COVID_df |> 
+  gt() |> 
+  tab_options(table.font.size = 32)
 ```
 
 ## Wide型からLong型へ
@@ -1538,7 +1504,7 @@ knitr::kable(COVID_df)
 ```{r}
 #| echo: false
 COVID_df |> 
-  pivot_longer(cols      = `2022/06/09`:`2022/06/13`,
+  pivot_longer(cols      = "2022/06/09":"2022/06/13",
                names_to  = "Date",
                values_to = "New_Cases")
 ```
@@ -1565,7 +1531,7 @@ COVID_df |>
 ```{r}
 #| code-line-numbers: "2-4"
 COVID_Long <- COVID_df |> 
-  pivot_longer(cols      = "2022/06/09":"2022/06/13",
+  pivot_longer(cols      = "2022/06/09":"2022/06/13", # 列名に記号「/」が含まれているので「"」で囲む
                names_to  = "Date",
                values_to = "New_Cases")
 COVID_Long
@@ -1635,7 +1601,7 @@ City_Data
 
 **正規表現（regular expression; 正則表現）**の知識が必要
 
-* テキスト分析に興味があるなら必須（前期・後期含めて、本講義では解説しない）
+* テキスト分析に興味があるなら必須（本講義では解説しない）
 
 ```{r}
 City_Data |>
