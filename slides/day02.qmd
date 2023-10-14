@@ -179,7 +179,6 @@ my_data |>
 ![](https://www.tidyverse.org/blog/2020/06/dplyr-1-0-0/dplyr.png){width=20% fig-align="center"}
 
 * 表形式データ (データフレームやtibble)を操作するパッケージ
-* 第8回の講義で解説した行・列の抽出も簡単に可能
 * {tidyverse}を読み込む際に自動的に読み込まれる
    * {tidyverse}はパッケージを集めたパッケージであり、{dplyr}もその一部
 
@@ -858,7 +857,7 @@ df |>
 
 `mutate()`内に`.after`、または`.before`を指定
 
-* `relocate()`関数と同じ仕組み（第9回）
+* `relocate()`関数と同じ仕組み
 
 **例)** `Population`を`Area`で割り、`Density`という名の新しい列`Area`の後に追加する。
 
