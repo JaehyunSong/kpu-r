@@ -5,3 +5,2121 @@ format: revealjs
 metadata-files: 
   - _slide.yml
 ---
+
+# グラフィックの文法と{ggplot2}
+
+```{r}
+#| include: false
+pacman::p_load(tidyverse, treemapify)
+df <- read_csv("Data/countries.csv")
+```
+
+## グラフを作成する方法
+
+代表的な可視化のパッケージ
+
+* 他にもインタラクティブ・プロットに特化した{plotly}、3次元グラフのための{rgl}、インタラクティブ地図の{leaflet}など多数あり
+
+:::: {.columns}
+
+::: {.column width=32%}
+### Base R
+
+* 別途のパッケージを使わず、R内蔵関数で作図
+* 紙にペンでグラフを書くイメージ
+* 図が気に入らなかったら一からやり直し
+* 作成した図をオブジェクトとして保存することが出来ない
+* 最も自由度が高い
+:::
+
+::: {.column width=2%}
+:::
+
+::: {.column width=32%}
+### {lattice}
+
+* Deepayan Sarkarが開発
+* {ggplot2}が登場する前には主流
+* 関数1つで可視化ができる（ただし、関数が長くなる）
+:::
+
+::: {.column width=2%}
+:::
+
+::: {.column width=32%}
+### {ggplot2}
+
+* Hadley Wickhamが大学院生の時に開発
+* グラフィックの文法 (**g**rammer of **g**raphics)」の思想をR上で具現化
+* グラフの様々な要素をそれぞれ1つの層 (layer)と捉え、積み重ねていく
+:::
+
+::::
+
+## Base Rの例
+
+::: {.panel-tabset}
+### コード
+
+```{r}
+#| eval: false
+library(tidyverse)
+df <- read_csv("Data/countries.csv") # 前回の実習用データ
+
+plot(x = df$PPP_per_capita, y = df$HDI_2018, pch = 19, 
+     col = ifelse(df$OECD == 1, "red", "blue"),
+     xlab = "一人当たり購買力平価GDP (USD)", ylab = "人間開発指数")
+legend("bottomright", pch = 19,
+       legend = c("OECD加盟国", "OECD非加盟国"), 
+       col    = c("red", "blue"))
+```
+
+### 結果
+
+```{r}
+#| echo: false
+#| fig-width: 8
+#| fig-height: 3.5
+plot(x = df$PPP_per_capita, y = df$HDI_2018, pch = 19, 
+     col = ifelse(df$OECD == 1, "red", "blue"),
+     xlab = "一人当たり購買力平価GDP (USD)", ylab = "人間開発指数")
+legend("bottomright", pch = 19,
+       legend = c("OECD加盟国", "OECD非加盟国"), 
+       col    = c("red", "blue"))
+```
+
+:::
+
+## {lattice}の例
+
+::: {.panel-tabset}
+### コード
+
+```{r}
+#| eval: false
+library(lattice)
+xyplot(HDI_2018 ~ PPP_per_capita, data = df,
+       group = OECD, pch = 19, grid = TRUE,
+       auto.key = TRUE,
+       key = list(title     = "OECD加盟有無",
+                  cex.title = 1,
+                  space     = "right",
+                  points    = list(col = c("magenta", "cyan"),
+                                   pch = 19),
+                  text      = list(c("加盟国", "非加盟国"))), 
+       xlab = "一人当たり購買力平価GDP (USD)", ylab = "人間開発指数")
+```
+
+### 結果
+
+```{r}
+#| echo: false
+#| fig-width: 8
+#| fig-height: 3.5
+library(lattice)
+xyplot(HDI_2018 ~ PPP_per_capita, data = df,
+       group = OECD, pch = 19, grid = TRUE,
+       auto.key = TRUE,
+       key = list(title     = "OECD加盟有無",
+                  cex.title = 1,
+                  space     = "right",
+                  points    = list(col = c("magenta", "cyan"),
+                                   pch = 19),
+                  text      = list(c("加盟国", "非加盟国"))), 
+       xlab = "一人当たり購買力平価GDP (USD)", ylab = "人間開発指数")
+```
+:::
+
+## {ggplot2}の例
+
+::: {.panel-tabset}
+### コード
+
+```{r}
+#| eval: false
+df |>
+   mutate(OECD = if_else(OECD == 1, "加盟国", "非加盟国")) |>
+   ggplot() +
+   geom_point(aes(x = PPP_per_capita, y = HDI_2018, color = OECD), 
+              size = 2) +
+   labs(x = "一人あたり購買力平価GDP (USD)", y = "人間開発指数",
+        color = "OECD加盟有無") +
+   theme_bw(base_size = 16)
+```
+
+### 結果
+
+```{r}
+#| echo: false
+#| fig-width: 8
+#| fig-height: 3.5
+#| warning: false
+df |>
+   mutate(OECD = if_else(OECD == 1, "加盟国", "非加盟国")) |>
+   ggplot() +
+   geom_point(aes(x = PPP_per_capita, y = HDI_2018, color = OECD), size = 2) +
+   labs(x = "一人あたり購買力平価GDP (USD)", y = "人間開発指数",
+        color = "OECD加盟有無") +
+   theme_bw(base_size   = 16)
+```
+:::
+
+## グラフィックの文法
+
+Wilkinson, Leland. 2005. *The Grammar of Graphics.* Springer. 
+
+:::: {.columns}
+
+::: {.column width=75%}
+* グラフを**構造化**された方法で記述し、**レイヤー (layer; 層)を積み重ねる**ことによってグラフを構築するフレームワーク
+* グラフの構成要素の例
+   * 横軸と縦軸
+      * 目盛りの間隔、ラベルの大きさ
+   * 点、線、面
+      * 色、太さ、形、透明度など
+   * 凡例
+   * 図のタイトル
+* それぞれの構成要素を一つのレイヤーとして扱い、レイヤーを積み重ねていく
+:::
+
+::: {.column width=2%}
+:::
+
+::: {.column width=23%}
+![](Figs/visual1/The_Grammar_of_Graphics.jpg){fig-align="center"}
+:::
+
+::::
+
+## {ggplot2}とは
+
+Hadley Wickhamが大学院生の時に開発した可視化パッケージ
+
+```{r}
+#| echo: false
+#| out-width: "175px"
+knitr::include_graphics("Figs/visual1/ggplot2_logo.png")
+```
+
+* **g**rammer of **g**raphicsの思想をR上で具現化したパッケージ
+* 図の構成要素それぞれに対応する関数が存在し、一つのレイヤーとして機能
+   * `ggplot()`: キャンバスを用意
+   * `geom_point()`: 点 / `geom_line()`: 線 / `geom_bar()`: 棒
+   * `scale_x_continuous()`: 連続変数の横軸
+   * `scale_y_discrete()`: 離散変数の縦軸など
+* 関数を覚える必要は全くない
+   * {ggplot2}の仕組みだけを覚え、後はググりながらコーディング
+
+## {ggplot2}のイメージ (1)
+
+データの読み込み&ハンドリング
+
+```{r}
+#| mesage: false
+library(tidyverse)
+df <- read_csv("Data/countries.csv")
+
+df <- df |> # OECD変数をリコーディングし、OECD_Jへ
+   mutate(OECD_J = if_else(OECD == 1, "加盟国", "非加盟国")) |>
+   select(Country, PPP_per_capita, HDI_2018, FH_Status, OECD_J, Continent)
+
+df
+```
+
+## {ggplot2}のイメージ (2)
+
+キャンバスの用意
+
+```{r}
+#| fig-width: 8
+#| fig-height: 3
+#| warning: false
+#| code-line-numbers: "2"
+df |> # データdfをggplot()関数に渡し、作図の準備をする
+   ggplot()
+```
+
+## {ggplot2}のイメージ (3)
+
+キャンバス上に点を出力
+
+```{r}
+#| fig-width: 8
+#| fig-height: 3
+#| warning: false
+#| code-line-numbers: "5"
+df |>
+   ggplot() +
+   # 点を出力する。点の横軸上の位置はPPP_per_capita、縦軸上の位置はHDI_2018に対応
+   # OECD_Jの値に応じて色分けする。
+   geom_point(aes(x = PPP_per_capita, y = HDI_2018, color = OECD_J))
+```
+
+## {ggplot2}のイメージ (4)
+
+ラベルの修正
+
+```{r}
+#| fig-width: 8
+#| fig-height: 3
+#| warning: false
+#| code-line-numbers: "4,5"
+df |>
+   ggplot() +
+   geom_point(aes(x = PPP_per_capita, y = HDI_2018, color = OECD_J)) +
+   labs(x = "一人当たり購買力平価基準GDP (米ドル)", y = "人間開発指数 (2018)",  
+        color = "OECD")
+```
+
+## {ggplot2}のイメージ (5)
+
+テーマ変更
+
+```{r}
+#| fig-width: 8
+#| fig-height: 3
+#| warning: false
+#| code-line-numbers: "6"
+df |>
+   ggplot() +
+   geom_point(aes(x = PPP_per_capita, y = HDI_2018, color = OECD_J)) +
+   labs(x = "一人当たり購買力平価基準GDP (米ドル)", y = "人間開発指数 (2018)",
+        color = "OECD") +
+   theme_bw(base_size = 12) # Black and Whiteテーマを使い、文字サイズは12
+```
+
+## {ggplot2}のイメージ (6)
+
+凡例の位置調整
+
+```{r}
+#| fig-width: 8
+#| fig-height: 3
+#| warning: false
+#| code-line-numbers: "7"
+df |>
+   ggplot() +
+   geom_point(aes(x = PPP_per_capita, y = HDI_2018, color = OECD_J)) +
+   labs(x = "一人当たり購買力平価基準GDP (米ドル)", y = "人間開発指数 (2018)",
+        color = "OECD") +
+   theme_bw(base_size = 12) +
+   theme(legend.position = "bottom") # 凡例を図の下段に
+```
+
+## {ggplot2}で図が出来上がるまで
+
+レイヤーを積み重ねるイメージ
+
+* 図の核心部は**幾何オブジェクト**（`geom_*()`）と**マッピング**（`aes()`）
+* 先に書いたコードが下に位置する。
+   * `コード1 + コード2`は`コード2`の内容が上に位置する。
+
+![](Figs/visual1/Layer.png){width=75% fig-align="center"}
+
+# グラフの構成要素
+
+## {ggplot2}の必須要素
+
+以下の要素があればグラフはとりあえず出来上がる
+
+1. **データ**（Data）
+2. **幾何オブジェクト**（Geometry Object）: `geom_*()`関数
+   * 散布図、棒グラフ、折れ線グラフ、...
+3. **マッピング**（Mapping）: `aes()`関数
+   * 散布図の場合、点の位置（横軸と縦軸）
+   * 棒グラフの場合、棒の位置（横軸）と高さ（縦軸）
+   * 折れ線グラフの場合、線の傾きが変化する点の位置（横軸と縦軸）
+4. **座標**系（Coordinate System）: `coord_*()`関数
+   * デカルト座標系（直交座標系）、極座標系など
+   * 座標系の上限の下限など
+   * 座標系は{ggplot2}が自動的に設定してくれるが、カスタマイズ可
+  
+凡例の位置、フォント、点の大きさ、軸ラベルの修正などは任意
+
+## {ggplot2}の必須要素
+
+座標系はデータ/幾何オブジェクトに応じて自動的に作成される（カスタマイズ可）
+
+![](Figs/visual1/Structure.png){width=70% fig-align="center"}
+
+## データとプロット内の要素の対応
+
+プロット内の要素：点、線、面
+
+* 以下の散布図の場合、各点は横軸上の位置（`x`）で投票率、縦軸上の位置（`y`）で現職の得票率を、色（`color`）で現職の所属政党を表している。
+
+![](Figs/visual1/data_plot.png){width=100% fig-align="center"}
+
+## 書き方
+
+* **注意:** レイヤーの積み重ねは`|>`でなく`+`を使用
+   * オブジェクトを**渡す**のではなく、レイヤーを**足す**という意味
+* 可視化は`ggplot()`からスタート
+* 幾何オブジェクトは`geom_`で始まる関数
+* 幾何オブジェクト内には`mapping = `でマッピングが必要。
+   * 第一引数であるため、`mapping = `は省略し、`aes()`からスタートでOK
+* `aes()`の中にはグラフ上に出力される点、線、面などがデータのどの変数に対応するかを記述
+
+```{r}
+#| eval: false
+ggplot(data = データ) +
+   幾何オブジェクト関数(mapping = aes(マッピング))
+```
+
+通常の書き方
+
+```{r}
+#| eval: false
+データ |> 
+   ggplot() +
+   幾何オブジェクト関数(aes(マッピング))
+```
+
+## データ
+
+使用するデータ構造はdata.frame、またはtibble
+
+:::: {.columns}
+
+::: {.column width=30%}
+### データの指定（1）
+
+* `data`引数にdata.frame（tibble）オブジェクト名を指定
+
+```{r}
+#| eval: false
+ggplot(data = データ名)
+```
+:::
+
+::: {.column width=1%}
+:::
+
+::: {.column width=30%}
+### データの指定（2）
+
+* `data`引数は第一引数であるため、省略されることも多い
+
+```{r}
+#| eval: false
+ggplot(データ名)
+```
+:::
+
+::: {.column width=1%}
+:::
+
+::: {.column width=38%}
+### データの指定（3）
+
+* `data`引数は第一引数であるため、パイプ演算子 (`|>`)で渡すことも可能
+* この方法を推奨
+
+```{r}
+#| eval: false
+データ名 |>
+   ggplot()
+```
+
+* `データ名`と`ggplot()`の間に{dplyr}、{tidyr}などの各種関数も使用可能
+
+```{r}
+#| eval: false
+データ名 |>
+   {dplyr}/{tidyr}の関数 |>
+   ggplot()
+```
+:::
+
+::::
+
+## 幾何オブジェクト
+
+```{r}
+#| eval: false
+データ名 |>
+   ggplot() +
+   幾何オブジェクト関数()
+```
+
+指定されたデータを使ってどのような図を作成するか
+
+* 散布図: `geom_point()`
+* 棒グラフ: `geom_bar()`
+* 折れ線グラフ: `geom_line()`
+* ヒストグラム: `geom_histogram()`
+* 箱ひげ図: `geom_boxplot()`
+* その他
+
+{ggplot2}が提供する幾何オブジェクトも数十種類があり、ユーザーが開発・公開した幾何オブジェクトなどもある
+
+* 非巡回有向グラフ作成のための{ggdag}、ネットワークの可視化のための{ggnetwork}など
+
+## マッピング
+
+グラフ上の**点、線、面などの情報をデータと変数に対応**させる
+
+* プロット上に出力されるデータの具体的な在り方を指定する
+* 散布図の例) 各点の横軸と縦軸における位置情報
+* `geom_*()`内の`aes()`関数で指定
+   * グラフに複数の幾何オブジェクトが存在し、マッピング情報が同じなら`ggplot()`内で指定することも可能
+
+**例)** `geom_point(aes(x = PPP_per_capita, y = HDI_2018, color = OECD_J))`
+
+|幾何オブジェクト|マッピング情報|引数|対応する変数|
+|:---|:---|:---|:---|
+|`geom_point()`|点の横軸上の位置|`x`|`PPP_per_capita`|
+|`geom_point()`|点の縦軸上の位置|`y`|`HDI_2018`|
+|`geom_point()`|点の色|`color`|`OECD_J`|
+
+* 点、線、面が持てる情報は他にも色々
+   * 大きさ（`size`）、線の種類（`linetype`）、透明度（`alpha`）、面の色（`fill`）、点の形（`shape`）、線の太さ（`linewidth`）、グループ（`group`）など
+
+## マッピング時の注意
+
+`aes()`の中で指定するか、外で指定するかで挙動が変わる。
+
+* `aes()`の**中**で`color`を指定する場合、**それぞれの点**が指定された変数の値に応じて色分けされる、
+* `aes()`の**外**で`color`を指定する場合、**全ての点**に適用される。
+
+::: {.panel-tabset}
+
+### `aes()`の中（コード）
+
+```{r}
+#| eval: false
+#| code-line-numbers: "3"
+df |>
+   ggplot() +
+   geom_point(aes(x = PPP_per_capita, y = HDI_2018, color = OECD_J)) +
+   labs(x = "一人当たり購買力平価基準GDP (米ドル)", y = "人間開発指数 (2018)")
+```
+
+### `aes()`の中（結果）
+
+```{r}
+#| echo: false
+#| fig-width: 8
+#| fig-height: 3
+#| warning: false
+df |>
+   ggplot() +
+   geom_point(aes(x = PPP_per_capita, y = HDI_2018, color = OECD_J)) +
+   labs(x = "一人当たり購買力平価基準GDP (米ドル)", y = "人間開発指数 (2018)")
+```
+
+### `aes()`の外（コード）
+
+```{r}
+#| eval: false
+#| code-line-numbers: "3"
+df |>
+   ggplot() +
+   geom_point(aes(x = PPP_per_capita, y = HDI_2018), color = "red") +
+   labs(x = "一人当たり購買力平価基準GDP (米ドル)", y = "人間開発指数 (2018)")
+```
+
+### `aes()`の外（結果）
+
+```{r}
+#| echo: false
+#| fig-width: 8
+#| fig-height: 3
+#| warning: false
+df |>
+   ggplot() +
+   geom_point(aes(x = PPP_per_capita, y = HDI_2018), color = "red") +
+   labs(x = "一人当たり購買力平価基準GDP (米ドル)", y = "人間開発指数 (2018)")
+```
+
+:::
+
+## 座標系
+
+* 直交座標系の拡大・縮小: `coord_cartesian()`
+   * 最もよく使う座標系（デフォルト）
+* 横軸と縦軸の交換: `coord_flip()`
+* 横軸と縦軸比の固定: `coord_fixed()`
+* 極座標系（polar coordinates system）へ変換: `coord_polar()`
+   * 円グラフを作成する際に使われるが、**円グラフは邪悪なる存在**のケースが多いため、省略
+
+## 直交座標系拡大の例
+
+横軸を30000〜90000、縦軸を0.7〜1にする
+
+::: {.panel-tabset}
+
+### コード
+
+```{r}
+#| eval: false
+#| code-line-numbers: "6"
+df |>
+   ggplot() +
+   geom_point(aes(x = PPP_per_capita, y = HDI_2018, color = OECD_J), 
+              size = 2) +
+   labs(x = "一人当たり購買力平価基準GDP", y = "人間開発指数", color = "OECD") +
+   coord_cartesian(xlim = c(30000, 90000), ylim = c(0.7, 1)) +
+   theme_bw()
+```
+
+### 結果
+
+```{r}
+#| echo: false
+#| fig-width: 8
+#| fig-height: 3.5
+#| warning: false
+df |>
+   ggplot() +
+   geom_point(aes(x = PPP_per_capita, y = HDI_2018, color = OECD_J), 
+              size = 2) +
+   labs(x = "一人当たり購買力平価基準GDP", y = "人間開発指数", color = "OECD") +
+   coord_cartesian(xlim = c(30000, 90000), ylim = c(0.7, 1)) +
+   theme_bw()
+```
+
+:::
+
+## スケール (Scale)
+
+マッピング要素のカスタマイズ
+
+* 横/縦軸の目盛り変更、色分けの色を指定など
+* `scale_*_*()`関数を使用
+   * `scale_マッピング要素_対応する変数のタイプ()`
+* 詳細は次週以降
+
+## ファセット (Facet) {.scrollable}
+
+グラフを2つ以上の面で分割
+
+* 例) `FH_Stauts`の棒グラフを大陸ごとに出力
+
+```{r}
+# データの用意
+# 参考) 「\n」は図内の改行を意味する。
+df <- df |>
+   mutate(FH_Status = case_when(FH_Status == "F"  ~ "自由",
+                                FH_Status == "PF" ~ "部分的に\n自由",
+                                TRUE              ~ "不自由"),
+          FH_Status = factor(FH_Status,
+                             levels = c("自由", "部分的に\n自由", "不自由"))) |>
+   drop_na(FH_Status)
+
+df
+```
+
+## ファセット分割なし
+
+同じ大陸内の`FH_Stauts`の分布を確認するには不向き
+
+```{r}
+#| fig-width: 8
+#| fig-height: 3
+#| warning: false
+df |>
+   ggplot() +
+   geom_bar(aes(x = FH_Status, fill = Continent),
+            position = position_dodge2(1/2)) +
+   labs(x = "フリーダムハウス評価", y = "国家数", fill = "大陸") +
+   theme_bw()
+```
+
+## ファセット分割あり
+
+```{r}
+#| fig-width: 8
+#| fig-height: 3
+#| warning: false
+#| code-line-numbers: "5"
+df |>
+   ggplot() +
+   geom_bar(aes(x = FH_Status)) +
+   labs(x = "フリーダムハウス評価", y = "国家数") +
+   facet_wrap(~ Continent, ncol = 5) +
+   theme_bw()
+```
+
+# 代表的な5種類のグラフ
+
+```{r}
+#| include: false
+library(tidyverse)
+df <- read_csv("Data/countries.csv")
+```
+
+## 5 Named Graphs（5NG）
+
+* 棒グラフ（bar plot）
+   * `geom_col()`（推奨）または、 `geom_bar()`（中級者向け）
+* ヒストグラム（histogram）
+   * `geom_histogram()`
+* 箱ひげ図（box plot / box-and-whisker plot）
+   * `geom_box()`
+* 散布図（scatter plot）
+   * `geom_point()`
+* 折れ線グラフ（line plot）
+   * `geom_line()`
+
+## グラフ作成の手順
+
+1. 作成したいグラフを決める
+2. 作成したいグラフの完成図を想像する or 描いてみる
+3. グラフ上の要素（点、線、面）が持つ情報を考える
+4. 3の情報が一つの変数（列）と対応するような整然データを作成する
+5. {ggplot2}で作図
+6. 図のカスタマイズ
+7. 図の保存
+
+# 棒グラフ
+
+## 棒グラフの必須要素
+
+棒グラフを作成する際に必要な**最低限**の情報
+
+```{r}
+#| message: false
+#| echo: false
+library(tidyverse)
+df <- read_csv("Data/countries.csv")
+```
+
+:::: {.columns}
+
+::: {.column width=49%}
+* `x`: 棒の横軸上の位置 (大陸)
+* `y`: 棒の高さ (人間開発指数の平均値)
+
+```{r}
+#| echo: false
+#| fig-width: 5
+#| fig-height: 4
+df |>
+   group_by(Continent) |>
+   summarise(HDI = mean(HDI_2018, na.rm = TRUE)) |>
+   ggplot() +
+   geom_col(aes(x = Continent, y = HDI)) +
+   labs(y = "Human Development Index") +
+   theme_bw(base_size   = 14)
+```
+:::
+
+::: {.column width=2%}
+:::
+
+::: {.column width=49%}
+* `y`: 棒の縦軸上の位置 (大陸)
+* `x`: 棒の長さ (人間開発指数の平均値)
+
+```{r}
+#| echo: false
+#| fig-width: 5
+#| fig-height: 4
+df |>
+   group_by(Continent) |>
+   summarise(HDI = mean(HDI_2018, na.rm = TRUE)) |>
+   ggplot() +
+   geom_col(aes(y = Continent, x = HDI)) +
+   labs(x = "Human Development Index") +
+   theme_bw(base_size   = 14)
+```
+:::
+
+::::
+
+## データの用意
+
+前回講義のデータ（`countries.csv`）を使用
+
+* {dplyr}を使用し、大陸（`Continent`）ごとの人間開発指数（`HDI_2018`）の平均値を計算し、`df2`という名で格納
+
+```{r}
+#| message: false
+library(tidyverse)
+df <- read_csv("Data/countries.csv")
+
+df2 <- df |>
+   group_by(Continent) |>
+   summarise(HDI = mean(HDI_2018, na.rm = TRUE))
+
+df2
+```
+
+## とりあえず作図してみよう
+
+* 使用する幾何オブジェクト: `geom_col()`
+* マッピング要素 (幾何オブジェクト内に`aes()`)
+   * 棒の横軸上の位置は大陸 (`Continent`)を意味する
+   * 棒の高さは人間開発指数の平均値 (`HDI`)を意味する
+
+:::: {.columns}
+
+::: {.column width=51%}
+### コード
+
+```{r}
+#| code-line-numbers: "3,4"
+bar_plot1 <- df2 |>
+  ggplot() +
+  geom_col(aes(x = Continent, y = HDI))
+```
+:::
+
+::: {.column width=1%}
+:::
+
+::: {.column width=48%}
+### 結果
+
+```{r}
+#| fig-width: 5
+#| fig-height: 3.5
+bar_plot1
+```
+:::
+
+::::
+
+## 日本語の使用（1）
+
+**Step1:** `df2`の`Continent`列を日本語にリコーディング
+
+```{r}
+df2 <- df2 |>
+   mutate(Continent_J = case_when(Continent == "Asia"    ~ "アジア",
+                                  Continent == "Africa"  ~ "アフリカ",
+                                  Continent == "America" ~ "アメリカ",
+                                  Continent == "Europe"  ~ "ヨーロッパ",
+                                  TRUE                   ~ "オセアニア"))
+
+df2
+```
+
+## 日本語の使用（2）
+
+**Step2:** 図のラベルを修正（`labs()`）
+
+```{r}
+#| fig-width: 8
+#| fig-height: 3.2
+#| code-line-numbers: "4"
+df2 |>
+   ggplot() +
+   geom_col(aes(x = Continent_J, y = HDI)) +
+   labs(x = "大陸", y = "人間開発指数の平均値")
+```
+
+## 棒の並び替え
+
+アルファベット順に並べ替えたい場合
+
+::: {.panel-tabset}
+### コード
+
+* `Continet_J`列をfactor化し、アフリカ、アメリカ、アジア、ヨーロッパ、オセアニア順とする
+
+```{r}
+#| eval: false
+#| fig-width: 8
+#| fig-height: 3.5
+#| code-line-numbers: "2-4"
+df2 |>
+   mutate(Continent_J = factor(Continent_J, 
+                               levels = c("アフリカ", "アメリカ", "アジア", 
+                                          "ヨーロッパ", "オセアニア"))) |> 
+   ggplot() +
+   geom_col(aes(x = Continent_J, y = HDI)) +
+   labs(x = "大陸", y = "人間開発指数の平均値") +
+   theme_bw() # Black and Whiteテーマも使ってみよう
+```
+
+### 結果
+
+```{r}
+#| echo: false
+#| fig-width: 8
+#| fig-height: 3.5
+#| code-line-numbers: "2-4"
+df2 |>
+   mutate(Continent_J = factor(Continent_J, 
+                               levels = c("アフリカ", "アメリカ", "アジア", 
+                                          "ヨーロッパ", "オセアニア"))) |> 
+   ggplot() +
+   geom_col(aes(x = Continent_J, y = HDI)) +
+   labs(x = "大陸", y = "人間開発指数の平均値") +
+   theme_bw() # Black and Whiteテーマも使ってみよう
+```
+:::
+
+## 便利な関数: `fct_inorder()`
+
+{forcats}の`fct_inorder()`関数（{forcats}は{tidyverse}の一部）
+
+* factor化を行い、各要素順番を**表で登場した順番**とする
+
+:::: {.columns}
+
+::: {.column width=32%}
+```{r}
+# df2の中身
+df2
+```
+:::
+
+::: {.column width=1%}
+:::
+
+::: {.column width=67%}
+```{r}
+#| fig-width: 8
+#| fig-height: 3.5
+#| code-line-numbers: "2"
+df2 |>
+   mutate(Continent_J = fct_inorder(Continent_J)) |>
+   ggplot() +
+   geom_col(aes(x = Continent_J, y = HDI)) +
+   labs(x = "大陸", y = "人間開発指数の平均値")
+```
+:::
+
+::::
+
+# 次元の追加
+
+## ケース数の棒グラフ
+
+各政治体制に属する国家数を計算
+
+```{r}
+df3 <- df |>
+   drop_na(Polity_Type) |>
+   mutate(Polity_Type = factor(Polity_Type,
+                               levels = c("Autocracy", "Closed Anocracy",
+                                          "Open Anocracy", "Democracy",
+                                          "Full Democracy"))) |>
+   group_by(Polity_Type) |>
+   summarise(N = n())
+
+df3
+```
+
+## 作図
+
+```{r}
+#| fig-width: 8
+#| fig-height: 3.5
+df3 |>
+   ggplot() +
+   geom_col(aes(x = Polity_Type, y = N))
+```
+
+## 棒が持つ情報
+
+* 政治体制のタイプ (`x = Polity_Type`)
+* 国家数 (`y = N`)
+
+**例)** さらに大陸の情報を持たせ、色分けしたい
+
+* 大陸の列が必要
+
+```{r}
+df4 <- df |>
+   drop_na(Polity_Type) |>
+   mutate(Polity_Type = factor(Polity_Type,
+                               levels = c("Autocracy", "Closed Anocracy",
+                                          "Open Anocracy", "Democracy",
+                                          "Full Democracy"))) |>
+   group_by(Polity_Type, Continent) |>
+   summarise(N       = n(),
+             .groups = "drop")
+```
+
+## データ
+
+```{r}
+df4
+```
+
+## 次元の追加
+
+`aes()`内に`fill = Continent`を追加
+
+```{r}
+#| fig-width: 8
+#| fig-height: 3
+#| code-line-numbers: "3"
+df4 |>
+  ggplot() +
+  geom_col(aes(x = Polity_Type, y = N, fill = Continent))
+```
+
+## 棒の位置をずらす
+
+`geom_col()`内に`position = "dodge"`を指定（`aes()`の外）
+
+```{r}
+#| fig-width: 8
+#| fig-height: 3
+#| code-line-numbers: "4"
+df4 |>
+  ggplot() +
+  geom_col(aes(x = Polity_Type, y = N, fill = Continent), 
+           position = "dodge")
+```
+
+## 凡例の位置調整
+
+`theme()`内に`legend.position = "bottom"`を指定
+
+* デフォルトは`"right"`（`"top"`は上段; `"none"`は削除）
+
+::: {.panel-tabset}
+### コード
+
+```{r}
+#| eval: false
+#| fig-width: 8
+#| fig-height: 3
+#| code-line-numbers: "5"
+df4 |>
+  ggplot() +
+  geom_col(aes(x = Polity_Type, y = N, fill = Continent),
+           position = "dodge") +
+  theme(legend.position = "bottom")
+```
+
+### 結果
+
+```{r}
+#| echo: false
+#| fig-width: 8
+#| fig-height: 3
+#| code-line-numbers: "5"
+df4 |>
+  ggplot() +
+  geom_col(aes(x = Polity_Type, y = N, fill = Continent),
+           position = "dodge") +
+  theme(legend.position = "bottom")
+```
+:::
+
+## もう一つの方法: マッピングの交換
+
+* 前ページの場合、「ある政治体制内の大陸の分布」を知ることに特化
+* 「ある大陸内の政治体制の分布」を見るには? $\rightarrow$ `x`と`fill`を交換
+
+::: {.panel-tabset}
+### コード
+
+```{r}
+#| eval: false
+#| fig-width: 8
+#| fig-height: 3
+#| code-line-numbers: "3"
+df4 |>
+  ggplot() +
+  geom_col(aes(x = Continent, y = N, fill = Polity_Type),
+           position = "dodge") +
+  labs(x = "Continent", y = "Number of Countries", fill = "Polity Type")
+```
+
+### 結果
+
+```{r}
+#| echo: false
+#| fig-width: 8
+#| fig-height: 3
+#| code-line-numbers: "3"
+df4 |>
+  ggplot() +
+  geom_col(aes(x = Continent, y = N, fill = Polity_Type),
+           position = "dodge") +
+  labs(x = "Continent", y = "Number of Countries", fill = "Polity Type")
+```
+:::
+
+## もう一つの方法: ファセット分割
+
+* 色分けを出来る限り抑えたい
+* `facet_wrap(~ 分割の基準となる変数名)`
+
+::: {.panel-tabset}
+### コード
+
+```{r}
+#| code-line-numbers: "4"
+bar_plot2 <- df4 |>
+  ggplot() +
+  geom_col(aes(x = Polity_Type, y = N)) +
+  facet_wrap(~ Continent, ncol = 5) # ncol/nrowで列/行数の指定が可能
+```
+
+### 結果
+
+```{r}
+#| fig-width: 7
+#| fig-height: 2.5
+bar_plot2
+```
+:::
+
+## 値ラベルの回転
+
+値ラベルが長すぎる場合、ラベルを回転することで重複を避ける
+
+* 覚える必要はなく、必要に応じてググる（`theme()`レイヤーはかなり複雑）
+
+::: {.panel-tabset}
+#### コード
+
+```{r}
+#| code-line-numbers: "4"
+# 以下のように図オブジェクトに直接「+」でレイヤーを追加することもできる。
+bar_plot3 <- bar_plot2 +
+   theme_minimal() + # テーマを変えてみよう
+   theme(axis.text.x = element_text(angle = 35, vjust = 1, hjust = 1)) # 35度回転
+```
+
+#### 結果
+
+```{r}
+#| fig-width: 7
+#| fig-height: 2.5
+bar_plot3
+```
+:::
+
+<!--- --->
+
+## マッピング交換でも解決可能
+
+`x`と`y`を交換しても良い
+
+::: {.panel-tabset}
+#### コード
+
+```{r}
+#| code-line-numbers: "3"
+bar_plot4 <- df4 |>
+  ggplot() +
+  geom_col(aes(x = N, y = Polity_Type)) +
+  labs(x = "Number of Countries", y = "Poltiy Type") +
+  facet_wrap(~ Continent, ncol = 5) + # 5列のファセット分割
+  theme_minimal(base_size = 12)       # フォントサイズの調整も可能
+```
+
+#### 結果
+
+```{r}
+#| fig-width: 8
+#| fig-height: 3.25
+bar_plot4
+```
+:::
+
+# ヒストグラム
+
+## ヒストグラムの棒が持つ情報
+
+棒の横軸上の位置と高さ
+
+* {ggplot2}の場合、ヒストグラムを出力する変数を`x`にマッピングするだけで、自動的にヒストグラムを生成
+
+```{r}
+#| echo: false
+#| fig-width: 8
+#| fig-height: 3.5
+#| warning: false
+#| message: false
+df |>
+   ggplot() +
+   geom_histogram(aes(x = HDI_2018), binwidth = 0.05) +
+   labs(x = "人間開発指数 (2018年)", y = "国家数") +
+   theme_gray(base_size   = 12)
+```
+
+<!--- --->
+
+## ヒストグラムの作成
+
+`geom_histogram()`を使用: マッピングは`x`のみ
+
+```{r}
+#| fig-width: 8
+#| fig-height: 3.5
+#| warning: false
+#| message: false
+df |>
+  ggplot() +
+  geom_histogram(aes(x = HDI_2018)) # HDI_2018のヒストグラム
+```
+
+<!--- --->
+
+## 棒の数を調整する
+
+`geom_histogram()`内、`aes()`の外に`bins`引数を指定
+
+```{r}
+#| fig-width: 8
+#| fig-height: 3.5
+#| warning: false
+#| message: false
+df |>
+  ggplot() +
+  geom_histogram(aes(x = HDI_2018), bins = 10) # 棒を10本にする
+```
+
+<!--- --->
+
+## 棒の幅を調整する
+
+`geom_histogram()`内、`aes()`の外に`binwidth`引数を指定
+
+```{r}
+#| fig-width: 8
+#| fig-height: 3.5
+#| warning: false
+#| message: false
+df |>
+  ggplot() +
+  geom_histogram(aes(x = HDI_2018), binwidth = 0.05) # 棒の幅を0.05にする
+```
+
+<!--- --->
+
+## 棒の枠線を入れる
+
+`geom_histogram()`内、`aes()`の外に`color`引数を指定
+
+```{r}
+#| fig-width: 8
+#| fig-height: 3
+#| warning: false
+#| message: false
+hist_plot1 <- df |>
+  ggplot() +
+  geom_histogram(aes(x = HDI_2018), binwidth = 0.05, color = "white") +
+  labs(x = "Human Development Index (2018)", y = "Number of Countries")
+hist_plot1
+```
+
+<!--- --->
+
+## 横軸のスケール調整
+
+`scale_x_continuous()`を使用 (`x`を`y`に変えると縦軸修正)
+
+* `breaks`引数: 目盛りの位置 / `labels`引数: 目盛りのラベル
+
+::: {.panel-tabset}
+### コード
+
+```{r}
+#| warning: false
+#| message: false
+#| code-line-numbers: "2,3"
+hist_plot2 <- hist_plot1 +
+   scale_x_continuous(breaks = seq(0.4, 1.0, by = 0.1),
+                      labels = seq(0.4, 1.0, by = 0.1))
+```
+
+### 結果
+
+```{r}
+#| fig-width: 8
+#| fig-height: 3
+#| warning: false
+#| message: false
+hist_plot2
+```
+:::
+
+<!--- --->
+
+## 次元の追加（ファセット分割）
+
+大陸ごとの`HDI_2018`のヒストグラム: ファセット分割を使用
+
+```{r}
+#| fig-width: 8
+#| fig-height: 3.4
+#| warning: false
+#| message: false
+#| code-line-numbers: "2"
+hist_plot1 +
+   facet_wrap(~Continent, ncol = 6)
+```
+
+<!--- --->
+
+## 次元の追加 (色分け)
+
+`position = "identity"`と`alpha = 0.5`で可能であるが、非推奨
+
+* `alpha = 1`の場合、棒が不透明であるため、0.5程度に調整
+
+::: {.panel-tabset}
+### コード
+
+```{r}
+#| eval: false
+#| code-line-numbers: "4,5"
+df |>
+   mutate(OECD = if_else(OECD == 1, "OECD Members", "Others")) |>
+   ggplot() +
+   geom_histogram(aes(x = HDI_2018, fill = OECD), position = "identity",
+                  binwidth = 0.05, color = "white", alpha = 0.5)
+```
+
+### 結果
+
+```{r}
+#| echo: false
+#| fig-width: 8
+#| fig-height: 3
+#| warning: false
+#| message: false
+df |>
+   mutate(OECD = if_else(OECD == 1, "OECD Members", "Others")) |>
+   ggplot() +
+   geom_histogram(aes(x = HDI_2018, fill = OECD), position = "identity",
+                  binwidth = 0.05, color = "white", alpha = 0.5)
+```
+:::
+
+# 文字化け & 図の保存
+
+## 図の保存
+
+`bar_plot3`を保存する例
+
+* `ggsave()`関数を利用
+* 作業フォルダー内の`Figs`フォルダに`Figure1.png`という名で保存
+   * 予め`Figs`フォルダーを作成しておくこと
+* 図のサイズは幅6インチ、高さ3インチ
+* 保存形式はPNG形式 & 解像度は400
+   * 画面表示のみなら最低150、印刷目的なら最低300
+* {ragg}パッケージをインストールしておく（文字化け防止）
+
+```{r}
+#| eval: false
+ggsave(filename = "Figs/Figure1.png", # 保存先とファイル名
+       plot     = bar_plot3,          # 保存する図のオブジェクト名
+       width    = 6,                  # 図の幅 (インチ)
+       height   = 3,                  # 図の高さ (インチ)
+       dpi      = 400,                # 解像度
+       device   = ragg::agg_png)      # 文字化け防止
+```
+
+## 文字化けが生じる場合
+
+JDCat分析ツールを使用する場合、文字化けは生じない
+
+* `theme_*()`レイヤーを追加し、`base_family = "日本語フォント"`を指定
+* `theme_gray()`: {ggplot2}の基本テーマ
+   * 他にも`theme_bw()`、`theme_minimal()`など
+* macOSの場合、`"HiraginoSans-W3"`、Windowsの場合、`"Yu Gothic"`を指定
+
+```{r}
+#| eval: false
+#| code-line-numbers: "5"
+df2 |>
+   ggplot() +
+   geom_col(aes(x = Continent_J, y = HDI)) +
+   labs(x = "大陸", y = "人間開発指数の平均値") +
+   theme_gray(base_family = "HiraginoSans-W3")
+```
+
+# 散布図
+
+## 散布図の必須要素
+
+散布図を作成する際に必要な**最低限**の情報
+
+:::: {.columns}
+
+::: {.column width=49%}
+データにフリーダムハウス・スコアと人間開発指数の**列**が必要
+
+* `x`: 点の横軸上の位置
+   * フリーダムハウス・スコア
+* `y`: 点の縦軸上の位置
+   * 人間開発指数
+* 原因と結果の関係（因果関係）が考えられる2変数の場合、**原因を横軸**、**結果を縦軸**にする。
+:::
+
+::: {.column width=2%}
+:::
+
+::: {.column width=49%}
+```{r}
+#| echo: false
+#| fig-width: 5
+#| fig-height: 5
+#| warning: false
+df |>
+   ggplot() +
+   geom_point(aes(x = FH_Total, y = HDI_2018)) +
+   labs(x = "フリーダムハウス・スコア", y = "人間開発指数 (2018)") +
+   theme_gray(base_size   = 14)
+```
+:::
+
+::::
+
+## 散布図の作成 (1)
+
+幾何オブジェクトは`geom_point()`を使用
+
+```{r}
+#| fig-width: 8
+#| fig-height: 3
+#| warning: false
+df |>
+   ggplot() +
+   geom_point(aes(x = FH_Total, y = HDI_2018))
+```
+
+## 散布図の作成 (2)
+
+ラベル修正 / 必要に応じてカスタマイズ
+
+```{r}
+#| fig-width: 8
+#| fig-height: 3
+#| warning: false
+df |>
+   ggplot() +
+   geom_point(aes(x = FH_Total, y = HDI_2018), color = "royalblue") +
+   labs(x = "フリーダムハウス・スコア", y = "人間開発指数 (2018)")
+```
+
+## 次元の追加
+
+散布図における次元の追加
+
+* それぞれの点は各国の (1) フリーダムハウス・スコアと (2) 人間開発指数の情報を持つ
+   * = 2次元
+* 更に情報を持たせるためには...
+   * 色分け: `color`
+   * 大きさ: `size`
+   * 形: `shape`
+   * 透明度(非推奨): `alpha` 
+   * ファセット分割
+* 5次元以上のグラフも可能だが、3次元までを推奨
+   * 一つのグラフの情報が多すぎると読みにくくなる
+   * 4次元以上になりそうならファセット分割で対応
+   * 3次元の場合、色分け（`color`）を推奨するが、白黒の図を作成する場合は形（`shape`）を使う。
+
+## 5次元の散布図
+
+各点はフリーダムハウス・スコア、人間開発指数、人口（対数変換）、大陸、OECD加盟有無の情報を持つ
+
+::: {.panel-tabset}
+### コード
+
+```{r}
+#| eval: false
+df |>
+   mutate(OECD = if_else(OECD == 1, "Member", "Non-member")) |>
+   ggplot() +
+   geom_point(aes(x = FH_Total, y = HDI_2018, color = Continent,
+                  size = Population, shape = OECD), alpha = 0.65) +
+   scale_size_continuous(trans = "log10") +
+   labs(x = "Freedom House Score", y = "Human Development Index (2018)",
+        size = "Population (log)") +
+   theme_gray()
+```
+
+### 結果
+
+```{r}
+#| echo: false
+#| fig-width: 10
+#| fig-height: 4
+#| warning: false
+df |>
+   mutate(OECD = if_else(OECD == 1, "Member", "Non-member")) |>
+   ggplot() +
+   geom_point(aes(x = FH_Total, y = HDI_2018, color = Continent,
+                  size = Population, shape = OECD), alpha = 0.65) +
+   scale_size_continuous(trans = "log10") +
+   labs(x = "Freedom House Score", y = "Human Development Index (2018)",
+        size = "Population (log)") +
+   theme_gray(base_family = "HiraKakuProN-W3")
+```
+:::
+
+## 色分けの例
+
+`aes()`の内部に`color = 色分けする変数`を指定
+
+::: {.panel-tabset}
+### コード
+
+* `HighIncome`変数を作成し、`PPP_per_capita`が2万以上なら`"高"`、未満なら`"低"`
+* `HighIncome`値に応じて点の色分けを行う（`color = HighIncome`）
+* 点の大きさは2とする（全体に適用させるため、`aes()`の外側に指定）
+* `labs()`内で凡例タイトルを修正; 凡例を下側へ移動
+
+```{r}
+scatter_plot1 <- df |>
+   drop_na(FH_Total, HDI_2018, PPP_per_capita) |>
+   mutate(HighIncome = if_else(PPP_per_capita >= 20000, "高", "低")) |>
+   ggplot() +
+   geom_point(aes(x = FH_Total, y = HDI_2018, color = HighIncome), 
+              size = 2) +
+   labs(x = "フリーダムハウス・スコア", y = "人間開発指数 (2018)",
+        color = "一人当たりPPP GDP") +
+   theme(legend.position = "bottom")
+```
+
+### 結果
+
+```{r}
+#| fig-width: 8
+#| fig-height: 3.5
+#| warning: false
+scatter_plot1
+```
+:::
+
+## 色のカスタマイズ
+
+`color`にマッピングされている変数（`HighIncome`）が離散変数
+
+* `scale_color_manual()`を使用（引数は`values = c("値1" = "色1", "値2" = "色2", ...)`）
+
+```{r}
+#| fig-width: 8
+#| fig-height: 3.5
+#| warning: false
+scatter_plot1 +
+   scale_color_manual(values = c("低" = "orange", "高" = "royalblue"))
+```
+
+## {ggplot2}で使える色
+
+* 文字列で指定
+   * `"red"`、`"blue"`、`"royalblue"`など（全657種類）
+   * Googleなどで「ggplot2 color」で検索（[例](http://sape.inf.usi.ch/quick-reference/ggplot2/colour)）
+* RGBカラー（HEXコード）で指定
+   * 細かく調整可能（16,777,216種類の色）
+   * 例) `"#FF0000"`: 赤、`"#4169E1"`: ロイヤルブルー
+
+## 色の見本 (一部)
+
+```{r}
+#| echo: false
+#| fig-width: 12
+#| fig-height: 6.2
+data.frame(c=colors()) |>
+   mutate(Num = grepl(x = c, pattern = "[0-9]$")) |>
+   filter(Num == FALSE) |>
+   mutate(y = seq(0, length(c) - 1) %% 18,
+          x = seq(0, length(c) - 1) %/% 18) |>
+   ggplot() +
+   scale_x_continuous(name="", breaks=NULL, expand=c(0, 0)) +
+   scale_y_continuous(name="", breaks=NULL, expand=c(0, 0)) +
+   scale_fill_identity() +
+   geom_rect(aes(xmin=x, xmax=x+1, ymin=y, ymax=y+1), fill="white") +
+   geom_rect(aes(xmin=x+0.05, xmax=x+0.95, ymin=y+0.5, ymax=y+1, fill=c)) +
+   geom_text(aes(x=x+0.5, y=y+0.5, label=c), colour="black", hjust=0.5, vjust=1, size=4)
+```
+
+## `shape`の見本
+
+`shape`で指定（デフォルトは`shape = 19`）
+
+* 黒の部分は`color`、グレーの部分は`fill`（または`bg`）で調整
+   * 21と22の場合、枠線は`color`、内側の色塗りは`fill`
+* 0〜14の場合、中身が透明
+
+```{r}
+#| echo: false
+#| fig-width: 8
+#| fig-height: 2.8
+tibble(x = rep(1:5, 5),
+       y = rep(1:5, each = 5)) |>
+   filter(!(y == 1 & x >= 4)) |>
+   arrange(desc(y), x) |>
+   mutate(pch = as.character(0:22)) |>
+   ggplot(aes(x = x, y = y)) +
+   geom_point(aes(shape = pch), 
+              color = "black", bg = "gray", size = 3) +
+   geom_text(aes(y = y + 0.25, label = pch), size = 5) +
+   scale_shape_manual(values = c("1"  =  1,  "2" =  2, "3"  =  3, "4"  =  4,
+                                 "5"  =  5,  "6" =  6, "7"  =  7, "8"  =  8,
+                                 "9"  =  5, "10" = 10, "11" = 11, "12" = 12,
+                                 "13" = 13, "14" = 14, "15" = 15, "16" = 16,
+                                 "17" = 17, "18" = 18, "19" = 19, "20" = 20,
+                                 "21" = 21, "22" = 22, "0"  = 0)) +
+   theme_minimal() +
+   theme(panel.grid.minor = element_blank(),
+         axis.line = element_blank(),
+         axis.title = element_blank(),
+         axis.text = element_blank(),
+         legend.position = "none")
+```
+
+# 箱ひげ図
+
+## 箱ひげ図とは
+
+:::: {.columns}
+
+::: {.column width=49%}
+変数の分布を示す方法の一つ
+
+* 最小値、最大値
+   * ひげの両端
+* 第一四分位数、第三四分位数
+   * 箱の上限と下限
+* 中央値（第二四分位数）
+   * 箱内の線
+* 外れ値がある場合、点
+
+変数の分布を**グループごと**に見る時に有効
+:::
+
+::: {.column width=2%}
+:::
+
+::: {.column width=49%}
+```{r}
+#| echo: false
+#| fig-width: 4
+#| fig-height: 4
+#| warning: false
+df |>
+   ggplot() +
+   geom_boxplot(aes(x = 1, y = HDI_2018), width = 0.5) +
+   annotate("text", x = 1.3, y = 0.7325, label = "中央値", hjust = 0) +
+   annotate("text", x = 1.3, y = 0.5870, label = "第一四分位数", hjust = 0) +
+   annotate("text", x = 1.3, y = 0.8347, label = "第三四分位数", hjust = 0) +
+   annotate("text", x = 1.05, y = 0.3770, label = "最小値", hjust = 0) +
+   annotate("text", x = 1.05, y = 0.9540, label = "最大値", hjust = 0) +
+   labs(x = "", y = "人間開発指数 (2018)") +
+   coord_cartesian(xlim = c(0.75, 1.5)) +
+   theme_minimal() +
+   theme(axis.text.x = element_blank())
+```
+:::
+
+::::
+
+## 箱ひげ図の作成
+
+人間開発指数 (`HDI_2018`) の箱ひげ図
+
+* `x`、または`y`に分布を確認した変数をマッピングする
+   * `x`にマッピングするか、`y`にするかによって箱の向きが変わる
+
+:::: {.columns}
+
+::: {.column width=52%}
+```{r}
+#| eval: false
+df |>
+   ggplot() +
+   geom_boxplot(aes(y = HDI_2018)) +
+   labs(x = "", y = "人間開発指数 (2018)") +
+   theme_bw()
+```
+:::
+
+::: {.column width=1%}
+:::
+
+::: {.column width=47%}
+```{r}
+#| echo: false
+#| fig-width: 5
+#| fig-height: 4.2
+df |>
+   ggplot() +
+   geom_boxplot(aes(y = HDI_2018)) +
+   labs(x = "", y = "人間開発指数 (2018)") +
+   theme_bw()
+```
+:::
+
+::::
+
+## 次元の追加
+
+`y`にしかマッピングされているため、まだ次元追加の余地が残っている
+
+* `x`にマッピング（大陸ごとの`HDI_2018`の箱ひげ図）
+* 更に次元を追加したい場合は、ファセット分割
+
+::: {.panel-tabset}
+### コード
+
+```{r}
+#| eval: false
+df |>
+   ggplot() +
+   geom_boxplot(aes(y = HDI_2018, x = Continent)) +
+   labs(x = "大陸", y = "人間開発指数 (2018)") +
+   theme_bw()
+```
+
+### 結果
+
+```{r}
+#| echo: false
+#| fig-width: 8
+#| fig-height: 3
+df |>
+   ggplot() +
+   geom_boxplot(aes(y = HDI_2018, x = Continent)) +
+   labs(x = "大陸", y = "人間開発指数 (2018)") +
+   theme_bw()
+```
+:::
+
+## カスタマイズ（色）
+
+箱の色を変える
+
+* すべての色を変える場合、`aes()`の**外側**に`fill`
+* 箱ごとにの色を変える場合、`aes()`の内側に`fill`
+
+::: {.panel-tabset}
+### コード (1)
+
+```{r}
+#| eval: false
+df |>
+   ggplot() +
+   geom_boxplot(aes(y = HDI_2018, x = Continent), fill = "cornsilk") +
+   labs(x = "大陸", y = "人間開発指数 (2018)") +
+   theme_bw()
+```
+
+### 結果 (1)
+
+```{r}
+#| echo: false
+#| fig-width: 8
+#| fig-height: 3
+df |>
+   ggplot() +
+   geom_boxplot(aes(y = HDI_2018, x = Continent), fill = "cornsilk") +
+   labs(x = "大陸", y = "人間開発指数 (2018)") +
+   theme_bw()
+```
+
+### コード (2)
+
+```{r}
+#| eval: false
+df |>
+   ggplot() +
+   geom_boxplot(aes(y = HDI_2018, x = Continent, fill = Continent)) +
+   labs(x = "大陸", y = "人間開発指数 (2018)") +
+   theme_bw() +
+   theme(legend.position = "none") # 凡例の削除
+```
+
+### 結果 (2)
+
+```{r}
+#| echo: false
+#| fig-width: 8
+#| fig-height: 3
+df |>
+   ggplot() +
+   geom_boxplot(aes(y = HDI_2018, x = Continent, fill = Continent)) +
+   labs(x = "大陸", y = "人間開発指数 (2018)") +
+   theme_bw() +
+   theme(legend.position = "none")
+```
+:::
+
+## カスタマイズ（箱の幅）
+
+* `aes()`の**外側**に`width`を指定
+
+::: {.panel-tabset}
+### コード
+
+```{r}
+#| eval: false
+df |>
+   ggplot() +
+   geom_boxplot(aes(y = HDI_2018, x = Continent), width = 0.5) +
+   labs(x = "大陸", y = "人間開発指数 (2018)") +
+   theme_bw() +
+   theme(legend.position = "none")
+```
+
+### 結果
+
+```{r}
+#| echo: false
+#| fig-width: 8
+#| fig-height: 3.25
+df |>
+   ggplot() +
+   geom_boxplot(aes(y = HDI_2018, x = Continent), width = 0.5) +
+   labs(x = "大陸", y = "人間開発指数 (2018)") +
+   theme_bw() +
+   theme(legend.position = "none")
+```
+
+:::
+
+## 横軸と縦軸の交換
+
+箱が多すぎて読みにくい場合、`x`と`y`を交換も良い
+
+::: {.panel-tabset}
+### コード
+
+```{r}
+#| eval: false
+df |>
+   ggplot() +
+   geom_boxplot(aes(x = HDI_2018, y = Continent)) +
+   labs(x = "人間開発指数 (2018)", y = "大陸") +
+   theme_bw(base_size = 14) +
+   theme(legend.position = "none")
+```
+
+### 結果
+
+```{r}
+#| echo: false
+#| fig-width: 8
+#| fig-height: 3.25
+df |>
+   ggplot() +
+   geom_boxplot(aes(x = HDI_2018, y = Continent)) +
+   labs(x = "人間開発指数 (2018)", y = "大陸") +
+   theme_bw(base_size = 14) +
+   theme(legend.position = "none")
+```
+
+:::
+
+
+# 折れ線グラフ
+
+## 折れ線グラフの必須要素
+
+折れ線グラフを作成する際に必要な**最低限**の情報
+
+:::: {.columns}
+
+::: {.column width=49%}
+データに日と新規感染者数の**列**が必要
+
+* `x`: 線の傾きが変化し得る点の横軸上の位置
+   * 日
+* `y`: 線の傾きが変化し得る点の縦軸上の位置
+   * 100万人当たり新規感染者数
+* 散布図とほぼ同じ
+* ただし、線が2つ以上の場合`groups`が必要
+   * 点をグループ化しないと、どの点を繋げば良いかが分からないため
+:::
+
+::: {.column width=2%}
+:::
+
+::: {.column width=49%}
+```{r}
+#| echo: false
+#| fig-width: 5
+#| fig-height: 5
+#| warning: false
+COVID_df <- read_csv("Data/covid_2022_06.csv")
+COVID_df |>
+   ggplot(aes(x = Day, y = NewCases)) +
+   geom_line(aes(group = Country)) +
+   geom_point(size = 3) +
+   labs(x = "日 (2022年6月)", y = "100万人当たり新規感染者数 (人)") +
+   theme_bw(base_size   = 14)
+```
+:::
+
+::::
+
+## データの用意
+
+授業サポートページから実習用データ（`covid_2022_06.csv`）をダウンロード
+
+* 整然データとして加工済み
+* `Day`: 日付（2022年6月）; `NewCases`: 100万人当りCOVID-19新規感染者数
+
+```{r}
+COVID_df <- read_csv("Data/covid_2022_06.csv")
+COVID_df
+```
+
+## 線が一本の場合
+
+`geom_line()`幾何オブジェクトを使用
+
+* `x`: 点の傾きが変化し得る点の横軸上の位置
+* `y`: 点の傾きが変化し得る点の縦軸上の位置
+* 日本の行のみを抽出し、横軸を日、縦軸を100万人当たり新規感染者数とした折れ線グラフを作成
+
+::: {.panel-tabset}
+### コード
+
+```{r}
+#| eval: false
+COVID_df |>
+   filter(Country == "Japan") |>
+   ggplot() +
+   geom_line(aes(x = Day, y = NewCases)) +
+   labs(x = "日 (2022年6月)", y = "100万人当たり新規感染者数 (人)")
+```
+
+### 結果
+
+```{r}
+#| echo: false
+#| fig-width: 10
+#| fig-height: 3
+COVID_df |>
+   filter(Country == "Japan") |>
+   ggplot() +
+   geom_line(aes(x = Day, y = NewCases)) +
+   labs(x = "日 (2022年6月)", y = "100万人当たり新規感染者数 (人)")
+```
+
+:::
+
+## よく出るメッセージ
+
+折れ線グラフを作成する際、以下のようなエラーメッセージが表示され、グラフが出力されない場合がある。
+
+* 原因は不明
+
+```
+geom_path: Each group consists of only one observation. Do you need to adjust the group aesthetic?
+```
+
+<br/>
+
+**【解決策】** このようなメッセージが出た場合は、`aes()`の中に`group = 1`を追加すると解決できる。
+
+* 普段から付けておく習慣を付けた方が良い。
+
+```{r}
+#| eval: false
+#| code-line-numbers: "4"
+COVID_df |>
+   filter(Country == "Japan") |>
+   ggplot() +
+   geom_line(aes(x = Day, y = NewCases, group = 1)) +
+   labs(x = "日 (2022年6月)", y = "100万人当たり新規感染者数 (人)")
+```
+
+## 線が二本以上の場合
+
+`group`に線のグループ変数を指定
+
+* 国別の折れ線グラフの場合、国変数を指定
+
+::: {.panel-tabset}
+### コード
+
+```{r}
+#| eval: false
+COVID_df <- COVID_df |>
+   mutate(Country = case_when(Country == "Japan" ~ "日本",
+                              Country == "Korea" ~ "韓国",
+                              TRUE               ~ "台湾"),
+          Country = factor(Country, levels = c("日本", "韓国", "台湾")))
+
+COVID_df |>
+   ggplot() +
+   geom_line(aes(x = Day, y = NewCases, group = Country)) +
+   labs(x = "日 (2022年6月)", y = "100万人当たり新規感染者数 (人)")
+```
+
+### 結果
+
+各線がどの国を示すのかが分からない...
+
+```{r}
+#| echo: false
+#| fig-width: 8
+#| fig-height: 3
+COVID_df <- COVID_df |>
+   mutate(Country = case_when(Country == "Japan" ~ "日本",
+                              Country == "Korea" ~ "韓国",
+                              TRUE               ~ "台湾"),
+          Country = factor(Country, levels = c("日本", "韓国", "台湾")))
+
+COVID_df |>
+   ggplot() +
+   geom_line(aes(x = Day, y = NewCases, group = Country)) +
+   labs(x = "日 (2022年6月)", y = "100万人当たり新規感染者数 (人)")
+```
+
+:::
+
+## 線が二本以上の場合
+
+`color`で色分け: 国別の折れ線グラフの場合、国変数を指定
+
+::: {.panel-tabset}
+### コード
+
+* 線をやや太め（1.5）にする
+   * `linewidth`: 全線に適用させるために`aes()`の外側に
+   * 線が細すぎると色が区別しにくい
+
+```{r}
+#| eval: false
+COVID_df |>
+   ggplot() +
+   geom_line(aes(x = Day, y = NewCases, group = Country, 
+                 color = Country), linewidth = 1.5) +
+   labs(x = "日 (2022年6月)", y = "100万人当たり新規感染者数 (人)", 
+        color = "国")
+```
+
+### 結果
+
+```{r}
+#| echo: false
+#| fig-width: 8
+#| fig-height: 3.5
+COVID_df |>
+   ggplot() +
+   geom_line(aes(x = Day, y = NewCases, group = Country, color = Country), 
+             linewidth = 1.5) +
+   labs(x = "日 (2022年6月)", y = "100万人当たり新規感染者数 (人)", 
+        color = "国")
+```
+
+:::
+
+## 次元の追加
+
+多くの折れ線グラフは既に3次元
+
+* 日（`x`）、新規感染者数（`y`）、国（`group` or `color`）
+* これ以上次元を増やすならファセット分割で対応するのが賢明
+* ファセット分割せずに次元を増やすなら...
+   * `linewidth`: 線の太さ
+   * `linetype`: 線のタイプ（1 = 実線、2 = 破線、3 = 点線、...）
+      * 白黒図の場合、`color`でなく、`linetype`
+   * `alpha`: 透明度
+
+## 線のタイプ
+
+* 主に白黒図で使用
+
+::: {.panel-tabset}
+### コード
+
+```{r}
+#| eval: false
+COVID_df |>
+   ggplot() +
+   geom_line(aes(x = Day, y = NewCases, group = Country, linetype = Country),
+             linewidth = 1) +
+   labs(x = "日 (2022年6月)", y = "100万人当たり新規感染者数 (人)", 
+        linetype = "国")
+```
+
+自分で線のタイプを指定したい場合は
+
+```{r}
+#| eval: false
+#| code-line-numbers: "4"
+データ |>
+  ggplot() +
+  ... +
+  scale_linetype_manual(values = c("日本" = 1, "韓国" = 2, "台湾" = 3))
+```
+
+### 結果
+
+```{r}
+#| echo: false
+#| fig-width: 8
+#| fig-height: 3.5
+COVID_df |>
+   ggplot() +
+   geom_line(aes(x = Day, y = NewCases, group = Country, 
+                 linetype = Country), linewidth = 1) +
+   labs(x = "日 (2022年6月)", y = "100万人当たり新規感染者数 (人)", 
+        linetype = "国") 
+```
+
+:::
+
+## `linetype`の見本
+
+種類が多くなると区別しにくいため、最大3つ程度
+
+* 実線（1）、破線（2）、点線（3）
+* 一つ面に登場する線は3〜4本程度まで（色分けも同様）
+
+```{r}
+#| echo: false
+#| fig-width: 8
+#| fig-height: 2.5
+tibble(x = rep(1, 6),
+       xend = rep(5, 6),
+       y = 1:6,
+       yend = 1:6,
+       type = c("6", "5", "4", "3", "2", "1")) |>
+   ggplot() +
+   geom_segment(aes(x = x, xend = xend, 
+                    y = y, yend = yend, linetype = type)) +
+   scale_y_continuous(breaks = 1:6, labels = 6:1) +
+   scale_linetype_manual(values = c("1" = 1, "2" = 2, "3" = 3, 
+                                    "4" = 4, "5" = 5, "6" = 6)) +
+   labs(y = "linetypeの値") +
+   theme_minimal(base_size = 14) +
+   theme(panel.grid = element_blank(),
+         axis.title.x = element_blank(),
+         axis.text.x = element_blank(),
+         legend.position = "none")
+```
+
+## 折れ線グラフ + 散布図（コード）
+
+`geom_point()`と`geom_line()`を重ねる
+
+* 後（先）に書いたレイヤーが前面（背面）に
+* 傾きの変化が激しくない場合に有効
+* 点は線より大きめに
+* 白黒印刷に備え、点の形分けも可能
+
+```{r}
+#| eval: false
+COVID_df |>
+   ggplot(aes(x = Day, y = NewCases, color = Country)) +
+   geom_point(aes(shape = Country), size = 3) +
+   geom_line(aes(group = Country), linewidth = 1) +
+   labs(x = "日 (2022年6月)", y = "100万人当たり新規感染者数 (人)", 
+        color = "国", shape = "国") +
+   theme_bw()
+```
+
+## 折れ線グラフ + 散布図（図）
+
+```{r}
+#| echo: false
+#| fig-width: 8
+#| fig-height: 4
+COVID_df |>
+   ggplot(aes(x = Day, y = NewCases, color = Country)) +
+   geom_point(aes(shape = Country), size = 3) +
+   geom_line(aes(group = Country), linewidth = 1) +
+   labs(x = "日 (2022年6月)", y = "100万人当たり新規感染者数 (人)", 
+        color = "国", shape = "国") +
+   theme_bw()
+```

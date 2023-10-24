@@ -62,7 +62,6 @@ website:
         - materials/day01.qmd
         - materials/day02.qmd
         - materials/day03.qmd
-        - materials/final.qmd
   google-analytics: "G-K1QX6P69E5"
 
 format:
